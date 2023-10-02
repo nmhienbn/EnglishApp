@@ -10,7 +10,7 @@ public class Dictionary implements DictionaryInterface {
 
         static int numberOfNode = 0;
         Node[] child = new Node[30]; // Children of node.
-        Word word = null;
+        ArrayList<Word> words = null;
 
         Node() {
             ++numberOfNode;
@@ -21,7 +21,7 @@ public class Dictionary implements DictionaryInterface {
     private final HashMap<Character, Integer> charset; // Map char to int.
     private int cntChar; // = 30
     public int wordMaxLen = 1;
-
+    private ArrayList<Word> proposedString;
 
     /**
      * Trie constructor.
@@ -51,11 +51,12 @@ public class Dictionary implements DictionaryInterface {
     }
 
     @Override
-    public void addWord(String str, String meaning) {
+    public boolean addWord(String str, String meaning) {
         String s = str.toLowerCase();
         if (s.length() > wordMaxLen) {
             wordMaxLen = s.length();
         }
+
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
             int c = charset.get(s.charAt(i));
@@ -64,34 +65,50 @@ public class Dictionary implements DictionaryInterface {
             }
             p = p.child[c];
         }
-        if (p.word == null) {
-            p.word = new Word(s, meaning);
-        } else {
-            System.out.println("This word has been existed! Please edit it if you want.");
+
+        if (p.words == null) {
+            p.words = new ArrayList<Word>();
         }
+
+        if (p.words.size() == 1) {
+            return false;
+        }
+
+        p.words.add(new Word(s, meaning));
+
+        return true;
     }
 
     @Override
-    public void editWord(String str, String meaning) {
+    public boolean editWord(String str, String meaning) {
         String s = str.toLowerCase();
         if (s.length() > wordMaxLen) {
             wordMaxLen = s.length();
         }
+
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
             int c = charset.get(s.charAt(i));
             if (p.child[c] == null) {
-                System.out.println("No word found to edit!");
+                return false;
             }
             p = p.child[c];
         }
-        p.word.setWordExplain(meaning);
-        System.out.println("models.Word \"" + str + "\" has been edited successfully! Now it means \"" + meaning + "\"");
+
+        // No word
+        if (p.words.isEmpty()) {
+            return false;
+        }
+
+        p.words.get(0).setWordExplain(meaning);
+
+        return true;
     }
 
     @Override
-    public void deleteWord(String str) {
+    public boolean deleteWord(String str) {
         String s = str.toLowerCase();
+
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
             int c = charset.get(s.charAt(i));
@@ -100,11 +117,12 @@ public class Dictionary implements DictionaryInterface {
             }
             p = p.child[c];
         }
-        if (p.word != null) {
-            System.out.println("The word \"" + p.word.getWordTarget() + "\" has been deleted successfully!");
-            p.word = null;
+
+        if (p.words.get(0) != null) {
+            p.words.remove(p.words.size() - 1);
+            return true;
         } else {
-            System.out.println("No word found to be deleted!");
+            return false;
         }
     }
 
@@ -123,10 +141,15 @@ public class Dictionary implements DictionaryInterface {
             }
             p = p.child[c];
         }
-        return p.word;
+        return p.words.get(0);
     }
 
-    @Override
+
+    /**
+     * Find a word in Trie.
+     *
+     * @param str string to be search.
+     */
     public void findWord(String str) {
         String s = str.toLowerCase();
         Word foundWord = findString(s);
@@ -137,11 +160,27 @@ public class Dictionary implements DictionaryInterface {
         }
     }
 
-    private ArrayList<Word> proposedString;
+    public ArrayList<Word> lookupWord(String str) {
+        proposedString = new ArrayList<>();
 
+
+
+        return proposedString;
+    }
+
+    public ArrayList<Word> queryAllWords() {
+        proposedString = new ArrayList<>();
+        findAllWords(root);
+        return proposedString;
+    }
+    /**
+     * Get all words from Trie
+     *
+     * @param u Current node in Trie
+     * */
     private void findAllWords(Node u) {
-        if (u.word != null) {
-            proposedString.add(u.word);
+        if (!u.words.isEmpty()) {
+            proposedString.add(u.words.get(0));
         }
         for (int i = 0; i < cntChar; ++i) {
             if (u.child[i] != null) {
@@ -151,44 +190,19 @@ public class Dictionary implements DictionaryInterface {
     }
 
     @Override
-    public void printAllWords() {
-        proposedString = new ArrayList<>();
-        findAllWords(root);
-        for (int i = 0; i < proposedString.size(); ++i) {
-            System.out.printf("%-8d| %-" + wordMaxLen + "s | %s\n", i + 1,
-                    proposedString.get(i).getWordTarget(), proposedString.get(i).getWordExplain());
-        }
-         System.out.println(Node.numberOfNode);
-    }
-
-    /**
-     * Find all strings having str as a prefix.
-     *
-     * @param str string to find
-     */
-    private void getProposedString(String str) {
+    public ArrayList<Word> getProposedString(String str) {
         String s = str.toLowerCase();
         proposedString = new ArrayList<>();
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
             int c = charset.get(s.charAt(i));
             if (p.child[c] == null) {
-                return; // No word found;
+                return null; // No word found;
             }
             p = p.child[c];
         }
         findAllWords(p);
-    }
 
-    @Override
-    public void printProposedString(String s) {
-        getProposedString(s);
-        System.out.println("Propose:");
-        if (proposedString.isEmpty()) {
-            System.out.println("No word to propose!");
-        }
-        for (Word word : proposedString) {
-            System.out.println("- " + word.getWordTarget());
-        }
+        return proposedString;
     }
 }

@@ -1,21 +1,13 @@
 package views;
 
-import models.Dictionary;
+import controllers.DictionaryManagement;
+import models.Word;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    Dictionary dictionary = Dictionary.getInstance();
-    /**
-     * Show all words as a table.
-     */
-    public void showAllWords() {
-        String s1 = "No";
-        String s2 = "English";
-        String s3 = "Vietnamese";
-        System.out.printf("%-8s| %-" + dictionary.wordMaxLen + "s | %s\n", s1, s2, s3);
-        dictionary.printAllWords();
-    }
+    DictionaryManagement manager = DictionaryManagement.getInstance();
 
     /**
      * Insert n words from command line.
@@ -26,7 +18,7 @@ public class DictionaryCommandline {
         for (int i = 0; i < n; i++) {
             String word = cin.nextLine();
             String explain = cin.nextLine();
-            dictionary.addWord(word, explain);
+            manager.dictionaryAddWord(word, explain);
         }
     }
 
@@ -40,10 +32,56 @@ public class DictionaryCommandline {
     }
 
     /**
-     * Print all strings having inputted string from stdin as a prefix.
+     * Print all strings with representation is str
+     *
+     * @param str string for looking up
      */
-    public void dictionarySearcher() {
-        Scanner cin = new Scanner(System.in);
-        dictionary.printProposedString(cin.next());
+    public void showLookupWord(String str) {
+        ArrayList<Word> proposedString = manager.dictionaryLookup(str);
+
+        System.out.println("Lookup results:");
+        if (proposedString.isEmpty()) {
+            System.out.println("No results founded!");
+        }
+
+        for (Word word : proposedString) {
+            System.out.println("- " + word.getWordTarget());
+        }
+    }
+
+    /**
+     * Print all strings having str as a prefix.
+     *
+     * @param str string to search
+     */
+    public void showSearchedWords(String str) {
+        ArrayList<Word> proposedString = manager.dictionarySearcher(str);
+
+        System.out.println("Searched results:");
+        if (proposedString.isEmpty()) {
+            System.out.println("No result founded!");
+        }
+
+        for (Word word : proposedString) {
+            System.out.println("- " + word.getWordTarget());
+        }
+    }
+
+    /**
+     * Print all the words in the dictionary to System.out.
+     */
+    public void showAllWords() {
+        ArrayList<Word> proposedString = manager.getAllWords();
+
+        int wordMaxLen = 0;
+        for (Word word : proposedString) {
+            wordMaxLen = Math.max(wordMaxLen, word.getWordTarget().length());
+        }
+
+        for (int i = 0; i < proposedString.size(); ++i) {
+            System.out.printf("%-8d| %-" + wordMaxLen + "s | %s\n", i + 1,
+                                    proposedString.get(i).getWordTarget(),
+                                    proposedString.get(i).getWordExplain());
+        }
     }
 }
