@@ -1,4 +1,4 @@
 package views;
 
-public class DictionaryApplication extends DictionaryCommandline {
+public class DictionaryApplication {
 }
