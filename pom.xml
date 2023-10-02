@@ -18,5 +18,10 @@
         <sourceDirectory>
             src/main/app
         </sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 </project>
