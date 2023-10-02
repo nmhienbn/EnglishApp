@@ -1,6 +1,10 @@
 package controllers;
 
 import models.Dictionary;
+import models.Word;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public interface DictionaryManagementInterface {
     Dictionary dictionary = Dictionary.getInstance();
@@ -11,11 +15,42 @@ public interface DictionaryManagementInterface {
      */
     void insertFromFile();
 
-    void dictionaryLookup();
+    /**
+     * Get all words.
+     * */
+    ArrayList<Word> getAllWords();
 
-    void insertAWordFromCommandline();
 
-    void editAWordFromCommandline();
+    /**
+     * return all the words that have prefix is str
+     *
+     * @param str string to search
+     * */
+    ArrayList<Word> dictionarySearcher(String str);
+
+    /**
+     * return all the words that is represented as str.
+     *
+     * @param str string to lookup.
+     * */
+    ArrayList<Word> dictionaryLookup(String str);
+
+    /**
+     * add a new word.
+     *
+     * @param str string to add.
+     * @param meaning the meaning of that word in VNese.
+     * @return true if the word is added successfully.
+     */
+    boolean dictionaryAddWord(String str, String meaning);
+
+    /**
+     * remove a word.
+     *
+     * @param str string to delete.
+     * @return true if the word is deleted successfully.
+     */
+    boolean dictionaryRemoveWord(String str);
 
     void deleteAWordFromCommandline();
 
