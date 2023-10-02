@@ -11,6 +11,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
 
         return instance;
     }
+
     /** Main. */
     public static void main(String[] args) {
 
