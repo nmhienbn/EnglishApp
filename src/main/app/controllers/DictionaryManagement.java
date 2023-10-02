@@ -5,7 +5,9 @@ import java.io.*;
 public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public void insertFromFile() {
-        String fin1 = "D:\\App\\src\\dictionaries.txt";
+
+        String fin1=System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
+        //String fin1 = "dictionaries.txt";
         try (BufferedReader fin = new BufferedReader(new FileReader(fin1))) {
             String line;
             while ((line = fin.readLine()) != null) {
