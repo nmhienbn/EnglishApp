@@ -1,44 +1,50 @@
 package models;
 
+import java.util.ArrayList;
+
 public interface DictionaryInterface {
     /**
-     * Add a word to Trie.
+     * Add a word to dictionary.
      *
      * @param str string to be added.
+     * @return true if the word is added successfully.
      */
-    void addWord(String str, String meaning);
+    boolean addWord(String str, String meaning);
 
     /**
-     * Edit a word in Trie.
+     * Edit a word in dictionary.
      *
      * @param str string to be edited.
+     * @param meaning meaning of edited word
+     * @return true if the word is successful edited
      */
-    void editWord(String str, String meaning);
-
+    boolean editWord(String str, String meaning);
 
     /**
-     * Delete a word from Trie.
+     * Delete a word from dictionary.
      *
      * @param str string to be deleted.
+     * @return true if the word is deleted successfully.
      */
-    void deleteWord(String str);
+    boolean deleteWord(String str);
 
     /**
-     * Find a word in Trie.
+     * Get all words from dictionary.
+     * */
+    ArrayList<Word> queryAllWords();
+
+    /**
+     * Get all words with prefix is str in dictionary.
      *
-     * @param str string to be deleted.
-     */
-    void findWord(String str);
+     * @param str string to search.
+     * */
+    ArrayList<Word> getProposedString(String str);
 
     /**
-     * Print all the words in the dictionary to System.out.
-     */
-    void printAllWords();
-
-    /**
-     * Print all strings having str as a prefix.
+     * return all the words that is represented as str in dictionary.
      *
-     * @param s string
-     */
-    void printProposedString(String s);
+     * @param str string to lookup.
+     * */
+    ArrayList<Word> lookupWord(String str);
+
 }

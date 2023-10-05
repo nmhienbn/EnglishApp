@@ -1,8 +1,22 @@
 package controllers;
 
+import models.Dictionary;
+import models.Word;
+
 import java.io.*;
+import java.util.ArrayList;
 
 public class DictionaryManagement implements DictionaryManagementInterface {
+    private static DictionaryManagement ins = null;
+
+    public static DictionaryManagement getInstance() {
+        if (ins == null) {
+            ins = new DictionaryManagement();
+        }
+
+        return ins;
+    }
+
     @Override
     public void insertFromFile() {
 
@@ -20,18 +34,31 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public void dictionaryLookup() {
-
+    public ArrayList<Word> getAllWords() {
+        ArrayList<Word> temp = new ArrayList<Word>(dictionary.queryAllWords());
+        return temp;
     }
 
     @Override
-    public void insertAWordFromCommandline() {
-
+    public ArrayList<Word> dictionaryLookup(String str) {
+        ArrayList<Word> temp = new ArrayList<Word>(dictionary.lookupWord(str));
+        return temp;
     }
 
     @Override
-    public void editAWordFromCommandline() {
+    public ArrayList<Word> dictionarySearcher(String str) {
+        ArrayList<Word> temp = new ArrayList<Word>(dictionary.getProposedString(str));
+        return temp;
+    }
 
+    @Override
+    public boolean dictionaryAddWord(String str, String meaning) {
+        return dictionary.addWord(str, meaning);
+    }
+
+    @Override
+    public boolean dictionaryRemoveWord(String str){
+        return dictionary.deleteWord(str);
     }
 
     @Override
@@ -41,6 +68,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
 
     @Override
     public void dictionaryExportToFile(String fout) {
+        /*
         try {
             PrintStream fileOutputStream = new PrintStream(new FileOutputStream(fout));
             System.setOut(fileOutputStream); // Redirect System.out to the file
@@ -63,6 +91,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
 
         // After this block, System.out will be back to its original state (console).
         System.out.println("Dictionary has been exported to file!");
+        */
     }
 
 }
