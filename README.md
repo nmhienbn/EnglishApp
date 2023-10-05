@@ -9,3 +9,4 @@ Final Project for OOP (INT2204 2)
 
 # Update 05/10/23
 - setup javafx, xem trong .idea/runConfig
+- mấy ông sau thêm thư viện thì nhớ để trong thư mục lib thì mọi người ai pull về cũng chạy dc
