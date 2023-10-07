@@ -1,0 +1,27 @@
+.root {
+    -fx-background-color: #E8EBE4;
+}
+
+.nav-panel {
+    -fx-pref-width: 200;
+    -fx-background-color: #999AC6;
+    -fx-spacing: 2.5px;
+}
+
+.nav-button {
+    -fx-pref-width: 200;
+    -fx-pref-height: 75;
+
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 15px 0 0 15px;
+
+    -fx-background-color: #B8BACF;
+}
+
+.nav-button:hover {
+    -fx-background-color: #D2D5DD;
+}
+
+.nav-button.focused {
+    -fx-background-color: #E8EBE4;
+}
