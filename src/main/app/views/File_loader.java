@@ -3,14 +3,10 @@ package views;
 import java.io.IOException;
 import java.net.URL;
 
-import javax.management.RuntimeErrorException;
-
 import views.controllers.mainDictionaryTab_ctrl;
 import views.controllers.mainPanel_ctrl;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 
 public class File_loader {
 
@@ -32,7 +28,6 @@ public class File_loader {
         try {
             return loader.load();
         } catch (IOException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -42,7 +37,7 @@ public class File_loader {
     }
 
     public Parent fxml_mainPanel() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/test2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/main.fxml"));
 
         Object controllerObject = new mainPanel_ctrl();
         loader.setController(controllerObject);
