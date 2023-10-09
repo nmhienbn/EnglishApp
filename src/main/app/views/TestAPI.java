@@ -17,8 +17,8 @@ public class TestAPI {
         ArrayList<Word> words = wordSet.dictionarySearcher(key);
 
         ArrayList<String> wordstr = new ArrayList<>();
-        for (int i = 0; i < words.size(); i++) {
-            wordstr.add(words.get(i).toString());
+        for (Word word : words) {
+            wordstr.add(word.getWordTarget());
         }
 
         return wordstr;

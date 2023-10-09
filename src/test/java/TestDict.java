@@ -11,7 +11,7 @@ public class TestDict {
 
     public static void main(String[] args) {
         wordSet.insertFromFile();
-        cmd.showLookupWord("bubble");
+        cmd.showLookupWord("b1ubble");
         wordSet.dictionarySearcher("c");
 //        wordSet.printProposedString("algo");
         wordSet.dictionaryRemoveWord("Bubble");
