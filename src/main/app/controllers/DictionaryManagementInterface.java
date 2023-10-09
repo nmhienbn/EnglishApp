@@ -4,7 +4,6 @@ import models.Dictionary;
 import models.Word;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public interface DictionaryManagementInterface {
     Dictionary dictionary = Dictionary.getInstance();

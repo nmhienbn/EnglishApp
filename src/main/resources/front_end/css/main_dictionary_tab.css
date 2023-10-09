@@ -1,0 +1,8 @@
+@import "global.css";
+
+#search_button {
+    -fx-background-image: url(../graphic/icons/search.png);
+
+    -fx-background-repeat: stretch;
+    -fx-background-position: 50% 50%;
+}
