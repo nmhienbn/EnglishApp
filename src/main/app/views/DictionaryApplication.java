@@ -8,11 +8,13 @@ import javafx.stage.Stage;
 
 public class DictionaryApplication extends Application {
     public static void main(String[] args) throws Exception {
+        TestAPI.SetupDict();
+
         launch(args);
     }
 
     @Override
-    public void start(Stage stage)  {
+    public void start(Stage stage) {
 
         Parent root = File_loader.getInstance().fxml_mainPanel();
 

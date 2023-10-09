@@ -20,7 +20,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public void insertFromFile() {
 
-        String fin1=System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
+        String fin1 = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
         //String fin1 = "dictionaries.txt";
         try (BufferedReader fin = new BufferedReader(new FileReader(fin1))) {
             String line;
@@ -47,8 +47,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
 
     @Override
     public ArrayList<Word> dictionarySearcher(String str) {
-        ArrayList<Word> temp = new ArrayList<Word>(dictionary.getProposedString(str));
-        return temp;
+        return new ArrayList<Word>(dictionary.getProposedString(str));
     }
 
     @Override
@@ -57,7 +56,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public boolean dictionaryRemoveWord(String str){
+    public boolean dictionaryRemoveWord(String str) {
         return dictionary.deleteWord(str);
     }
 
