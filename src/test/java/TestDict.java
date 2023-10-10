@@ -6,20 +6,28 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TestDict {
-    private static DictionaryManagement wordSet = new DictionaryManagement();
-    private static DictionaryCommandline cmd = new DictionaryCommandline();
+    private static final DictionaryManagement wordSet = new DictionaryManagement();
+    private static final DictionaryCommandline cmd = new DictionaryCommandline();
+    private static final Dictionary dict = Dictionary.getInstance();
 
-    public static void main(String[] args) {
-        wordSet.insertFromFile();
-        cmd.showLookupWord("b1ubble");
-        wordSet.dictionarySearcher("c");
-//        wordSet.printProposedString("algo");
-        wordSet.dictionaryRemoveWord("Bubble");
-        cmd.showLookupWord("buBble");
+    private static void manyTests(){
         Scanner cin = new Scanner(System.in);
         while (true) {
             cmd.showLookupWord(cin.next());
         }
+    }
+
+    public static void main(String[] args) {
+        wordSet.insertFromFile();
+//        cmd.showSearchedWords("bubble");
+        cmd.showLookupWord("bubble");
+//        System.out.println(dict.lookupWord("bubble"));
+//        wordSet.dictionarySearcher("c");
+        wordSet.dictionaryRemoveWord("Bubble");
+        cmd.showLookupWord("buBble");
+
+//        manyTests();
+
 //        wordSet.dictionarySearcher();
 //        wordSet.dictionaryExportToFile("D:\\App\\src\\out_dictionaries.txt");
     }
