@@ -20,7 +20,7 @@ public class Dictionary implements DictionaryInterface {
     private final Node root;
     private final HashMap<Character, Integer> charset; // Map char to int.
     private int cntChar; // = 30
-    public int wordMaxLen = 1;
+    public static int wordMaxLen = 1;
     private ArrayList<Word> proposedString;
 
     /**
@@ -59,7 +59,11 @@ public class Dictionary implements DictionaryInterface {
 
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
-            int c = charset.get(s.charAt(i));
+            Integer c = charset.get(s.charAt(i));
+            if (c == null) {
+                System.out.println("Invalid word!");
+                return false;
+            }
             if (p.child[c] == null) {
                 p.child[c] = new Node();
             }
@@ -67,15 +71,14 @@ public class Dictionary implements DictionaryInterface {
         }
 
         if (p.words == null) {
-            p.words = new ArrayList<Word>();
+            p.words = new ArrayList<>();
         }
 
-        if (p.words.size() == 1) {
-            return false;
-        }
+//        if (p.words.size() == 1) {
+//            return false;
+//        }
 
         p.words.add(new Word(s, meaning));
-
         return true;
     }
 
@@ -88,15 +91,15 @@ public class Dictionary implements DictionaryInterface {
 
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
-            int c = charset.get(s.charAt(i));
-            if (p.child[c] == null) {
+            Integer c = charset.get(s.charAt(i));
+            if (c == null || p.child[c] == null) {
                 return false;
             }
             p = p.child[c];
         }
 
         // No word
-        if (p.words.isEmpty()) {
+        if (p.words == null) {
             return false;
         }
 
@@ -111,15 +114,16 @@ public class Dictionary implements DictionaryInterface {
 
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
-            int c = charset.get(s.charAt(i));
-            if (p.child[c] == null) {
+            Integer c = charset.get(s.charAt(i));
+            if (c == null || p.child[c] == null) {
                 System.out.println("No word found to be deleted!");
+                return false;
             }
             p = p.child[c];
         }
 
-        if (p.words.get(0) != null) {
-            p.words.remove(p.words.size() - 1);
+        if (p.words != null) {
+            p.words = null;
             return true;
         } else {
             return false;
@@ -130,63 +134,97 @@ public class Dictionary implements DictionaryInterface {
      * Find a string in trie.
      *
      * @param s string to find
-     * @return null or the Word corresponding to s
+     * @return null or the Node corresponding to s
      */
-    private Word findString(String s) {
+    private Node findString(String s) {
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
-            int c = charset.get(s.charAt(i));
-            if (p.child[c] == null) {
+            Integer c = charset.get(s.charAt(i));
+            if (c == null || p.child[c] == null) {
                 return null; // No word found;
             }
             p = p.child[c];
         }
-        return p.words.get(0);
+        return p;
     }
 
 
     /**
      * Find a word in Trie.
      *
-     * @param str string to be search.
+     * @param str string to be searched.
      */
     public void findWord(String str) {
         String s = str.toLowerCase();
-        Word foundWord = findString(s);
-        if (foundWord == null)
+        Node foundNode = findString(s);
+        if (foundNode == null || foundNode.words == null)
             System.out.println("No word found!");
         else {
-            System.out.println(foundWord);
+            System.out.println(foundNode.words.get(0).getWordTarget());
+            for (Word word : foundNode.words) {
+                System.out.println(word.getWordExplain());
+            }
         }
     }
 
     public ArrayList<Word> lookupWord(String str) {
-        proposedString = new ArrayList<>();
-
-
-
-        return proposedString;
+        String s = str.toLowerCase();
+        Node foundNode = findString(s);
+        if (foundNode == null)
+            return null;
+        else {
+            return foundNode.words;
+        }
     }
 
     public ArrayList<Word> queryAllWords() {
         proposedString = new ArrayList<>();
-        findAllWords(root);
+        findAllWordTargets(root);
         return proposedString;
     }
+
     /**
-     * Get all words from Trie
+     * Get all word_target(s) from Trie
      *
      * @param u Current node in Trie
-     * */
-    private void findAllWords(Node u) {
-        if (!u.words.isEmpty()) {
+     */
+    private void findAllWordTargets(Node u) {
+        if (u.words != null) {
             proposedString.add(u.words.get(0));
         }
         for (int i = 0; i < cntChar; ++i) {
             if (u.child[i] != null) {
-                findAllWords(u.child[i]);
+                findAllWordTargets(u.child[i]);
             }
         }
+    }
+
+    private int printed = 0;
+
+    /**
+     * Print all words from Trie.
+     *
+     * @param u Current node in Trie
+     */
+    private void printAllWords(Node u) {
+        if (u.words != null) {
+            for (Word word : u.words) {
+                System.out.printf("%-8d| %-" + wordMaxLen + "s | %s\n", printed, word.getWordTarget(), word.getWordExplain());
+            }
+        }
+        for (int i = 0; i < cntChar; ++i) {
+            if (u.child[i] != null) {
+                findAllWordTargets(u.child[i]);
+            }
+        }
+    }
+
+    /**
+     * Print all words from Trie.
+     */
+    public void printAllWords() {
+        printed = 0;
+        printAllWords(root);
     }
 
     @Override
@@ -195,13 +233,13 @@ public class Dictionary implements DictionaryInterface {
         proposedString = new ArrayList<>();
         Node p = root;
         for (int i = 0; i < s.length(); ++i) {
-            int c = charset.get(s.charAt(i));
-            if (p.child[c] == null) {
+            Integer c = charset.get(s.charAt(i));
+            if (c == null || p.child[c] == null) {
                 return null; // No word found;
             }
             p = p.child[c];
         }
-        findAllWords(p);
+        findAllWordTargets(p);
 
         return proposedString;
     }
