@@ -10,7 +10,7 @@ public class Dictionary implements DictionaryInterface {
 
         static int numberOfNode = 0;
         Node[] child = new Node[30]; // Children of node.
-        ArrayList<Word> words = null;
+        Word word = null;
 
         Node() {
             ++numberOfNode;
@@ -70,15 +70,11 @@ public class Dictionary implements DictionaryInterface {
             p = p.child[c];
         }
 
-        if (p.words == null) {
-            p.words = new ArrayList<>();
+        if (p.word == null) {
+            p.word = new Word(s, meaning);
+        } else {
+            p.word.setWordExplain((p.word.getWordExplain() + "\n" + meaning));
         }
-
-//        if (p.words.size() == 1) {
-//            return false;
-//        }
-
-        p.words.add(new Word(s, meaning));
         return true;
     }
 
@@ -99,11 +95,12 @@ public class Dictionary implements DictionaryInterface {
         }
 
         // No word
-        if (p.words == null) {
-            return false;
-        }
 
-        p.words.get(0).setWordExplain(meaning);
+        if (p.word == null) {
+            p.word = new Word(s, meaning);
+        } else {
+            p.word.setWordExplain(meaning);
+        }
 
         return true;
     }
@@ -122,8 +119,8 @@ public class Dictionary implements DictionaryInterface {
             p = p.child[c];
         }
 
-        if (p.words != null) {
-            p.words = null;
+        if (p.word != null) {
+            p.word = null;
             return true;
         } else {
             return false;
@@ -154,26 +151,13 @@ public class Dictionary implements DictionaryInterface {
      *
      * @param str string to be searched.
      */
-    public void findWord(String str) {
-        String s = str.toLowerCase();
-        Node foundNode = findString(s);
-        if (foundNode == null || foundNode.words == null)
-            System.out.println("No word found!");
-        else {
-            System.out.println(foundNode.words.get(0).getWordTarget());
-            for (Word word : foundNode.words) {
-                System.out.println(word.getWordExplain());
-            }
-        }
-    }
-
-    public ArrayList<Word> lookupWord(String str) {
+    public Word lookupWord(String str) {
         String s = str.toLowerCase();
         Node foundNode = findString(s);
         if (foundNode == null)
             return null;
         else {
-            return foundNode.words;
+            return foundNode.word;
         }
     }
 
@@ -189,8 +173,8 @@ public class Dictionary implements DictionaryInterface {
      * @param u Current node in Trie
      */
     private void findAllWordTargets(Node u) {
-        if (u.words != null) {
-            proposedString.add(u.words.get(0));
+        if (u.word != null) {
+            proposedString.add(u.word);
         }
         for (int i = 0; i < cntChar; ++i) {
             if (u.child[i] != null) {
@@ -199,31 +183,29 @@ public class Dictionary implements DictionaryInterface {
         }
     }
 
-    private int printed = 0;
+    private int cnt = 0;
 
     /**
-     * Print all words from Trie.
+     * Print all words from Trie as a table.
      *
      * @param u Current node in Trie
      */
     private void printAllWords(Node u) {
-        if (u.words != null) {
-            for (Word word : u.words) {
-                System.out.printf("%-8d| %-" + wordMaxLen + "s | %s\n", printed, word.getWordTarget(), word.getWordExplain());
-            }
+        if (u.word != null) {
+            System.out.printf("%-8d| %-" + wordMaxLen + "s | %s\n", cnt, u.word.getWordTarget(), u.word.getWordExplain());
         }
         for (int i = 0; i < cntChar; ++i) {
             if (u.child[i] != null) {
-                findAllWordTargets(u.child[i]);
+                printAllWords(u.child[i]);
             }
         }
     }
 
     /**
-     * Print all words from Trie.
+     * Print all words from Trie as a table.
      */
     public void printAllWords() {
-        printed = 0;
+        cnt = 0;
         printAllWords(root);
     }
 

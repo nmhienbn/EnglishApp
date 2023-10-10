@@ -26,7 +26,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
             String line;
             while ((line = fin.readLine()) != null) {
                 String[] tmp = line.split("\t", 2);
-                dictionary.addWord(tmp[0], tmp[1]);
+                dictionary.addWord(tmp[0], tmp[1].replaceAll("\\\\", "\n"));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,12 +43,8 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public ArrayList<Word> dictionaryLookup(String str) {
-        ArrayList<Word> tmp = dictionary.lookupWord(str);
-        if (tmp == null) {
-            return new ArrayList<>();
-        }
-        return new ArrayList<>(tmp);
+    public Word dictionaryLookup(String str) {
+        return dictionary.lookupWord(str);
     }
 
     @Override

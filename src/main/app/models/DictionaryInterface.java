@@ -41,10 +41,10 @@ public interface DictionaryInterface {
     ArrayList<Word> getProposedString(String str);
 
     /**
-     * return all the words that is represented as str in dictionary.
+     * Return the Word that its target is str in dictionary.
      *
      * @param str string to lookup.
      * */
-    ArrayList<Word> lookupWord(String str);
+    Word lookupWord(String str);
 
 }
