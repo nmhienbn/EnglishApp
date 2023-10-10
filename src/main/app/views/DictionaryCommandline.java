@@ -33,20 +33,18 @@ public class DictionaryCommandline {
     }
 
     /**
-     * Print all strings with representation is str
+     * Print all meaning of word str.
      *
      * @param str string for looking up
      */
     public void showLookupWord(String str) {
-        ArrayList<Word> proposedString = manager.dictionaryLookup(str);
+        Word proposedString = manager.dictionaryLookup(str);
 
         System.out.println("Lookup results:");
-        if (proposedString.isEmpty()) {
+        if (proposedString == null) {
             System.out.println("No results founded!");
-        }
-
-        for (Word word : proposedString) {
-            System.out.println("- " + word.getWordTarget());
+        } else {
+            System.out.println(proposedString.getWordExplain());
         }
     }
 
@@ -76,8 +74,8 @@ public class DictionaryCommandline {
 
         for (int i = 0; i < proposedString.size(); ++i) {
             System.out.printf("%-8d| %-" + Dictionary.wordMaxLen + "s | %s\n", i + 1,
-                                    proposedString.get(i).getWordTarget(),
-                                    proposedString.get(i).getWordExplain());
+                    proposedString.get(i).getWordTarget(),
+                    proposedString.get(i).getWordExplain());
         }
     }
 }

@@ -16,28 +16,28 @@ public interface DictionaryManagementInterface {
 
     /**
      * Get all words.
-     * */
+     */
     ArrayList<Word> getAllWords();
 
 
     /**
-     * return all the words that have prefix is str
+     * Return all the words that have prefix is str
      *
      * @param str string to search
-     * */
+     */
     ArrayList<Word> dictionarySearcher(String str);
 
     /**
-     * return all the words that is represented as str.
+     * Return all the meaning of str.
      *
      * @param str string to lookup.
-     * */
-    ArrayList<Word> dictionaryLookup(String str);
+     */
+    Word dictionaryLookup(String str);
 
     /**
-     * add a new word.
+     * Add a new word.
      *
-     * @param str string to add.
+     * @param str     string to add.
      * @param meaning the meaning of that word in VNese.
      * @return true if the word is added successfully.
      */
