@@ -23,4 +23,8 @@ public class TestAPI {
 
         return wordstr;
     }
+
+    public static String getWordMeaning(String word) {
+        return "da";
+    }
 }

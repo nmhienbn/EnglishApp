@@ -1,8 +1,4 @@
-:root {
-    --seacrh_icon: url(../graphic/icons/search.png);
-
-
-}
+#root {}
 
 .button {
     -fx-focus-color: transparent;
