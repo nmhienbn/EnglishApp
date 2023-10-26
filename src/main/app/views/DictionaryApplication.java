@@ -21,7 +21,6 @@ public class DictionaryApplication extends Application {
             System.out.println("null");
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(File_loader.getInstance().get_css("global.css"));
         // scene.getStylesheets().add(File_loader.getInstance().get_css("main_dictionary_tab.css"));
         stage.setTitle("hi");
         stage.setScene(scene);
