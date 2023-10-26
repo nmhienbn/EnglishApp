@@ -3,6 +3,7 @@ package controllers;
 import models.Dictionary;
 import models.Word;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public interface DictionaryManagementInterface {
@@ -59,4 +60,15 @@ public interface DictionaryManagementInterface {
      * @param fout output directory.
      */
     void dictionaryExportToFile(String fout);
+
+    /**
+     * Translate a string from source language to target language.
+     * <em>sourceLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ... or an <em>auto</em> (auto detect).
+     * <em>targetLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ...
+     * @param str text to translate
+     * @param sourceLanguage source language
+     * @param targetLanguage target language
+     * @return translated text
+     */
+    String translate(String str, String sourceLanguage, String targetLanguage) throws IOException;
 }

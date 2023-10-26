@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.googleapi.GoogleTranslate;
 import models.Dictionary;
 import models.Word;
 
@@ -64,6 +65,11 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public boolean dictionaryRemoveWord(String str) {
         return dictionary.deleteWord(str);
+    }
+
+    @Override
+    public String translate(String str, String sourceLanguage, String targetLanguage) throws IOException {
+        return GoogleTranslate.translate(str, sourceLanguage, targetLanguage);
     }
 
     @Override
