@@ -2,13 +2,28 @@
     -fx-background-color: #E8EBE4;
 }
 
-#home_button {
+#home {
     -fx-background-image: url(../graphic/icons/home.png);
+    -fx-background-size: 40 40;
+
 }
 
-#dictonary_button {
+#main_dictionary {
     -fx-background-image: url(../graphic/icons/dictionary.png);
+    -fx-background-size: 45 45;
 }
+
+#user_dictionary {
+    -fx-background-image: url(../graphic/icons/dictionary.png);
+    -fx-background-size: 45 45;
+}
+
+#google {
+    -fx-background-image: url(../graphic/icons/translate.png);
+    -fx-background-size: 45 45;
+}
+
+
 
 .nav-panel {
     -fx-pref-width: 200;
@@ -23,7 +38,6 @@
     -fx-border-radius: 0 0 0 0;
     -fx-background-radius: 0 0 0 0;
 
-    -fx-background-size: 40 40;
     -fx-background-position: 50% 50%;
     -fx-background-repeat: no-repeat;
 
