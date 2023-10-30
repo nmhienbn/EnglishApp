@@ -1,9 +1,19 @@
+@import "theme.css";
+
 #dictionary-nav {
-    -fx-background-color: #fefefe
+    -fx-background-color: white1
 }
 
 #search_button {
     -fx-background-image: url(../graphic/icons/search.png);
     -fx-background-repeat: stretch;
     -fx-background-position: 50% 50%;
+}
+
+.mainbg {
+    -fx-background-color: white2;
+}
+
+.textwindow {
+    -fx-background-color: white0;
 }

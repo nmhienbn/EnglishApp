@@ -45,9 +45,9 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>
-            <Button id="main_dictionary" fx:id="main_dictionary_button" layoutX="10.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="293.0" styleClass="nav-button" />
-            <Button id="user_dictionary" fx:id="user_dictionary_button" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="297.0" styleClass="nav-button" text="My Dictionary" />
-            <Button id="google" fx:id="google_translate_button" alignment="CENTER" layoutX="10.0" layoutY="93.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="468.0" styleClass="nav-button" text="Google" />
+            <Button id="main_dictionary" fx:id="main_dictionary_button" layoutX="10.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="293.0" styleClass="nav-button" text="main" textFill="WHITE" />
+            <Button id="user_dictionary" fx:id="user_dictionary_button" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="297.0" styleClass="nav-button" text="user" textFill="WHITE" />
+            <Button id="google" fx:id="google_translate_button" alignment="CENTER" layoutX="10.0" layoutY="93.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="83.0" prefWidth="468.0" styleClass="nav-button" text="Google" textFill="WHITE" />
          </children>
          <padding>
             <Insets top="140.0" />

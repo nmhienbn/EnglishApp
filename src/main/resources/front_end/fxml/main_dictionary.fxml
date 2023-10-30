@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ecf0f1;" stylesheets="@../css/DictionaryTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainbg" stylesheets="@../css/DictionaryTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="325.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="665.0" prefWidth="660.0" style="-fx-background-color: #fefefe;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
-      <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="670.0" prefWidth="225.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="15.0">
+      <AnchorPane layoutX="321.0" layoutY="18.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="665.0" prefWidth="679.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="670.0" prefWidth="225.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="15.0">
          <children>
             <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="620.0" prefWidth="225.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                <content>
-                  <VBox fx:id="word_list_box" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="618.0" prefWidth="226.0" style="-fx-background-color: #fefefe;" />
+                  <VBox fx:id="word_list_box" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="618.0" prefWidth="226.0" styleClass="textwindow" />
                </content>
             </ScrollPane>
-            <TextField fx:id="search_box" prefHeight="43.0" prefWidth="186.0" promptText="Tra từ" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TextField fx:id="search_box" prefHeight="43.0" prefWidth="186.0" promptText="Tra từ" styleClass="textwindow" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="20.0" />
                </font>
