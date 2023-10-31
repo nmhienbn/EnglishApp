@@ -1,18 +1,32 @@
-.root {
-    -fx-background-color: #E8EBE4;
-}
+@import "theme.css";
 
-#home_button {
+
+#home {
     -fx-background-image: url(../graphic/icons/home.png);
+    -fx-background-size: 40 40;
+
 }
 
-#dictonary_button {
+#main_dictionary {
     -fx-background-image: url(../graphic/icons/dictionary.png);
+    -fx-background-size: 45 45;
 }
+
+#user_dictionary {
+    -fx-background-image: url(../graphic/icons/dictionary.png);
+    -fx-background-size: 45 45;
+}
+
+#google {
+    -fx-background-image: url(../graphic/icons/translate.png);
+    -fx-background-size: 40 40;
+}
+
+
 
 .nav-panel {
     -fx-pref-width: 200;
-    -fx-background-color: #999AC6;
+    -fx-background-color: green1;
     -fx-spacing: 2.5px;
 }
 
@@ -23,17 +37,16 @@
     -fx-border-radius: 0 0 0 0;
     -fx-background-radius: 0 0 0 0;
 
-    -fx-background-size: 40 40;
     -fx-background-position: 50% 50%;
     -fx-background-repeat: no-repeat;
 
-    -fx-background-color: #B8BACF;
+    -fx-background-color: green2;
 }
 
 .nav-button:hover {
-    -fx-background-color: #D2D5DD;
+    -fx-background-color: green1;
 }
 
 .nav-button.focused {
-    -fx-background-color: #E8EBE4;
+    -fx-background-color: white1;
 }

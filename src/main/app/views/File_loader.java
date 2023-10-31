@@ -21,7 +21,9 @@ public class File_loader {
     private File_loader() {
     }
 
-    public URL getUrl(String path) { return getClass().getClassLoader().getResource(path);}
+    public URL getUrl(String path) {
+        return getClass().getClassLoader().getResource(path);
+    }
 
     // * use this to handle exception
     private Parent FXMLloader_load(FXMLLoader loader) {
@@ -57,6 +59,14 @@ public class File_loader {
 
         Object controllerObject = new mainDictionaryTab_ctrl();
         loader.setController(controllerObject);
+        return FXMLloader_load(loader);
+    }
+
+    public Parent fxml_google_translate_Tab() {
+        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/google_tab.fxml"));
+
+        //Object controllerObject = new mainDictionaryTab_ctrl();
+        //loader.setController(controllerObject);
         return FXMLloader_load(loader);
     }
 

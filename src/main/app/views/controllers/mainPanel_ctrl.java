@@ -1,6 +1,7 @@
 package views.controllers;
 
 import java.io.*;
+
 import views.File_loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,6 +24,8 @@ public class mainPanel_ctrl {
     @FXML
     private Button google_translate_button;
 
+    private Button focused_button = null;
+
     Parent home_tab;
     Parent main_dictionary_tab;
     Parent user_dictionary_tab;
@@ -38,6 +41,8 @@ public class mainPanel_ctrl {
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
 
+        goodle_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
+
         mainPane.setCenter(home_tab);
 
     }
@@ -50,6 +55,10 @@ public class mainPanel_ctrl {
 
     private void OnButtonPress(Button button) {
         System.out.println("press: " + button.getText());
+
+        if (focused_button != null) focused_button.getStyleClass().remove("focused");
+        focused_button = button;
+        focused_button.getStyleClass().add("focused");
 
         if (button == home_button)
             mainPane.setCenter(home_tab);
