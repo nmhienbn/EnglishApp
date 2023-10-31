@@ -3,6 +3,7 @@ package views;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class DictionaryApplication extends Application {
@@ -22,6 +23,7 @@ public class DictionaryApplication extends Application {
 
         Scene scene = new Scene(root);
         // scene.getStylesheets().add(File_loader.getInstance().get_css("main_dictionary_tab.css"));
+        stage.getIcons().add(new Image("front_end/graphic/icons/icon.png"));
         stage.setTitle("hi");
         stage.setScene(scene);
         stage.setResizable(false);
