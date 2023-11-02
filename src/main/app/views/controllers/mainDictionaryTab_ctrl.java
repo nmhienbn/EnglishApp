@@ -1,11 +1,10 @@
 package views.controllers;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
@@ -23,6 +22,12 @@ public class mainDictionaryTab_ctrl {
 
     @FXML
     private VBox word_list_box;
+
+    //? wifa = word infomation area
+    @FXML
+    private Label wifa_meaning;
+    @FXML
+    private Label wifa_word;
 
     @FXML
     void initialize() {
@@ -79,6 +84,8 @@ public class mainDictionaryTab_ctrl {
 
     private void on_choose_word(String word) {
         System.out.println("choose word: " + word);
+        wifa_meaning.setText(TestAPI.getWordMeaning(word));
+        wifa_word.setText(word);
     }
 
 }

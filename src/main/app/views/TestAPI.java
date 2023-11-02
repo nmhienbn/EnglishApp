@@ -1,6 +1,7 @@
 package views;
 
 import controllers.DictionaryManagement;
+import controllers.googleapi.GoogleTranslate;
 import models.Word;
 
 import java.util.ArrayList;
@@ -25,6 +26,24 @@ public class TestAPI {
     }
 
     public static String getWordMeaning(String word) {
-        return "da";
+        Word WORD = wordSet.dictionaryLookup(word);
+        return WORD.getWordExplain();
     }
+
+    public static String translateVE(String input) {
+        try {
+            return GoogleTranslate.translate(input, "vi", "en");
+        } catch (Exception e) {
+            return "ERROR:: Cannot translate";
+        }
+    }
+
+    public static String translateEV(String input) {
+        try {
+            return GoogleTranslate.translate(input, "en", "vi");
+        } catch (Exception e) {
+            return "ERROR:: Cannot translate";
+        }
+    }
+
 }

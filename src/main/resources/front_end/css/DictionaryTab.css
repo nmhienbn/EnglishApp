@@ -1,7 +1,7 @@
 @import "theme.css";
 
 #dictionary-nav {
-    -fx-background-color: white1
+    -fx-background-color: nav_color1;
 }
 
 #search_button {
@@ -10,8 +10,16 @@
     -fx-background-position: 50% 50%;
 }
 
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
 .mainbg {
-    -fx-background-color: white2;
+    -fx-background-color: white1;
 }
 
 .textwindow {

@@ -2,9 +2,8 @@ package views.controllers;
 
 import java.io.*;
 
+import javafx.scene.control.Tooltip;
 import views.File_loader;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -23,13 +22,17 @@ public class mainPanel_ctrl {
     private Button user_dictionary_button;
     @FXML
     private Button google_translate_button;
+    @FXML
+    private Button wordle_button;
 
     private Button focused_button = null;
 
     Parent home_tab;
     Parent main_dictionary_tab;
     Parent user_dictionary_tab;
-    Parent goodle_translator_tab;
+    Parent google_translator_tab;
+    Parent wordle_tab;
+
 
     @FXML
     void initialize() throws IOException {
@@ -37,12 +40,18 @@ public class mainPanel_ctrl {
         config_nav_button(main_dictionary_button);
         config_nav_button(user_dictionary_button);
         config_nav_button(google_translate_button);
+        config_nav_button(wordle_button);
+        home_button.setTooltip(new Tooltip("Home"));
+        main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
+        user_dictionary_button.setTooltip(new Tooltip("User's dictionary"));
+        google_translate_button.setTooltip(new Tooltip("Google translator"));
+        wordle_button.setTooltip(new Tooltip("Wordle game"));
 
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
-
-        goodle_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
-
+        google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
+        wordle_tab = File_loader.getInstance().fxml_wordle_Tab();
+        
         mainPane.setCenter(home_tab);
 
     }
@@ -67,7 +76,9 @@ public class mainPanel_ctrl {
         if (button == user_dictionary_button)
             mainPane.setCenter(user_dictionary_tab);
         if (button == google_translate_button)
-            mainPane.setCenter(goodle_translator_tab);
+            mainPane.setCenter(google_translator_tab);
+        if (button == wordle_button)
+            mainPane.setCenter(wordle_tab);
     }
 
 }
