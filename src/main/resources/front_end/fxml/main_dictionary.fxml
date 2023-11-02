@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainbg" stylesheets="@../css/DictionaryTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="321.0" layoutY="18.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="665.0" prefWidth="679.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
       <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="670.0" prefWidth="225.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="15.0">
          <children>
             <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="620.0" prefWidth="225.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
@@ -31,14 +32,36 @@
                <children>
                   <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="History" />
                   <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Favorite" />
-               </children></VBox>
-            <VBox layoutX="-12.0" layoutY="97.0" prefHeight="406.0" prefWidth="75.0" AnchorPane.bottomAnchor="294.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               </children>
+            </VBox>
+            <VBox layoutX="-12.0" layoutY="97.0" prefHeight="406.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Add" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Modify/Edit" />
                   <Button layoutX="10.0" layoutY="85.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Remove" />
                </children>
             </VBox>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <BorderPane layoutX="321.0" layoutY="15.0" prefHeight="670.0" prefWidth="670.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <top>
+            <Label fx:id="wifa_word" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" text="test WORD" textFill="RED" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="278.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Label fx:id="wifa_meaning" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="test meaning" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

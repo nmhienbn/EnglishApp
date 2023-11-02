@@ -3,6 +3,8 @@ package views;
 import java.io.IOException;
 import java.net.URL;
 
+import views.controllers.GoogleTab_ctrl;
+import views.controllers.WordleTab_ctrl;
 import views.controllers.mainDictionaryTab_ctrl;
 import views.controllers.mainPanel_ctrl;
 import javafx.fxml.FXMLLoader;
@@ -65,9 +67,21 @@ public class File_loader {
     public Parent fxml_google_translate_Tab() {
         FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/google_tab.fxml"));
 
-        //Object controllerObject = new mainDictionaryTab_ctrl();
-        //loader.setController(controllerObject);
+        Object controllerObject = new GoogleTab_ctrl();
+        loader.setController(controllerObject);
         return FXMLloader_load(loader);
+    }
+
+    public Parent fxml_wordle_Tab() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/wordle.fxml"));
+            Object controllerObject = new WordleTab_ctrl();
+            loader.setController(controllerObject);
+            return FXMLloader_load(loader);
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
 }

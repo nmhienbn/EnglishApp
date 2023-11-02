@@ -4,6 +4,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ecf0f1;" stylesheets="@../css/DictionaryTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -15,8 +16,14 @@
                   <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Favorite" />
                </children></VBox>
          </children></AnchorPane>
-      <TextArea layoutX="90.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="884.0" wrapText="true" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="99.0" />
-      <TextArea disable="true" layoutX="117.0" layoutY="444.0" prefHeight="250.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0" />
-      <Button layoutX="719.0" layoutY="360.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="266.0" text="TRANSLATE" />
+      <TextArea fx:id="text1" layoutX="90.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="884.0" wrapText="true" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="99.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <TextArea fx:id="text2" disable="true" layoutX="117.0" layoutY="444.0" prefHeight="250.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <Button fx:id="translate_button" layoutX="719.0" layoutY="360.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="266.0" text="TRANSLATE" />
    </children>
 </AnchorPane>

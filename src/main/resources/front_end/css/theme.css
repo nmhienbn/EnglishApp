@@ -1,10 +1,16 @@
 * {
     /* the bigeer the number, the darker the color */
-    white0: #ebede9;
-    white1: #c7cfcc;
-    white2: #a8b5b2;
+    white0: #f8f9fa;
+    white1: #dee2e6;
+    white2: #dee2e6;
+    white3: #ced4da;
+    white4: #adb5bd;
 
-    green0: #d0da91;
-    green1: #a8ca58;
-    green2: #75a743;
+    green0: #d9ed92;
+    green1: #b5e48c;
+    green2: #99d98c;
+
+    nav_color0: #283044;
+    nav_color1: #78A1BB;
+
 }

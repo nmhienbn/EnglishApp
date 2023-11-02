@@ -24,9 +24,9 @@
 
 
 
-.nav-panel {
-    -fx-pref-width: 200;
-    -fx-background-color: green1;
+#nav-panel {
+    -fx-pref-width: 100;
+    -fx-background-color: nav_color0;
     -fx-spacing: 2.5px;
 }
 
@@ -40,7 +40,7 @@
     -fx-background-position: 50% 50%;
     -fx-background-repeat: no-repeat;
 
-    -fx-background-color: green2;
+    -fx-background-color: transparent;
 }
 
 .nav-button:hover {
