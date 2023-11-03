@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" styleClass="main-screen"
+            stylesheets="@../css/wordle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <top>
+        <VBox alignment="TOP_CENTER" minWidth="480.0">
+
+            <HBox alignment="CENTER">
+                <padding>
+                    <Insets bottom="8" left="30"/>
+                </padding>
+                <Pane>
+                    <ImageView fx:id="helpIcon" fitHeight="32" fitWidth="32" onMouseClicked="#showHelp"/>
+                </Pane>
+                <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
+                    <padding>
+                        <Insets bottom="8" left="27" right="30"/>
+                    </padding>
+                </HBox>
+                <Pane>
+                    <ImageView fx:id="restartIcon" fitHeight="40" fitWidth="40" onMouseClicked="#restart"/>
+                </Pane>
+
+                <padding>
+                    <Insets right="35"/>
+                </padding>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane fx:id="gridPane" alignment="CENTER" focusTraversable="true" hgap="5" onKeyPressed="#onKeyPressed"
+                  vgap="5">
+            <BorderPane.margin>
+                <Insets bottom="15.0" top="15.0"/>
+            </BorderPane.margin>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <VBox>
+            <GridPane fx:id="keyboardRow1" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
+                <padding>
+                    <Insets top="10.0"/>
+                </padding>
+            </GridPane>
+
+            <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="2"/>
+
+            <GridPane fx:id="keyboardRow3" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
+                <padding>
+                    <Insets bottom="10.0"/>
+                </padding>
+            </GridPane>
+        </VBox>
+    </bottom>
+
+</BorderPane>

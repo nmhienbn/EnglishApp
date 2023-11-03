@@ -33,6 +33,8 @@ public class mainPanel_ctrl {
     Parent google_translator_tab;
     Parent wordle_tab;
 
+    WordleTab_ctrl wordleTab_ctrl;
+
 
     @FXML
     void initialize() throws IOException {
@@ -41,16 +43,19 @@ public class mainPanel_ctrl {
         config_nav_button(user_dictionary_button);
         config_nav_button(google_translate_button);
         config_nav_button(wordle_button);
+
         home_button.setTooltip(new Tooltip("Home"));
         main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
         user_dictionary_button.setTooltip(new Tooltip("User's dictionary"));
         google_translate_button.setTooltip(new Tooltip("Google translator"));
         wordle_button.setTooltip(new Tooltip("Wordle game"));
 
+
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
         google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
-        wordle_tab = File_loader.getInstance().fxml_wordle_Tab();
+        wordleTab_ctrl= new WordleTab_ctrl();
+        wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
         
         mainPane.setCenter(home_tab);
 
@@ -77,8 +82,10 @@ public class mainPanel_ctrl {
             mainPane.setCenter(user_dictionary_tab);
         if (button == google_translate_button)
             mainPane.setCenter(google_translator_tab);
-        if (button == wordle_button)
+        if (button == wordle_button) {
             mainPane.setCenter(wordle_tab);
+            wordleTab_ctrl.gridRequestFocus();
+        }
     }
 
 }

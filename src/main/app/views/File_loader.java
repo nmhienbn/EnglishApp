@@ -72,10 +72,9 @@ public class File_loader {
         return FXMLloader_load(loader);
     }
 
-    public Parent fxml_wordle_Tab() {
+    public Parent fxml_wordle_Tab(Object controllerObject) {
         try {
             FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/wordle.fxml"));
-            Object controllerObject = new WordleTab_ctrl();
             loader.setController(controllerObject);
             return FXMLloader_load(loader);
         } catch (Exception e) {
