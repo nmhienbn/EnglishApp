@@ -32,7 +32,7 @@ public class mainDictionaryTab_ctrl {
     @FXML
     void initialize() {
         assert search_button != null
-                : "fx:id=\"seacrh_button\" was not injected: check your FXML file 'main_dictionary.fxml'.";
+                : "fx:id=\"search_button\" was not injected: check your FXML file 'main_dictionary.fxml'.";
         assert search_box != null
                 : "fx:id=\"search_box\" was not injected: check your FXML file 'main_dictionary.fxml'.";
         assert word_list_box != null
