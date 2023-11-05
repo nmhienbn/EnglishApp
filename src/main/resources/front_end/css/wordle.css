@@ -8,6 +8,7 @@
     -key-background-color: #d3d6da;
     -present-color: #c9b458;
     -correct-color: #6aaa64;
+    -selected-color: blue;
 }
 
 .default-tile {
@@ -146,7 +147,7 @@
     -fx-background-color: -key-background-color;
     -fx-text-fill: -text-fill-color;
     -fx-font-size: 25px;
-    -fx-min-width: 58px;
+    -fx-min-width: 150px;
     -fx-min-height: 58px;
     -fx-text-alignment: center;
     -fx-alignment: center;

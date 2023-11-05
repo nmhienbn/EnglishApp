@@ -28,7 +28,7 @@ public class DictionaryApplication extends Application {
         // scene.getStylesheets().add(File_loader.getInstance().get_css("main_dictionary_tab.css"));
         setCursor(scene);
 
-        stage.setTitle("hi");
+        stage.setTitle("DUOLINGO");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -42,10 +42,7 @@ public class DictionaryApplication extends Application {
     // Load your custom cursor image
     private void setCursor(Scene scene) {
         Image cursorImage = new Image("front_end/graphic/icons/download.gif");
-        ImageCursor cursor = new ImageCursor(cursorImage,
-                cursorImage.getWidth() / 2,
-                cursorImage.getHeight() / 2);
-        ImageCursor.getBestSize(cursorImage.getWidth() * 2, cursorImage.getHeight() * 2);
+        ImageCursor cursor = new ImageCursor(cursorImage);
         scene.setCursor(cursor);
     }
 }
