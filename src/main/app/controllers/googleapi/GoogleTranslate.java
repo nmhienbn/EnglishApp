@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class GoogleTranslate {
     /**
@@ -21,20 +23,21 @@ public class GoogleTranslate {
      */
     public static String translate(String text, String sourceLanguage, String targetLanguage) throws IOException {
         // init link
-        String urlStr = String.format("https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=%s&tl=%s&q=%s",
-                sourceLanguage, targetLanguage, text);
-        // make it to a link
-        urlStr = urlStr.replace(" ", "%20");
+        String urlStr = String.format("https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=%s&tl=%s&dt=t&q=%s",
+                sourceLanguage, targetLanguage, URLEncoder.encode(text, StandardCharsets.UTF_8));
+
 
         // create connection
         URL url = new URL(urlStr);
+        System.out.println(url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
         // send request
-        con.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36");
+        con.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36");
         con.setRequestMethod("GET");
 
         // now get response
+
         int responseCode = con.getResponseCode();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream())
@@ -44,9 +47,9 @@ public class GoogleTranslate {
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }
-
         in.close();
         con.disconnect();
+        System.out.println(content.toString());
 
         String trans = "-1";
         try {
