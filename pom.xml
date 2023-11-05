@@ -51,6 +51,14 @@
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/algs4.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

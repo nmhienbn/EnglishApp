@@ -1,8 +1,9 @@
-package views.controllers;
+package views.wordle;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Pos;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -61,8 +62,17 @@ public class ScoreWindow {
         scene.getStylesheets()
                 .add(Objects.requireNonNull(ScoreWindow.class.getResource("/front_end/css/wordle.css"))
                         .toExternalForm());
+        setCursor(scene);
         stage.getIcons().add(new Image(Objects.requireNonNull(ScoreWindow.class.getResourceAsStream("/game/images/icon.png"))));
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+
+    // Load your custom cursor image
+    private static void setCursor(Scene scene) {
+        Image cursorImage = new Image("front_end/graphic/icons/download.gif");
+        ImageCursor cursor = new ImageCursor(cursorImage);
+        scene.setCursor(cursor);
     }
 }

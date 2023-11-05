@@ -1,7 +1,8 @@
-package views.controllers;
+package views.wordle;
 
 import edu.princeton.cs.algs4.StdRandom;
 import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.scene.Node;
@@ -36,8 +37,7 @@ public class MainWordle {
     private final String[][] Letters = {
             {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"},
             {"A", "S", "D", "F", "G", "H", "J", "K", "L"},
-            {"↵", "Z", "X", "C", "V", "B", "N", "M", "←"}};
-    // ↵ is the enter key, ← is the backspace key
+            {"enter", "Z", "X", "C", "V", "B", "N", "M", "backspace"}};
 
 
     private MainWordle() {
@@ -64,10 +64,11 @@ public class MainWordle {
     public void createGameTitle(HBox titleHBox) {
         String example = "-example";
         String title = "Wordle";
+        int[] style = {0, 2, 1, 0, 1, 2};
         for (int i = 0; i < title.length(); i++) {
             String letter = String.valueOf(title.charAt(i));
             Label label = new Label(letter);
-            label.getStyleClass().add(LetterStyleClass[StdRandom.uniformInt(3)] + example);
+            label.getStyleClass().add(LetterStyleClass[style[i]] + example);
             titleHBox.getChildren().add(label);
         }
     }
@@ -97,6 +98,8 @@ public class MainWordle {
             for (int j = 0; j < Letters[i].length; j++) {
                 Label label = new Label(Letters[i][j]);
                 label.setOnMouseClicked(e -> onLetterClicked(gridPane, keyboardRows, label.getText()));
+                label.setOnMouseEntered(e -> label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5;"));
+                label.setOnMouseExited(e -> label.setStyle("-fx-border-color: transparent;"));
                 if (i == 2 && (j == 0 || j == Letters[i].length - 1)) {
                     label.getStyleClass().add("keyboardTileSymbol");
                 } else {
@@ -134,9 +137,9 @@ public class MainWordle {
         for (Node child : gridPane.getChildren()) {
             Integer r = GridPane.getRowIndex(child);
             Integer c = GridPane.getColumnIndex(child);
-            int row = r == null ? 0 : r;
-            int column = c == null ? 0 : c;
-            if (row == searchRow && column == searchColumn && (child instanceof Label)) {
+            int row = (r == null ? 0 : r);
+            int col = (c == null ? 0 : c);
+            if (row == searchRow && col == searchColumn && (child instanceof Label)) {
                 return (Label) child;
             }
         }
@@ -208,13 +211,13 @@ public class MainWordle {
     }
 
     private void updateRowColors(GridPane gridPane, int searchRow) {
-
+        SequentialTransition effects = new SequentialTransition();
         for (int i = 1; i <= MAX_COLUMN; i++) {
             Label label = getLabel(gridPane, searchRow, i);
             String styleClass;
             if (label != null) {
                 String currentCharacter = String.valueOf(label.getText().charAt(0)).toLowerCase();
-                if (String.valueOf(winningWord.charAt(i - 1)).toLowerCase().equals(currentCharacter)) {
+                if (String.valueOf(winningWord.charAt(i - 1)).equalsIgnoreCase(currentCharacter)) {
                     styleClass = "correct-letter";
                 } else if (winningWord.contains(currentCharacter)) {
                     styleClass = "present-letter";
@@ -222,21 +225,26 @@ public class MainWordle {
                     styleClass = "wrong-letter";
                 }
 
-                FadeTransition firstFadeTransition = new FadeTransition(Duration.millis(300), label);
-                firstFadeTransition.setFromValue(1);
-                firstFadeTransition.setToValue(0.2);
-                firstFadeTransition.setOnFinished(e -> {
+                // Effects
+                FadeTransition fadeTransition;
+                ScaleTransition scaleTransition;
+
+                // Fade Out
+                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2);
+                fadeTransition.setOnFinished(e -> {
                     label.getStyleClass().clear();
                     label.getStyleClass().setAll(styleClass);
                 });
+                scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2);
+                effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
 
-                FadeTransition secondFadeTransition = new FadeTransition(Duration.millis(300), label);
-                secondFadeTransition.setFromValue(0.2);
-                secondFadeTransition.setToValue(1);
-
-                new SequentialTransition(firstFadeTransition, secondFadeTransition).play();
+                // Fade In
+                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1);
+                scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1);
+                effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
             }
         }
+        effects.play();
     }
 
     private void updateKeyboardColors(GridPane gridPane, GridPane[] keyboardRows) {
@@ -325,18 +333,8 @@ public class MainWordle {
         if (Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
             setLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN, letter);
             Label label = getLabel(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-            ScaleTransition firstScaleTransition = new ScaleTransition(Duration.millis(100), label);
-            firstScaleTransition.fromXProperty().setValue(1);
-            firstScaleTransition.toXProperty().setValue(1.1);
-            firstScaleTransition.fromYProperty().setValue(1);
-            firstScaleTransition.toYProperty().setValue(1.1);
-            ScaleTransition secondScaleTransition = new ScaleTransition(Duration.millis(100), label);
-            secondScaleTransition.fromXProperty().setValue(1.1);
-            secondScaleTransition.toXProperty().setValue(1);
-            secondScaleTransition.fromYProperty().setValue(1.1);
-            secondScaleTransition.toYProperty().setValue(1);
-            new SequentialTransition(firstScaleTransition, secondScaleTransition).play();
-
+            GameAnimations.scaleTrans(label, 1, 1.1).play();
+            GameAnimations.scaleTrans(label, 1.1, 1).play();
             setLabelStyleClass(gridPane, CURRENT_ROW, CURRENT_COLUMN, "tile-with-letter");
             if (CURRENT_COLUMN < MAX_COLUMN)
                 CURRENT_COLUMN++;
@@ -344,9 +342,9 @@ public class MainWordle {
     }
 
     private void onLetterClicked(GridPane gridPane, GridPane[] keyboardRows, String letter) {
-        if (letter.equals("←")) {
+        if (letter.equals("backspace")) {
             onBackspacePressed(gridPane);
-        } else if (letter.equals("↵")) {
+        } else if (letter.equals("enter")) {
             onEnterPressed(gridPane, keyboardRows);
         } else {
             onLetterChosen(gridPane, letter);
@@ -404,6 +402,9 @@ public class MainWordle {
             for (Node child : keyboardRow.getChildren()) {
                 if (child instanceof Label) {
                     label = (Label) child;
+                    if (label.getText().equals("enter") || label.getText().equals("backspace")) {
+                        continue;
+                    }
                     label.getStyleClass().clear();
                     label.getStyleClass().add("keyboardTile");
                 }

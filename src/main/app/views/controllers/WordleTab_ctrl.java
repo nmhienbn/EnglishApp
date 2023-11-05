@@ -4,6 +4,7 @@ import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,6 +22,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.kordamp.bootstrapfx.BootstrapFX;
+import views.wordle.MainWordle;
+import views.wordle.ScoreWindow;
+import views.wordle.GameAnimations;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -94,9 +98,7 @@ public class WordleTab_ctrl {
 
     @FXML
     public void restart() {
-        RotateTransition rotateTransition = new RotateTransition(Duration.millis(500), restartIcon);
-        rotateTransition.setFromAngle(0);
-        rotateTransition.setToAngle(360);
+        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartIcon, 0, 360 * 3);
         rotateTransition.setOnFinished(ae ->
                 mainWordle.resetGame(gridPane, keyboardRows));
         rotateTransition.play();
@@ -114,7 +116,7 @@ public class WordleTab_ctrl {
     }
 
     public static void showToast() {
-        Toast.makeText(stageReference);
+        GameAnimations.showNotFoundWord(stageReference);
     }
 
     private void initWords(String path, ArrayList<String> words) {
@@ -185,25 +187,25 @@ public class WordleTab_ctrl {
         Label thirdWordLabel = new Label("The letter U is not in the word in any spot.");
         thirdWordLabel.getStyleClass().setAll("lead");
 
-        Line line2 = new Line();
-        line2.setStroke(Paint.valueOf("b8b8b8"));
-        line2.setEndX(2000);
+        Image cursorImage = new Image("front_end/graphic/icons/download.gif");
+        ImageCursor cursor = new ImageCursor(cursorImage);
 
         Button goBackButton = new Button("GO BACK");
         goBackButton.getStyleClass().setAll("btn", "btn-primary");
 
         goBackButton.setOnMouseClicked(me -> stage.close());
+        goBackButton.setCursor(cursor);
 
         root.setAlignment(Pos.TOP_CENTER);
         root.getChildren().addAll(helpParagraph, line1, labelExample, firstWordHBox,
-                firstWordLabel, secondWordHBox, secondWordLabel, thirdWordHBox, thirdWordLabel,
-                line2, goBackButton);
+                firstWordLabel, secondWordHBox, secondWordLabel, thirdWordHBox,
+                thirdWordLabel, goBackButton);
         Scene scene = new Scene(root, 500, 515);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         scene.getStylesheets()
                 .add(Objects.requireNonNull(ScoreWindow.class.getResource("/front_end/css/wordle.css"))
                         .toExternalForm());
-
+        scene.setCursor(cursor);
         stage.getIcons().add(new Image(Objects.requireNonNull(MainWordle.class.getResourceAsStream("/game/images/help.png"))));
         stage.setScene(scene);
         stage.showAndWait();
