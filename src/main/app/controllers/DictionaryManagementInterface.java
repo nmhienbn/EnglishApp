@@ -1,5 +1,6 @@
 package controllers;
 
+import javazoom.jl.decoder.JavaLayerException;
 import models.Dictionary;
 import models.Word;
 
@@ -71,4 +72,13 @@ public interface DictionaryManagementInterface {
      * @return translated text
      */
     String translate(String str, String sourceLanguage, String targetLanguage) throws IOException;
+
+    /**
+     * Speek text.
+     * @param text content of text to speek
+     * @param language language of text, vi for vietnamese, en for english, ...
+     * @throws IOException
+     * @throws JavaLayerException
+     */
+    void speek(String text, String language) throws IOException, JavaLayerException;
 }
