@@ -65,16 +65,20 @@ public class GoogleTranslate {
      * @throws IOException
      * @throws JavaLayerException
      */
-    public static void speek(String text, String language) throws IOException, JavaLayerException {
+    public static void speek(String text, String language) throws IOException {
         // https://translate.google.com.vn/translate_tts?ie=UTF-8&q=Ki%E1%BA%BFt%20gi%C3%A0%20Tr%C3%AAn&tl=vi&client=tw-ob
         String urlStr = String.format("https://translate.google.com.vn/translate_tts?ie=UTF-8&q=%s&tl=%s&client=tw-ob",
                 URLEncoder.encode(text, StandardCharsets.UTF_8), language);
 
-        URL url = new URL(urlStr);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-        InputStream audio = con.getInputStream();
-        new Player(audio).play();
-        con.disconnect();
+            InputStream audio = con.getInputStream();
+            new Player(audio).play();
+            con.disconnect();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
     }
 }

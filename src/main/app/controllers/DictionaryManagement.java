@@ -74,7 +74,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public void speek(String text, String language) throws IOException, JavaLayerException {
+    public void speek(String text, String language) throws IOException {
         GoogleTranslate.speek(text, language);
     }
 

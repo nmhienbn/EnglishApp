@@ -80,5 +80,5 @@ public interface DictionaryManagementInterface {
      * @throws IOException
      * @throws JavaLayerException
      */
-    void speek(String text, String language) throws IOException, JavaLayerException;
+    void speek(String text, String language) throws IOException;
 }
