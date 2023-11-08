@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,14 +17,16 @@
                   <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Favorite" />
                </children></VBox>
          </children></AnchorPane>
-      <TextArea fx:id="text1" layoutX="90.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="884.0" wrapText="true" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="99.0">
+      <TextArea fx:id="text1" layoutX="102.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="884.0" wrapText="true" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="57.0">
          <font>
-            <Font size="14.0" />
+            <Font size="20.0" />
          </font></TextArea>
-      <TextArea fx:id="text2" disable="true" layoutX="117.0" layoutY="444.0" prefHeight="250.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0">
+      <TextArea fx:id="text2" layoutX="117.0" layoutY="444.0" prefHeight="250.0" prefWidth="200.0" promptText="Bản dịch" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0">
          <font>
-            <Font size="14.0" />
+            <Font size="15.0" />
          </font></TextArea>
-      <Button fx:id="translate_button" layoutX="719.0" layoutY="360.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="266.0" text="TRANSLATE" />
+      <Button fx:id="translate_button" layoutX="718.0" layoutY="317.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="266.0" text="TRANSLATE" />
+      <Label fx:id="test_label" layoutX="118.0" layoutY="331.0" prefHeight="64.0" prefWidth="210.0" text="Test label" />
+      <Button fx:id="swap_lang_button" layoutX="550.0" layoutY="318.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="168.0" text="SWAP LANGUAGE" />
    </children>
 </AnchorPane>

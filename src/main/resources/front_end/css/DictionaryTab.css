@@ -10,6 +10,57 @@
     -fx-background-position: 50% 50%;
 }
 
+#add-button {
+    -fx-background-image: url(../graphic/icons/plus.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 40 40;
+}
+
+#edit-button {
+    -fx-background-image: url(../graphic/icons/edit.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 40 40;
+}
+
+#remove-button {
+    -fx-background-image: url(../graphic/icons/delete.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 40 40;
+}
+
+#history-button {
+    -fx-background-image: url(../graphic/icons/history.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 40 40;
+}
+
+#favorite-button {
+    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 40 40;
+}
+
+#word-info-label {
+    -fx-text-fill: red;
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+}
+
+#word-info-meaning {
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+}
+
+.function-button {
+    -fx-background-color: transparent;
+}
+
 .scroll-pane {
     -fx-background-color: transparent;
 }
