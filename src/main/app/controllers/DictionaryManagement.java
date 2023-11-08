@@ -1,6 +1,7 @@
 package controllers;
 
 import controllers.googleapi.GoogleTranslate;
+import javazoom.jl.decoder.JavaLayerException;
 import models.Dictionary;
 import models.Word;
 
@@ -70,6 +71,11 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public String translate(String str, String sourceLanguage, String targetLanguage) throws IOException {
         return GoogleTranslate.translate(str, sourceLanguage, targetLanguage);
+    }
+
+    @Override
+    public void speek(String text, String language) throws IOException {
+        GoogleTranslate.speek(text, language);
     }
 
     @Override

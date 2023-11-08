@@ -2,12 +2,10 @@ package controllers.googleapi;
 // Free Endpoint: https://github.com/ssut/py-googletrans/issues/268
 // Java Request: https://www.baeldung.com/java-http-request
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+import java.io.*;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 public class GoogleTranslate {
@@ -26,10 +24,8 @@ public class GoogleTranslate {
         String urlStr = String.format("https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=%s&tl=%s&dt=t&q=%s",
                 sourceLanguage, targetLanguage, URLEncoder.encode(text, StandardCharsets.UTF_8));
 
-
         // create connection
         URL url = new URL(urlStr);
-        System.out.println(url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
         // send request
@@ -60,5 +56,29 @@ public class GoogleTranslate {
         }
 
         return trans;
+    }
+
+    /**
+     * Speek text.
+     * @param text content of text to speek
+     * @param language language of text, vi for vietnamese, en for english, ...
+     * @throws IOException
+     * @throws JavaLayerException
+     */
+    public static void speek(String text, String language) throws IOException {
+        // https://translate.google.com.vn/translate_tts?ie=UTF-8&q=Ki%E1%BA%BFt%20gi%C3%A0%20Tr%C3%AAn&tl=vi&client=tw-ob
+        String urlStr = String.format("https://translate.google.com.vn/translate_tts?ie=UTF-8&q=%s&tl=%s&client=tw-ob",
+                URLEncoder.encode(text, StandardCharsets.UTF_8), language);
+
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            InputStream audio = con.getInputStream();
+            new Player(audio).play();
+            con.disconnect();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
     }
 }
