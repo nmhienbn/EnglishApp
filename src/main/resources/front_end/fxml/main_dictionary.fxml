@@ -28,31 +28,31 @@
       </AnchorPane>
       <AnchorPane id="dictionary-nav" layoutX="-95.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutX="-12.0" layoutY="491.0" prefHeight="209.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="491.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="History" />
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Favorite" />
-               </children>
-            </VBox>
             <VBox layoutX="-12.0" layoutY="97.0" prefHeight="406.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Add" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Modify/Edit" />
-                  <Button layoutX="10.0" layoutY="85.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Remove" />
+                  <Button id="add-button" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" text="Add" />
+                  <Button id="edit-button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
+                  <Button id="remove-button" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
+               </children>
+            </VBox>
+            <VBox layoutX="-12.0" layoutY="491.0" prefHeight="209.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="491.0">
+               <children>
+                  <Button id="history-button" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
+                  <Button id="favorite-button" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
                </children>
             </VBox>
          </children>
       </AnchorPane>
       <BorderPane layoutX="321.0" layoutY="15.0" prefHeight="670.0" prefWidth="670.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <top>
-            <Label fx:id="wifa_word" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" text="test WORD" textFill="RED" BorderPane.alignment="CENTER">
+            <Label id="word-info-label" fx:id="wifa_word" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" pickOnBounds="false" prefHeight="53.0" prefWidth="666.0" styleClass="trans_bg" text="test WORD" textAlignment="JUSTIFY" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
          </top>
          <center>
-            <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="278.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+            <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="430.0" prefWidth="666.0" BorderPane.alignment="CENTER">
                <content>
                   <Label fx:id="wifa_meaning" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="test meaning" wrapText="true">
                      <font>

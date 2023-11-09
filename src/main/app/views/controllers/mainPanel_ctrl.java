@@ -2,7 +2,9 @@ package views.controllers;
 
 import java.io.*;
 
+import javafx.geometry.Bounds;
 import javafx.scene.control.Tooltip;
+import javafx.util.Duration;
 import views.File_loader;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -38,11 +40,6 @@ public class mainPanel_ctrl {
 
     @FXML
     void initialize() throws IOException {
-        config_nav_button(home_button);
-        config_nav_button(main_dictionary_button);
-        config_nav_button(user_dictionary_button);
-        config_nav_button(google_translate_button);
-        config_nav_button(wordle_button);
 
         home_button.setTooltip(new Tooltip("Home"));
         main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
@@ -50,13 +47,18 @@ public class mainPanel_ctrl {
         google_translate_button.setTooltip(new Tooltip("Google translator"));
         wordle_button.setTooltip(new Tooltip("Wordle game"));
 
+        config_nav_button(home_button);
+        config_nav_button(main_dictionary_button);
+        config_nav_button(user_dictionary_button);
+        config_nav_button(google_translate_button);
+        config_nav_button(wordle_button);
 
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
         google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
-        wordleTab_ctrl= new WordleTab_ctrl();
+        wordleTab_ctrl = new WordleTab_ctrl();
         wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
-        
+
         mainPane.setCenter(home_tab);
 
     }
@@ -65,6 +67,15 @@ public class mainPanel_ctrl {
         button.setOnAction(e -> {
             OnButtonPress(button);
         });
+        Tooltip tt = button.getTooltip();
+        tt.setShowDelay(new Duration(.1));
+        tt.setOnShown(s -> {
+            //Get button current bounds on computer screen
+            Bounds bounds = button.localToScreen(button.getBoundsInLocal());
+            button.getTooltip().setX(bounds.getMaxX() - 5);
+            button.getTooltip().setY(bounds.getCenterY() - tt.getHeight() / 2);
+        });
+        tt.getStyleClass().add("navbutton-tooltip");
     }
 
     private void OnButtonPress(Button button) {

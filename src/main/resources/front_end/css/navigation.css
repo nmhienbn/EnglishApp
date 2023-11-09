@@ -22,7 +22,16 @@
     -fx-background-size: 40 40;
 }
 
+#wordle {
+    -fx-background-image: url(../graphic/icons/wordle.png);
+    -fx-background-size: 40 40;
+}
 
+.navbutton-tooltip {
+    -fx-font: normal bold 15 Langdon;
+    -fx-base: #AE3522;
+    -fx-text-fill: orange;
+}
 
 #nav-panel {
     -fx-pref-width: 100;
@@ -31,7 +40,7 @@
 }
 
 .nav-button {
-    -fx-pref-width: 200;
+    -fx-pref-width: 100;
     -fx-pref-height: 75;
 
     -fx-border-radius: 0 0 0 0;
