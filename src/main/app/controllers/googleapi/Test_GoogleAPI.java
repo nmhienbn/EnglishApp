@@ -9,6 +9,6 @@ public class Test_GoogleAPI {
         // Test translate
         System.out.println(GoogleTranslate.translate("tôi đi ăn cơm", "vi", "en"));
 
-        GoogleTranslate.speek("Tôi thích H lắm", "vi");
+        GoogleTranslate.speek("Tôi thích H lắm", "en");
     }
 }

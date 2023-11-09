@@ -45,7 +45,6 @@ public class GoogleTranslate {
         }
         in.close();
         con.disconnect();
-        System.out.println(content.toString());
 
         String trans = "-1";
         try {
