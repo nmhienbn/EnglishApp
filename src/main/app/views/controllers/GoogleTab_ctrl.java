@@ -12,6 +12,20 @@ import javafx.scene.control.TextArea;
 import views.TestAPI;
 
 public class GoogleTab_ctrl {
+    @FXML
+    private Label lang_label1;
+
+    @FXML
+    private Label lang_label2;
+
+    @FXML
+    private Button speak_button1;
+
+    @FXML
+    private Button speak_button2;
+
+    @FXML
+    private Button swap_lang_button;
 
     @FXML
     private TextArea text1;
@@ -21,12 +35,6 @@ public class GoogleTab_ctrl {
 
     @FXML
     private Button translate_button;
-
-    @FXML
-    private Button swap_lang_button;
-
-    @FXML
-    private Label test_label;
 
     private String lang1 = "en";
     private String lang2 = "vi";
@@ -43,21 +51,37 @@ public class GoogleTab_ctrl {
                 doTranslate();
             }
         });
-
         text2.setEditable(false);
+        setLang_label();
 
-        test_label.setText(lang1 + "->" + lang2);
         swap_lang_button.setOnAction(e -> {
             String temp = lang1;
             lang1 = lang2;
             lang2 = temp;
-            test_label.setText(lang1 + "->" + lang2);
+            setLang_label();
+        });
+        speak_button1.setOnAction(e -> {
+            speak_button1.setDisable(true);
+            TestAPI.SpeakAPI(text1.getText(), lang1);
+            speak_button1.setDisable(false);
+        });
+        speak_button2.setOnAction(e -> {
+            speak_button2.setDisable(true);
+            TestAPI.SpeakAPI(text2.getText(), lang2);
+            speak_button2.setDisable(false);
         });
     }
 
     private void doTranslate() {
         String transed = TestAPI.TranslateAPI(text1.getText(), lang1, lang2);
+        transed.replaceAll("\n", System.getProperty("line.separator"));
         text2.setText(transed);
     }
 
+    private void setLang_label() {
+        if (lang1.equals("vi")) lang_label1.setText("Tiếng Việt");
+        if (lang1.equals("en")) lang_label1.setText("English");
+        if (lang2.equals("vi")) lang_label2.setText("Tiếng Việt");
+        if (lang2.equals("en")) lang_label2.setText("English");
+    }
 }

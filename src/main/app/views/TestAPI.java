@@ -34,22 +34,6 @@ public class TestAPI {
         return WORD.getWordExplain();
     }
 
-    public static String translateVE(String input) {
-        try {
-            return GoogleTranslate.translate(input, "vi", "en");
-        } catch (Exception e) {
-            return "ERROR:: Cannot translate";
-        }
-    }
-
-    public static String translateEV(String input) {
-        try {
-            return GoogleTranslate.translate(input, "en", "vi");
-        } catch (Exception e) {
-            return "ERROR:: Cannot translate";
-        }
-    }
-
     public static String TranslateAPI(String input, String source, String target) {
         try {
             return GoogleTranslate.translate(input, source, target);
@@ -58,10 +42,11 @@ public class TestAPI {
         }
     }
 
-    public static void SpeakAPI(String text) {
+    public static void SpeakAPI(String text, String lang) {
+        if (text == null || text.isEmpty()) return;
         try {
             System.out.println("start speak: " + text);
-            wordSet.speek(text, "en");
+            wordSet.speek(text, lang);
             System.out.println("end speak: " + text);
         } catch (Exception e) {
             System.out.println("SPEAK API ERROR");
