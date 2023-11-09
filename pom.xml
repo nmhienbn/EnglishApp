@@ -41,6 +41,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>21</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10 -->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
@@ -73,7 +80,7 @@
             <artifactId>sample</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/algs4.jar</systemPath>
+            <systemPath>${project.basedir}/lib/algs4.jar</systemPath>
         </dependency>
     </dependencies>
 
