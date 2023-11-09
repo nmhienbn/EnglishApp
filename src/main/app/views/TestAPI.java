@@ -58,4 +58,14 @@ public class TestAPI {
         }
     }
 
+    public static void SpeakAPI(String text) {
+        try {
+            System.out.println("start speak: " + text);
+            wordSet.speek(text, "en");
+            System.out.println("end speak: " + text);
+        } catch (Exception e) {
+            System.out.println("SPEAK API ERROR");
+        }
+    }
+
 }

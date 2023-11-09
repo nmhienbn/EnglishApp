@@ -21,6 +21,9 @@ public class mainDictionaryTab_ctrl {
     private TextField search_box;
 
     @FXML
+    private Button speak_button;
+
+    @FXML
     private VBox word_list_box;
 
     //? wifa = word infomation area
@@ -51,6 +54,12 @@ public class mainDictionaryTab_ctrl {
             if (e.getCode() != KeyCode.ENTER)
                 System.out.println("current word: " + search_box.getText());
             update_wordlist();
+        });
+
+        speak_button.setOnAction(e -> {
+            speak_button.setDisable(true);
+            TestAPI.SpeakAPI(wifa_word.getText());
+            speak_button.setDisable(false);
         });
     }
 
