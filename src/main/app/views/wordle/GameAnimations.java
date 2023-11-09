@@ -14,6 +14,8 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.kordamp.bootstrapfx.BootstrapFX;
 
+// https://stackoverflow.com/questions/28183667/how-i-can-stop-an-animated-gif-in-javafx
+
 public final class GameAnimations {
 
     public static void showNotFoundWord(Stage ownerStage) {
