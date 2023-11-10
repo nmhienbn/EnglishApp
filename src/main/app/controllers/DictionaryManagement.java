@@ -70,7 +70,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public void insertFromFile(String filePath) {
+    public void dictionaryInsertFromFile(String filePath) {
         if (filePath == null) {
             filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
         }
