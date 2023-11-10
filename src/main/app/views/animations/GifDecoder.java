@@ -1,4 +1,4 @@
-package views;
+package views.animations;
 import java.net.*;
 import java.io.*;
 import java.util.*;

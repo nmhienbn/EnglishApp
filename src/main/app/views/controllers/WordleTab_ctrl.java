@@ -2,26 +2,15 @@ package views.controllers;
 
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.ImageCursor;
-import javafx.scene.Scene;
+import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Line;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Modality;
+import javafx.scene.layout.*;
+import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import org.kordamp.bootstrapfx.BootstrapFX;
-import views.wordle.GameAnimations;
+import javafx.util.Duration;
+import views.animations.GameAnimations;
 import views.wordle.MainWordle;
 import views.wordle.ScoreWindow;
 
@@ -29,8 +18,9 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.stream.Stream;
+
+import static java.lang.System.exit;
 
 public class WordleTab_ctrl {
 
@@ -44,11 +34,17 @@ public class WordleTab_ctrl {
     public GridPane keyboardRow3;
     public GridPane[] keyboardRows;
     @FXML
-    public ImageView helpIcon;
+    public Button helpButton;
     @FXML
     public HBox titleHBox;
     @FXML
-    public ImageView restartIcon;
+    public Button restartButton;
+
+    @FXML
+    public BorderPane helpPane;
+    @FXML
+    public Polygon triangle;
+
     /* Word lists */
     public static final ArrayList<String> winningWords = new ArrayList<>();
     public static final ArrayList<String> dictionaryWords = new ArrayList<>();
@@ -88,16 +84,36 @@ public class WordleTab_ctrl {
 
     @FXML
     public void showHelp() {
-        displayHelpWindow();
+        if (helpPane.isVisible()) {
+            helpPane.setVisible(false);
+            triangle.setVisible(false);
+            gridRequestFocus();
+        } else {
+            ScoreWindow.createHelpWindow(helpPane);
+            helpPane.setVisible(true);
+            triangle.setVisible(true);
+        }
     }
 
     public void createTitleHBox() {
         mainWordle.createGameTitle(titleHBox);
     }
 
+    private void config_nav_button(Button button) {
+        Tooltip tt = button.getTooltip();
+        tt.setShowDelay(new Duration(.1));
+        tt.setOnShown(s -> {
+            //Get button current bounds on computer screen
+            Bounds bounds = button.localToScreen(button.getBoundsInLocal());
+            button.getTooltip().setX(bounds.getMaxX() - tt.getWidth() / 2);
+            button.getTooltip().setY(bounds.getMaxY() + 5);
+        });
+        tt.getStyleClass().add("navbutton-tooltip");
+    }
+
     @FXML
     public void restart() {
-        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartIcon, 0, 360 * 3);
+        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
         rotateTransition.setOnFinished(ae ->
                 mainWordle.resetGame(gridPane, keyboardRows));
         rotateTransition.play();
@@ -108,14 +124,20 @@ public class WordleTab_ctrl {
         initializeWordLists();
         createUI();
         getRandomWord();
-        helpIcon.setImage(new Image(Objects.requireNonNull(getClass().
-                getResourceAsStream("/game/images/help.png"))));
-        restartIcon.setImage(new Image(Objects.requireNonNull(getClass().
-                getResourceAsStream("/game/images/icons8-restart-40.png"))));
+        mainWordle.wordleTab_ctrl = this;
+        ScoreWindow.wordleTab_ctrl = this;
+        helpButton.setTooltip(new Tooltip("Instructions"));
+        helpButton.setStyle("-fx-background-image: url(/game/images/help.png); " +
+                "-fx-background-size: 40 40;-fx-background-radius: 50%");
+        config_nav_button(helpButton);
+        restartButton.setTooltip(new Tooltip("Restart"));
+        restartButton.setStyle("-fx-background-image: url(/game/images/restart.png); " +
+                "-fx-background-size: 40 40;-fx-background-radius: 50%");
+        config_nav_button(restartButton);
     }
 
     public static void showToast() {
-        GameAnimations.showNotFoundWord(stageReference);
+        ScoreWindow.showNotFoundWord(MainWordle.getInstance().wordleTab_ctrl.helpPane);
     }
 
     private void initWords(String path, ArrayList<String> words) {
@@ -131,82 +153,7 @@ public class WordleTab_ctrl {
         initWords("/game/dictionary.txt", dictionaryWords);
     }
 
-    private static HBox giveExampleWord(String sampleWord, String typeExample, int index) {
-        String[] letter = sampleWord.split("");
-        HBox WordHBox = new HBox(3);
-        for (int i = 0; i < letter.length; i++) {
-            Label label = new Label(letter[i]);
-            if (i == index)
-                label.getStyleClass().setAll(typeExample);
-            else
-                label.getStyleClass().setAll("default-letter-example");
-            WordHBox.getChildren().add(label);
-        }
-        return WordHBox;
-    }
-
-    /**
-     * Display game instructions.
-     */
-    private static void displayHelpWindow() {
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initStyle(StageStyle.UTILITY);
-        stage.setTitle("HOW TO PLAY");
-
-        VBox root = new VBox(15);
-        root.setPadding(new Insets(20, 20, 20, 20));
-        Label helpParagraph = new Label("""
-                Guess the WORDLE in six tries. \n
-                Each guess must be a valid five-letter word.\n
-                Hit the enter button to submit.\n\n 
-                After each guess, the color of the tiles will change to \n 
-                show how close your guess was to the word.""");
-        helpParagraph.setTextAlignment(TextAlignment.CENTER);
-        helpParagraph.getStyleClass().setAll("lead");
-
-        Line line1 = new Line();
-        line1.setStroke(Paint.valueOf("b8b8b8"));
-        line1.setEndX(2000);
-
-        Label labelExample = new Label("Examples");
-        labelExample.getStyleClass().setAll("h3");
-        labelExample.setTextAlignment(TextAlignment.LEFT);
-
-        /* 3 EXAMPLES */
-        HBox firstWordHBox = giveExampleWord("WEARY", "correct-letter-example", 0);
-        Label firstWordLabel = new Label("The letter W is in the word and in the correct spot.");
-        firstWordLabel.getStyleClass().setAll("lead");
-
-        HBox secondWordHBox = giveExampleWord("PILLS", "present-letter-example", 1);
-        Label secondWordLabel = new Label("The letter I is in the word but in the wrong spot.");
-        secondWordLabel.getStyleClass().setAll("lead");
-
-        HBox thirdWordHBox = giveExampleWord("VAGUE", "wrong-letter-example", 2);
-        Label thirdWordLabel = new Label("The letter U is not in the word in any spot.");
-        thirdWordLabel.getStyleClass().setAll("lead");
-
-        Image cursorImage = new Image("front_end/graphic/icons/download.gif");
-        ImageCursor cursor = new ImageCursor(cursorImage);
-
-        Button goBackButton = new Button("GO BACK");
-        goBackButton.getStyleClass().setAll("btn", "btn-primary");
-
-        goBackButton.setOnMouseClicked(me -> stage.close());
-        goBackButton.setCursor(cursor);
-
-        root.setAlignment(Pos.TOP_CENTER);
-        root.getChildren().addAll(helpParagraph, line1, labelExample, firstWordHBox,
-                firstWordLabel, secondWordHBox, secondWordLabel, thirdWordHBox,
-                thirdWordLabel, goBackButton);
-        Scene scene = new Scene(root, 500, 515);
-        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
-        scene.getStylesheets()
-                .add(Objects.requireNonNull(ScoreWindow.class.getResource("/front_end/css/wordle.css"))
-                        .toExternalForm());
-        scene.setCursor(cursor);
-        stage.getIcons().add(new Image(Objects.requireNonNull(MainWordle.class.getResourceAsStream("/game/images/help.png"))));
-        stage.setScene(scene);
-        stage.showAndWait();
+    public void showEndGameWindow(boolean guessed, String winningWord) {
+        ScoreWindow.displayEndGame(guessed, winningWord, helpPane);
     }
 }
