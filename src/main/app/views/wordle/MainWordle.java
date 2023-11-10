@@ -11,15 +11,19 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.util.Duration;
+import views.File_loader;
+import views.animations.GameAnimations;
+import views.controllers.WordleTab_ctrl;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static java.lang.System.exit;
 import static views.controllers.WordleTab_ctrl.*;
 
 public class MainWordle {
     private static MainWordle instance = null;
+    public WordleTab_ctrl wordleTab_ctrl = null;
     private final String[] LetterStyleClass = {"correct-letter", "present-letter", "wrong-letter"};
 
     /**
@@ -63,7 +67,7 @@ public class MainWordle {
      */
     public void createGameTitle(HBox titleHBox) {
         String example = "-example";
-        String title = "Wordle";
+        String title = "WORDLE";
         int[] style = {0, 2, 1, 0, 1, 2};
         for (int i = 0; i < title.length(); i++) {
             String letter = String.valueOf(title.charAt(i));
@@ -230,7 +234,7 @@ public class MainWordle {
                 ScaleTransition scaleTransition;
 
                 // Fade Out
-                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2);
+                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 150);
                 fadeTransition.setOnFinished(e -> {
                     label.getStyleClass().clear();
                     label.getStyleClass().setAll(styleClass);
@@ -239,7 +243,7 @@ public class MainWordle {
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
 
                 // Fade In
-                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1);
+                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 150);
                 scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1);
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
             }
@@ -357,23 +361,17 @@ public class MainWordle {
             if (guess.equals(winningWord)) {
                 updateRowColors(gridPane, CURRENT_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
-                ScoreWindow.display(true, winningWord);
+                wordleTab_ctrl.showEndGameWindow(true, winningWord);
             } else if (isValidGuess(guess)) {
                 updateRowColors(gridPane, CURRENT_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
                 if (CURRENT_ROW == MAX_ROW) {
-                    ScoreWindow.display(false, winningWord);
-                    if (ScoreWindow.resetGame.get())
-                        resetGame(gridPane, keyboardRows);
+                    wordleTab_ctrl.showEndGameWindow(false, winningWord);
                 }
                 CURRENT_ROW++;
                 CURRENT_COLUMN = 1;
             } else {
                 showToast();
-            }
-            if (ScoreWindow.resetGame.get()) {
-                resetGame(gridPane, keyboardRows);
-                ScoreWindow.resetGame.set(false);
             }
         }
     }
@@ -413,6 +411,7 @@ public class MainWordle {
 
         CURRENT_COLUMN = 1;
         CURRENT_ROW = 1;
+        wordleTab_ctrl.gridRequestFocus();
     }
 
     private boolean binarySearch(ArrayList<String> list, String string) {
