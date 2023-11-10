@@ -1,12 +1,12 @@
 package controllers;
 
 import controllers.googleapi.GoogleTranslate;
-import javazoom.jl.decoder.JavaLayerException;
-import models.Dictionary;
+import models.Trie;
 import models.Word;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DictionaryManagement implements DictionaryManagementInterface {
     private static DictionaryManagement ins = null;
@@ -19,21 +19,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
         return ins;
     }
 
-    @Override
-    public void insertFromFile() {
 
-        String fin1 = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
-        //String fin1 = "dictionaries.txt";
-        try (BufferedReader fin = new BufferedReader(new FileReader(fin1))) {
-            String line;
-            while ((line = fin.readLine()) != null) {
-                String[] tmp = line.split("\t", 2);
-                dictionary.addWord(tmp[0], tmp[1].replaceAll("\\\\", "\n"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public ArrayList<Word> getAllWords() {
@@ -84,23 +70,35 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
+    public void insertFromFile(String filePath) {
+        if (filePath == null) {
+            filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
+        }
+        String fin1 = filePath;
+
+        try(Scanner cin = new Scanner(new FileReader(fin1))) {
+            dictionary.imports(cin);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return;
+        }
+
+    }
+
+    @Override
     public void dictionaryExportToFile(String fout) {
         try {
             PrintStream fileOutputStream = new PrintStream(new FileOutputStream(fout));
             System.setOut(fileOutputStream); // Redirect System.out to the file
 
-            // Now, anything printed to System.out will be written to the file
-            String s1 = "No";
-            String s2 = "English";
-            String s3 = "Vietnamese";
-            System.out.printf("%-8s| %-" + Dictionary.wordMaxLen + "s | %s\n", s1, s2, s3);
-            dictionary.printAllWords();
+            // export
+            dictionary.exports();
 
             // Close the fileOutputStream
             fileOutputStream.close();
 
             // You can restore the original System.out like this:
-            // System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
         } catch (IOException e) {
             e.printStackTrace();
         }

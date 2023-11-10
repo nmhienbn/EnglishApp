@@ -1,7 +1,7 @@
 package views;
 
 import controllers.DictionaryManagement;
-import models.Dictionary;
+import models.Trie;
 import models.Word;
 
 import java.util.ArrayList;
@@ -72,8 +72,19 @@ public class DictionaryCommandline {
     public void showAllWords() {
         ArrayList<Word> proposedString = manager.getAllWords();
 
+        int maxLen = 0;
+        for (Word word : proposedString) {
+            maxLen = Math.max(maxLen, word.getWordTarget().length());
+        }
+
+        // head
+        String s1 = "No";
+        String s2 = "English";
+        String s3 = "Vietnamese";
+        System.out.printf("%-8s| %-" + maxLen + "s | %s\n", s1, s2, s3);
+
         for (int i = 0; i < proposedString.size(); ++i) {
-            System.out.printf("%-8d| %-" + Dictionary.wordMaxLen + "s | %s\n", i + 1,
+            System.out.printf("%-8d| %-" + maxLen + "s | %s\n", i + 1,
                     proposedString.get(i).getWordTarget(),
                     proposedString.get(i).getWordExplain());
         }

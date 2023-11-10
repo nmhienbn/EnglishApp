@@ -1,8 +1,8 @@
 import controllers.DictionaryManagement;
 import models.Dictionary;
+import models.Trie;
 import views.DictionaryCommandline;
 
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TestDict {
@@ -18,7 +18,7 @@ public class TestDict {
     }
 
     public static void main(String[] args) {
-        wordSet.insertFromFile();
+        wordSet.insertFromFile(null);
 //        cmd.showSearchedWords("bubble");
         cmd.showLookupWord("bubble");
 //        System.out.println(dict.lookupWord("bubble"));
