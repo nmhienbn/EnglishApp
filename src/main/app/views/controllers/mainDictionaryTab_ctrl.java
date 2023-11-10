@@ -58,7 +58,7 @@ public class mainDictionaryTab_ctrl {
 
         speak_button.setOnAction(e -> {
             speak_button.setDisable(true);
-            TestAPI.SpeakAPI(wifa_word.getText());
+            TestAPI.SpeakAPI(wifa_word.getText(), "en");
             speak_button.setDisable(false);
         });
     }

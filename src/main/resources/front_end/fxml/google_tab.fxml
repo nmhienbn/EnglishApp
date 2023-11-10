@@ -4,29 +4,52 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ecf0f1;" stylesheets="@../css/DictionaryTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ecf0f1;" styleClass="mainbg" stylesheets="@../css/googleTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane id="dictionary-nav" layoutX="-95.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox layoutX="-12.0" layoutY="491.0" prefHeight="209.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="491.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="History" />
-                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Favorite" />
-               </children></VBox>
-         </children></AnchorPane>
-      <TextArea fx:id="text1" layoutX="102.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="884.0" wrapText="true" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="57.0">
-         <font>
-            <Font size="20.0" />
-         </font></TextArea>
-      <TextArea fx:id="text2" layoutX="117.0" layoutY="444.0" prefHeight="250.0" prefWidth="200.0" promptText="Bản dịch" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="15.0">
-         <font>
-            <Font size="15.0" />
-         </font></TextArea>
       <Button fx:id="translate_button" layoutX="718.0" layoutY="317.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="266.0" text="TRANSLATE" />
-      <Label fx:id="test_label" layoutX="118.0" layoutY="331.0" prefHeight="64.0" prefWidth="210.0" text="Test label" />
       <Button fx:id="swap_lang_button" layoutX="550.0" layoutY="318.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="168.0" text="SWAP LANGUAGE" />
+      <AnchorPane layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="970.0" styleClass="textwindow" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <TextArea fx:id="text1" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+            <HBox prefHeight="40.0" prefWidth="970.0">
+               <children>
+                  <Label fx:id="lang_label1" maxHeight="1.7976931348623157E308" prefHeight="41.0" text="LANG1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefWidth="20.0" />
+                  <Button fx:id="speak_button1" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="60.0" styleClass="speak_button" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="15.0" layoutY="381.0" prefHeight="300.0" prefWidth="435.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <TextArea fx:id="text2" prefHeight="250.0" promptText="Bản dịch" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+            <HBox prefHeight="40.0" prefWidth="970.0" styleClass="textwindow" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="lang_label2" maxHeight="1.7976931348623157E308" prefHeight="41.0" text="LANG2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefWidth="20.0" />
+                  <Button fx:id="speak_button2" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="60.0" styleClass="speak_button" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
