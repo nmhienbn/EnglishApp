@@ -5,7 +5,7 @@ import java.io.*;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Tooltip;
 import javafx.util.Duration;
-import views.AnimatedGif;
+import views.animations.AnimatedGif;
 import views.File_loader;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;

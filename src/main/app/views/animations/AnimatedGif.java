@@ -1,7 +1,6 @@
-package views;
+package views.animations;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 
