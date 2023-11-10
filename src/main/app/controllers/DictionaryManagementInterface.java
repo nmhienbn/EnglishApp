@@ -14,9 +14,9 @@ public interface DictionaryManagementInterface {
     /**
      * Insert all words from a standard file.
      * Standard file: each line contains word_target and word_explain split by a tab ('\t').
-     * @param filePath path to file (default is dictionaries.txt in resources).
+     * @param filePath path to file (null for default file-dictionaries.txt in resources).
      */
-    void insertFromFile(String filePath);
+    void dictionaryInsertFromFile(String filePath);
 
     /**
      * Get all words.

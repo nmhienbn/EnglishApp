@@ -18,13 +18,13 @@ public class TestDict {
     }
 
     public static void main(String[] args) {
-        wordSet.insertFromFile(null);
+        wordSet.dictionaryInsertFromFile(null);
 //        cmd.showSearchedWords("bubble");
-        cmd.showLookupWord("bubble");
+//        cmd.showLookupWord("bubble");
 //        System.out.println(dict.lookupWord("bubble"));
 //        wordSet.dictionarySearcher("c");
-        wordSet.dictionaryRemoveWord("Bubble");
-        cmd.showLookupWord("buBble");
+//        wordSet.dictionaryRemoveWord("Bubble");
+//        cmd.showLookupWord("buBble");
 
 //        manyTests();
 
