@@ -2,28 +2,28 @@
 
 
 #home {
-    -fx-background-image: url(../graphic/icons/home.png);
+    /*-fx-background-image: url(../graphic/icons/home.png);*/
     -fx-background-size: 40 40;
 
 }
 
 #main_dictionary {
-    -fx-background-image: url(../graphic/icons/dictionary.png);
+    /*-fx-background-image: url(../graphic/icons/dictionary.png);*/
     -fx-background-size: 45 45;
 }
 
 #user_dictionary {
-    -fx-background-image: url(../graphic/icons/dictionary.png);
+    /*-fx-background-image: url(../graphic/icons/dictionary.png);*/
     -fx-background-size: 45 45;
 }
 
 #google {
-    -fx-background-image: url(../graphic/icons/translate.png);
+    /*-fx-background-image: url(../graphic/icons/translate.png);*/
     -fx-background-size: 40 40;
 }
 
 #wordle {
-    -fx-background-image: url(../graphic/icons/wordle.png);
+    /*-fx-background-image: url(../graphic/icons/wordle.png);*/
     -fx-background-size: 40 40;
 }
 

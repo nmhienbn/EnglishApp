@@ -5,6 +5,7 @@ import java.io.*;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Tooltip;
 import javafx.util.Duration;
+import views.AnimatedGif;
 import views.File_loader;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -37,6 +38,14 @@ public class mainPanel_ctrl {
 
     WordleTab_ctrl wordleTab_ctrl;
 
+    public void setButton(Button button, String filename, double durationMs) {
+        AnimatedGif ani = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
+        button.setGraphic(ani.getView());
+        button.setOnMousePressed(e -> {
+            ani.playOnce();
+        });
+    }
+
 
     @FXML
     void initialize() throws IOException {
@@ -52,6 +61,12 @@ public class mainPanel_ctrl {
         config_nav_button(user_dictionary_button);
         config_nav_button(google_translate_button);
         config_nav_button(wordle_button);
+
+        setButton(home_button, "/front_end/graphic/icons/home.gif", 1000);
+        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 1000);
+        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 1000);
+        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 1000);
+        setButton(user_dictionary_button, "/front_end/graphic/icons/book.gif", 1000);
 
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();

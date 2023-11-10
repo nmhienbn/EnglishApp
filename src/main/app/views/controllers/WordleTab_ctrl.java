@@ -20,11 +20,10 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Duration;
 import org.kordamp.bootstrapfx.BootstrapFX;
+import views.wordle.GameAnimations;
 import views.wordle.MainWordle;
 import views.wordle.ScoreWindow;
-import views.wordle.GameAnimations;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
