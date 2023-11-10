@@ -4,6 +4,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import models.Dictionary;
 import models.Word;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -13,8 +14,9 @@ public interface DictionaryManagementInterface {
     /**
      * Insert all words from a standard file.
      * Standard file: each line contains word_target and word_explain split by a tab ('\t').
+     * @param filePath path to file (null for default file-dictionaries.txt in resources).
      */
-    void insertFromFile();
+    void dictionaryInsertFromFile(String filePath);
 
     /**
      * Get all words.

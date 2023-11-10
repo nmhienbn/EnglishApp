@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-ifstream fin("anhviet109K.txt");
-ofstream fout1("words.txt");
-ofstream fout2("pronounces.txt");
-ofstream fout3("meaning.txt");
-ofstream fout4("dictionaries.txt");
+wifstream fin("anhviet109K.txt");
+wofstream fout1("words.txt");
+wofstream fout2("pronounces.txt");
+wofstream fout3("meaning.txt");
+wofstream fout4("dictionaries.txt");
 
 struct Word
 {
-    string word, ipa, meaning;
+    wstring word, ipa, meaning;
 
     bool operator<(const Word &other) const
     {
@@ -17,16 +17,17 @@ struct Word
     }
 };
 
-string line;
+wstring line;
 bool isNewWord = true;
-set<char> ss;
-set<string> words;
+set<wchar_t> ss;
+set<wstring> words;
 bool is_a_word = true;
 vector<Word> fullWords;
 
 int main()
 {
     fin.ignore();
+    set<wchar_t> allStart;
     while (getline(fin, line))
     {
         if (line.empty())
@@ -34,12 +35,18 @@ int main()
             isNewWord = true;
             continue;
         }
+
+        if (line[0] == '!' && allStart.find(line[0]) == allStart.end()) {
+            wcout << line << '\n';
+        }
+        allStart.insert(line[0]);
+
         if (isNewWord)
         {
             is_a_word = true;
             line.erase(line.begin());
             int _cnt = 0;
-            string word, pronounce;
+            wstring word, pronounce;
             for (int i = 0; i < line.size(); i++)
             {
                 if (line[i] == '/')
@@ -64,7 +71,7 @@ int main()
             // while (word.front() == ' ')
             //     word.erase(word.begin());
 
-            for (char c : word)
+            for (wchar_t c : word)
             {
                 if (!isalpha(c) && c != ' ' && c != '-' && c != '.' && c != '\'')
                 {
@@ -75,7 +82,7 @@ int main()
 
             if (is_a_word)
             {
-                for (char &c : word)
+                for (wchar_t &c : word)
                 {
                     c = tolower(c);
                     ss.insert(c);
@@ -87,7 +94,7 @@ int main()
                 else
                 {
                     words.insert(word);
-                    fullWords.push_back({word, pronounce, ""});
+                    fullWords.push_back({word, pronounce, L""});
                 }
             }
             isNewWord = false;
@@ -115,6 +122,12 @@ int main()
     cout << ss.size() << '\n';
     for (char c : ss)
     {
-        cout << c << '\n';
+        wcout << c << '\n';
+    }
+
+    cout << "Start of lines:\n";
+    for (auto c : allStart)
+    {
+        wcout << c << '\n';
     }
 }
