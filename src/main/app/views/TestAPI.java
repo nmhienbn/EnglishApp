@@ -11,7 +11,7 @@ public class TestAPI {
     private static DictionaryManagement wordSet = DictionaryManagement.getInstance();
 
     public static void SetupDict() {
-        wordSet.insertFromFile();
+        wordSet.insertFromFile(null);
     }
 
     public static ArrayList<String> getword(String key) {

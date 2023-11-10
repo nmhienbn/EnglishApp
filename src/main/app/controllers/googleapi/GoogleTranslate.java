@@ -80,4 +80,11 @@ public class GoogleTranslate {
             System.out.println("Error: " + e.toString());
         }
     }
+
+    public static void main(String[] args) throws IOException, JavaLayerException {
+        // Test translate
+        System.out.println(GoogleTranslate.translate("tôi đi ăn cơm", "vi", "en"));
+
+        GoogleTranslate.speek("Tôi thích H lắm", "vi");
+    }
 }
