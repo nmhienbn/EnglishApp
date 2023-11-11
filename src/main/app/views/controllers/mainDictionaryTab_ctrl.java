@@ -94,6 +94,7 @@ public class mainDictionaryTab_ctrl {
     private void on_choose_word(String word) {
         System.out.println("choose word: " + word);
         wifa_meaning.setText(TestAPI.getWordMeaning(word));
+        System.out.println(TestAPI.getWordMeaning(word));
         wifa_word.setText(word);
     }
 
