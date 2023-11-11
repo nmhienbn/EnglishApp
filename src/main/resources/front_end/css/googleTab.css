@@ -1,0 +1,37 @@
+@import "theme.css";
+
+.speak_button {
+    -fx-background-image: url(../graphic/icons/speak.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30;
+    -fx-background-position: 50%;
+
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.mainbg {
+    -fx-background-color: white1;
+}
+
+.textwindow {
+    -fx-background-color: white0;
+}
+
+.text-area {
+    -fx-border-color: transparent;
+
+}
+
+.text-area:focus {
+    -fx-border-color: transparent;
+
+}
+
+.text-area .content {
+    -fx-border-color: transparent;
+}
+
+.text-area:focus .content {
+    -fx-border-color: transparent;
+}
