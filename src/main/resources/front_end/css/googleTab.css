@@ -14,24 +14,35 @@
     -fx-background-color: white1;
 }
 
+#swap_lang_button {
+    -fx-background-image: url(../graphic/icons/swap.png);
+    -fx-background-size: 40;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 7% 60%;
+
+    -fx-background-color: white0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 1, 0, 0, 0);
+}
+
+#translate_button {
+    -fx-background-image: url(../graphic/icons/translate_button_background.png);
+    -fx-background-size: 40;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 10% 50%;
+
+    -fx-background-color: nav_color0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 1, 0, 0, 0);
+}
+
 .textwindow {
     -fx-background-color: white0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 2, 0, 0, 0);
+
 }
 
 .text-area {
-    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 
-}
-
-.text-area:focus {
-    -fx-border-color: transparent;
-
-}
-
-.text-area .content {
-    -fx-border-color: transparent;
-}
-
-.text-area:focus .content {
-    -fx-border-color: transparent;
+    -fx-background-color: transparent;
 }

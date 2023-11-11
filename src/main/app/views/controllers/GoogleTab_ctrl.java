@@ -61,11 +61,13 @@ public class GoogleTab_ctrl {
             setLang_label();
         });
         speak_button1.setOnAction(e -> {
+            if (speak_button1.isDisable()) return;
             speak_button1.setDisable(true);
             TestAPI.SpeakAPI(text1.getText(), lang1);
             speak_button1.setDisable(false);
         });
         speak_button2.setOnAction(e -> {
+            if (speak_button2.isDisable()) return;
             speak_button2.setDisable(true);
             TestAPI.SpeakAPI(text2.getText(), lang2);
             speak_button2.setDisable(false);
@@ -74,7 +76,10 @@ public class GoogleTab_ctrl {
 
     private void doTranslate() {
         String transed = TestAPI.TranslateAPI(text1.getText(), lang1, lang2);
-        transed.replaceAll("\n", System.getProperty("line.separator"));
+        System.out.println("Translate:");
+        transed = transed.replaceAll("\\\\n", "\n");
+        System.out.println(transed);
+
         text2.setText(transed);
     }
 
