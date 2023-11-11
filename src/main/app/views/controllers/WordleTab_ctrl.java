@@ -6,21 +6,20 @@ import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.Polygon;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import views.animations.GameAnimations;
+import views.wordle.GameNotification;
 import views.wordle.MainWordle;
-import views.wordle.ScoreWindow;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.stream.Stream;
-
-import static java.lang.System.exit;
 
 public class WordleTab_ctrl {
 
@@ -41,36 +40,27 @@ public class WordleTab_ctrl {
     public Button restartButton;
 
     @FXML
-    public BorderPane helpPane;
+    public BorderPane notificationPane;
     @FXML
     public Polygon triangle;
 
-    /* Word lists */
+    // Word lists
     public static final ArrayList<String> winningWords = new ArrayList<>();
-    public static final ArrayList<String> dictionaryWords = new ArrayList<>();
 
-    private static Stage stageReference;
-
-    public void createUI() {
-        createGrid();
-        createKeyboard();
-        createTitleHBox();
-    }
-
-    public void createGrid() {
-        mainWordle.createGrid(gridPane);
-    }
-
-    public void createKeyboard() {
-        keyboardRows = new GridPane[3];
-        keyboardRows[0] = keyboardRow1;
-        keyboardRows[1] = keyboardRow2;
-        keyboardRows[2] = keyboardRow3;
-        mainWordle.createKeyBoard(keyboardRows, gridPane);
-    }
-
-    public void gridRequestFocus() {
-        gridPane.requestFocus();
+    @FXML
+    void initialize() {
+        initializeWordLists();
+        createUI();
+        mainWordle.wordleTab_ctrl = this;
+        GameNotification.wordleTab_ctrl = this;
+        helpButton.setTooltip(new Tooltip("Instructions"));
+        helpButton.setStyle("-fx-background-image: url(/game/images/help.png); " +
+                "-fx-background-size: 40 40;-fx-background-radius: 50%");
+        config_nav_button(helpButton);
+        restartButton.setTooltip(new Tooltip("Restart"));
+        restartButton.setStyle("-fx-background-image: url(/game/images/restart.png); " +
+                "-fx-background-size: 40 40;-fx-background-radius: 50%");
+        config_nav_button(restartButton);
     }
 
     @FXML
@@ -78,25 +68,44 @@ public class WordleTab_ctrl {
         mainWordle.onKeyPressed(gridPane, keyboardRows, keyEvent);
     }
 
-    public void getRandomWord() {
-        mainWordle.getRandomWord();
-    }
-
     @FXML
     public void showHelp() {
-        if (helpPane.isVisible()) {
-            helpPane.setVisible(false);
+        if (notificationPane.isVisible()) {
+            notificationPane.setVisible(false);
             triangle.setVisible(false);
             gridRequestFocus();
         } else {
-            ScoreWindow.createHelpWindow(helpPane);
-            helpPane.setVisible(true);
+            GameNotification.instructionNotification(notificationPane);
+            notificationPane.setVisible(true);
             triangle.setVisible(true);
         }
     }
 
-    public void createTitleHBox() {
+    @FXML
+    public void restart() {
+        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
+        rotateTransition.setOnFinished(ae ->
+                mainWordle.resetGame(gridPane, keyboardRows));
+        rotateTransition.play();
+    }
+
+    private void createUI() {
+        // Create Grid
+        mainWordle.createGrid(gridPane);
+
+        // Create Keyboard
+        keyboardRows = new GridPane[3];
+        keyboardRows[0] = keyboardRow1;
+        keyboardRows[1] = keyboardRow2;
+        keyboardRows[2] = keyboardRow3;
+        mainWordle.createKeyBoard(keyboardRows, gridPane);
+
+        // Create Game Title
         mainWordle.createGameTitle(titleHBox);
+    }
+
+    public void gridRequestFocus() {
+        gridPane.requestFocus();
     }
 
     private void config_nav_button(Button button) {
@@ -111,33 +120,8 @@ public class WordleTab_ctrl {
         tt.getStyleClass().add("navbutton-tooltip");
     }
 
-    @FXML
-    public void restart() {
-        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
-        rotateTransition.setOnFinished(ae ->
-                mainWordle.resetGame(gridPane, keyboardRows));
-        rotateTransition.play();
-    }
-
-    @FXML
-    void initialize() {
-        initializeWordLists();
-        createUI();
-        getRandomWord();
-        mainWordle.wordleTab_ctrl = this;
-        ScoreWindow.wordleTab_ctrl = this;
-        helpButton.setTooltip(new Tooltip("Instructions"));
-        helpButton.setStyle("-fx-background-image: url(/game/images/help.png); " +
-                "-fx-background-size: 40 40;-fx-background-radius: 50%");
-        config_nav_button(helpButton);
-        restartButton.setTooltip(new Tooltip("Restart"));
-        restartButton.setStyle("-fx-background-image: url(/game/images/restart.png); " +
-                "-fx-background-size: 40 40;-fx-background-radius: 50%");
-        config_nav_button(restartButton);
-    }
-
-    public static void showToast() {
-        ScoreWindow.showNotFoundWord(MainWordle.getInstance().wordleTab_ctrl.helpPane);
+    public static void showWordNotFound() {
+        GameNotification.notFoundWordNotification(MainWordle.getInstance().wordleTab_ctrl.notificationPane);
     }
 
     private void initWords(String path, ArrayList<String> words) {
@@ -148,12 +132,12 @@ public class WordleTab_ctrl {
         winning_words_lines.forEach(words::add);
     }
 
-    public void initializeWordLists() {
+    private void initializeWordLists() {
         initWords("/game/winning-words.txt", winningWords);
-        initWords("/game/dictionary.txt", dictionaryWords);
+        mainWordle.getRandomWord();
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        ScoreWindow.displayEndGame(guessed, winningWord, helpPane);
+        GameNotification.endGameNotification(guessed, winningWord, notificationPane);
     }
 }

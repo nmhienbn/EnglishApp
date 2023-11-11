@@ -40,7 +40,7 @@
             <center>
                 <GridPane fx:id="gridPane" alignment="CENTER" focusTraversable="true" hgap="5" onKeyPressed="#onKeyPressed" vgap="5">
                     <BorderPane.margin>
-                        <Insets bottom="15.0" top="15.0" />
+                        <Insets bottom="15.0" />
                     </BorderPane.margin>
                     <columnConstraints>
                         <ColumnConstraints />
@@ -73,6 +73,6 @@
 
         </BorderPane>
         <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true" points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 192.79998779296875, 36.80000305175781" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false" />
-        <BorderPane fx:id="helpPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="486.0" prefWidth="491.0" visible="false" />
+        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500" prefWidth="500" visible="false" />
     </children>
 </AnchorPane>

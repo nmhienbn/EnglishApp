@@ -1,20 +1,13 @@
 package views.animations;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.RotateTransition;
-import javafx.animation.ScaleTransition;
-import javafx.scene.Node;
+import javafx.animation.*;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.util.Duration;
-import org.kordamp.bootstrapfx.BootstrapFX;
+import java.awt.image.BufferedImage;
 
 // https://stackoverflow.com/questions/28183667/how-i-can-stop-an-animated-gif-in-javafx
 
@@ -41,5 +34,70 @@ public final class GameAnimations {
         rotateTransition.setFromAngle(fromAngle);
         rotateTransition.setToAngle(toAngle);
         return rotateTransition;
+    }
+
+    public static class ImgAnimation extends Transition {
+        private ImageView imageView;
+        private int count;
+        private int lastIndex;
+        private Image[] sequence;
+
+        protected ImgAnimation() {
+        }
+
+        public ImgAnimation(Image[] sequence, double durationMs) {
+            init(sequence, durationMs);
+        }
+
+        protected void init(Image[] sequence, double durationMs) {
+            this.imageView = new ImageView(sequence[0]);
+            this.sequence = sequence;
+            this.count = sequence.length;
+
+            setCycleCount(1);
+            setCycleDuration(Duration.millis(durationMs));
+            setInterpolator(Interpolator.LINEAR);
+
+        }
+
+        protected void interpolate(double k) {
+
+            final int index = Math.min((int) Math.floor(k * count), count - 1);
+            if (index != lastIndex) {
+                imageView.setImage(sequence[index]);
+                lastIndex = index;
+            }
+
+        }
+
+        public ImageView getView() {
+            return imageView;
+        }
+
+    }
+
+    public static class AnimatedGif extends ImgAnimation {
+
+        public AnimatedGif(String filename, double durationMs) {
+
+            GifDecoder d = new GifDecoder();
+            d.read(filename);
+
+            Image[] sequence = new Image[d.getFrameCount()];
+            for (int i = 0; i < d.getFrameCount(); i++) {
+                WritableImage wimg = null;
+                BufferedImage bimg = d.getFrame(i);
+                sequence[i] = SwingFXUtils.toFXImage(bimg, wimg);
+            }
+
+            super.init(sequence, durationMs);
+        }
+
+        public void playOnce() {
+            super.play();
+            super.setOnFinished(e -> {
+                super.stop();
+            });
+        }
     }
 }

@@ -1,16 +1,22 @@
 package views.controllers;
 
 import java.io.*;
+import java.util.Objects;
 
 import javafx.geometry.Bounds;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-import views.animations.AnimatedGif;
+import views.animations.GameAnimations.AnimatedGif;
 import views.File_loader;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import views.animations.GameAnimations;
+
+import static java.lang.System.exit;
 
 public class mainPanel_ctrl {
 
@@ -27,6 +33,8 @@ public class mainPanel_ctrl {
     private Button google_translate_button;
     @FXML
     private Button wordle_button;
+    @FXML
+    ImageView logoImg;
 
     private Button focused_button = null;
 
@@ -46,9 +54,10 @@ public class mainPanel_ctrl {
         });
     }
 
-
     @FXML
     void initialize() throws IOException {
+        logoImg.setImage(new Image(Objects.requireNonNull(getClass().
+                getResource("/front_end/graphic/icons/logo.gif")).toExternalForm()));
 
         home_button.setTooltip(new Tooltip("Home"));
         main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
