@@ -11,14 +11,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import views.File_loader;
 import views.animations.GameAnimations;
 import views.controllers.WordleTab_ctrl;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
-import static java.lang.System.exit;
 import static views.controllers.WordleTab_ctrl.*;
 
 public class MainWordle {
@@ -102,7 +99,7 @@ public class MainWordle {
             for (int j = 0; j < Letters[i].length; j++) {
                 Label label = new Label(Letters[i][j]);
                 label.setOnMouseClicked(e -> onLetterClicked(gridPane, keyboardRows, label.getText()));
-                label.setOnMouseEntered(e -> label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5;"));
+                label.setOnMouseEntered(e -> label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;"));
                 label.setOnMouseExited(e -> label.setStyle("-fx-border-color: transparent;"));
                 if (i == 2 && (j == 0 || j == Letters[i].length - 1)) {
                     label.getStyleClass().add("keyboardTileSymbol");
@@ -214,6 +211,12 @@ public class MainWordle {
         }
     }
 
+    /**
+     * Updates the row colors
+     *
+     * @param gridPane  the gridPane that contains the letters
+     * @param searchRow the row to be updated
+     */
     private void updateRowColors(GridPane gridPane, int searchRow) {
         SequentialTransition effects = new SequentialTransition();
         for (int i = 1; i <= MAX_COLUMN; i++) {
@@ -234,7 +237,7 @@ public class MainWordle {
                 ScaleTransition scaleTransition;
 
                 // Fade Out
-                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 150);
+                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 100);
                 fadeTransition.setOnFinished(e -> {
                     label.getStyleClass().clear();
                     label.getStyleClass().setAll(styleClass);
@@ -243,7 +246,7 @@ public class MainWordle {
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
 
                 // Fade In
-                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 150);
+                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 100);
                 scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1);
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
             }
@@ -251,6 +254,12 @@ public class MainWordle {
         effects.play();
     }
 
+    /**
+     * Updates the keyboard colors
+     *
+     * @param gridPane     the gridPane that contains the letters
+     * @param keyboardRows the keyboard
+     */
     private void updateKeyboardColors(GridPane gridPane, GridPane[] keyboardRows) {
         String currentWord = getWordFromCurrentRow(gridPane).toLowerCase();
         for (int i = 1; i <= MAX_COLUMN; i++) {
@@ -279,7 +288,12 @@ public class MainWordle {
         }
     }
 
-
+    /**
+     * Gets the word from the current row.
+     *
+     * @param gridPane the gridPane that contains the letters
+     * @return the word from the current row
+     */
     private String getWordFromCurrentRow(GridPane gridPane) {
         StringBuilder input = new StringBuilder();
         for (int j = 1; j <= MAX_COLUMN; j++)
@@ -287,6 +301,13 @@ public class MainWordle {
         return input.toString();
     }
 
+    /**
+     * Checks if the array contains the input
+     *
+     * @param array the array to be checked
+     * @param input the input to be checked
+     * @return true if the array contains the input, false otherwise
+     */
     private boolean contains(String[] array, String input) {
         for (String s : array) {
             if (s.equalsIgnoreCase(input))
@@ -295,45 +316,62 @@ public class MainWordle {
         return false;
     }
 
+    /**
+     * Event a key is pressed
+     *
+     * @param gridPane     the gridPane that contains the letters
+     * @param keyboardRows the keyboard
+     * @param keyEvent     the key pressed
+     */
     public void onKeyPressed(GridPane gridPane, GridPane[] keyboardRows, KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
-            onBackspacePressed(gridPane);
+            onBackspaceChosen(gridPane);
         } else if (keyEvent.getCode().isLetterKey()) {
-            onLetterPressed(gridPane, keyEvent);
+            onLetterChosen(gridPane, keyEvent.getText());
         }
         if (keyEvent.getCode() == KeyCode.ENTER) {
-            onEnterPressed(gridPane, keyboardRows);
+            onEnterChosen(gridPane, keyboardRows);
         }
     }
 
+    /**
+     * A letter is clicked
+     *
+     * @param gridPane     the gridPane that contains the letters
+     * @param keyboardRows the keyboard
+     * @param letter       the letter clicked
+     */
+    private void onLetterClicked(GridPane gridPane, GridPane[] keyboardRows, String letter) {
+        if (letter.equals("backspace")) {
+            onBackspaceChosen(gridPane);
+        } else if (letter.equals("enter")) {
+            onEnterChosen(gridPane, keyboardRows);
+        } else {
+            onLetterChosen(gridPane, letter);
+        }
+    }
+
+    /**
+     * Resets the letter at the specified row and column
+     *
+     * @param gridPane the gridPane that contains the letters
+     * @param row      the row of the letter
+     * @param col      the column of the letter
+     */
     private void resetTitle(GridPane gridPane, int row, int col) {
         setLabelText(gridPane, row, col, "");
         clearLabelStyleClass(gridPane, row, col);
         setLabelStyleClass(gridPane, row, col, "default-tile");
     }
 
-    private void onBackspacePressed(GridPane gridPane) {
-        if ((CURRENT_COLUMN == MAX_COLUMN || CURRENT_COLUMN == 1)
-                && !Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-        } else if ((CURRENT_COLUMN > 1 && CURRENT_COLUMN < MAX_COLUMN)
-                || (CURRENT_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), ""))) {
-            CURRENT_COLUMN--;
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-        }
-    }
-
-    private void onLetterPressed(GridPane gridPane, KeyEvent keyEvent) {
-        // this is to make it so that when the user types a letter but the row is full
-        // it doesn't change the last letter instead
-        if (Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
-            onLetterChosen(gridPane, keyEvent.getText());
-        }
-    }
-
+    /**
+     * A letter is chosen
+     *
+     * @param gridPane the gridPane that contains the letters
+     * @param letter   the letter chosen
+     */
     private void onLetterChosen(GridPane gridPane, String letter) {
-        // this is to make it so that when the user types a letter but the row is full
-        // it doesn't change the last letter instead
+        // If the user types a letter while the row is full, nothing changes.
         if (Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
             setLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN, letter);
             Label label = getLabel(gridPane, CURRENT_ROW, CURRENT_COLUMN);
@@ -345,17 +383,29 @@ public class MainWordle {
         }
     }
 
-    private void onLetterClicked(GridPane gridPane, GridPane[] keyboardRows, String letter) {
-        if (letter.equals("backspace")) {
-            onBackspacePressed(gridPane);
-        } else if (letter.equals("enter")) {
-            onEnterPressed(gridPane, keyboardRows);
-        } else {
-            onLetterChosen(gridPane, letter);
+    /**
+     * Backspace button is pressed
+     *
+     * @param gridPane the gridPane that contains the letters
+     */
+    private void onBackspaceChosen(GridPane gridPane) {
+        if ((CURRENT_COLUMN == MAX_COLUMN || CURRENT_COLUMN == 1)
+                && !Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
+            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
+        } else if ((CURRENT_COLUMN > 1 && CURRENT_COLUMN < MAX_COLUMN)
+                || (CURRENT_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), ""))) {
+            CURRENT_COLUMN--;
+            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
         }
     }
 
-    private void onEnterPressed(GridPane gridPane, GridPane[] keyboardRows) {
+    /**
+     * Enter button is pressed
+     *
+     * @param gridPane     the gridPane that contains the letters
+     * @param keyboardRows the keyboard
+     */
+    private void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
         if (CURRENT_ROW <= MAX_ROW && CURRENT_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winningWord)) {
@@ -367,23 +417,52 @@ public class MainWordle {
                 updateKeyboardColors(gridPane, keyboardRows);
                 if (CURRENT_ROW == MAX_ROW) {
                     wordleTab_ctrl.showEndGameWindow(false, winningWord);
+                } else {
+                    CURRENT_ROW++;
+                    CURRENT_COLUMN = 1;
                 }
-                CURRENT_ROW++;
-                CURRENT_COLUMN = 1;
             } else {
-                showToast();
+                showWordNotFound();
             }
         }
     }
 
+    /**
+     * Gets a random word from the winningWords list
+     */
     public void getRandomWord() {
         winningWord = winningWords.get(StdRandom.uniformInt(winningWords.size()));
     }
 
+    /**
+     * Checks if the guess is a valid word
+     *
+     * @param guess the guess to be checked
+     * @return true if the guess is a valid word, false otherwise
+     */
     private boolean isValidGuess(String guess) {
-        return binarySearch(winningWords, guess) || binarySearch(dictionaryWords, guess);
+        int low = 0, high = winningWords.size() - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int cmp = guess.compareTo(winningWords.get(mid));
+            if (cmp == 0) {
+                return true;
+            }
+            if (cmp > 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return false;
     }
 
+    /**
+     * Restarts the game
+     *
+     * @param gridPane     the gridPane that contains the letters
+     * @param keyboardRows the keyboard
+     */
     public void resetGame(GridPane gridPane, GridPane[] keyboardRows) {
         getRandomWord();
         Label label;
@@ -412,18 +491,6 @@ public class MainWordle {
         CURRENT_COLUMN = 1;
         CURRENT_ROW = 1;
         wordleTab_ctrl.gridRequestFocus();
-    }
-
-    private boolean binarySearch(ArrayList<String> list, String string) {
-        int low = 0, high = list.size() - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            int comparison = string.compareTo(list.get(mid));
-            if (comparison == 0) return true;
-            if (comparison > 0) low = mid + 1;
-            else high = mid - 1;
-        }
-        return false;
     }
 
 }
