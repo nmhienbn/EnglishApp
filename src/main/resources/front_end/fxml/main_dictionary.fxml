@@ -31,9 +31,9 @@
          <children>
             <VBox layoutX="-12.0" layoutY="97.0" prefHeight="406.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button id="add-button" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" text="Add" />
-                  <Button id="edit-button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
-                  <Button id="remove-button" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
+                  <Button id="add-button" fx:id="add_word_button" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" text="Add" />
+                  <Button id="edit-button" fx:id="edit_word_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
+                  <Button id="remove-button" fx:id="remove_word_button" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" styleClass="function-button" />
                </children>
             </VBox>
             <VBox layoutX="-12.0" layoutY="491.0" prefHeight="209.0" prefWidth="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="491.0">

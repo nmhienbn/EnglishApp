@@ -1,5 +1,8 @@
 @import "theme.css";
 
+.root {
+    -fx-background-color: white1;
+}
 
 #home {
     /*-fx-background-image: url(../graphic/icons/home.png);*/
