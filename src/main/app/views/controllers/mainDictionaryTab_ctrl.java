@@ -26,6 +26,15 @@ public class mainDictionaryTab_ctrl {
     @FXML
     private VBox word_list_box;
 
+    @FXML
+    private Button add_word_button;
+
+    @FXML
+    private Button remove_word_button;
+
+    @FXML
+    private Button edit_word_button;
+
     //? wifa = word infomation area
     @FXML
     private Label wifa_meaning;
@@ -61,6 +70,14 @@ public class mainDictionaryTab_ctrl {
             TestAPI.SpeakAPI(wifa_word.getText(), "en");
             speak_button.setDisable(false);
         });
+
+
+        add_word_button.setOnAction(e -> {
+            TestAPI.testAddWord("test add word", "test meaning");
+        });
+        remove_word_button.setOnAction(e -> {
+            TestAPI.testRemoveWord("test add word");
+        });
     }
 
     private void update_wordlist() {
@@ -92,9 +109,9 @@ public class mainDictionaryTab_ctrl {
     }
 
     private void on_choose_word(String word) {
-        System.out.println("choose word: " + word);
+        //System.out.println("choose word: " + word);
         wifa_meaning.setText(TestAPI.getWordMeaning(word));
-        System.out.println(TestAPI.getWordMeaning(word));
+        //System.out.println(TestAPI.getWordMeaning(word));
         wifa_word.setText(word);
     }
 

@@ -53,4 +53,12 @@ public class TestAPI {
         }
     }
 
+    public static void testAddWord(String word, String meaning) {
+        wordSet.dictionaryAddWord(word, meaning);
+    }
+
+    public static void testRemoveWord(String word) {
+        wordSet.dictionaryRemoveWord(word);
+    }
+
 }
