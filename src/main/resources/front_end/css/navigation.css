@@ -2,6 +2,10 @@
 
 .root {
     -fx-background-color: white1;
+    -fx-pref-width: 1100;
+    -fx-pref-height: 700;
+    -fx-min-width: 1100;
+    -fx-min-height: 700;
 }
 
 #home {
