@@ -4,6 +4,7 @@ import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -11,14 +12,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.shape.Polygon;
 import views.animations.GameAnimations;
 import views.wordle.GameNotification;
-import views.wordle.MainWordle;
+import views.wordle.MainCatchWord;
 
 import java.util.ArrayList;
 
-public class WordleTab_ctrl extends Game_ctrl{
+public class CTW_ctrl extends Game_ctrl{
+    private final MainCatchWord mainCTW = MainCatchWord.getInstance();
 
-    private final MainWordle mainWordle = MainWordle.getInstance();
-
+    @FXML
+    public ImageView ImageAns;
     @FXML
     public GridPane gridPane;
     @FXML
@@ -32,7 +34,6 @@ public class WordleTab_ctrl extends Game_ctrl{
     public HBox titleHBox;
     @FXML
     public Button restartButton;
-
     @FXML
     public BorderPane notificationPane;
     @FXML
@@ -45,8 +46,8 @@ public class WordleTab_ctrl extends Game_ctrl{
     void initialize() {
         initializeWordLists();
         createUI();
-        mainWordle.wordleTab_ctrl = this;
-        GameNotification.wordleTab_ctrl = this;
+        mainCTW.ctw_ctrl = this;
+        GameNotification.ctw_ctrl = this;
         helpButton.setTooltip(new Tooltip("Instructions"));
         helpButton.setStyle("-fx-background-image: url(/game/images/help.png); " +
                 "-fx-background-size: 40 40;-fx-background-radius: 50%");
@@ -59,7 +60,7 @@ public class WordleTab_ctrl extends Game_ctrl{
 
     @FXML
     public void onKeyPressed(KeyEvent keyEvent) {
-        mainWordle.onKeyPressed(gridPane, keyboardRows, keyEvent);
+        mainCTW.onKeyPressed(gridPane, keyboardRows, keyEvent);
     }
 
     @FXML
@@ -79,23 +80,24 @@ public class WordleTab_ctrl extends Game_ctrl{
     public void restart() {
         RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
         rotateTransition.setOnFinished(ae ->
-                mainWordle.resetGame(gridPane, keyboardRows));
+                mainCTW.resetGame(ImageAns, gridPane, keyboardRows));
         rotateTransition.play();
+        gridRequestFocus();
     }
 
     private void createUI() {
+        // Create Game Title
+        mainCTW.createGameTitle(titleHBox);
+
         // Create Grid
-        mainWordle.createGrid(gridPane);
+        mainCTW.createGrid(gridPane, ImageAns);
 
         // Create Keyboard
         keyboardRows = new GridPane[3];
         keyboardRows[0] = keyboardRow1;
         keyboardRows[1] = keyboardRow2;
         keyboardRows[2] = keyboardRow3;
-        mainWordle.createKeyBoard(keyboardRows, gridPane);
-
-        // Create Game Title
-        mainWordle.createGameTitle(titleHBox);
+        mainCTW.createKeyBoard(keyboardRows, gridPane);
     }
 
     public void gridRequestFocus() {
@@ -103,12 +105,13 @@ public class WordleTab_ctrl extends Game_ctrl{
     }
 
     public static void showWordNotFound() {
-        GameNotification.showNotification(MainWordle.getInstance().wordleTab_ctrl.notificationPane, "INVALID WORD!");
+        GameNotification.showNotification(MainCatchWord.getInstance().ctw_ctrl.notificationPane, "WRONG WORD!");
     }
 
     private void initializeWordLists() {
-        initWords("/game/winning-words.txt", winningWords);
-        mainWordle.getRandomWord();
+        initWords("/game/ctw_words.txt", winningWords);
+        mainCTW.setLevels(winningWords.size());
+        mainCTW.getRandomWord();
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {

@@ -34,6 +34,11 @@
     -fx-background-size: 40 40;
 }
 
+#ctw {
+    /*-fx-background-image: url(../graphic/icons/wordle.png);*/
+    -fx-background-size: 40 40;
+}
+
 .navbutton-tooltip {
     -fx-font: normal bold 15 Langdon;
     -fx-base: #AE3522;

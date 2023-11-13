@@ -82,4 +82,14 @@ public class File_loader {
         }
     }
 
+    public Parent fxml_ctw_Tab(Object controllerObject) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/ctw.fxml"));
+            loader.setController(controllerObject);
+            return FXMLloader_load(loader);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 }
