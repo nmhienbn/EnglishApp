@@ -50,22 +50,32 @@ public class TestAPI {
     }
 
     public static void testAddWord(String word, String meaning) {
+        if (wordSet.dictionaryLookup(word) != null) {
+            System.out.println("Word already exists");
+            return;
+        }
         wordSet.dictionaryAddWord(word, meaning);
     }
 
-    /*public static void testEditWord(String word, String meaning) {
-    }*/
+    public static void testEditWord(String word, String meaning) {
+        wordSet.dictionaryEditWord(word, meaning);
+    }
 
     public static void testRemoveWord(String word) {
         wordSet.dictionaryRemoveWord(word);
     }
 
-    public static void LoadDict(Boolean isOriginal) {
-        if (isOriginal)
-            wordSet.dictionaryInsertFromFile(wordSet.DEFAULT_DICTIONARY_PATH);
-        else
+    public static void LoadDict(boolean isOriginal) {
+        //wordSet.dictionaryInsertFromFile(wordSet.ORIGINAL_DICTIONARY_PATH);
+        if (isOriginal) {
+            System.out.println("Load default dict: " + wordSet.ORIGINAL_DICTIONARY_PATH);
             wordSet.dictionaryInsertFromFile(wordSet.ORIGINAL_DICTIONARY_PATH);
+        } else {
+            System.out.println("Load default dict: " + wordSet.DEFAULT_DICTIONARY_PATH);
+            wordSet.dictionaryInsertFromFile(wordSet.DEFAULT_DICTIONARY_PATH);
+        }
     }
+
 
     public static void SaveDict() {
         wordSet.dictionaryExportToFile(wordSet.DEFAULT_DICTIONARY_PATH);
