@@ -68,6 +68,7 @@ public class DictionaryCommandline {
             manager.dictionaryAddWord(word, explain);
         }
     }
+
     /**
      * Print all meaning of word str.
      */
@@ -169,24 +170,46 @@ public class DictionaryCommandline {
     }
 
     public static void main(String[] args) {
-        TestAPI.SetupDict();
+        TestAPI.LoadDict(false);
         DictionaryCommandline dict = new DictionaryCommandline();
 
         while (true) {
             int req = dict.getRequest();
 
             switch (req) {
-                case 0: exit(0); break;
-                case 1: dict.insertFromCommandline(); break;
-                case 2: dict.removeWord(); break;
-                case 3: dict.updateWord(); break;
-                case 4: dict.showAllWords(); break;
-                case 5: dict.lookupWord(); break;
-                case 6: dict.searchWords(); break;
-                case 7: dict.playGame(); break;
-                case 8: dict.manager.dictionaryInsertFromFile(null); break;
-                case 9: dict.manager.dictionaryExportToFile(null); break;
-                default: System.out.println("Invalid request!"); break;
+                case 0:
+                    exit(0);
+                    break;
+                case 1:
+                    dict.insertFromCommandline();
+                    break;
+                case 2:
+                    dict.removeWord();
+                    break;
+                case 3:
+                    dict.updateWord();
+                    break;
+                case 4:
+                    dict.showAllWords();
+                    break;
+                case 5:
+                    dict.lookupWord();
+                    break;
+                case 6:
+                    dict.searchWords();
+                    break;
+                case 7:
+                    dict.playGame();
+                    break;
+                case 8:
+                    dict.manager.dictionaryInsertFromFile(null);
+                    break;
+                case 9:
+                    dict.manager.dictionaryExportToFile(null);
+                    break;
+                default:
+                    System.out.println("Invalid request!");
+                    break;
             }
         }
     }

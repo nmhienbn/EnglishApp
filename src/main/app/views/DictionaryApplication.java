@@ -10,9 +10,9 @@ import javafx.scene.ImageCursor;
 
 public class DictionaryApplication extends Application {
     public static void main(String[] args) throws Exception {
-        TestAPI.SetupDict();
-
+        TestAPI.LoadDict(false);
         launch(args);
+        TestAPI.SaveDict();
     }
 
     @Override
