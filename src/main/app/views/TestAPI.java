@@ -10,10 +10,6 @@ import java.util.List;
 public class TestAPI {
     private static DictionaryManagement wordSet = DictionaryManagement.getInstance();
 
-    public static void SetupDict() {
-        wordSet.dictionaryInsertFromFile(null);
-    }
-
     public static ArrayList<String> getword(String key) {
         ArrayList<Word> words;
         if (key.equals("@all"))
@@ -59,6 +55,17 @@ public class TestAPI {
 
     public static void testRemoveWord(String word) {
         wordSet.dictionaryRemoveWord(word);
+    }
+
+    public static void LoadDict(Boolean isOriginal) {
+        if (isOriginal)
+            wordSet.dictionaryInsertFromFile(wordSet.DEFAULT_DICTIONARY_PATH);
+        else
+            wordSet.dictionaryInsertFromFile(wordSet.ORIGINAL_DICTIONARY_PATH);
+    }
+
+    public static void SaveDict() {
+        wordSet.dictionaryExportToFile(wordSet.DEFAULT_DICTIONARY_PATH);
     }
 
 }
