@@ -1,0 +1,70 @@
+* {
+    -white-color: white;
+    -wrong-color: #787c7e;
+    -text-fill-color: black;
+    -empty-border-color: #d3d6da;
+    -unlocked-border-color: #878a8c;
+    -background-color: white;
+    -key-background-color: #d3d6da;
+    -present-color: #c9b458;
+    -correct-color: #6aaa64;
+    -selected-color: blue;
+}
+
+#choice-box {
+    -fx-background-color: white;
+    -fx-border-color: -empty-border-color;
+    -fx-text-fill: -text-fill-color;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-border-width: 1px;
+    -fx-border-radius: 75;
+    -fx-background-radius: 75;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-pref-width: 350;
+    -fx-pref-height: 110;
+}
+
+#text-box {
+    -fx-background-color: pink;
+    -fx-background-radius: 50;
+    -fx-alignment: center;
+    -fx-pref-width: 110;
+    -fx-pref-height: 110;
+}
+
+#question-box {
+    -fx-background-color: white;
+    -fx-border-color: -empty-border-color;
+    -fx-text-fill: -text-fill-color;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-border-width: 1px;
+    -fx-border-radius: 75;
+    -fx-background-radius: 75;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-pref-width: 800;
+    -fx-pref-height: 500;
+    -fx-wrap-text: true;
+}
+
+.default-tile {
+    -fx-background-color: -background-color;
+    -fx-border-color: -empty-border-color;
+    -fx-text-fill: -text-fill-color;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 65px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
