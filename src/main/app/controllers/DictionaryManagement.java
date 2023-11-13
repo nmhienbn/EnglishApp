@@ -17,7 +17,6 @@ public class DictionaryManagement implements DictionaryManagementInterface {
         if (ins == null) {
             ins = new DictionaryManagement();
         }
-
         return ins;
     }
 
@@ -48,6 +47,11 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public boolean dictionaryAddWord(String str, String meaning) {
         return dictionary.addWord(str, meaning);
+    }
+
+    @Override
+    public boolean dictionaryEditWord(String str, String meaning) {
+        return dictionary.editWord(str, meaning);
     }
 
     @Override

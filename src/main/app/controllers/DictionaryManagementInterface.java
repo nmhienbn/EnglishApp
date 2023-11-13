@@ -14,6 +14,7 @@ public interface DictionaryManagementInterface {
     /**
      * Insert all words from a standard file.
      * Standard file: each line contains word_target and word_explain split by a tab ('\t').
+     *
      * @param filePath path to file (null for default file-dictionaries.txt in resources).
      */
     void dictionaryInsertFromFile(String filePath);
@@ -48,6 +49,15 @@ public interface DictionaryManagementInterface {
     boolean dictionaryAddWord(String str, String meaning);
 
     /**
+     * Edit an existing word.
+     *
+     * @param str     string to edit.
+     * @param meaning the meaning of that word in VNese.
+     * @return true if the word is added successfully.
+     */
+    boolean dictionaryEditWord(String str, String meaning);
+
+    /**
      * remove a word.
      *
      * @param str string to delete.
@@ -68,7 +78,8 @@ public interface DictionaryManagementInterface {
      * Translate a string from source language to target language.
      * <em>sourceLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ... or an <em>auto</em> (auto detect).
      * <em>targetLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ...
-     * @param str text to translate
+     *
+     * @param str            text to translate
      * @param sourceLanguage source language
      * @param targetLanguage target language
      * @return translated text
@@ -77,7 +88,8 @@ public interface DictionaryManagementInterface {
 
     /**
      * Speek text.
-     * @param text content of text to speek
+     *
+     * @param text     content of text to speek
      * @param language language of text, vi for vietnamese, en for english, ...
      * @throws IOException
      * @throws JavaLayerException
