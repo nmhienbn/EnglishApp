@@ -32,10 +32,10 @@ public class DictionaryApplication extends Application {
         stage.setTitle("DUOLINGO");
         stage.setScene(scene);
 
-        //stage.setResizable(false);
+        stage.setResizable(false);
         //TODO set resizable
-        stage.setMinWidth(1100);
-        stage.setMinHeight(700);
+        //stage.setMinWidth(1100);
+        //stage.setMinHeight(700);
         stage.show();
     }
 
