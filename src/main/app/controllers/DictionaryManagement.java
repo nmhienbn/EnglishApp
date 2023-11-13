@@ -11,15 +11,16 @@ import java.util.Scanner;
 public class DictionaryManagement implements DictionaryManagementInterface {
     public final String ORIGINAL_DICTIONARY_PATH = this.getClass().getResource("/models/original_dictionaries.txt").getPath();
     public final String DEFAULT_DICTIONARY_PATH = this.getClass().getResource("/models/dictionaries.txt").getPath();
-
     private static DictionaryManagement ins = null;
 
     public static DictionaryManagement getInstance() {
         if (ins == null) {
             ins = new DictionaryManagement();
         }
+
         return ins;
     }
+
 
     @Override
     public ArrayList<Word> getAllWords() {
@@ -72,11 +73,11 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public void dictionaryInsertFromFile(String filePath) {
         if (filePath == null) {
-            filePath = this.getClass().getResource("/models/dictionaries.txt").getPath();
+            filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
         }
         String fin1 = filePath;
 
-        try(Scanner cin = new Scanner(new FileReader(fin1))) {
+        try (Scanner cin = new Scanner(new FileReader(fin1))) {
             dictionary.imports(cin);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

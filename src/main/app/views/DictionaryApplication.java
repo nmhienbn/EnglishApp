@@ -34,8 +34,8 @@ public class DictionaryApplication extends Application {
 
         stage.setResizable(false);
         //TODO set resizable
-        //stage.setMinWidth(1200);
-        //stage.setMinHeight(800);
+        //stage.setMinWidth(1100);
+        //stage.setMinHeight(700);
         stage.show();
     }
 
