@@ -13,8 +13,8 @@ import java.awt.image.BufferedImage;
 
 public final class GameAnimations {
 
-    public static ScaleTransition scaleTrans(Parent label, double fromScale, double toScale) {
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(150), label);
+    public static ScaleTransition scaleTrans(Parent node, double fromScale, double toScale) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(150), node);
         scaleTransition.fromXProperty().setValue(fromScale);
         scaleTransition.toXProperty().setValue(toScale);
         scaleTransition.fromYProperty().setValue(fromScale);
@@ -22,8 +22,8 @@ public final class GameAnimations {
         return scaleTransition;
     }
 
-    public static FadeTransition fadeTrans(Parent label, double fromFade, double toFade, double duration) {
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(duration), label);
+    public static FadeTransition fadeTrans(Parent node, double fromFade, double toFade, double duration) {
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(duration), node);
         fadeTransition.setFromValue(fromFade);
         fadeTransition.setToValue(toFade);
         return fadeTransition;
