@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryManagement implements DictionaryManagementInterface {
+    public final String ORIGINAL_DICTIONARY_PATH = this.getClass().getResource("/models/original_dictionaries.txt").getPath();
+    public final String DEFAULT_DICTIONARY_PATH = this.getClass().getResource("/models/dictionaries.txt").getPath();
+
     private static DictionaryManagement ins = null;
 
     public static DictionaryManagement getInstance() {
         if (ins == null) {
             ins = new DictionaryManagement();
         }
-
         return ins;
     }
-
-
 
     @Override
     public ArrayList<Word> getAllWords() {
@@ -72,7 +72,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     @Override
     public void dictionaryInsertFromFile(String filePath) {
         if (filePath == null) {
-            filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
+            filePath = this.getClass().getResource("/models/dictionaries.txt").getPath();
         }
         String fin1 = filePath;
 

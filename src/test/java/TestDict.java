@@ -11,9 +11,8 @@ public class TestDict {
     private static final Dictionary dict = Dictionary.getInstance();
 
     private static void manyTests(){
-        Scanner cin = new Scanner(System.in);
         while (true) {
-            cmd.showLookupWord(cin.next());
+            cmd.lookupWord();
         }
     }
 
