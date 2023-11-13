@@ -2,7 +2,6 @@ package views.controllers;
 
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
-import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
@@ -10,18 +9,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Polygon;
-import javafx.util.Duration;
 import views.animations.GameAnimations;
 import views.wordle.GameNotification;
 import views.wordle.MainWordle;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
-public class WordleTab_ctrl {
+public class WordleTab_ctrl extends Game_ctrl{
 
     private final MainWordle mainWordle = MainWordle.getInstance();
 
@@ -108,28 +102,8 @@ public class WordleTab_ctrl {
         gridPane.requestFocus();
     }
 
-    private void config_nav_button(Button button) {
-        Tooltip tt = button.getTooltip();
-        tt.setShowDelay(new Duration(.1));
-        tt.setOnShown(s -> {
-            //Get button current bounds on computer screen
-            Bounds bounds = button.localToScreen(button.getBoundsInLocal());
-            button.getTooltip().setX(bounds.getMaxX() - tt.getWidth() / 2);
-            button.getTooltip().setY(bounds.getMaxY() + 5);
-        });
-        tt.getStyleClass().add("navbutton-tooltip");
-    }
-
     public static void showWordNotFound() {
-        GameNotification.notFoundWordNotification(MainWordle.getInstance().wordleTab_ctrl.notificationPane);
-    }
-
-    private void initWords(String path, ArrayList<String> words) {
-        InputStream winning_words = getClass().getResourceAsStream(path);
-        assert winning_words != null
-                : "Could not find " + path + " file in resources folder.";
-        Stream<String> winning_words_lines = new BufferedReader(new InputStreamReader(winning_words)).lines();
-        winning_words_lines.forEach(words::add);
+        GameNotification.showNotification(MainWordle.getInstance().wordleTab_ctrl.notificationPane, "INVALID WORD!");
     }
 
     private void initializeWordLists() {
@@ -138,6 +112,6 @@ public class WordleTab_ctrl {
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane);
+        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this);
     }
 }

@@ -1,14 +1,10 @@
 package views.wordle;
 
 import javafx.animation.FadeTransition;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -19,6 +15,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import views.animations.GameAnimations;
+import views.controllers.CTW_ctrl;
+import views.controllers.Game_ctrl;
 import views.controllers.WordleTab_ctrl;
 
 public class GameNotification {
@@ -27,10 +25,11 @@ public class GameNotification {
     }
 
     public static WordleTab_ctrl wordleTab_ctrl;
+    public static CTW_ctrl ctw_ctrl;
     private static double xOffset = 0;
     private static double yOffset = 0;
 
-    public static void endGameNotification(boolean guessed, String winningWord, BorderPane mainPane) {
+    public static void endGameNotification(boolean guessed, String winningWord, BorderPane mainPane, Game_ctrl game_ctrl) {
         mainPane.setPrefWidth(400);
         mainPane.setPrefHeight(300);
         mainPane.setLayoutX(200);
@@ -66,7 +65,7 @@ public class GameNotification {
             mainPane.setVisible(false);
             mainPane.setTranslateX(0);
             mainPane.setTranslateY(0);
-            wordleTab_ctrl.restart();
+            game_ctrl.restart();
         });
 
         vbox.getChildren().addAll(ins, line, mainLabel, winningWordLabel, playAgainButton);
@@ -168,7 +167,7 @@ public class GameNotification {
     }
 
 
-    public static void notFoundWordNotification(BorderPane notificationPane) {
+    public static void showNotification(BorderPane notificationPane, String notification) {
         notificationPane.setPrefWidth(200);
         notificationPane.setPrefHeight(100);
         notificationPane.setLayoutX(300);
@@ -177,7 +176,7 @@ public class GameNotification {
         notificationPane.setVisible(true);
         notificationPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 
-        Text text = new Text("INVALID WORD");
+        Text text = new Text(notification);
         text.setFill(Color.WHITE);
         text.getStyleClass().setAll("h2", "strong");
 

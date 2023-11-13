@@ -34,6 +34,8 @@ public class mainPanel_ctrl {
     @FXML
     private Button wordle_button;
     @FXML
+    private Button ctw_button;
+    @FXML
     ImageView logoImg;
 
     private Button focused_button = null;
@@ -43,8 +45,11 @@ public class mainPanel_ctrl {
     Parent user_dictionary_tab;
     Parent google_translator_tab;
     Parent wordle_tab;
+    Parent ctw_tab;
 
     WordleTab_ctrl wordleTab_ctrl;
+
+    CTW_ctrl ctwTab_ctrl;
 
     public void setButton(Button button, String filename, double durationMs) {
         AnimatedGif ani = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
@@ -64,24 +69,29 @@ public class mainPanel_ctrl {
         user_dictionary_button.setTooltip(new Tooltip("User's dictionary"));
         google_translate_button.setTooltip(new Tooltip("Google translator"));
         wordle_button.setTooltip(new Tooltip("Wordle game"));
+        ctw_button.setTooltip(new Tooltip("Catch the word game"));
 
         config_nav_button(home_button);
         config_nav_button(main_dictionary_button);
         config_nav_button(user_dictionary_button);
         config_nav_button(google_translate_button);
         config_nav_button(wordle_button);
+        config_nav_button(ctw_button);
 
         setButton(home_button, "/front_end/graphic/icons/home.gif", 1000);
-        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 1000);
-        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 1000);
         setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 1000);
         setButton(user_dictionary_button, "/front_end/graphic/icons/book.gif", 1000);
+        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 1000);
+        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 1000);
+        setButton(ctw_button, "/front_end/graphic/icons/ctw.gif", 1000);
 
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
         google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
         wordleTab_ctrl = new WordleTab_ctrl();
         wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
+        ctwTab_ctrl = new CTW_ctrl();
+        ctw_tab = File_loader.getInstance().fxml_ctw_Tab(ctwTab_ctrl);
 
         mainPane.setCenter(home_tab);
 
@@ -111,15 +121,18 @@ public class mainPanel_ctrl {
 
         if (button == home_button)
             mainPane.setCenter(home_tab);
-        if (button == main_dictionary_button)
+        else if (button == main_dictionary_button)
             mainPane.setCenter(main_dictionary_tab);
-        if (button == user_dictionary_button)
+        else if (button == user_dictionary_button)
             mainPane.setCenter(user_dictionary_tab);
-        if (button == google_translate_button)
+        else if (button == google_translate_button)
             mainPane.setCenter(google_translator_tab);
-        if (button == wordle_button) {
+        else if (button == wordle_button) {
             mainPane.setCenter(wordle_tab);
             wordleTab_ctrl.gridRequestFocus();
+        } else if (button == ctw_button) {
+            mainPane.setCenter(ctw_tab);
+            ctwTab_ctrl.gridRequestFocus();
         }
     }
 
