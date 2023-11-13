@@ -29,7 +29,8 @@ public class GameNotification {
     private static double xOffset = 0;
     private static double yOffset = 0;
 
-    public static void endGameNotification(boolean guessed, String winningWord, BorderPane mainPane, Game_ctrl game_ctrl) {
+    public static void endGameNotification(boolean guessed, String winningWord, BorderPane mainPane, Game_ctrl game_ctrl,
+                                           String[] messages) {
         mainPane.setPrefWidth(400);
         mainPane.setPrefHeight(300);
         mainPane.setLayoutX(200);
@@ -49,11 +50,11 @@ public class GameNotification {
         Label mainLabel = new Label();
         if (guessed) {
             ins.setText("CONGRATULATIONS!");
-            mainLabel.setText("           You won! \n The winning word was");
+            mainLabel.setText(messages[0]);
             mainLabel.getStyleClass().setAll("lead", "big-font");
         } else {
             ins.setText("GAME OVER!");
-            mainLabel.setText("           You lost! \n The winning word was");
+            mainLabel.setText(messages[1]);
             mainLabel.getStyleClass().setAll("big-font");
         }
         Label winningWordLabel = new Label(winningWord.toUpperCase());
@@ -65,6 +66,8 @@ public class GameNotification {
             mainPane.setVisible(false);
             mainPane.setTranslateX(0);
             mainPane.setTranslateY(0);
+            mainPane.setOnMousePressed(null);
+            mainPane.setOnMouseDragged(null);
             game_ctrl.restart();
         });
 

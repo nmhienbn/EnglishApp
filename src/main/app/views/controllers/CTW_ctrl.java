@@ -104,7 +104,7 @@ public class CTW_ctrl extends Game_ctrl{
         gridPane.requestFocus();
     }
 
-    public static void showWordNotFound() {
+    public static void showWrongWord() {
         GameNotification.showNotification(MainCatchWord.getInstance().ctw_ctrl.notificationPane, "WRONG WORD!");
     }
 
@@ -115,6 +115,7 @@ public class CTW_ctrl extends Game_ctrl{
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this);
+        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
+                new String[]{"               You won! \n The word you need to catch was", ""});
     }
 }

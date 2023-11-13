@@ -15,7 +15,7 @@ import views.wordle.MainWordle;
 
 import java.util.ArrayList;
 
-public class WordleTab_ctrl extends Game_ctrl{
+public class WordleTab_ctrl extends Game_ctrl {
 
     private final MainWordle mainWordle = MainWordle.getInstance();
 
@@ -112,6 +112,7 @@ public class WordleTab_ctrl extends Game_ctrl{
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this);
+        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
+                new String[]{"           You won! \n The winning word was", "           You lost! \n The winning word was"});
     }
 }

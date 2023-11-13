@@ -11,7 +11,7 @@ import views.controllers.CTW_ctrl;
 
 import java.util.Objects;
 
-import static views.controllers.CTW_ctrl.showWordNotFound;
+import static views.controllers.CTW_ctrl.showWrongWord;
 import static views.controllers.CTW_ctrl.winningWords;
 
 public class MainCatchWord extends Game {
@@ -141,7 +141,7 @@ public class MainCatchWord extends Game {
             if (guess.equals(winningWord)) {
                 ctw_ctrl.showEndGameWindow(true, winningWord);
             } else {
-                showWordNotFound();
+                showWrongWord();
             }
         }
     }
@@ -151,7 +151,7 @@ public class MainCatchWord extends Game {
      */
     public void getRandomWord() {
         now_level++;
-        if (now_level == level.length) {
+        if (now_level >= level.length) {
             now_level = 0;
             StdRandom.shuffle(level);
         }
