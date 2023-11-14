@@ -3,9 +3,7 @@ package views.controllers;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import views.TestAPI;
@@ -24,7 +22,7 @@ public class mainDictionaryTab_ctrl {
     private Button speak_button;
 
     @FXML
-    private VBox word_list_box;
+    private ListView<String> word_list_box;
 
     @FXML
     private Button add_word_button;
@@ -37,7 +35,7 @@ public class mainDictionaryTab_ctrl {
 
     //? wifa = word infomation area
     @FXML
-    private Label wifa_meaning;
+    private TextArea wifa_meaning;
     @FXML
     private Label wifa_word;
 
@@ -50,11 +48,17 @@ public class mainDictionaryTab_ctrl {
         assert word_list_box != null
                 : "fx:id=\"word_list_box\" was not injected: check your FXML file 'main_dictionary.fxml'.";
 
+        init_search_area();
+        init_word_information_area();
+        init_fuction_button();
+
+    }
+
+    private void init_search_area() {
         search_button.setId("search_button");
         search_button.setOnAction(e -> {
             submit_search();
         });
-
         search_box.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER)
                 submit_search();
@@ -65,6 +69,16 @@ public class mainDictionaryTab_ctrl {
             update_wordlist();
         });
 
+        word_list_box.setOnMouseClicked(e -> {
+            on_choose_word(word_list_box.getSelectionModel().getSelectedItem());
+        });
+    }
+
+    private void init_word_information_area() {
+        wifa_meaning.setEditable(false);
+    }
+
+    private void init_fuction_button() {
         speak_button.setOnAction(e -> {
             speak_button.setDisable(true);
             TestAPI.SpeakAPI(wifa_word.getText(), "en");
@@ -81,14 +95,15 @@ public class mainDictionaryTab_ctrl {
     }
 
     private void update_wordlist() {
-        word_list_box.getChildren().clear();
+        word_list_box.getItems().clear();
         if (!search_box.getText().isEmpty()) {
             ArrayList<String> wordlist = TestAPI.getword(search_box.getText());
             int count = 0;
             for (String word : wordlist) {
+                /*
                 Button word_button = new Button();
-                word_button.setMaxWidth(1000);
-                word_button.setPrefHeight(50);
+                word_button.prefWidthProperty().bind(word_list_box.widthProperty());
+                word_button.maxWidthProperty().bind(word_list_box.widthProperty());
                 word_button.setMinHeight(50);
                 word_button.setMaxHeight(50);
                 word_button.setText(word);
@@ -96,7 +111,8 @@ public class mainDictionaryTab_ctrl {
                     on_choose_word(word);
                 });
 
-                word_list_box.getChildren().add(word_button);
+                word_list_box.getItems().add(word_button);*/
+                word_list_box.getItems().add(word);
 
                 count++;
                 if (count >= MAX_WORD_FIND) break;
