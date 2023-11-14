@@ -1,7 +1,10 @@
 package views.controllers;
 
+import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
+import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
@@ -78,9 +81,24 @@ public class WordleTab_ctrl extends Game_ctrl {
     @FXML
     public void restart() {
         RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
-        rotateTransition.setOnFinished(ae ->
-                mainWordle.resetGame(gridPane, keyboardRows));
+        rotateTransition.setOnFinished(ae -> {
+            showStartGame();
+            mainWordle.resetGame(gridPane, keyboardRows);
+        });
         rotateTransition.play();
+    }
+
+    @Override
+    public void showStartGame() {
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        ParallelTransition parallelTransition1 = new ParallelTransition();
+        for (Node node : gridPane.getChildren()) {
+            if (node != null) {
+                parallelTransition1.getChildren().add(GameAnimations.scaleTrans(node, 0, 1, 1000));
+            }
+        }
+        sequentialTransition.getChildren().add(parallelTransition1);
+        sequentialTransition.play();
     }
 
     private void createUI() {

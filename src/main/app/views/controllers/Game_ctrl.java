@@ -1,9 +1,11 @@
 package views.controllers;
 
+import javafx.animation.SequentialTransition;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.util.Duration;
+import views.animations.GameAnimations;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -34,4 +36,6 @@ public abstract class Game_ctrl {
         });
         tt.getStyleClass().add("navbutton-tooltip");
     }
+
+    public abstract void showStartGame();
 }
