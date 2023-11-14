@@ -85,11 +85,11 @@ public class mainPanel_ctrl {
         config_nav_button(wordle_button);
         config_nav_button(ctw_button);
 
-        setButton(home_button, "/front_end/graphic/icons/home.gif", 1000);
-        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 1000);
-        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 1000);
-        setButton(quizz, "/front_end/graphic/icons/quizz.gif", 1000);
-        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 1000);
+        setButton(home_button, "/front_end/graphic/icons/home.gif", 2000);
+        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 2000);
+        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 2000);
+        setButton(quizz, "/front_end/graphic/icons/quizz.gif", 2000);
+        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 2000);
         setButton(ctw_button, "/front_end/graphic/icons/ctw.gif", 2000);
 
         home_tab = File_loader.getInstance().fxml_homeTab();
