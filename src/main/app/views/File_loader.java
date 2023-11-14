@@ -69,11 +69,10 @@ public class File_loader {
         return FXMLloader_load(loader);
     }
 
-    public Parent fxml_quizz_Tab() {
+    public Parent fxml_quizz_Tab(Quizz_ctrl quizz_ctrl) {
         FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/quizz.fxml"));
 
-        Object controllerObject = new Quizz_ctrl();
-        loader.setController(controllerObject);
+        loader.setController(quizz_ctrl);
         return FXMLloader_load(loader);
     }
 

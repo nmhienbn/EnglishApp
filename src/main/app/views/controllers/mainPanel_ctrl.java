@@ -1,19 +1,18 @@
 package views.controllers;
 
-import java.io.*;
-import java.util.Objects;
-
-import javafx.geometry.Bounds;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.util.Duration;
-import views.animations.GameAnimations.AnimatedGif;
-import views.File_loader;
+import javafx.animation.Animation;
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.BorderPane;
+import javafx.util.Duration;
+import views.File_loader;
+import views.animations.GameAnimations.AnimatedGif;
+
+import java.io.IOException;
 
 public class mainPanel_ctrl {
 
@@ -33,7 +32,7 @@ public class mainPanel_ctrl {
     @FXML
     private Button ctw_button;
     @FXML
-    ImageView logoImg;
+    private Button logoImg;
 
     private Button focused_button = null;
 
@@ -48,18 +47,29 @@ public class mainPanel_ctrl {
 
     CTW_ctrl ctwTab_ctrl;
 
+    Quizz_ctrl quizz_ctrl;
+
     public void setButton(Button button, String filename, double durationMs) {
         AnimatedGif ani = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
         button.setGraphic(ani.getView());
+        ani.getView().setEffect(colorAdjust);
         button.setOnMousePressed(e -> {
+            ani.getView().setEffect(null); // Remove the effect
             ani.playOnce();
         });
     }
 
+    ColorAdjust colorAdjust = new ColorAdjust();
+
     @FXML
     void initialize() throws IOException {
-        logoImg.setImage(new Image(Objects.requireNonNull(getClass().
-                getResource("/front_end/graphic/icons/logo.gif")).toExternalForm()));
+        colorAdjust.setSaturation(-1);
+        AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/logo.gif").
+                toExternalForm(), 3000);
+        logoImg.setGraphic(ani.getView());
+        ani.setCycleCount(Animation.INDEFINITE);
+        ani.setAutoReverse(true);
+        ani.play();
 
         home_button.setTooltip(new Tooltip("Home"));
         main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
@@ -85,7 +95,8 @@ public class mainPanel_ctrl {
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
         google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
-        quizz_tab = File_loader.getInstance().fxml_quizz_Tab();
+        quizz_ctrl = new Quizz_ctrl();
+        quizz_tab = File_loader.getInstance().fxml_quizz_Tab(quizz_ctrl);
         wordleTab_ctrl = new WordleTab_ctrl();
         wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
         ctwTab_ctrl = new CTW_ctrl();
@@ -112,8 +123,14 @@ public class mainPanel_ctrl {
 
     private void OnButtonPress(Button button) {
         System.out.println("press: " + button.getText());
+        if (focused_button == button) {
+            return;
+        }
 
-        if (focused_button != null) focused_button.getStyleClass().remove("focused");
+        if (focused_button != null) {
+            focused_button.getStyleClass().remove("focused");
+            focused_button.getGraphic().setEffect(colorAdjust);
+        }
         focused_button = button;
         focused_button.getStyleClass().add("focused");
 
@@ -123,8 +140,10 @@ public class mainPanel_ctrl {
             mainPane.setCenter(main_dictionary_tab);
         else if (button == google_translate_button)
             mainPane.setCenter(google_translator_tab);
-        else if (button == quizz)
+        else if (button == quizz) {
             mainPane.setCenter(quizz_tab);
+            quizz_ctrl.showStartGame();
+        }
         else if (button == wordle_button) {
             mainPane.setCenter(wordle_tab);
             wordleTab_ctrl.gridRequestFocus();

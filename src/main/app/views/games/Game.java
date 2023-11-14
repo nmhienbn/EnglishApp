@@ -1,4 +1,4 @@
-package views.wordle;
+package views.games;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -43,7 +43,7 @@ public abstract class Game {
             for (int j = 0; j < Letters[i].length; j++) {
                 Label label = new Label(Letters[i][j]);
                 label.setOnMouseClicked(e -> onLetterClicked(gridPane, keyboardRows, label.getText()));
-                label.setOnMouseEntered(e -> label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;"));
+                label.setOnMouseEntered(e -> onMouseEntered(label));
                 label.setOnMouseExited(e -> label.setStyle("-fx-border-color: transparent;"));
                 if (i == 2 && (j == 0 || j == Letters[i].length - 1)) {
                     label.getStyleClass().add("keyboardTileSymbol");
@@ -53,6 +53,10 @@ public abstract class Game {
                 keyboardRows[i].add(label, j, i + 1);
             }
         }
+    }
+
+    protected void onMouseEntered(Label label) {
+        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
     }
 
     /**

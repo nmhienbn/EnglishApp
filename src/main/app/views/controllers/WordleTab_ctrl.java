@@ -10,8 +10,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Polygon;
 import views.animations.GameAnimations;
-import views.wordle.GameNotification;
-import views.wordle.MainWordle;
+import views.games.GameNotification;
+import views.games.MainWordle;
 
 import java.util.ArrayList;
 
@@ -113,6 +113,6 @@ public class WordleTab_ctrl extends Game_ctrl {
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
         GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
-                new String[]{"           You won! \n The winning word was", "           You lost! \n The winning word was"});
+                new String[]{"YOU WON!", "THE WINNING WORD WAS:"});
     }
 }

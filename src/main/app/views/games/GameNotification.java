@@ -1,16 +1,19 @@
-package views.wordle;
+package views.games;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -18,6 +21,7 @@ import views.animations.GameAnimations;
 import views.controllers.CTW_ctrl;
 import views.controllers.Game_ctrl;
 import views.controllers.WordleTab_ctrl;
+
 
 public class GameNotification {
 
@@ -39,9 +43,9 @@ public class GameNotification {
         VBox vbox = new VBox(15);
         vbox.setAlignment(Pos.CENTER);
 
-        Label ins = new Label();
+        Text ins = new Text();
         ins.setTextAlignment(TextAlignment.CENTER);
-        ins.getStyleClass().setAll("h2", "strong");
+        ins.getStyleClass().setAll("h1", "strong");
 
         Line line = new Line();
         line.setStroke(Paint.valueOf("b8b8b8"));
@@ -51,18 +55,26 @@ public class GameNotification {
         if (guessed) {
             ins.setText("CONGRATULATIONS!");
             mainLabel.setText(messages[0]);
-            mainLabel.getStyleClass().setAll("lead", "big-font");
         } else {
             ins.setText("GAME OVER!");
             mainLabel.setText(messages[1]);
-            mainLabel.getStyleClass().setAll("big-font");
         }
-        Label winningWordLabel = new Label(winningWord.toUpperCase());
-        winningWordLabel.getStyleClass().setAll("h2", "strong");
+        mainLabel.getStyleClass().setAll("lead", "big-font");
 
-        Button playAgainButton = new Button("PLAY AGAIN");
-        playAgainButton.getStyleClass().setAll("btn", "btn-primary");
-        playAgainButton.setOnMouseClicked(me -> {
+        Label answer = new Label(winningWord.toUpperCase());
+        answer.getStyleClass().setAll("h1", "strong");
+
+        ImageView playAgainButton = new ImageView(new Image("front_end/graphic/icons/play_again.png",
+                200, 50, true, false));
+        playAgainButton.setOnMouseEntered(e -> {
+            ScaleTransition scaleTransition = GameAnimations.scaleTrans(playAgainButton, 1, 1.4, 150);
+            scaleTransition.play();
+        });
+        playAgainButton.setOnMouseExited(e -> {
+            ScaleTransition scaleTransition = GameAnimations.scaleTrans(playAgainButton, 1.4, 1, 150);
+            scaleTransition.play();
+        });
+        playAgainButton.setOnMouseClicked(e -> {
             mainPane.setVisible(false);
             mainPane.setTranslateX(0);
             mainPane.setTranslateY(0);
@@ -71,12 +83,16 @@ public class GameNotification {
             game_ctrl.restart();
         });
 
-        vbox.getChildren().addAll(ins, line, mainLabel, winningWordLabel, playAgainButton);
+        vbox.getChildren().addAll(ins, line, mainLabel, answer, playAgainButton);
+
         mainPane.setCenter(vbox);
         mainPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
-                "-fx-border-color: #000000; -fx-border-width: 2px;" +
-                "-fx-border-radius: 5; -fx-background-radius: 2;");
+                "-fx-border-radius: 30; -fx-background-radius: 30;"+
+                "-fx-border-color: black; -fx-border-width: 3;");
         mainPane.setVisible(true);
+
+        ScaleTransition scaleTransition = GameAnimations.scaleTrans(mainPane, 0, 1, 500);
+        scaleTransition.play();
 
         mainPane.setOnMousePressed(e -> {
             xOffset = e.getSceneX();
@@ -150,7 +166,7 @@ public class GameNotification {
         helpPane.setCenter(vbox);
         helpPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
                 "-fx-border-color: #000000; -fx-border-width: 2px;" +
-                "-fx-border-radius: 5; -fx-background-radius: 2;");
+                "-fx-border-radius: 5; -fx-background-radius: 5;");
         helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
     }
 
@@ -185,7 +201,7 @@ public class GameNotification {
 
         notificationPane.setCenter(text);
         notificationPane.setStyle("-fx-background-radius: 5; " +
-                "-fx-background-color: rgba(0, 0, 0, 0.8); -fx-padding: 10;");
+                "-fx-background-color: rgba(0, 0, 0, 0.7); -fx-padding: 10;");
 
         FadeTransition fadeTransition = GameAnimations.fadeTrans(notificationPane, 0.75, 1, 750);
         fadeTransition.setOnFinished(e -> notificationPane.setVisible(false));

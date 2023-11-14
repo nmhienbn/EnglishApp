@@ -1,4 +1,4 @@
-package views.wordle;
+package views.games;
 
 import edu.princeton.cs.algs4.StdRandom;
 import javafx.animation.FadeTransition;
@@ -67,6 +67,14 @@ public class MainWordle extends Game{
         }
     }
 
+    @Override
+    protected void onMouseEntered(Label label) {
+        if (wordleTab_ctrl.notificationPane.isVisible()) {
+            return;
+        }
+        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+    }
+
     /**
      * Updates the row colors
      *
@@ -98,12 +106,12 @@ public class MainWordle extends Game{
                     label.getStyleClass().clear();
                     label.getStyleClass().setAll(styleClass);
                 });
-                scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2);
+                scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2, 150);
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
 
                 // Fade In
                 fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 100);
-                scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1);
+                scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1, 150);
                 effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
             }
         }
@@ -172,8 +180,8 @@ public class MainWordle extends Game{
         if (Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
             setLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN, letter);
             Label label = getLabel(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-            GameAnimations.scaleTrans(label, 1, 1.2).play();
-            GameAnimations.scaleTrans(label, 1.2, 1).play();
+            GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
+            GameAnimations.scaleTrans(label, 1.2, 1, 150).play();
             setLabelStyleClass(gridPane, CURRENT_ROW, CURRENT_COLUMN, "tile-with-letter");
             if (CURRENT_COLUMN < MAX_COLUMN)
                 CURRENT_COLUMN++;

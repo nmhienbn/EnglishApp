@@ -1,121 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="800.0"
-            stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="800.0"
-                    styleClass="main-screen">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" styleClass="main-screen">
 
             <top>
                 <VBox alignment="TOP_CENTER" minWidth="480.0">
 
                     <HBox alignment="CENTER">
                         <padding>
-                            <Insets bottom="8" left="30"/>
+                            <Insets bottom="8" left="30" />
                         </padding>
                         <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
                             <padding>
-                                <Insets bottom="8" left="27" right="30"/>
+                                <Insets bottom="8" left="27" right="30" />
                             </padding>
                         </HBox>
-                        <Button fx:id="restartButton" onMouseClicked="#restart" prefHeight="40" prefWidth="40"/>
+                        <Button fx:id="restartButton" onMouseClicked="#restart" prefHeight="40" prefWidth="40" />
 
                         <padding>
-                            <Insets right="35"/>
+                            <Insets right="35" />
                         </padding>
                     </HBox>
                 </VBox>
             </top>
             <bottom>
-                <GridPane fx:id="choices" alignment="CENTER" focusTraversable="true" hgap="30.0" prefHeight="379.0"
-                          prefWidth="780.0" vgap="15.0" BorderPane.alignment="CENTER">
+                <GridPane fx:id="choices" alignment="CENTER" focusTraversable="true" hgap="30.0" prefHeight="379.0" prefWidth="780.0" vgap="15.0" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
-                        <Insets bottom="15.0"/>
+                        <Insets bottom="15.0" />
                     </BorderPane.margin>
                     <columnConstraints>
-                        <ColumnConstraints/>
-                        <ColumnConstraints/>
-                        <ColumnConstraints/>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                        <RowConstraints/>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
                     </rowConstraints>
                     <children>
-                        <BorderPane id="choice-box"
-                                    GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <BorderPane id="choice-box" fx:id="fA" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <left>
                                 <StackPane prefHeight="106.0" prefWidth="80.0">
                                     <children>
-                                        <Label id="text-box" text="A"/>
+                                        <Label id="text-box" text="A" />
                                     </children>
                                 </StackPane>
                             </left>
                             <center>
-                                <Text fx:id="ansA" BorderPane.alignment="CENTER"/>
+                                <Text fx:id="ansA" BorderPane.alignment="CENTER" />
                             </center>
                         </BorderPane>
-                        <BorderPane id="choice-box"
-                                    GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <BorderPane id="choice-box" fx:id="fB" GridPane.columnIndex="2" GridPane.rowIndex="1">
                             <left>
                                 <StackPane prefHeight="106.0" prefWidth="80.0">
                                     <children>
-                                        <Label id="text-box" text="B"/>
+                                        <Label id="text-box" text="B" />
                                     </children>
                                 </StackPane>
                             </left>
                             <center>
-                                <Text fx:id="ansB" BorderPane.alignment="CENTER"/>
+                                <Text fx:id="ansB" BorderPane.alignment="CENTER" />
                             </center>
                         </BorderPane>
-                        <BorderPane id="choice-box"
-                                    GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <BorderPane id="choice-box" fx:id="fC" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <left>
                                 <StackPane prefHeight="106.0" prefWidth="80.0">
                                     <children>
-                                        <Label id="text-box" text="C"/>
+                                        <Label id="text-box" text="C" />
                                     </children>
                                 </StackPane>
                             </left>
                             <center>
-                                <Text fx:id="ansC" BorderPane.alignment="CENTER"/>
+                                <Text fx:id="ansC" BorderPane.alignment="CENTER" />
                             </center>
                         </BorderPane>
-                        <BorderPane id="choice-box"
-                                    GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <BorderPane id="choice-box" fx:id="fD" GridPane.columnIndex="2" GridPane.rowIndex="2">
                             <left>
                                 <StackPane prefHeight="106.0" prefWidth="80.0">
                                     <children>
-                                        <Label id="text-box" text="D"/>
+                                        <Label id="text-box" text="D" />
                                     </children>
                                 </StackPane>
                             </left>
                             <center>
-                                <Text fx:id="ansD" BorderPane.alignment="CENTER"/>
+                                <Text fx:id="ansD" BorderPane.alignment="CENTER" />
                             </center>
                         </BorderPane>
                     </children>
                 </GridPane>
             </bottom>
             <center>
-                <StackPane id="question-box" BorderPane.alignment="CENTER">
+                <StackPane id="question-box" fx:id="fQ" BorderPane.alignment="CENTER">
                     <children>
-                        <Text fx:id="question" wrappingWidth="720"/>
+                        <Text fx:id="question" wrappingWidth="720" />
                     </children>
                 </StackPane>
             </center>
 
         </BorderPane>
-        <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true"
-                 points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 192.79998779296875, 36.80000305175781"
-                 stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false"/>
-        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500"
-                    prefWidth="500" visible="false"/>
+        <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true" points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 192.79998779296875, 36.80000305175781" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false" />
+        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500" prefWidth="500" visible="false" />
     </children>
 </AnchorPane>

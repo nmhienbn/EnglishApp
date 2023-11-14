@@ -3,6 +3,7 @@ package views.controllers;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -11,12 +12,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Polygon;
 import views.animations.GameAnimations;
-import views.wordle.GameNotification;
-import views.wordle.MainCatchWord;
+import views.games.GameNotification;
+import views.games.MainCatchWord;
 
 import java.util.ArrayList;
 
-public class CTW_ctrl extends Game_ctrl{
+public class CTW_ctrl extends Game_ctrl {
     private final MainCatchWord mainCTW = MainCatchWord.getInstance();
 
     @FXML
@@ -116,6 +117,6 @@ public class CTW_ctrl extends Game_ctrl{
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
         GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
-                new String[]{"               You won! \n The word you need to catch was", ""});
+                new String[]{"The word you need to catch was", ""});
     }
 }

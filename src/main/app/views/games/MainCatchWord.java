@@ -1,4 +1,4 @@
-package views.wordle;
+package views.games;
 
 import edu.princeton.cs.algs4.StdRandom;
 import javafx.scene.control.Label;
@@ -88,6 +88,14 @@ public class MainCatchWord extends Game {
     }
 
     @Override
+    protected void onMouseEntered(Label label) {
+        if (ctw_ctrl.notificationPane.isVisible()) {
+            return;
+        }
+        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+    }
+
+    @Override
     protected void resetTitle(GridPane gridPane, int row, int col) {
         setLabelText(gridPane, row, col, "");
     }
@@ -98,8 +106,8 @@ public class MainCatchWord extends Game {
         if (Objects.equals(getLabelText(gridPane, 1, CURRENT_COLUMN), "")) {
             setLabelText(gridPane, 1, CURRENT_COLUMN, letter);
             Label label = getLabel(gridPane, 1, CURRENT_COLUMN);
-            GameAnimations.scaleTrans(label, 1, 1.3).play();
-            GameAnimations.scaleTrans(label, 1.3, 1).play();
+            GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
+            GameAnimations.scaleTrans(label, 1.3, 1, 150).play();
             setLabelStyleClass(gridPane, 1, CURRENT_COLUMN, "tile-with-letter");
             if (CURRENT_COLUMN < MAX_COLUMN) {
                 CURRENT_COLUMN++;
