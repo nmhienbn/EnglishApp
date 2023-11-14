@@ -1,5 +1,6 @@
-package views.wordle;
+package views.games;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -13,7 +14,7 @@ import views.controllers.Quizz_ctrl;
 
 import static views.controllers.Quizz_ctrl.QUESTIONS;
 
-public class MainQuizz {
+public class MainQuizz extends Game {
     protected static MainQuizz instance = null;
     public Quizz_ctrl quizz_ctrl = null;
 
@@ -40,10 +41,32 @@ public class MainQuizz {
     private int now_level = 0;
 
     public void createGameTitle(HBox titleHBox) {
-        Label label = new Label("QUIZZ");
+        Label label = new Label("QUIZZ NIGHT");
         label.getStyleClass().add("default-tile");
         titleHBox.getChildren().add(label);
     }
+
+    @Override
+    protected void resetTitle(GridPane gridPane, int row, int col) {
+
+    }
+
+    @Override
+    protected void onLetterChosen(GridPane gridPane, String letter) {
+
+    }
+
+    @Override
+    protected void onBackspaceChosen(GridPane gridPane) {
+
+    }
+
+    @Override
+    protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
+
+    }
+
+    private boolean isScaled = false;
 
     /**
      * Creates the keyboard for the game
@@ -54,14 +77,21 @@ public class MainQuizz {
         for (Node node : gridPane.getChildren()) {
             if (node instanceof BorderPane borderPane) {
                 borderPane.setOnMouseEntered(event -> {
-                    borderPane.toFront();
-                    ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1, 1.15);
-                    scaleTransition.play();
+                    if (!quizz_ctrl.notificationPane.isVisible()) {
+                        borderPane.toFront();
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1, 1.15, 150);
+                        scaleTransition.play();
+                        isScaled = true;
+                    }
                 });
                 borderPane.setOnMouseExited(event -> {
-                    borderPane.toFront();
-                    ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1.15, 1);
-                    scaleTransition.play();
+                    if (isScaled) {
+                        isScaled = false;
+                        borderPane.toFront();
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1.15, 1, 150);
+                        scaleTransition.play();
+                    }
+
                 });
                 borderPane.setOnMouseClicked(event -> onClickedChoice(borderPane));
             }
