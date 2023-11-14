@@ -58,10 +58,18 @@ public class TestAPI {
     }
 
     public static void testEditWord(String word, String meaning) {
+        if (wordSet.dictionaryLookup(word) == null) {
+            System.out.println("Word does not exists");
+            return;
+        }
         wordSet.dictionaryEditWord(word, meaning);
     }
 
     public static void testRemoveWord(String word) {
+        if (wordSet.dictionaryLookup(word) == null) {
+            System.out.println("Word does not exists");
+            return;
+        }
         wordSet.dictionaryRemoveWord(word);
     }
 
