@@ -102,6 +102,7 @@ public class mainPanel_ctrl {
         ctwTab_ctrl = new CTW_ctrl();
         ctw_tab = File_loader.getInstance().fxml_ctw_Tab(ctwTab_ctrl);
 
+        //mainPane.setCenter(home_tab);
         OnButtonPress(home_button);
     }
 
@@ -132,6 +133,7 @@ public class mainPanel_ctrl {
         }
         focused_button = button;
         focused_button.getStyleClass().add("focused");
+        focused_button.getGraphic().setEffect(null);
 
         if (button == home_button)
             mainPane.setCenter(home_tab);
