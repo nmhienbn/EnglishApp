@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Dictionary implements DictionaryInterface {
 
     private static Dictionary instance = null;
+
     /**
      * Singleton.
      */
@@ -17,6 +18,7 @@ public class Dictionary implements DictionaryInterface {
     }
 
     Trie trie;
+
     Dictionary() {
         trie = new Trie();
     }
@@ -59,7 +61,7 @@ public class Dictionary implements DictionaryInterface {
         ArrayList<Word> words = trie.queryAllWords();
 
         for (Word word : words) {
-            System.out.printf("%s\t%s\n", word.getWordTarget(), word.getWordExplain());
+            System.out.printf("%s\t%s\n", word.getWordTarget(), word.getWordExplain().replaceAll("\n", "\\\\"));
         }
     }
 
