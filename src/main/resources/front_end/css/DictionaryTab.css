@@ -57,6 +57,10 @@
     -fx-opacity: 1;
 }
 
+.list-cell:empty {
+    -fx-opacity: 0;
+}
+
 .function-button {
     -fx-background-color: transparent;
 }

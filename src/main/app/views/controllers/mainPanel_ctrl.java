@@ -102,8 +102,7 @@ public class mainPanel_ctrl {
         ctwTab_ctrl = new CTW_ctrl();
         ctw_tab = File_loader.getInstance().fxml_ctw_Tab(ctwTab_ctrl);
 
-        mainPane.setCenter(home_tab);
-
+        OnButtonPress(home_button);
     }
 
     private void config_nav_button(Button button) {
@@ -122,7 +121,7 @@ public class mainPanel_ctrl {
     }
 
     private void OnButtonPress(Button button) {
-        System.out.println("press: " + button.getText());
+        System.out.println("choose tab: " + button.getTooltip().getText());
         if (focused_button == button) {
             return;
         }
@@ -143,8 +142,7 @@ public class mainPanel_ctrl {
         else if (button == quizz) {
             mainPane.setCenter(quizz_tab);
             quizz_ctrl.showStartGame();
-        }
-        else if (button == wordle_button) {
+        } else if (button == wordle_button) {
             mainPane.setCenter(wordle_tab);
             wordleTab_ctrl.gridRequestFocus();
             wordleTab_ctrl.showStartGame();
