@@ -13,77 +13,86 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Polygon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../css/wordle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
+            stylesheets="@../css/wordle.css" xmlns="http://javafx.com/javafx/20.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="main-screen" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="main-screen" AnchorPane.bottomAnchor="15.0"
+                    AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
 
             <top>
                 <VBox alignment="TOP_CENTER" minWidth="480.0">
 
                     <HBox alignment="CENTER">
                         <padding>
-                            <Insets bottom="8" left="30" />
+                            <Insets bottom="8" left="30"/>
                         </padding>
-                        <Button fx:id="helpButton" onMouseClicked="#showHelp" prefHeight="40" prefWidth="40" />
+                        <ImageView fx:id="helpButton" accessibleRole="BUTTON" onMouseClicked="#showHelp" fitHeight="50" fitWidth="50"
+                                   pickOnBounds="true" preserveRatio="true"/>
                         <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
                             <padding>
-                                <Insets bottom="8" left="27" right="30" />
+                                <Insets bottom="8" left="27" right="30"/>
                             </padding>
                         </HBox>
-                        <Button fx:id="restartButton" onMouseClicked="#restart" prefHeight="40" prefWidth="40" />
-
+                        <ImageView fx:id="restartButton" accessibleRole="BUTTON" onMouseClicked="#restart" fitHeight="50" fitWidth="50"
+                                   pickOnBounds="true" preserveRatio="true"/>
                         <padding>
-                            <Insets right="35" />
+                            <Insets right="35"/>
                         </padding>
                     </HBox>
                 </VBox>
             </top>
 
             <center>
-            <VBox>
-               <BorderPane.margin>
-                  <Insets bottom="15.0" />
-               </BorderPane.margin>
-               <children>
-                  <StackPane>
-                     <children>
-                        <ImageView fx:id="ImageAns" fitHeight="266.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </StackPane>
-                      <GridPane fx:id="gridPane" alignment="CENTER" focusTraversable="true" hgap="5" onKeyPressed="#onKeyPressed" prefHeight="83.0" prefWidth="780.0" vgap="5">
-                          <columnConstraints>
-                              <ColumnConstraints />
-                              <ColumnConstraints />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints />
-                              <RowConstraints />
-                          </rowConstraints>
-                      </GridPane>
-               </children>
-            </VBox>
+                <VBox>
+                    <BorderPane.margin>
+                        <Insets bottom="15.0"/>
+                    </BorderPane.margin>
+                    <children>
+                        <StackPane>
+                            <children>
+                                <ImageView fx:id="ImageAns" fitHeight="266.0" fitWidth="780.0" pickOnBounds="true"
+                                           preserveRatio="true"/>
+                            </children>
+                        </StackPane>
+                        <GridPane fx:id="gridPane" alignment="CENTER" focusTraversable="true" hgap="5"
+                                  onKeyPressed="#onKeyPressed" prefHeight="83.0" prefWidth="780.0" vgap="5">
+                            <columnConstraints>
+                                <ColumnConstraints/>
+                                <ColumnConstraints/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </VBox>
             </center>
 
             <bottom>
                 <VBox>
                     <GridPane fx:id="keyboardRow1" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
                         <padding>
-                            <Insets top="10.0" />
+                            <Insets top="10.0"/>
                         </padding>
                     </GridPane>
 
-                    <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="2" />
+                    <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="2"/>
 
                     <GridPane fx:id="keyboardRow3" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
                         <padding>
-                            <Insets bottom="10.0" />
+                            <Insets bottom="10.0"/>
                         </padding>
                     </GridPane>
                 </VBox>
             </bottom>
 
         </BorderPane>
-        <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true" points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 113.60000610351562, 40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false" />
-        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500" prefWidth="500" visible="false" />
+        <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true"
+                 points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 113.60000610351562, 40.0"
+                 stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false"/>
+        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500"
+                    prefWidth="500" visible="false"/>
     </children>
 </AnchorPane>

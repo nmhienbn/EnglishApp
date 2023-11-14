@@ -7,6 +7,8 @@ import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -51,7 +53,7 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public HBox titleHBox;
     @FXML
-    public Button restartButton;
+    public ImageView restartButton;
 
     @FXML
     public BorderPane notificationPane;
@@ -66,10 +68,8 @@ public class Quizz_ctrl extends Game_ctrl {
         initializeQuizzLists();
         createUI();
         mainQuizz.quizz_ctrl = this;
-        restartButton.setTooltip(new Tooltip("Another Question"));
-        restartButton.setStyle("-fx-background-image: url(/game/images/restart.png); " +
-                "-fx-background-size: 40 40;-fx-background-radius: 50%");
-        config_nav_button(restartButton);
+        restartButton.setImage(new Image("/game/images/restart.png"));
+        setTooltip(restartButton, "Restart");
     }
 
     @FXML

@@ -37,7 +37,7 @@ public class GameNotification {
                                            String[] messages) {
         mainPane.setPrefWidth(400);
         mainPane.setPrefHeight(300);
-        mainPane.setLayoutX(200);
+        mainPane.setLayoutX(300);
         mainPane.setLayoutY(100);
         mainPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         VBox vbox = new VBox(15);
@@ -117,7 +117,7 @@ public class GameNotification {
     public static void instructionNotification(BorderPane helpPane) {
         helpPane.setPrefWidth(500);
         helpPane.setPrefHeight(500);
-        helpPane.setLayoutX(150);
+        helpPane.setLayoutX(250);
         helpPane.setLayoutY(80);
         VBox vbox = new VBox(5);
         vbox.setPadding(new Insets(0, 0, 0, 0));
@@ -189,7 +189,7 @@ public class GameNotification {
     public static void showNotification(BorderPane notificationPane, String notification) {
         notificationPane.setPrefWidth(200);
         notificationPane.setPrefHeight(100);
-        notificationPane.setLayoutX(300);
+        notificationPane.setLayoutX(400);
         notificationPane.setLayoutY(250);
         notificationPane.setOpacity(0);
         notificationPane.setVisible(true);

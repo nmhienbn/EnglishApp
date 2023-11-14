@@ -1,9 +1,0 @@
-.application-tab {
-    -fx-pref-width: 600;
-    -fx-pref-height: 600;
-}
-
-.application-tab.home-tab {
-    -fx-padding: 100px 100px 100px 100px;
-
-}
