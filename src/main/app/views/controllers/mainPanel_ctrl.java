@@ -147,9 +147,11 @@ public class mainPanel_ctrl {
         else if (button == wordle_button) {
             mainPane.setCenter(wordle_tab);
             wordleTab_ctrl.gridRequestFocus();
+            wordleTab_ctrl.showStartGame();
         } else if (button == ctw_button) {
             mainPane.setCenter(ctw_tab);
             ctwTab_ctrl.gridRequestFocus();
+            ctwTab_ctrl.showStartGame();
         }
     }
 
