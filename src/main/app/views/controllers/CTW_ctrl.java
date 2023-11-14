@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -33,11 +34,11 @@ public class CTW_ctrl extends Game_ctrl {
     public GridPane keyboardRow3;
     public GridPane[] keyboardRows;
     @FXML
-    public Button helpButton;
+    public ImageView helpButton;
     @FXML
     public HBox titleHBox;
     @FXML
-    public Button restartButton;
+    public ImageView restartButton;
     @FXML
     public BorderPane notificationPane;
     @FXML
@@ -52,14 +53,10 @@ public class CTW_ctrl extends Game_ctrl {
         createUI();
         mainCTW.ctw_ctrl = this;
         GameNotification.ctw_ctrl = this;
-        helpButton.setTooltip(new Tooltip("Instructions"));
-        helpButton.setStyle("-fx-background-image: url(/game/images/help.png); " +
-                "-fx-background-size: 40 40;-fx-background-radius: 50%");
-        config_nav_button(helpButton);
-        restartButton.setTooltip(new Tooltip("Restart"));
-        restartButton.setStyle("-fx-background-image: url(/game/images/restart.png); " +
-                "-fx-background-size: 40 40;-fx-background-radius: 50%");
-        config_nav_button(restartButton);
+        helpButton.setImage(new Image("/game/images/help.png"));
+        setTooltip(helpButton, "Instructions");
+        restartButton.setImage(new Image("/game/images/restart.png"));
+        setTooltip(restartButton, "Restart");
     }
 
     @FXML

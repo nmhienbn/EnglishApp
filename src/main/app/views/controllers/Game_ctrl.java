@@ -4,6 +4,7 @@ import javafx.animation.SequentialTransition;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import views.animations.GameAnimations;
 
@@ -25,14 +26,15 @@ public abstract class Game_ctrl {
     }
 
 
-    protected void config_nav_button(Button button) {
-        Tooltip tt = button.getTooltip();
+    protected void setTooltip(ImageView img, String text) {
+        Tooltip tt = new Tooltip(text);
+        Tooltip.install(img, tt);
         tt.setShowDelay(new Duration(.1));
         tt.setOnShown(s -> {
-            //Get button current bounds on computer screen
-            Bounds bounds = button.localToScreen(button.getBoundsInLocal());
-            button.getTooltip().setX(bounds.getMaxX() - tt.getWidth() / 2);
-            button.getTooltip().setY(bounds.getMaxY() + 5);
+            //Get img current bounds on computer screen
+            Bounds bounds = img.localToScreen(img.getBoundsInLocal());
+            tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
+            tt.setY(bounds.getMaxY() + 5);
         });
         tt.getStyleClass().add("navbutton-tooltip");
     }

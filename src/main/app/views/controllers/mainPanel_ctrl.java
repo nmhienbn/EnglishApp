@@ -71,19 +71,12 @@ public class mainPanel_ctrl {
         ani.setAutoReverse(true);
         ani.play();
 
-        home_button.setTooltip(new Tooltip("Home"));
-        main_dictionary_button.setTooltip(new Tooltip("Main dictionary"));
-        google_translate_button.setTooltip(new Tooltip("Google translator"));
-        quizz.setTooltip(new Tooltip("Quizz game"));
-        wordle_button.setTooltip(new Tooltip("Wordle game"));
-        ctw_button.setTooltip(new Tooltip("Catch the word game"));
-
-        config_nav_button(home_button);
-        config_nav_button(main_dictionary_button);
-        config_nav_button(google_translate_button);
-        config_nav_button(quizz);
-        config_nav_button(wordle_button);
-        config_nav_button(ctw_button);
+        setNavButton(home_button, "Home");
+        setNavButton(main_dictionary_button, "Main Dictionary");
+        setNavButton(google_translate_button, "Google Translate");
+        setNavButton(quizz, "Quizz");
+        setNavButton(wordle_button, "Wordle");
+        setNavButton(ctw_button, "CTW");
 
         setButton(home_button, "/front_end/graphic/icons/home.gif", 2000);
         setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 2000);
@@ -106,17 +99,18 @@ public class mainPanel_ctrl {
         OnButtonPress(home_button);
     }
 
-    private void config_nav_button(Button button) {
+    private void setNavButton(Button button, String text) {
+        Tooltip tt = new Tooltip(text);
         button.setOnAction(e -> {
             OnButtonPress(button);
         });
-        Tooltip tt = button.getTooltip();
+        button.setTooltip(tt);
         tt.setShowDelay(new Duration(.1));
         tt.setOnShown(s -> {
             //Get button current bounds on computer screen
             Bounds bounds = button.localToScreen(button.getBoundsInLocal());
-            button.getTooltip().setX(bounds.getMaxX() - 5);
-            button.getTooltip().setY(bounds.getCenterY() - tt.getHeight() / 2);
+            tt.setX(bounds.getMaxX() - 5);
+            tt.setY(bounds.getCenterY() - tt.getHeight() / 2);
         });
         tt.getStyleClass().add("navbutton-tooltip");
     }
