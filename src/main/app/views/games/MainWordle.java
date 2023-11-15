@@ -72,7 +72,8 @@ public class MainWordle extends Game{
         if (wordleTab_ctrl.notificationPane.isVisible()) {
             return;
         }
-        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+        label.toFront();
+        label.setStyle("-fx-border-color: BLUE;");
     }
 
     /**
