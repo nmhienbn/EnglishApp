@@ -4,10 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
 import views.controllers.Quizz_ctrl;
@@ -75,25 +72,25 @@ public class MainQuizz extends Game {
      */
     public void createGrid(GridPane gridPane) {
         for (Node node : gridPane.getChildren()) {
-            if (node instanceof BorderPane borderPane) {
-                borderPane.setOnMouseEntered(event -> {
-                    if (!quizz_ctrl.notificationPane.isVisible()) {
-                        borderPane.toFront();
-                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1, 1.15, 150);
+            if (node instanceof AnchorPane anchorPane) {
+                anchorPane.setOnMouseEntered(event -> {
+                    if (!quizz_ctrl.notificationPane.isVisible() && !isScaled) {
+                        anchorPane.toFront();
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1, 1.15, 150);
                         scaleTransition.play();
                         isScaled = true;
                     }
                 });
-                borderPane.setOnMouseExited(event -> {
+                anchorPane.setOnMouseExited(event -> {
                     if (isScaled) {
                         isScaled = false;
-                        borderPane.toFront();
-                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(borderPane, 1.15, 1, 150);
+                        anchorPane.toFront();
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1.15, 1, 150);
                         scaleTransition.play();
                     }
 
                 });
-                borderPane.setOnMouseClicked(event -> onClickedChoice(borderPane));
+                anchorPane.setOnMouseClicked(event -> onClickedChoice(anchorPane));
             }
         }
     }
@@ -109,9 +106,9 @@ public class MainQuizz extends Game {
         answer = quizz.answer;
     }
 
-    private void onClickedChoice(BorderPane borderPane) {
-        if (borderPane.getLeft() instanceof StackPane stackPane) {
-            if (stackPane.getChildren().get(0) instanceof Label label) {
+    private void onClickedChoice(AnchorPane anchorPane) {
+        for (Node node : anchorPane.getChildren()) {
+            if (node instanceof Label label) {
                 quizz_ctrl.showEndGameWindow(label.getText().equals(answer), answer);
             }
         }
