@@ -12,37 +12,20 @@
 }
 
 #choice-box {
-    -fx-background-color: white;
-    -fx-border-color: -unlocked-border-color;
-    -fx-text-fill: -text-fill-color;
     -fx-font-size: 25px;
+    -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-border-width: 1px;
-    -fx-border-radius: 40;
-    -fx-background-radius: 40;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
-    -fx-max-width: Infinity;
-    -fx-max-height: Infinity;
-    -fx-pref-width: 350;
-    -fx-pref-height: 110;
 }
 
 #text-box {
-    -fx-background-color: pink;
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-    -fx-border-color: -key-background-color;
-    -fx-border-width: 5px;
-    -fx-alignment: center;
-    -fx-pref-width: 110;
-    -fx-pref-height: 110;
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
 }
 
 #question-box {
-    -fx-background-color: white;
-    -fx-border-color: -empty-border-color;
-    -fx-text-fill: -text-fill-color;
+    -fx-background-color: whitesmoke;
     -fx-font-size: 25px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;
