@@ -11,10 +11,7 @@
     -selected-color: blue;
 }
 
-.default-tile {
-    -fx-background-color: -background-color;
-    -fx-border-color: -empty-border-color;
-    -fx-text-fill: -text-fill-color;
+.present-letter, .wrong-letter, .correct-letter, .grid-pane, .default-tile {
     -fx-font-size: 30px;
     -fx-font-weight: bold;
     -fx-border-width: 2px;
@@ -28,21 +25,16 @@
     -fx-alignment: center;
 }
 
+.default-tile {
+    -fx-background-color: -background-color;
+    -fx-border-color: -empty-border-color;
+    -fx-text-fill: -text-fill-color;
+}
+
 .grid-pane {
     -fx-background-color: -background-color;
     -fx-border-color: -empty-border-color;
     -fx-text-fill: -text-fill-color;
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 62px;
-    -fx-min-height: 62px;
-    -fx-pref-width: 65px;
-    -fx-pref-height: 65px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .tile-with-letter {
@@ -53,51 +45,18 @@
     -fx-background-color: -present-color;
     -fx-border-color: -present-color;
     -fx-text-fill: white;
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 62px;
-    -fx-min-height: 62px;
-    -fx-pref-width: 65px;
-    -fx-pref-height: 65px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .wrong-letter {
     -fx-background-color: -wrong-color;
     -fx-border-color: -wrong-color;
     -fx-text-fill: white;
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 62px;
-    -fx-min-height: 62px;
-    -fx-pref-width: 65px;
-    -fx-pref-height: 65px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .correct-letter {
     -fx-background-color: -correct-color;
     -fx-border-color: -correct-color;
     -fx-text-fill: white;
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 62px;
-    -fx-min-height: 62px;
-    -fx-pref-width: 65px;
-    -fx-pref-height: 65px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .main-screen {
@@ -105,52 +64,36 @@
     -fx-padding: 10px;
 }
 
-.keyboardTile {
-    -fx-background-color: -key-background-color;
-    -fx-text-fill: -text-fill-color;
-    -fx-font-size: 13px;
+.keyboardTile, .keyboardCorrectColor, .keyboardPresentColor, .keyboardWrongColor {
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-min-width: 43px;
     -fx-min-height: 58px;
     -fx-text-alignment: center;
     -fx-alignment: center;
     -fx-background-radius: 4px;
+
+    -fx-border-width: 5;
+    -fx-border-radius: 5;
+    -fx-border-insets: -5;
+}
+
+.keyboardTile {
+    -fx-background-color: -key-background-color;
+    -fx-text-fill: -text-fill-color;
 }
 
 .keyboardCorrectColor {
     -fx-background-color: -correct-color;
-    -fx-text-fill: white;
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-    -fx-min-width: 43px;
-    -fx-min-height: 58px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
-    -fx-background-radius: 4px;
 }
 
 .keyboardPresentColor {
     -fx-background-color: -present-color;
-    -fx-text-fill: white;
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-    -fx-min-width: 43px;
-    -fx-min-height: 58px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
-    -fx-background-radius: 4px;
 }
 
 .keyboardWrongColor {
     -fx-background-color: -wrong-color;
     -fx-text-fill: white;
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-    -fx-min-width: 43px;
-    -fx-min-height: 58px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
-    -fx-background-radius: 4px;
 }
 
 .keyboardTileSymbol {
@@ -162,6 +105,10 @@
     -fx-text-alignment: center;
     -fx-alignment: center;
     -fx-background-radius: 4px;
+
+    -fx-border-width: 5;
+    -fx-border-radius: 5;
+    -fx-border-insets: -5;
 }
 
 .big-font {
@@ -173,10 +120,7 @@
     -fx-pref-width: 20;
 }
 
-.correct-letter-example {
-    -fx-background-color: -correct-color;
-    -fx-border-color: -correct-color;
-    -fx-text-fill: white;
+.correct-letter-example, .wrong-letter-example, .present-letter-example, .default-letter-example {
     -fx-font-size: 27px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;
@@ -188,55 +132,42 @@
     -fx-pref-height: 45px;
     -fx-text-alignment: center;
     -fx-alignment: center;
+}
+
+.correct-letter-example {
+    -fx-background-color: -correct-color;
+    -fx-border-color: -correct-color;
+    -fx-text-fill: white;
 }
 
 .default-letter-example {
     -fx-background-color: -background-color;
     -fx-border-color: -empty-border-color;
     -fx-text-fill: -text-fill-color;
-    -fx-font-size: 27px;
-    -fx-font-weight: bold;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 45px;
-    -fx-min-height: 45px;
-    -fx-pref-width: 45px;
-    -fx-pref-height: 45px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .present-letter-example {
     -fx-background-color: -present-color;
     -fx-border-color: -present-color;
     -fx-text-fill: white;
-    -fx-font-size: 27px;
-    -fx-font-weight: bold;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 45px;
-    -fx-min-height: 45px;
-    -fx-pref-width: 45px;
-    -fx-pref-height: 45px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .wrong-letter-example {
     -fx-background-color: -wrong-color;
     -fx-border-color: -wrong-color;
     -fx-text-fill: white;
-    -fx-font-size: 27px;
+}
+
+.ctw-example, .ctw-default-tile {
+    -fx-font-size: 25px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-min-width: 45px;
-    -fx-min-height: 45px;
-    -fx-pref-width: 45px;
-    -fx-pref-height: 45px;
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
     -fx-text-alignment: center;
     -fx-alignment: center;
 }
@@ -245,32 +176,10 @@
     -fx-background-color: -correct-color;
     -fx-border-color: black;
     -fx-text-fill: white;
-    -fx-font-size: 25px;
-    -fx-font-weight: bold;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 35px;
-    -fx-min-height: 35px;
-    -fx-pref-width: 35px;
-    -fx-pref-height: 35px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
 
 .ctw-default-tile {
     -fx-background-color: -background-color;
     -fx-border-color: -empty-border-color;
     -fx-text-fill: -text-fill-color;
-    -fx-font-size: 25px;
-    -fx-font-weight: bold;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-min-width: 35px;
-    -fx-min-height: 35px;
-    -fx-pref-width: 35px;
-    -fx-pref-height: 35px;
-    -fx-text-alignment: center;
-    -fx-alignment: center;
 }
