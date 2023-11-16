@@ -2,15 +2,29 @@ package views.controllers;
 
 import java.util.ArrayList;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import views.TestAPI;
 
 public class mainDictionaryTab_ctrl {
 
-    final int MAX_WORD_FIND = 50;
+    final int MAX_WORD_FIND = 100;
 
     @FXML
     private Button search_button;
@@ -38,6 +52,8 @@ public class mainDictionaryTab_ctrl {
     private TextArea wifa_meaning;
     @FXML
     private Label wifa_word;
+
+    boolean is_editing = false;
 
     @FXML
     void initialize() {
@@ -89,9 +105,74 @@ public class mainDictionaryTab_ctrl {
         add_word_button.setOnAction(e -> {
             TestAPI.testAddWord("test add word", "test meaning");
         });
-        remove_word_button.setOnAction(e -> {
-            TestAPI.testRemoveWord("test add word");
+
+        edit_word_button.setOnAction(e -> {
+            if (!is_editing) try_start_edit_word();
+            else finish_edit_word();
         });
+
+        wifa_meaning.focusedProperty().addListener((ov, oldV, newV) -> {
+            if (!newV) { // focus lost
+                //wifa_meaning.requestFocus();
+                if (is_editing) finish_edit_word();
+            }
+        });
+
+
+        remove_word_button.setOnAction(e -> {
+            try_remove_word();
+        });
+    }
+
+    private void popup_word_not_exist(String word) {
+        Popup popup = new Popup();
+        popup.setAutoHide(true);
+        Label label = new Label("Error: Word does not exists");
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setAlignment(javafx.geometry.Pos.CENTER);
+        label.setFont(new Font(25));
+        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
+        label.setPrefSize(400, 100);
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(1));
+        delay.setOnFinished(event -> popup.hide());
+        delay.play();
+
+        popup.getContent().add(label);
+        popup.show(wifa_word.getScene().getWindow());
+        System.out.println("Word does not exists, WORD: \"" + word + "\"");
+    }
+
+    private void try_start_edit_word() {
+        String word = wifa_word.getText();
+        if (word == null || word.isEmpty()) return;
+        if (!TestAPI.dictionaryContainWord(word)) {
+            popup_word_not_exist(word);
+            return;
+        }
+        System.out.println("start edit word: " + word);
+        is_editing = true;
+        wifa_meaning.setEditable(true);
+        wifa_meaning.requestFocus();
+    }
+
+    private void finish_edit_word() {
+        System.out.println("finish edit word: " + wifa_word.getText());
+        is_editing = false;
+        wifa_meaning.setEditable(false);
+        String meaning = wifa_meaning.getText();
+        TestAPI.testEditWord(wifa_word.getText(), meaning);
+    }
+
+    private void try_remove_word() {
+        if (wifa_word.getText() == null && wifa_word.getText().isEmpty()) return;
+        if (!TestAPI.dictionaryContainWord(wifa_word.getText())) {
+            popup_word_not_exist(wifa_word.getText());
+            return;
+        }
+        System.out.println("remove word: " + wifa_word.getText());
+        TestAPI.testRemoveWord(wifa_word.getText());
+        update_wordlist();
     }
 
     private void update_wordlist() {
@@ -100,18 +181,6 @@ public class mainDictionaryTab_ctrl {
             ArrayList<String> wordlist = TestAPI.getword(search_box.getText());
             int count = 0;
             for (String word : wordlist) {
-                /*
-                Button word_button = new Button();
-                word_button.prefWidthProperty().bind(word_list_box.widthProperty());
-                word_button.maxWidthProperty().bind(word_list_box.widthProperty());
-                word_button.setMinHeight(50);
-                word_button.setMaxHeight(50);
-                word_button.setText(word);
-                word_button.setOnAction(e -> {
-                    on_choose_word(word);
-                });
-
-                word_list_box.getItems().add(word_button);*/
                 word_list_box.getItems().add(word);
 
                 count++;
@@ -125,10 +194,9 @@ public class mainDictionaryTab_ctrl {
     }
 
     private void on_choose_word(String word) {
+        if (word == null) return;
         //System.out.println("choose word: " + word);
         wifa_meaning.setText(TestAPI.getWordMeaning(word));
-        //System.out.println(TestAPI.getWordMeaning(word));
         wifa_word.setText(word);
     }
-
 }

@@ -17,18 +17,25 @@
     -fx-background-size: 40 40;
 }
 
+#speak-button {
+    -fx-background-image: url(../graphic/icons/speak.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 30;
+}
+
 #edit-button {
     -fx-background-image: url(../graphic/icons/edit.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 30;
 }
 
 #remove-button {
     -fx-background-image: url(../graphic/icons/delete.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 30;
 }
 
 #history-button {
@@ -55,7 +62,11 @@
     -fx-text-fill: black;
     -fx-background-color: transparent;
     -fx-opacity: 1;
+
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent
 }
+
 
 .list-cell:empty {
     -fx-opacity: 0;
@@ -63,7 +74,17 @@
 
 .function-button {
     -fx-background-color: transparent;
+    -fx-opacity: 0.5;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
+
+.function-button:hover {
+    -fx-background-color: white3;
+}
+
+.function-button .pressed {}
 
 .scroll-pane {
     -fx-background-color: transparent;

@@ -49,6 +49,10 @@ public class TestAPI {
         }
     }
 
+    public static boolean dictionaryContainWord(String word) {
+        return wordSet.dictionaryLookup(word) != null;
+    }
+
     public static void testAddWord(String word, String meaning) {
         if (wordSet.dictionaryLookup(word) != null) {
             System.out.println("Word already exists");
