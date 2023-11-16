@@ -125,15 +125,7 @@ public class mainDictionaryTab_ctrl {
 
         add_word_button.setOnAction(e -> try_add_word());
 
-        favorite_toggle_button.setOnAction(e -> {
-            if (favorite_toggle_button.isSelected()) {
-                System.out.println("favorite selected");
-                //TestAPI.addFavoriteWord(wifa_word.getText());
-            } else {
-                System.out.println("favorite unselected");
-                //TestAPI.removeFavoriteWord(wifa_word.getText());
-            }
-        });
+        favorite_toggle_button.setOnAction(e -> toggle_favorite());
     }
 
     private void init_toggle_button() {
@@ -295,6 +287,20 @@ public class mainDictionaryTab_ctrl {
         update_wordlist();
     }
 
+    private void toggle_favorite() {
+        System.out.println("action toggle favorite called");
+        String word = wifa_word.getText();
+        if (favorite_toggle_button.isSelected()) {
+            if (word == null || word.isEmpty() || !TestAPI.dictionaryContainWord(word)) {
+                favorite_toggle_button.setSelected(false);
+                return;
+            }
+            TestAPI.addFavoriteWord(word);
+        } else {
+            TestAPI.removeFavoriteWord(word);
+        }
+    }
+
     private void update_wordlist() {
         word_list_box.getItems().clear();
         ArrayList<String> wordlist = new ArrayList<>();
@@ -332,6 +338,10 @@ public class mainDictionaryTab_ctrl {
     private void on_choose_word(String word) {
         if (word == null) return;
         //System.out.println("choose word: " + word);
+        if (TestAPI.isFavoriteWord(word))
+            favorite_toggle_button.setSelected(true);
+        else
+            favorite_toggle_button.setSelected(false);
         wifa_meaning.setText(TestAPI.getWordMeaning(word));
         wifa_word.setText(word);
         if (SHF_group.getSelectedToggle() != history_button)

@@ -39,7 +39,7 @@
                   <Button fx:id="speak_button1" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="60.0" styleClass="speak_button" />
                </children>
             </HBox>
-            <Line endX="970.0" endY="40.0" startY="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+            <Line endX="970.0" endY="40.0" startY="40.0" styleClass="line" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="15.0" layoutY="381.0" prefHeight="300.0" prefWidth="435.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
@@ -62,7 +62,7 @@
                   <Button fx:id="speak_button2" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="60.0" styleClass="speak_button" />
                </children>
             </HBox>
-            <Line endX="970.0" endY="40.0" startY="40.0" />
+            <Line endX="970.0" endY="40.0" startY="40.0" styleClass="line" />
          </children>
       </AnchorPane>
    </children>

@@ -21,7 +21,7 @@
     -fx-background-position: 7% 60%;
 
     -fx-background-color: white0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 1, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .1, 0, 0, 0);
 }
 
 #translate_button {
@@ -31,12 +31,12 @@
     -fx-background-position: 10% 50%;
 
     -fx-background-color: nav_color0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 1, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .1, 0, 0, 0);
 }
 
 .textwindow {
     -fx-background-color: white0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 2, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .2, 0, 0, 0);
 
 }
 
