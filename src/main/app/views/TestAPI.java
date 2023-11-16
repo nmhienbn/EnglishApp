@@ -4,11 +4,88 @@ import controllers.DictionaryManagement;
 import controllers.googleapi.GoogleTranslate;
 import models.Word;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class TestAPI {
-    private static DictionaryManagement wordSet = DictionaryManagement.getInstance();
+    public static void Init() {
+        LoadDict(false);
+        LoadFavoriteWords();
+    }
+
+    public static void Shutdown() {
+        SaveDict();
+        SaveFavoriteWords();
+    }
+
+
+    private static final HashSet<String> favoriteWords = new HashSet<>();
+    private static final DictionaryManagement wordSet = DictionaryManagement.getInstance();
+    private static final String favoriteWordsPath = TestAPI.class.getClassLoader().getResource("models/favorite_words.txt").getPath();
+    private static final Queue<String> search_history = new LinkedList<>();
+    private static final int MAX_SEARCH_HISTORY = 50;
+
+    private static void LoadFavoriteWords() {
+        //TODO load favorite words from file
+
+        try (Scanner cin = new Scanner(new FileReader(favoriteWordsPath))) {
+            while (cin.hasNextLine()) {
+                String word = cin.nextLine();
+                favoriteWords.add(word);
+            }
+            cin.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    private static void SaveFavoriteWords() {
+        try {
+            PrintStream fileOutputStream = new PrintStream(new FileOutputStream(favoriteWordsPath));
+            System.setOut(fileOutputStream); // Redirect System.out to the file
+
+            for (String word : favoriteWords) {
+                System.out.println(word);
+            }
+            // Close the fileOutputStream
+            fileOutputStream.close();
+            // You can restore the original System.out like this:
+            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //TODO save favorite words to file
+    }
+
+    public static boolean isFavoriteWord(String word) {
+        return favoriteWords.contains(word);
+    }
+
+    public static void addFavoriteWord(String word) {
+        favoriteWords.add(word);
+    }
+
+    public static void removeFavoriteWord(String word) {
+        favoriteWords.remove(word);
+    }
+
+    public static void addSearchHistory(String word) {
+        for (String s : search_history) {
+            if (s.equals(word)) {
+                search_history.remove(s);
+                break;
+            }
+        }
+        search_history.add(word);
+        if (search_history.size() > MAX_SEARCH_HISTORY) search_history.poll();
+    }
+
+
+    public static Iterable<String> SearchHistory() {
+        return search_history;
+    }
+
 
     public static ArrayList<String> getword(String key) {
         ArrayList<Word> words;

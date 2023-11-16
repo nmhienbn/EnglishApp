@@ -46,3 +46,7 @@
 
     -fx-background-color: transparent;
 }
+
+.line {
+    -fx-opacity: 0.2;
+}
