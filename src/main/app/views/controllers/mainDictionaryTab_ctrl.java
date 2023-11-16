@@ -59,7 +59,7 @@ public class mainDictionaryTab_ctrl {
     private Button save_edit_button;
 
     @FXML
-    private Button add_favorite_button;
+    private ToggleButton favorite_toggle_button;
 
     //? wifa = word infomation area
     @FXML
@@ -78,8 +78,6 @@ public class mainDictionaryTab_ctrl {
 
     @FXML
     void initialize() {
-
-
         init_search_area();
         init_word_information_area();
         init_fuction_button();
@@ -126,6 +124,16 @@ public class mainDictionaryTab_ctrl {
         remove_word_button.setOnAction(e -> try_remove_word());
 
         add_word_button.setOnAction(e -> try_add_word());
+
+        favorite_toggle_button.setOnAction(e -> {
+            if (favorite_toggle_button.isSelected()) {
+                System.out.println("favorite selected");
+                //TestAPI.addFavoriteWord(wifa_word.getText());
+            } else {
+                System.out.println("favorite unselected");
+                //TestAPI.removeFavoriteWord(wifa_word.getText());
+            }
+        });
     }
 
     private void init_toggle_button() {
