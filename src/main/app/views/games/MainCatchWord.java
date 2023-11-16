@@ -7,12 +7,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
-import views.controllers.CTW_ctrl;
+import views.controllers.games_ctrl.CTW_ctrl;
 
 import java.util.Objects;
 
-import static views.controllers.CTW_ctrl.showWrongWord;
-import static views.controllers.CTW_ctrl.winningWords;
+import static views.controllers.games_ctrl.CTW_ctrl.showWrongWord;
+import static views.controllers.games_ctrl.CTW_ctrl.winningWords;
 
 public class MainCatchWord extends Game {
     protected static MainCatchWord instance = null;
@@ -92,7 +92,8 @@ public class MainCatchWord extends Game {
         if (ctw_ctrl.notificationPane.isVisible()) {
             return;
         }
-        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+        label.toFront();
+        label.setStyle("-fx-border-color: BLUE;");
     }
 
     @Override
@@ -103,16 +104,16 @@ public class MainCatchWord extends Game {
     @Override
     protected void onLetterChosen(GridPane gridPane, String letter) {
         // If the user types a letter while the row is full, nothing changes.
-        if (Objects.equals(getLabelText(gridPane, 1, CURRENT_COLUMN), "")) {
-            setLabelText(gridPane, 1, CURRENT_COLUMN, letter);
-            Label label = getLabel(gridPane, 1, CURRENT_COLUMN);
+        if (Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "")) {
+            setLabelText(gridPane, 1, CUR_COLUMN, letter);
+            Label label = getLabel(gridPane, 1, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
             GameAnimations.scaleTrans(label, 1.3, 1, 150).play();
-            setLabelStyleClass(gridPane, 1, CURRENT_COLUMN, "tile-with-letter");
-            if (CURRENT_COLUMN < MAX_COLUMN) {
-                CURRENT_COLUMN++;
-                if (winningWord.charAt(CURRENT_COLUMN - 1) == ' ') {
-                    CURRENT_COLUMN++;
+            setLabelStyleClass(gridPane, 1, CUR_COLUMN, "tile-with-letter");
+            if (CUR_COLUMN < MAX_COLUMN) {
+                CUR_COLUMN++;
+                if (winningWord.charAt(CUR_COLUMN - 1) == ' ') {
+                    CUR_COLUMN++;
                 }
             }
         }
@@ -124,16 +125,16 @@ public class MainCatchWord extends Game {
      * @param gridPane the gridPane that contains the letters
      */
     protected void onBackspaceChosen(GridPane gridPane) {
-        if ((CURRENT_COLUMN == MAX_COLUMN || CURRENT_COLUMN == 1)
-                && !Objects.equals(getLabelText(gridPane, 1, CURRENT_COLUMN), "")) {
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-        } else if ((CURRENT_COLUMN > 1 && CURRENT_COLUMN < MAX_COLUMN)
-                || (CURRENT_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, 1, CURRENT_COLUMN), ""))) {
-            CURRENT_COLUMN--;
-            if (winningWord.charAt(CURRENT_COLUMN - 1) == ' ') {
-                CURRENT_COLUMN--;
+        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1)
+                && !Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "")) {
+            resetTitle(gridPane, CURRENT_ROW, CUR_COLUMN);
+        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN)
+                || (CUR_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), ""))) {
+            CUR_COLUMN--;
+            if (winningWord.charAt(CUR_COLUMN - 1) == ' ') {
+                CUR_COLUMN--;
             }
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
+            resetTitle(gridPane, CURRENT_ROW, CUR_COLUMN);
         }
     }
 
@@ -144,7 +145,7 @@ public class MainCatchWord extends Game {
      * @param keyboardRows the keyboard
      */
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
-        if (CURRENT_COLUMN == MAX_COLUMN) {
+        if (CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winningWord)) {
                 ctw_ctrl.showEndGameWindow(true, winningWord);
@@ -180,7 +181,7 @@ public class MainCatchWord extends Game {
         createGrid(gridPane, img);
         createKeyBoard(keyboardRows, gridPane);
 
-        CURRENT_COLUMN = 1;
+        CUR_COLUMN = 1;
         ctw_ctrl.gridRequestFocus();
     }
 }

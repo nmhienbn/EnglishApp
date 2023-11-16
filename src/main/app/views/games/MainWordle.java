@@ -10,17 +10,17 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
-import views.controllers.WordleTab_ctrl;
+import views.controllers.games_ctrl.WordleTab_ctrl;
 
 import java.util.Objects;
 
-import static views.controllers.WordleTab_ctrl.showWordNotFound;
-import static views.controllers.WordleTab_ctrl.winningWords;
+import static views.controllers.games_ctrl.WordleTab_ctrl.showWordNotFound;
+import static views.controllers.games_ctrl.WordleTab_ctrl.winningWords;
 
 public class MainWordle extends Game{
     protected static MainWordle instance = null;
     public WordleTab_ctrl wordleTab_ctrl = null;
-    protected final String[] LetterStyleClass = {"correct-letter", "present-letter", "wrong-letter"};
+    protected final String[] LetterStyleClass = {"correct-letter", "valid-letter", "absent-letter"};
 
 
     protected MainWordle() {
@@ -61,7 +61,7 @@ public class MainWordle extends Game{
         for (int i = 1; i <= MAX_ROW; i++) {
             for (int j = 1; j <= MAX_COLUMN; j++) {
                 Label label = new Label();
-                label.getStyleClass().add("grid-pane");
+                label.getStyleClass().add("default-tile");
                 gridPane.add(label, j, i);
             }
         }
@@ -72,7 +72,8 @@ public class MainWordle extends Game{
         if (wordleTab_ctrl.notificationPane.isVisible()) {
             return;
         }
-        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+        label.toFront();
+        label.setStyle("-fx-border-color: BLUE;");
     }
 
     /**
@@ -142,9 +143,9 @@ public class MainWordle extends Game{
             if (currentCharacter.equals(winningCharacter))
                 styleClass = "keyboardCorrectColor";
             else if (winningWord.contains(currentCharacter))
-                styleClass = "keyboardPresentColor";
+                styleClass = "keyboardValidColor";
             else
-                styleClass = "keyboardWrongColor";
+                styleClass = "keyboardAbsentColor";
             if (keyboardLabel != null) {
                 keyboardLabel.getStyleClass().clear();
                 keyboardLabel.getStyleClass().add(styleClass);
@@ -177,45 +178,45 @@ public class MainWordle extends Game{
     @Override
     protected void onLetterChosen(GridPane gridPane, String letter) {
         // If the user types a letter while the row is full, nothing changes.
-        if (Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
-            setLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN, letter);
-            Label label = getLabel(gridPane, CURRENT_ROW, CURRENT_COLUMN);
+        if (Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "")) {
+            setLabelText(gridPane, CUR_ROW, CUR_COLUMN, letter);
+            Label label = getLabel(gridPane, CUR_ROW, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
             GameAnimations.scaleTrans(label, 1.2, 1, 150).play();
-            setLabelStyleClass(gridPane, CURRENT_ROW, CURRENT_COLUMN, "tile-with-letter");
-            if (CURRENT_COLUMN < MAX_COLUMN)
-                CURRENT_COLUMN++;
+            setLabelStyleClass(gridPane, CUR_ROW, CUR_COLUMN, "tile-with-letter");
+            if (CUR_COLUMN < MAX_COLUMN)
+                CUR_COLUMN++;
         }
     }
 
     @Override
     protected void onBackspaceChosen(GridPane gridPane) {
-        if ((CURRENT_COLUMN == MAX_COLUMN || CURRENT_COLUMN == 1)
-                && !Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), "")) {
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
-        } else if ((CURRENT_COLUMN > 1 && CURRENT_COLUMN < MAX_COLUMN)
-                || (CURRENT_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, CURRENT_ROW, CURRENT_COLUMN), ""))) {
-            CURRENT_COLUMN--;
-            resetTitle(gridPane, CURRENT_ROW, CURRENT_COLUMN);
+        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1)
+                && !Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "")) {
+            resetTitle(gridPane, CUR_ROW, CUR_COLUMN);
+        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN)
+                || (CUR_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), ""))) {
+            CUR_COLUMN--;
+            resetTitle(gridPane, CUR_ROW, CUR_COLUMN);
         }
     }
 
     @Override
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
-        if (CURRENT_ROW <= MAX_ROW && CURRENT_COLUMN == MAX_COLUMN) {
+        if (CUR_ROW <= MAX_ROW && CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winningWord)) {
-                updateRowColors(gridPane, CURRENT_ROW);
+                updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
                 wordleTab_ctrl.showEndGameWindow(true, winningWord);
             } else if (isValidGuess(guess)) {
-                updateRowColors(gridPane, CURRENT_ROW);
+                updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
-                if (CURRENT_ROW == MAX_ROW) {
+                if (CUR_ROW == MAX_ROW) {
                     wordleTab_ctrl.showEndGameWindow(false, winningWord);
                 } else {
-                    CURRENT_ROW++;
-                    CURRENT_COLUMN = 1;
+                    CUR_ROW++;
+                    CUR_COLUMN = 1;
                 }
             } else {
                 showWordNotFound();
@@ -283,8 +284,8 @@ public class MainWordle extends Game{
             }
         }
 
-        CURRENT_COLUMN = 1;
-        CURRENT_ROW = 1;
+        CUR_COLUMN = 1;
+        CUR_ROW = 1;
         wordleTab_ctrl.gridRequestFocus();
     }
 

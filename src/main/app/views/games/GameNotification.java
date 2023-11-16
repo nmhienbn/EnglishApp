@@ -13,14 +13,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import views.animations.GameAnimations;
-import views.controllers.CTW_ctrl;
-import views.controllers.Game_ctrl;
-import views.controllers.WordleTab_ctrl;
+import views.controllers.games_ctrl.CTW_ctrl;
+import views.controllers.games_ctrl.Game_ctrl;
+import views.controllers.games_ctrl.WordleTab_ctrl;
 
 
 public class GameNotification {
@@ -75,12 +74,7 @@ public class GameNotification {
             scaleTransition.play();
         });
         playAgainButton.setOnMouseClicked(e -> {
-            mainPane.setVisible(false);
-            mainPane.setTranslateX(0);
-            mainPane.setTranslateY(0);
-            mainPane.setOnMousePressed(null);
-            mainPane.setOnMouseDragged(null);
-            game_ctrl.restart();
+            reallyRestart(game_ctrl, mainPane);
         });
 
         vbox.getChildren().addAll(ins, line, mainLabel, answer, playAgainButton);
@@ -114,7 +108,16 @@ public class GameNotification {
         });
     }
 
-    public static void instructionNotification(BorderPane helpPane) {
+    public static void reallyRestart(Game_ctrl game_ctrl, BorderPane mainPane) {
+        mainPane.setVisible(false);
+        mainPane.setTranslateX(0);
+        mainPane.setTranslateY(0);
+        mainPane.setOnMousePressed(null);
+        mainPane.setOnMouseDragged(null);
+        game_ctrl.restart();
+    }
+
+    public static void instructionWordle(BorderPane helpPane) {
         helpPane.setPrefWidth(500);
         helpPane.setPrefHeight(500);
         helpPane.setLayoutX(250);
@@ -149,18 +152,56 @@ public class GameNotification {
         Label firstWordLabel = new Label("The letter W is in the word and in the correct spot.");
         firstWordLabel.getStyleClass().setAll("lead");
 
-        HBox secondWordHBox = giveExampleWord("PILLS", "present-letter-example", 1);
+        HBox secondWordHBox = giveExampleWord("PILLS", "valid-letter-example", 1);
         Label secondWordLabel = new Label("The letter I is in the word but in the wrong spot.");
         secondWordLabel.getStyleClass().setAll("lead");
 
-        HBox thirdWordHBox = giveExampleWord("VAGUE", "wrong-letter-example", 2);
-        Label thirdWordLabel = new Label("The letter U is not in the word in any spot.");
+        HBox thirdWordHBox = giveExampleWord("VAGUE", "absent-letter-example", 2);
+        Label thirdWordLabel = new Label("The letter G is not in the word in any spot.");
         thirdWordLabel.getStyleClass().setAll("lead");
 
         vbox.setAlignment(Pos.CENTER);
         vbox.getChildren().addAll(ins, line, insParagraph, labelExample, firstWordHBox,
                 firstWordLabel, secondWordHBox, secondWordLabel, thirdWordHBox,
                 thirdWordLabel);
+
+
+        helpPane.setCenter(vbox);
+        helpPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
+                "-fx-border-color: #000000; -fx-border-width: 2px;" +
+                "-fx-border-radius: 5; -fx-background-radius: 5;");
+        helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+    }
+
+    public static void instructionCTW(BorderPane helpPane) {
+        helpPane.setPrefWidth(500);
+        helpPane.setPrefHeight(400);
+        helpPane.setLayoutX(250);
+        helpPane.setLayoutY(80);
+        VBox vbox = new VBox(5);
+        vbox.setPadding(new Insets(0, 0, 0, 0));
+
+        Label ins = new Label("HOW TO PLAY");
+        ins.setTextAlignment(TextAlignment.CENTER);
+        ins.getStyleClass().setAll("h2", "strong");
+
+        Line line = new Line();
+        line.setStroke(Paint.valueOf("b8b8b8"));
+        line.setEndX(490);
+
+        ImageView img = new ImageView(new Image("game/ctw/CTW_example.png",
+                480, 480, true, false));
+
+        Label insParagraph = new Label("""
+                • The left picture is RAIN
+                • The right picture is BOW
+                • Hence, the answer is RAINBOW.""");
+        insParagraph.setTextAlignment(TextAlignment.LEFT);
+        insParagraph.getStyleClass().setAll("lead");
+        insParagraph.setStyle("-fx-line-spacing: -0.2em;");
+
+        vbox.setAlignment(Pos.CENTER);
+        vbox.getChildren().addAll(ins, line, img, insParagraph);
 
 
         helpPane.setCenter(vbox);

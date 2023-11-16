@@ -1,15 +1,14 @@
 package views.games;
 
-import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
-import views.controllers.Quizz_ctrl;
+import views.controllers.games_ctrl.Quizz_ctrl;
 
-import static views.controllers.Quizz_ctrl.QUESTIONS;
+import static views.controllers.games_ctrl.Quizz_ctrl.QUESTIONS;
 
 public class MainQuizz extends Game {
     protected static MainQuizz instance = null;
@@ -76,7 +75,7 @@ public class MainQuizz extends Game {
                 anchorPane.setOnMouseEntered(event -> {
                     if (!quizz_ctrl.notificationPane.isVisible() && !isScaled) {
                         anchorPane.toFront();
-                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1, 1.15, 150);
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1, 1.2, 150);
                         scaleTransition.play();
                         isScaled = true;
                     }
@@ -85,7 +84,7 @@ public class MainQuizz extends Game {
                     if (isScaled) {
                         isScaled = false;
                         anchorPane.toFront();
-                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1.15, 1, 150);
+                        ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1.2, 1, 150);
                         scaleTransition.play();
                     }
 

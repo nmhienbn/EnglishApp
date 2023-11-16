@@ -15,43 +15,68 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.image.Image?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
+            stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="main-screen">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
+                    styleClass="main-screen">
 
             <top>
                 <VBox alignment="TOP_CENTER" minWidth="480.0">
 
-                    <HBox alignment="CENTER">
+                    <HBox alignment="CENTER" spacing="30.0">
                         <padding>
-                            <Insets bottom="8" left="30" />
+                            <Insets bottom="8" left="30"/>
                         </padding>
+                        <ImageView fitHeight="50" fitWidth="50">
+                        </ImageView>
+                        <ImageView fitHeight="50" fitWidth="50">
+                        </ImageView>
+
                         <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
                             <padding>
-                                <Insets bottom="8" left="27" right="30" />
+                                <Insets bottom="8" left="27" right="30"/>
                             </padding>
                         </HBox>
-                        <ImageView fx:id="restartButton" accessibleRole="BUTTON" fitHeight="50" fitWidth="50" onMouseClicked="#restart" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="restartButton" accessibleRole="BUTTON" fitHeight="50" fitWidth="50"
+                                   onMouseClicked="#restart" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../game/images/restart.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="exitButton" accessibleRole="BUTTON" fitHeight="50" fitWidth="50"
+                                   onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../game/images/exit.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </ImageView>
+
+
                         <padding>
-                            <Insets right="35" />
+                            <Insets right="35"/>
                         </padding>
                     </HBox>
                 </VBox>
             </top>
             <bottom>
-                <GridPane fx:id="choices" alignment="CENTER" focusTraversable="true" hgap="50.0" prefHeight="379.0" prefWidth="780.0" vgap="30.0" BorderPane.alignment="CENTER">
+                <GridPane fx:id="choices" alignment="CENTER" focusTraversable="true" hgap="50.0" prefHeight="379.0"
+                          prefWidth="780.0" vgap="30.0" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
-                        <Insets bottom="15.0" />
+                        <Insets bottom="15.0"/>
                     </BorderPane.margin>
                     <columnConstraints>
-                        <ColumnConstraints />
-                        <ColumnConstraints />
-                        <ColumnConstraints />
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints />
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
                     </rowConstraints>
                     <children>
 
@@ -61,39 +86,41 @@
                                 <!-- New hexagon outside the original hexagon -->
                                 <Polygon fill="#f55459" strokeWidth="0.0">
                                     <points>
-                                        <Double fx:value="360.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="360.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
                                 <Polygon fill="#465a64" strokeWidth="0.0">
                                     <points>
                                         <!-- Original hexagon points -->
-                                        <Double fx:value="110.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="110.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
-                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="A" />
-                                <Text id="choice-box" fx:id="ansA" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656" />
+                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0"
+                                       layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="A"/>
+                                <Text id="choice-box" fx:id="ansA" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656"/>
                             </children>
                         </AnchorPane>
                         <AnchorPane fx:id="fB" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -102,39 +129,41 @@
                                 <!-- New hexagon outside the original hexagon -->
                                 <Polygon fill="#FED650" strokeWidth="0.0">
                                     <points>
-                                        <Double fx:value="360.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="360.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
                                 <Polygon fill="#465a64" strokeWidth="0.0">
                                     <points>
                                         <!-- Original hexagon points -->
-                                        <Double fx:value="110.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="110.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
-                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="B" />
-                                <Text id="choice-box" fx:id="ansB" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656" />
+                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0"
+                                       layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="B"/>
+                                <Text id="choice-box" fx:id="ansB" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656"/>
                             </children>
                         </AnchorPane>
                         <AnchorPane fx:id="fC" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -143,39 +172,41 @@
                                 <!-- New hexagon outside the original hexagon -->
                                 <Polygon fill="#2196F5" strokeWidth="0.0">
                                     <points>
-                                        <Double fx:value="360.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="360.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
                                 <Polygon fill="#465a64" strokeWidth="0.0">
                                     <points>
                                         <!-- Original hexagon points -->
-                                        <Double fx:value="110.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="110.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
-                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="C" />
-                                <Text id="choice-box" fx:id="ansC" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656" />
+                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0"
+                                       layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="C"/>
+                                <Text id="choice-box" fx:id="ansC" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656"/>
                             </children>
                         </AnchorPane>
                         <AnchorPane fx:id="fD" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -184,39 +215,41 @@
                                 <!-- New hexagon outside the original hexagon -->
                                 <Polygon fill="#5CB774" strokeWidth="0.0">
                                     <points>
-                                        <Double fx:value="360.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="332.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="360.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="332.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
                                 <Polygon fill="#465a64" strokeWidth="0.0">
                                     <points>
                                         <!-- Original hexagon points -->
-                                        <Double fx:value="110.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="95.0" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="47.5" />
-                                        <Double fx:value="27.5" />
-                                        <Double fx:value="0.0" />
-                                        <Double fx:value="82.5" />
-                                        <Double fx:value="0.0" />
+                                        <Double fx:value="110.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="95.0"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="47.5"/>
+                                        <Double fx:value="27.5"/>
+                                        <Double fx:value="0.0"/>
+                                        <Double fx:value="82.5"/>
+                                        <Double fx:value="0.0"/>
                                     </points>
                                 </Polygon>
-                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="D" />
-                                <Text id="choice-box" fx:id="ansD" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656" />
+                                <Label id="text-box" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0"
+                                       layoutY="17.0" prefHeight="60.0" prefWidth="60.0" text="D"/>
+                                <Text id="choice-box" fx:id="ansD" layoutX="118.0" layoutY="51.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Text" wrappingWidth="215.73670959472656"/>
                             </children>
                         </AnchorPane>
 
@@ -226,13 +259,13 @@
             <center>
                 <StackPane id="question-box" fx:id="fQ" prefWidth="1000.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Text fx:id="question" wrappingWidth="720" fill="#4A5E67" />
+                        <Text fx:id="question" wrappingWidth="720" fill="#4A5E67"/>
                     </children>
                 </StackPane>
             </center>
 
         </BorderPane>
-        <Polygon fx:id="triangle" fill="WHITE" focusTraversable="true" points="184.0, 96.79999542236328, 279.20001220703125, 96.79999542236328, 192.79998779296875, 36.80000305175781" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false" />
-        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500.0" prefWidth="500.0" visible="false" />
+        <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500.0"
+                    prefWidth="500.0" visible="false"/>
     </children>
 </AnchorPane>

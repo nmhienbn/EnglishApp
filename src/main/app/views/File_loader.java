@@ -6,6 +6,8 @@ import java.net.URL;
 import views.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import views.controllers.games_ctrl.MainGame_ctrl;
+import views.controllers.games_ctrl.Quizz_ctrl;
 
 public class File_loader {
 
@@ -65,6 +67,14 @@ public class File_loader {
         FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/google_tab.fxml"));
 
         Object controllerObject = new GoogleTab_ctrl();
+        loader.setController(controllerObject);
+        return FXMLloader_load(loader);
+    }
+
+    public Parent fxml_mainGameTab() {
+        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/game.fxml"));
+
+        Object controllerObject = new MainGame_ctrl();
         loader.setController(controllerObject);
         return FXMLloader_load(loader);
     }
