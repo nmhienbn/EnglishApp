@@ -1,15 +1,14 @@
 package views.games;
 
-import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
-import views.controllers.Quizz_ctrl;
+import views.controllers.games_ctrl.Quizz_ctrl;
 
-import static views.controllers.Quizz_ctrl.QUESTIONS;
+import static views.controllers.games_ctrl.Quizz_ctrl.QUESTIONS;
 
 public class MainQuizz extends Game {
     protected static MainQuizz instance = null;

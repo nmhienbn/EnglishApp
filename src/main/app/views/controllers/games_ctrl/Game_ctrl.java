@@ -1,7 +1,8 @@
-package views.controllers;
+package views.controllers.games_ctrl;
 
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
@@ -40,4 +41,17 @@ public abstract class Game_ctrl {
     }
 
     public abstract void showStartGame();
+
+    public static boolean inHierarchy(Node node, Node potentialHierarchyElement) {
+        if (potentialHierarchyElement == null) {
+            return false;
+        }
+        while (node != null) {
+            if (node == potentialHierarchyElement) {
+                return false;
+            }
+            node = node.getParent();
+        }
+        return true;
+    }
 }

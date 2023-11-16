@@ -1,18 +1,15 @@
-package views.controllers;
+package views.controllers.games_ctrl;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
+import views.controllers.mainPanel_ctrl;
 import views.games.GameNotification;
 import views.games.MainQuizz;
 
@@ -23,6 +20,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Quizz_ctrl extends Game_ctrl {
+    public static mainPanel_ctrl mainPanelCtrl = null;
     public static class Quizz {
         public String question;
         public String[] choices;
@@ -51,11 +49,10 @@ public class Quizz_ctrl extends Game_ctrl {
     public HBox titleHBox;
     @FXML
     public ImageView restartButton;
-
+    @FXML
+    public ImageView exitButton;
     @FXML
     public BorderPane notificationPane;
-    @FXML
-    public Polygon triangle;
 
     // Word lists
     public static final ArrayList<Quizz> QUESTIONS = new ArrayList<>();
@@ -65,8 +62,8 @@ public class Quizz_ctrl extends Game_ctrl {
         initializeQuizzLists();
         createUI();
         mainQuizz.quizz_ctrl = this;
-        restartButton.setImage(new Image("/game/images/restart.png"));
         setTooltip(restartButton, "Restart");
+        setTooltip(exitButton, "Exit");
     }
 
     @FXML
@@ -112,6 +109,11 @@ public class Quizz_ctrl extends Game_ctrl {
         }
 
         mainQuizz.getRandomWord();
+    }
+
+    @FXML
+    public void exitGame() {
+        mainPanelCtrl.mainPane.setCenter(mainPanelCtrl.game_tab);
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
