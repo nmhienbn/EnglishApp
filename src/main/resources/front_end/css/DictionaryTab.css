@@ -1,49 +1,89 @@
 @import "theme.css";
 
-#dictionary-nav {
-    -fx-background-color: nav_color1;
-}
-
-#search_button {
-    -fx-background-image: url(../graphic/icons/search.png);
-    -fx-background-repeat: stretch;
-    -fx-background-position: 50% 50%;
-}
+/*---------------------------------------------------------------------------------------------------*/
 
 #add-button {
     -fx-background-image: url(../graphic/icons/plus.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 20 20;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+#speak-button {
+    -fx-background-image: url(../graphic/icons/speak.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 30;
 }
 
 #edit-button {
     -fx-background-image: url(../graphic/icons/edit.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 30;
+}
+
+#save_edit_button {
+    -fx-background-image: url(../graphic/icons/save.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 30;
 }
 
 #remove-button {
     -fx-background-image: url(../graphic/icons/delete.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 30;
 }
 
-#history-button {
-    -fx-background-image: url(../graphic/icons/history.png);
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
-}
-
-#favorite-button {
+#add_favorite_button {
     -fx-background-image: url(../graphic/icons/favourite.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
-    -fx-background-size: 40 40;
+    -fx-background-size: 30;
 }
+
+#favorite_toggle_button {
+    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 30;
+}
+
+#favorite_toggle_button:selected {
+    -fx-background-image: url(../graphic/icons/favourite_true.png);
+    -fx-background-size: 35;
+
+
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+#search_button {
+    -fx-background-image: url(../graphic/icons/search.png);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 35;
+
+    -fx-background-position: 50% 50%;
+}
+
+#history_button {
+    -fx-background-image: url(../graphic/icons/history.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 35;
+}
+
+#favorite_button {
+    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-size: 35;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
 
 #word-info-label {
     -fx-text-fill: red;
@@ -55,7 +95,13 @@
     -fx-text-fill: black;
     -fx-background-color: transparent;
     -fx-opacity: 1;
+
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent
 }
+
+/*---------------------------------------------------------------------------------------------------*/
+
 
 .list-cell:empty {
     -fx-opacity: 0;
@@ -63,7 +109,43 @@
 
 .function-button {
     -fx-background-color: transparent;
+    -fx-opacity: 0.7;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
+
+.function-button:disabled {
+    -fx-background-color: transparent;
+    -fx-opacity: 0.2;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.function-button:hover {
+    -fx-background-color: white3;
+}
+
+.function-button .pressed {}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+.SHF_group {
+    -fx-opacity: 0.7;
+    -fx-background-color: transparent;
+
+}
+
+.SHF_group:hover {
+    -fx-background-color: white3;
+}
+
+.SHF_group:selected {
+    -fx-background-color: white4;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
 
 .scroll-pane {
     -fx-background-color: transparent;
