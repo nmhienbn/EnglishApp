@@ -12,8 +12,8 @@ public abstract class Game {
     /**
      * Variables for the grid.
      */
-    protected int CURRENT_ROW = 1;
-    protected int CURRENT_COLUMN = 1;
+    protected int CUR_ROW = 1;
+    protected int CUR_COLUMN = 1;
     protected int MAX_COLUMN = 5;
     protected int MAX_ROW = 6;
     protected String winningWord;
@@ -168,7 +168,7 @@ public abstract class Game {
     protected String getWordFromCurrentRow(GridPane gridPane) {
         StringBuilder input = new StringBuilder();
         for (int j = 1; j <= MAX_COLUMN; j++)
-            input.append(getLabelText(gridPane, CURRENT_ROW, j));
+            input.append(getLabelText(gridPane, CUR_ROW, j));
         return input.toString();
     }
 

@@ -1,17 +1,17 @@
 * {
     -white-color: white;
-    -wrong-color: #787c7e;
     -text-fill-color: black;
     -empty-border-color: #d3d6da;
     -unlocked-border-color: #878a8c;
     -background-color: white;
     -key-background-color: #d3d6da;
+    -wrong-color: #787c7e;
     -present-color: #c9b458;
     -correct-color: #6aaa64;
     -selected-color: blue;
 }
 
-.present-letter, .wrong-letter, .correct-letter, .grid-pane, .default-tile {
+.valid-letter, .absent-letter, .correct-letter, .default-tile {
     -fx-font-size: 30px;
     -fx-font-weight: bold;
     -fx-border-width: 2px;
@@ -31,23 +31,17 @@
     -fx-text-fill: -text-fill-color;
 }
 
-.grid-pane {
-    -fx-background-color: -background-color;
-    -fx-border-color: -empty-border-color;
-    -fx-text-fill: -text-fill-color;
-}
-
 .tile-with-letter {
     -fx-border-color: -unlocked-border-color;
 }
 
-.present-letter {
+.valid-letter {
     -fx-background-color: -present-color;
     -fx-border-color: -present-color;
     -fx-text-fill: white;
 }
 
-.wrong-letter {
+.absent-letter {
     -fx-background-color: -wrong-color;
     -fx-border-color: -wrong-color;
     -fx-text-fill: white;
@@ -64,7 +58,7 @@
     -fx-padding: 10px;
 }
 
-.keyboardTile, .keyboardCorrectColor, .keyboardPresentColor, .keyboardWrongColor {
+.keyboardTile, .keyboardCorrectColor, .keyboardValidColor, .keyboardAbsentColor {
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-min-width: 43px;
@@ -87,11 +81,11 @@
     -fx-background-color: -correct-color;
 }
 
-.keyboardPresentColor {
+.keyboardValidColor {
     -fx-background-color: -present-color;
 }
 
-.keyboardWrongColor {
+.keyboardAbsentColor {
     -fx-background-color: -wrong-color;
     -fx-text-fill: white;
 }
@@ -120,7 +114,7 @@
     -fx-pref-width: 20;
 }
 
-.correct-letter-example, .wrong-letter-example, .present-letter-example, .default-letter-example {
+.correct-letter-example, .absent-letter-example, .valid-letter-example, .default-letter-example {
     -fx-font-size: 27px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;
@@ -146,13 +140,13 @@
     -fx-text-fill: -text-fill-color;
 }
 
-.present-letter-example {
+.valid-letter-example {
     -fx-background-color: -present-color;
     -fx-border-color: -present-color;
     -fx-text-fill: white;
 }
 
-.wrong-letter-example {
+.absent-letter-example {
     -fx-background-color: -wrong-color;
     -fx-border-color: -wrong-color;
     -fx-text-fill: white;

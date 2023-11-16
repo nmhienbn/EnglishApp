@@ -11,43 +11,71 @@ import javafx.scene.layout.BorderPane;
 import javafx.util.Duration;
 import views.File_loader;
 import views.animations.GameAnimations.AnimatedGif;
+import views.controllers.games_ctrl.CTW_ctrl;
+import views.controllers.games_ctrl.MainGame_ctrl;
+import views.controllers.games_ctrl.Quizz_ctrl;
+import views.controllers.games_ctrl.WordleTab_ctrl;
 
 import java.io.IOException;
 
 public class mainPanel_ctrl {
 
     @FXML
-    private BorderPane mainPane;
+    public BorderPane mainPane;
+    @FXML
+    private Button logoImg;
 
     @FXML
     private Button home_button;
     @FXML
     private Button main_dictionary_button;
     @FXML
-    private Button quizz;
-    @FXML
     private Button google_translate_button;
     @FXML
-    private Button wordle_button;
-    @FXML
-    private Button ctw_button;
-    @FXML
-    private Button logoImg;
+    private Button game_button;
 
     private Button focused_button = null;
 
     Parent home_tab;
     Parent main_dictionary_tab;
-    Parent quizz_tab;
     Parent google_translator_tab;
-    Parent wordle_tab;
-    Parent ctw_tab;
+    public Parent game_tab;
 
-    WordleTab_ctrl wordleTab_ctrl;
+    ColorAdjust colorAdjust = new ColorAdjust();
 
-    CTW_ctrl ctwTab_ctrl;
+    @FXML
+    void initialize() throws IOException {
+        colorAdjust.setSaturation(-1);
+        AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/logo.gif").
+                toExternalForm(), 5000);
+        logoImg.setGraphic(ani.getView());
+        ani.setCycleCount(Animation.INDEFINITE);
+        ani.setAutoReverse(true);
+        ani.play();
 
-    Quizz_ctrl quizz_ctrl;
+        setNavButton(home_button, "Home");
+        setNavButton(main_dictionary_button, "Main Dictionary");
+        setNavButton(google_translate_button, "Google Translate");
+        setNavButton(game_button, "Game");
+
+        setButton(home_button, "/front_end/graphic/icons/home.gif", 2000);
+        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 2000);
+        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 2000);
+        setButton(game_button, "/front_end/graphic/icons/game.gif", 2000);
+
+        home_tab = File_loader.getInstance().fxml_homeTab();
+        main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
+        google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
+        game_tab = File_loader.getInstance().fxml_mainGameTab();
+
+        //mainPane.setCenter(home_tab);
+        OnButtonPress(home_button);
+
+        MainGame_ctrl.mainPanelCtrl = this;
+        WordleTab_ctrl.mainPanelCtrl = this;
+        CTW_ctrl.mainPanelCtrl = this;
+        Quizz_ctrl.mainPanelCtrl = this;
+    }
 
     public void setButton(Button button, String filename, double durationMs) {
         AnimatedGif ani = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
@@ -57,46 +85,6 @@ public class mainPanel_ctrl {
             ani.getView().setEffect(null); // Remove the effect
             ani.playOnce();
         });
-    }
-
-    ColorAdjust colorAdjust = new ColorAdjust();
-
-    @FXML
-    void initialize() throws IOException {
-        colorAdjust.setSaturation(-1);
-        AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/logo.gif").
-                toExternalForm(), 3000);
-        logoImg.setGraphic(ani.getView());
-        ani.setCycleCount(Animation.INDEFINITE);
-        ani.setAutoReverse(true);
-        ani.play();
-
-        setNavButton(home_button, "Home");
-        setNavButton(main_dictionary_button, "Main Dictionary");
-        setNavButton(google_translate_button, "Google Translate");
-        setNavButton(quizz, "Quizz");
-        setNavButton(wordle_button, "Wordle");
-        setNavButton(ctw_button, "CTW");
-
-        setButton(home_button, "/front_end/graphic/icons/home.gif", 2000);
-        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 2000);
-        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 2000);
-        setButton(quizz, "/front_end/graphic/icons/quizz.gif", 2000);
-        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 2000);
-        setButton(ctw_button, "/front_end/graphic/icons/ctw.gif", 2000);
-
-        home_tab = File_loader.getInstance().fxml_homeTab();
-        main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();
-        google_translator_tab = File_loader.getInstance().fxml_google_translate_Tab();
-        quizz_ctrl = new Quizz_ctrl();
-        quizz_tab = File_loader.getInstance().fxml_quizz_Tab(quizz_ctrl);
-        wordleTab_ctrl = new WordleTab_ctrl();
-        wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
-        ctwTab_ctrl = new CTW_ctrl();
-        ctw_tab = File_loader.getInstance().fxml_ctw_Tab(ctwTab_ctrl);
-
-        //mainPane.setCenter(home_tab);
-        OnButtonPress(home_button);
     }
 
     private void setNavButton(Button button, String text) {
@@ -135,18 +123,8 @@ public class mainPanel_ctrl {
             mainPane.setCenter(main_dictionary_tab);
         else if (button == google_translate_button)
             mainPane.setCenter(google_translator_tab);
-        else if (button == quizz) {
-            mainPane.setCenter(quizz_tab);
-            quizz_ctrl.showStartGame();
-        } else if (button == wordle_button) {
-            mainPane.setCenter(wordle_tab);
-            wordleTab_ctrl.gridRequestFocus();
-            wordleTab_ctrl.showStartGame();
-        } else if (button == ctw_button) {
-            mainPane.setCenter(ctw_tab);
-            ctwTab_ctrl.gridRequestFocus();
-            ctwTab_ctrl.showStartGame();
-        }
+        else if (button == game_button)
+            mainPane.setCenter(game_tab);
     }
 
 }
