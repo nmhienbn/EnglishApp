@@ -20,6 +20,7 @@ import java.util.stream.Stream;
 public abstract class Game_ctrl {
     public BorderPane notificationPane;
     public Region dimSc;
+
     abstract public void restart();
 
     protected void initWords(String path, ArrayList<String> words) {
@@ -31,7 +32,7 @@ public abstract class Game_ctrl {
     }
 
 
-    protected void setTooltip(ImageView img, String text) {
+    protected void setTooltip(Node img, String text) {
         Tooltip tt = new Tooltip(text);
         Tooltip.install(img, tt);
         tt.setShowDelay(new Duration(.1));
@@ -40,6 +41,12 @@ public abstract class Game_ctrl {
             Bounds bounds = img.localToScreen(img.getBoundsInLocal());
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
+        });
+        img.setOnMouseEntered(e -> {
+            img.setStyle("-fx-background-color: #ced4da");
+        });
+        img.setOnMouseExited(e -> {
+            img.setStyle("-fx-background-color: transparent");
         });
     }
 
