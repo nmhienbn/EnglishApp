@@ -6,6 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Region;
 import javafx.util.Duration;
 import views.animations.GameAnimations;
 
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public abstract class Game_ctrl {
+    public BorderPane notificationPane;
+    public Region dimSc;
     abstract public void restart();
 
     protected void initWords(String path, ArrayList<String> words) {
@@ -37,7 +41,6 @@ public abstract class Game_ctrl {
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
         });
-        tt.getStyleClass().add("navbutton-tooltip");
     }
 
     public abstract void showStartGame();

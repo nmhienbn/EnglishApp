@@ -7,10 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.mainPanel_ctrl;
 import views.games.GameNotification;
@@ -42,6 +39,8 @@ public class WordleTab_ctrl extends Game_ctrl {
     public ImageView exitButton;
     @FXML
     public BorderPane notificationPane;
+    @FXML
+    public Region dimSc;
 
     // Word lists
     public static final ArrayList<String> winningWords = new ArrayList<>();
@@ -59,6 +58,7 @@ public class WordleTab_ctrl extends Game_ctrl {
             if (notificationPane.isVisible() &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), helpButton)) {
+                dimSc.setVisible(false);
                 notificationPane.setVisible(false);
                 notificationPane.setTranslateX(0);
                 notificationPane.setTranslateY(0);
@@ -77,10 +77,14 @@ public class WordleTab_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         if (notificationPane.isVisible()) {
+            dimSc.setVisible(false);
             notificationPane.setVisible(false);
             gridRequestFocus();
         } else {
             GameNotification.instructionWordle(notificationPane);
+            dimSc.toFront();
+            dimSc.setVisible(true);
+            notificationPane.toFront();
             notificationPane.setVisible(true);
         }
     }
@@ -142,7 +146,7 @@ public class WordleTab_ctrl extends Game_ctrl {
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
+        GameNotification.endGameNotification(guessed, winningWord, this,
                 new String[]{"YOU WON!", "THE WINNING WORD WAS:"});
     }
 }

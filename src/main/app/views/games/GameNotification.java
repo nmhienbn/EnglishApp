@@ -32,8 +32,9 @@ public class GameNotification {
     private static double xOffset = 0;
     private static double yOffset = 0;
 
-    public static void endGameNotification(boolean guessed, String winningWord, BorderPane mainPane, Game_ctrl game_ctrl,
-                                           String[] messages) {
+    public static void endGameNotification(boolean guessed, String winningWord,
+                                           Game_ctrl game_ctrl, String[] messages) {
+        BorderPane mainPane = game_ctrl.notificationPane;
         mainPane.setPrefWidth(400);
         mainPane.setPrefHeight(300);
         mainPane.setLayoutX(300);
@@ -74,16 +75,20 @@ public class GameNotification {
             scaleTransition.play();
         });
         playAgainButton.setOnMouseClicked(e -> {
-            reallyRestart(game_ctrl, mainPane);
+            reallyRestart(game_ctrl);
         });
 
         vbox.getChildren().addAll(ins, line, mainLabel, answer, playAgainButton);
 
         mainPane.setCenter(vbox);
         mainPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
-                "-fx-border-radius: 30; -fx-background-radius: 30;"+
+                "-fx-border-radius: 30; -fx-background-radius: 30;" +
                 "-fx-border-color: black; -fx-border-width: 3;");
+
+        game_ctrl.dimSc.setVisible(true);
+        game_ctrl.dimSc.toFront();
         mainPane.setVisible(true);
+        mainPane.toFront();
 
         ScaleTransition scaleTransition = GameAnimations.scaleTrans(mainPane, 0, 1, 500);
         scaleTransition.play();
@@ -108,7 +113,9 @@ public class GameNotification {
         });
     }
 
-    public static void reallyRestart(Game_ctrl game_ctrl, BorderPane mainPane) {
+    public static void reallyRestart(Game_ctrl game_ctrl) {
+        BorderPane mainPane = game_ctrl.notificationPane;
+        game_ctrl.dimSc.setVisible(false);
         mainPane.setVisible(false);
         mainPane.setTranslateX(0);
         mainPane.setTranslateY(0);
@@ -225,7 +232,6 @@ public class GameNotification {
         }
         return WordHBox;
     }
-
 
     public static void showNotification(BorderPane notificationPane, String notification) {
         notificationPane.setPrefWidth(200);

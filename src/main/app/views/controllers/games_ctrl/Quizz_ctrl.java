@@ -53,6 +53,8 @@ public class Quizz_ctrl extends Game_ctrl {
     public ImageView exitButton;
     @FXML
     public BorderPane notificationPane;
+    @FXML
+    public Region dimSc;
 
     // Word lists
     public static final ArrayList<Quizz> QUESTIONS = new ArrayList<>();
@@ -117,7 +119,7 @@ public class Quizz_ctrl extends Game_ctrl {
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
+        GameNotification.endGameNotification(guessed, winningWord, this,
                 new String[]{"YOUR ANSWER IS CORRECT!", "THE CORRECT ANSWER IS"});
     }
 
