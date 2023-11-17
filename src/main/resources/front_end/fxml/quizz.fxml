@@ -16,6 +16,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Region?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
             stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
@@ -267,5 +268,6 @@
         </BorderPane>
         <BorderPane fx:id="notificationPane" focusTraversable="true" layoutX="163.0" layoutY="81.0" prefHeight="500.0"
                     prefWidth="500.0" visible="false"/>
+        <Region fx:id="dimSc" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false" />
     </children>
 </AnchorPane>
