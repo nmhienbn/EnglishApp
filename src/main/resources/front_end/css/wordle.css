@@ -11,7 +11,10 @@
     -selected-color: blue;
 }
 
-.valid-letter, .absent-letter, .correct-letter, .default-tile {
+.valid-letter,
+.absent-letter,
+.correct-letter,
+.default-tile {
     -fx-font-size: 30px;
     -fx-font-weight: bold;
     -fx-border-width: 2px;
@@ -58,7 +61,10 @@
     -fx-padding: 10px;
 }
 
-.keyboardTile, .keyboardCorrectColor, .keyboardValidColor, .keyboardAbsentColor {
+.keyboardTile,
+.keyboardCorrectColor,
+.keyboardValidColor,
+.keyboardAbsentColor {
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-min-width: 43px;
@@ -114,7 +120,10 @@
     -fx-pref-width: 20;
 }
 
-.correct-letter-example, .absent-letter-example, .valid-letter-example, .default-letter-example {
+.correct-letter-example,
+.absent-letter-example,
+.valid-letter-example,
+.default-letter-example {
     -fx-font-size: 27px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;
@@ -152,7 +161,8 @@
     -fx-text-fill: white;
 }
 
-.ctw-example, .ctw-default-tile {
+.ctw-example,
+.ctw-default-tile {
     -fx-font-size: 25px;
     -fx-font-weight: bold;
     -fx-border-width: 1px;

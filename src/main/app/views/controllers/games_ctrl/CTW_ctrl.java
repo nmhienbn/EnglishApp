@@ -5,12 +5,10 @@ import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.mainPanel_ctrl;
 import views.games.GameNotification;
@@ -34,15 +32,17 @@ public class CTW_ctrl extends Game_ctrl {
     public GridPane keyboardRow3;
     public GridPane[] keyboardRows;
     @FXML
-    public ImageView helpButton;
+    public Button helpButton;
     @FXML
     public HBox titleHBox;
     @FXML
-    public ImageView restartButton;
+    public Button restartButton;
     @FXML
-    public ImageView exitButton;
+    public Button exitButton;
     @FXML
     public BorderPane notificationPane;
+    @FXML
+    public Region dimSc;
 
     // Word lists
     public static final ArrayList<String> winningWords = new ArrayList<>();
@@ -60,6 +60,7 @@ public class CTW_ctrl extends Game_ctrl {
             if (notificationPane.isVisible() &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), helpButton)) {
+                dimSc.setVisible(false);
                 notificationPane.setVisible(false);
                 notificationPane.setTranslateX(0);
                 notificationPane.setTranslateY(0);
@@ -78,10 +79,14 @@ public class CTW_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         if (notificationPane.isVisible()) {
+            dimSc.setVisible(false);
             notificationPane.setVisible(false);
             gridRequestFocus();
         } else {
             GameNotification.instructionCTW(notificationPane);
+            dimSc.toFront();
+            dimSc.setVisible(true);
+            notificationPane.toFront();
             notificationPane.setVisible(true);
         }
     }
@@ -146,7 +151,7 @@ public class CTW_ctrl extends Game_ctrl {
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, notificationPane, this,
+        GameNotification.endGameNotification(guessed, winningWord, this,
                 new String[]{"The word you need to catch was", ""});
     }
 }

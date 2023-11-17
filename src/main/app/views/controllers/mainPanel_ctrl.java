@@ -3,6 +3,7 @@ package views.controllers;
 import javafx.animation.Animation;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
@@ -49,6 +50,7 @@ public class mainPanel_ctrl {
         AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/logo.gif").
                 toExternalForm(), 5000);
         logoImg.setGraphic(ani.getView());
+        setTooltip(logoImg, "DUOLINGO");
         ani.setCycleCount(Animation.INDEFINITE);
         ani.setAutoReverse(true);
         ani.play();
@@ -97,6 +99,19 @@ public class mainPanel_ctrl {
         tt.setOnShown(s -> {
             //Get button current bounds on computer screen
             Bounds bounds = button.localToScreen(button.getBoundsInLocal());
+            tt.setX(bounds.getMaxX() - 5);
+            tt.setY(bounds.getCenterY() - tt.getHeight() / 2);
+        });
+        tt.getStyleClass().add("navbutton-tooltip");
+    }
+
+    private void setTooltip(Node node, String text) {
+        Tooltip tt = new Tooltip(text);
+        Tooltip.install(node, tt);
+        tt.setShowDelay(new Duration(.1));
+        tt.setOnShown(s -> {
+            //Get button current bounds on computer screen
+            Bounds bounds = node.localToScreen(node.getBoundsInLocal());
             tt.setX(bounds.getMaxX() - 5);
             tt.setY(bounds.getCenterY() - tt.getHeight() / 2);
         });

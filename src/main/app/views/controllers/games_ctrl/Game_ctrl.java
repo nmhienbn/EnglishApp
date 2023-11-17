@@ -6,6 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Region;
 import javafx.util.Duration;
 import views.animations.GameAnimations;
 
@@ -16,6 +18,9 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public abstract class Game_ctrl {
+    public BorderPane notificationPane;
+    public Region dimSc;
+
     abstract public void restart();
 
     protected void initWords(String path, ArrayList<String> words) {
@@ -27,17 +32,22 @@ public abstract class Game_ctrl {
     }
 
 
-    protected void setTooltip(ImageView img, String text) {
+    protected void setTooltip(Node node, String text) {
         Tooltip tt = new Tooltip(text);
-        Tooltip.install(img, tt);
+        Tooltip.install(node, tt);
         tt.setShowDelay(new Duration(.1));
         tt.setOnShown(s -> {
             //Get img current bounds on computer screen
-            Bounds bounds = img.localToScreen(img.getBoundsInLocal());
+            Bounds bounds = node.localToScreen(node.getBoundsInLocal());
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
         });
-        tt.getStyleClass().add("navbutton-tooltip");
+        node.setOnMouseEntered(e -> {
+            node.setStyle("-fx-background-color: #ced4da");
+        });
+        node.setOnMouseExited(e -> {
+            node.setStyle("-fx-background-color: transparent");
+        });
     }
 
     public abstract void showStartGame();
