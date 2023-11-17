@@ -3,10 +3,8 @@ package views.controllers.games_ctrl;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
 import views.controllers.mainPanel_ctrl;
@@ -48,9 +46,9 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public HBox titleHBox;
     @FXML
-    public ImageView restartButton;
+    public Button restartButton;
     @FXML
-    public ImageView exitButton;
+    public Button exitButton;
     @FXML
     public BorderPane notificationPane;
     @FXML
