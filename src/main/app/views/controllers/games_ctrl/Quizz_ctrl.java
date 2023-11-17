@@ -1,8 +1,10 @@
 package views.controllers.games_ctrl;
 
+import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 
 public class Quizz_ctrl extends Game_ctrl {
     public static mainPanel_ctrl mainPanelCtrl = null;
+
     public static class Quizz {
         public String question;
         public String[] choices;
@@ -54,6 +57,8 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public Region dimSc;
 
+    SequentialTransition sequentialTransition;
+
     // Word lists
     public static final ArrayList<Quizz> QUESTIONS = new ArrayList<>();
 
@@ -68,13 +73,18 @@ public class Quizz_ctrl extends Game_ctrl {
 
     @FXML
     public void restart() {
-        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
-        rotateTransition.setOnFinished(ae -> {
-            mainQuizz.getRandomWord();
-            mainQuizz.createQuestion(question, ansA, ansB, ansC, ansD);
-            showStartGame();
-        });
-        rotateTransition.play();
+        for (Node node : restartButton.getChildrenUnmodifiable()) {
+            if (node != null) {
+                RotateTransition rotateTransition = GameAnimations.rotateTrans(node, 0, 360 * 3);
+                rotateTransition.setOnFinished(ae -> {
+                    mainQuizz.getRandomWord();
+                    mainQuizz.createQuestion(question, ansA, ansB, ansC, ansD);
+                    showStartGame();
+                });
+                rotateTransition.play();
+                break;
+            }
+        }
     }
 
     private void createUI() {
@@ -114,6 +124,8 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public void exitGame() {
         mainPanelCtrl.mainPane.setCenter(mainPanelCtrl.game_tab);
+        sequentialTransition.stop();
+        sequentialTransition = null;
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
@@ -122,8 +134,20 @@ public class Quizz_ctrl extends Game_ctrl {
     }
 
     public void showStartGame() {
-        int duration = 500;
-        SequentialTransition sequentialTransition = new SequentialTransition();
+        ParallelTransition parallelTransition = new ParallelTransition();
+        int duration = 200;
+        if (sequentialTransition != null) {
+            sequentialTransition.stop();
+            parallelTransition.getChildren().addAll(
+                    GameAnimations.fadeTrans(fQ, 1, 0, duration),
+                    GameAnimations.scaleTrans(fA, 1, 0, duration),
+                    GameAnimations.scaleTrans(fB, 1, 0, duration),
+                    GameAnimations.scaleTrans(fC, 1, 0, duration),
+                    GameAnimations.scaleTrans(fD, 1, 0, duration));
+        }
+        sequentialTransition = new SequentialTransition();
+        sequentialTransition.getChildren().add(parallelTransition);
+        duration = 400;
         sequentialTransition.getChildren().addAll(
                 GameAnimations.fadeTrans(fQ, 0, 1, duration),
                 GameAnimations.scaleTrans(fA, 0, 1, duration),

@@ -19,7 +19,7 @@ import org.kordamp.bootstrapfx.BootstrapFX;
 import views.animations.GameAnimations;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.Game_ctrl;
-import views.controllers.games_ctrl.WordleTab_ctrl;
+import views.controllers.games_ctrl.Wordle_ctrl;
 
 
 public class GameNotification {
@@ -27,7 +27,7 @@ public class GameNotification {
     private GameNotification() {
     }
 
-    public static WordleTab_ctrl wordleTab_ctrl;
+    public static Wordle_ctrl wordle_ctrl;
     public static CTW_ctrl ctw_ctrl;
     private static double xOffset = 0;
     private static double yOffset = 0;

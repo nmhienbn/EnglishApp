@@ -6,7 +6,6 @@ import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
@@ -16,7 +15,7 @@ import views.games.MainWordle;
 
 import java.util.ArrayList;
 
-public class WordleTab_ctrl extends Game_ctrl {
+public class Wordle_ctrl extends Game_ctrl {
     public static mainPanel_ctrl mainPanelCtrl = null;
 
     private final MainWordle mainWordle = MainWordle.getInstance();
@@ -50,8 +49,8 @@ public class WordleTab_ctrl extends Game_ctrl {
     void initialize() {
         initializeWordLists();
         createUI();
-        mainWordle.wordleTab_ctrl = this;
-        GameNotification.wordleTab_ctrl = this;
+        mainWordle.wordle_ctrl = this;
+        GameNotification.wordle_ctrl = this;
         setTooltip(helpButton, "Instructions");
         setTooltip(restartButton, "Restart");
         setTooltip(exitButton, "Exit");
@@ -92,12 +91,18 @@ public class WordleTab_ctrl extends Game_ctrl {
 
     @FXML
     public void restart() {
-        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
-        rotateTransition.setOnFinished(ae -> {
-            showStartGame();
-            mainWordle.resetGame(gridPane, keyboardRows);
-        });
-        rotateTransition.play();
+        for (Node node : restartButton.getChildrenUnmodifiable()) {
+            if (node != null) {
+                RotateTransition rotateTransition = GameAnimations.rotateTrans(node, 0, 360 * 3);
+                rotateTransition.setOnFinished(ae -> {
+                    showStartGame();
+                    mainWordle.resetGame(gridPane, keyboardRows);
+                });
+                rotateTransition.play();
+                gridRequestFocus();
+                break;
+            }
+        }
     }
 
     @Override
@@ -138,7 +143,7 @@ public class WordleTab_ctrl extends Game_ctrl {
     }
 
     public static void showWordNotFound() {
-        GameNotification.showNotification(MainWordle.getInstance().wordleTab_ctrl.notificationPane, "INVALID WORD!");
+        GameNotification.showNotification(MainWordle.getInstance().wordle_ctrl.notificationPane, "INVALID WORD!");
     }
 
     private void initializeWordLists() {
