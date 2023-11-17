@@ -32,21 +32,21 @@ public abstract class Game_ctrl {
     }
 
 
-    protected void setTooltip(Node img, String text) {
+    protected void setTooltip(Node node, String text) {
         Tooltip tt = new Tooltip(text);
-        Tooltip.install(img, tt);
+        Tooltip.install(node, tt);
         tt.setShowDelay(new Duration(.1));
         tt.setOnShown(s -> {
             //Get img current bounds on computer screen
-            Bounds bounds = img.localToScreen(img.getBoundsInLocal());
+            Bounds bounds = node.localToScreen(node.getBoundsInLocal());
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
         });
-        img.setOnMouseEntered(e -> {
-            img.setStyle("-fx-background-color: #ced4da");
+        node.setOnMouseEntered(e -> {
+            node.setStyle("-fx-background-color: #ced4da");
         });
-        img.setOnMouseExited(e -> {
-            img.setStyle("-fx-background-color: transparent");
+        node.setOnMouseExited(e -> {
+            node.setStyle("-fx-background-color: transparent");
         });
     }
 
