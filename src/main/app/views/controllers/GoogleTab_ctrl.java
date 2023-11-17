@@ -84,9 +84,9 @@ public class GoogleTab_ctrl {
     }
 
     private void setLang_label() {
-        if (lang1.equals("vi")) lang_label1.setText("Tiếng Việt");
-        if (lang1.equals("en")) lang_label1.setText("English");
-        if (lang2.equals("vi")) lang_label2.setText("Tiếng Việt");
-        if (lang2.equals("en")) lang_label2.setText("English");
+        if (lang1.equals("vi")) lang_label1.setText("Tiếng Việt - Vietnamese");
+        if (lang1.equals("en")) lang_label1.setText("Tiếng Anh - English");
+        if (lang2.equals("vi")) lang_label2.setText("Tiếng Việt - Vietnamese");
+        if (lang2.equals("en")) lang_label2.setText("Tiếng Anh - English");
     }
 }
