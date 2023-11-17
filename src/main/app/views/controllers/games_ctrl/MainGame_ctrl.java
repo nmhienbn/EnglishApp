@@ -22,7 +22,7 @@ public class MainGame_ctrl {
     Parent wordle_tab;
     Parent ctw_tab;
 
-    WordleTab_ctrl wordleTab_ctrl;
+    Wordle_ctrl wordle_ctrl;
 
     CTW_ctrl ctwTab_ctrl;
 
@@ -36,8 +36,8 @@ public class MainGame_ctrl {
 
         quizz_ctrl = new Quizz_ctrl();
         quizz_tab = File_loader.getInstance().fxml_quizz_Tab(quizz_ctrl);
-        wordleTab_ctrl = new WordleTab_ctrl();
-        wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordleTab_ctrl);
+        wordle_ctrl = new Wordle_ctrl();
+        wordle_tab = File_loader.getInstance().fxml_wordle_Tab(wordle_ctrl);
         ctwTab_ctrl = new CTW_ctrl();
         ctw_tab = File_loader.getInstance().fxml_ctw_Tab(ctwTab_ctrl);
     }
@@ -50,7 +50,7 @@ public class MainGame_ctrl {
             ani.play();
         });
         button.setOnMouseExited(e -> {
-            ani.stop();
+            ani.pause();
         });
         button.setOnAction(e -> {
             OnButtonPress(button);
@@ -63,8 +63,8 @@ public class MainGame_ctrl {
             quizz_ctrl.showStartGame();
         } else if (button == wordle_button) {
             mainPanelCtrl.mainPane.setCenter(wordle_tab);
-            wordleTab_ctrl.gridRequestFocus();
-            wordleTab_ctrl.showStartGame();
+            wordle_ctrl.gridRequestFocus();
+            wordle_ctrl.showStartGame();
         } else if (button == ctw_button) {
             mainPanelCtrl.mainPane.setCenter(ctw_tab);
             ctwTab_ctrl.gridRequestFocus();

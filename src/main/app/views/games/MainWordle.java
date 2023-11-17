@@ -10,16 +10,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
-import views.controllers.games_ctrl.WordleTab_ctrl;
+import views.controllers.games_ctrl.Wordle_ctrl;
 
 import java.util.Objects;
 
-import static views.controllers.games_ctrl.WordleTab_ctrl.showWordNotFound;
-import static views.controllers.games_ctrl.WordleTab_ctrl.winningWords;
+import static views.controllers.games_ctrl.Wordle_ctrl.showWordNotFound;
+import static views.controllers.games_ctrl.Wordle_ctrl.winningWords;
 
-public class MainWordle extends Game{
+public class MainWordle extends Game {
     protected static MainWordle instance = null;
-    public WordleTab_ctrl wordleTab_ctrl = null;
+    public Wordle_ctrl wordle_ctrl = null;
     protected final String[] LetterStyleClass = {"correct-letter", "valid-letter", "absent-letter"};
 
 
@@ -69,7 +69,7 @@ public class MainWordle extends Game{
 
     @Override
     protected void onMouseEntered(Label label) {
-        if (wordleTab_ctrl.notificationPane.isVisible()) {
+        if (wordle_ctrl.notificationPane.isVisible()) {
             return;
         }
         label.toFront();
@@ -208,12 +208,12 @@ public class MainWordle extends Game{
             if (guess.equals(winningWord)) {
                 updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
-                wordleTab_ctrl.showEndGameWindow(true, winningWord);
+                wordle_ctrl.showEndGameWindow(true, winningWord);
             } else if (isValidGuess(guess)) {
                 updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
                 if (CUR_ROW == MAX_ROW) {
-                    wordleTab_ctrl.showEndGameWindow(false, winningWord);
+                    wordle_ctrl.showEndGameWindow(false, winningWord);
                 } else {
                     CUR_ROW++;
                     CUR_COLUMN = 1;
@@ -286,7 +286,7 @@ public class MainWordle extends Game{
 
         CUR_COLUMN = 1;
         CUR_ROW = 1;
-        wordleTab_ctrl.gridRequestFocus();
+        wordle_ctrl.gridRequestFocus();
     }
 
 }

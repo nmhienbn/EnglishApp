@@ -93,13 +93,18 @@ public class CTW_ctrl extends Game_ctrl {
 
     @FXML
     public void restart() {
-        RotateTransition rotateTransition = GameAnimations.rotateTrans(restartButton, 0, 360 * 3);
-        rotateTransition.setOnFinished(ae -> {
-            mainCTW.resetGame(ImageAns, gridPane, keyboardRows);
-            showStartGame();
-        });
-        rotateTransition.play();
-        gridRequestFocus();
+        for (Node node : restartButton.getChildrenUnmodifiable()) {
+            if (node != null) {
+                RotateTransition rotateTransition = GameAnimations.rotateTrans(node, 0, 360 * 3);
+                rotateTransition.setOnFinished(ae -> {
+                    mainCTW.resetGame(ImageAns, gridPane, keyboardRows);
+                    showStartGame();
+                });
+                rotateTransition.play();
+                gridRequestFocus();
+                break;
+            }
+        }
     }
 
     @FXML

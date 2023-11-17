@@ -15,7 +15,7 @@ import views.animations.GameAnimations.AnimatedGif;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.MainGame_ctrl;
 import views.controllers.games_ctrl.Quizz_ctrl;
-import views.controllers.games_ctrl.WordleTab_ctrl;
+import views.controllers.games_ctrl.Wordle_ctrl;
 
 import java.io.IOException;
 
@@ -74,7 +74,7 @@ public class mainPanel_ctrl {
         OnButtonPress(home_button);
 
         MainGame_ctrl.mainPanelCtrl = this;
-        WordleTab_ctrl.mainPanelCtrl = this;
+        Wordle_ctrl.mainPanelCtrl = this;
         CTW_ctrl.mainPanelCtrl = this;
         Quizz_ctrl.mainPanelCtrl = this;
     }
