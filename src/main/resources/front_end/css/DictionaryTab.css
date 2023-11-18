@@ -105,8 +105,8 @@
 #search_box,
 #word_list_box,
 #word_info_area {
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .2, 0, 0, 0);
-
+    -fx-background-color: white0;
+    -fx-effect: dropshadow(three-pass-box, #27282E, 1, 0, 0, 0);
 }
 
 /*---------------------------------------------------------------------------------------------------*/
@@ -133,7 +133,7 @@
 }
 
 .function-button:hover {
-    -fx-background-color: white3;
+    -fx-background-color: white2;
 }
 
 .function-button .pressed {}
@@ -147,11 +147,44 @@
 }
 
 .SHF_group:hover {
-    -fx-background-color: white3;
+    -fx-background-color: white2;
 }
 
 .SHF_group:selected {
     -fx-background-color: white4;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+.scroll-bar:vertical {
+    -fx-pref-width: 12;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: white0;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: white2;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2em;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
 }
 
 /*---------------------------------------------------------------------------------------------------*/
@@ -171,3 +204,19 @@
 .textwindow {
     -fx-background-color: white0;
 }
+
+/*---------------------------------------------------------------------------------------------------*/
+
+.word-info-text {}
+
+.word-info-text.type {}
+
+.word-info-text.pronounce {}
+
+.word-info-text.example {}
+
+.word-info-text.meaning {}
+
+.word-info-text.undefined {}
+
+/*---------------------------------------------------------------------------------------------------*/
