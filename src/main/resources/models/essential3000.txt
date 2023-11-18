@@ -1,0 +1,1915 @@
+﻿.
+about#[əˈbaʊt]#khoảng chừng, gần
+after#[ˈɑːftə(r)]#sau, đằng sau, sau khi
+again#[əˈɡen]#lại, lần nữa
+air#[eə(r)]#không khí, bầu không khí
+all#[ɔːl]#tất cả, hết thảy, toàn bộ
+along#[əˈlɒŋ]#dọc theo, theo
+also#[ˈɔːlsəʊ]#cũng, cũng vậy
+an#[ən]#một, một (nào đó)
+and#[ənd]#và, cùng, với, còn
+another#[əˈnʌðə(r)]#khác
+any#[ˈeni]#bất cứ vật gì, bất cứ ai (ý khẳng định)
+around#[əˈraʊnd]#xung quanh, vòng quanh
+as#[əz]#khi, lúc, do, bởi
+at#[ət]#ở tại (chỉ vị trí, khoảng cách), vào lúc (chỉ thời gian)
+away#[əˈweɪ]#xa, xa cách, biến mất
+back#[bæk]#lưng, đằng sau, mặt sau
+be#[bi]#thì, là
+because#[bɪˈkəz]#vì, bởi vì
+been#[biːn]#thì, là
+before#[bɪˈfɔː(r)]#trước, đằng trước, trước đây
+below#[bɪˈləʊ]#ở dưới, ở dưới thấp, thấp hơn
+between#[bɪˈtwiːn]#giữa, ở giữa
+both#[bəʊθ]#cả hai
+but#[bət]#nhưng, trừ ra, ngoài ra
+by#[baɪ]#gần, bằng, bởi
+came#[keim]#đến, tới, đi đến
+can#[kæn]#có thể, có khả năng
+come#[kʌm]#đến, tới, đi đến
+could#[kəd]#có thể
+day#[deɪ]#ban ngày, ngày
+did#[dɪd]#quá khứ của do
+different#[ˈdɪfrənt]#khác, khác biệt, khác nhau
+do#[]#làm, thực hiện
+down#[daʊn]#xuống, bỏ xuống, giảm bớt
+each#[iːtʃ]#mỗi người, mỗi vật, mỗi cái
+end#[end]#kết thúc, chấm dứt, đoạn cuối
+even#[ˈiːvn]#ngay cả, ngay
+every#[ˈevri]#mỗi, mọi
+few#[fjuː]#ít, vài
+find#[faɪnd]#thấy, tìm thấy, tìm ra
+first#[fɜːst]#thứ nhất, đầu tiên, trước tiên
+for#[fə(r)]#thay cho, thế cho, đại diện cho
+from#[frəm]#từ (đâu), tách khỏi, dựa vào
+get#[ɡet]#được, có được, kiếm được
+give#[ɡɪv]#cho, biếu, tặng
+go#[ɡəʊ]#đi, đi đến, đi tới
+good#[ɡʊd]#tốt, hay, tuyệt
+great#[ɡreɪt]#tuyệt, to lớn, vĩ đại
+have#[həv]#có, nhận được, biết được
+he#[hi]#nó, anh ấy, ông ấy...
+help#[help]#giúp đỡ, cứu giúp
+her#[hə(r)]#nó, cô ấy, bà ấy, chị ấy...
+here#[hɪə(r)]#đây, ở đây, ở chỗ này
+him#[hɪm]#nó, hắn, ông ấy, anh ấy
+his#[hɪz]#của nó, của hắn, của ông ấy, của anh ấy
+home#[həʊm]#nhà, chỗ ở
+house#[haʊs]#nhà ở, căn nhà, toà nhà
+how#[haʊ]#thế nào, như thế nào, làm sao
+i#[aɪ]#tôi, ta, tao, tớ, mình
+if#[ɪf]#nếu, nếu như
+in#[ɪn]#ở, tại, trong (nơi chốn, không gian...)
+into#[ˈɪntə]#vào, vào trong
+is#[ɪz]#thì, là (dùng với ngôi 3 số ít, là thời hiện tại của .be)
+it#[ɪt]#cái đó, điều đó, con vật đó, nó
+its#[ɪts]#của cái đó, của điều đó, của con vật đó
+just#[dʒʌst]#vừa mới, chỉ, chính
+know#[nəʊ]#biết, hiểu biết
+large#[lɑːdʒ]#rộng, lớn, to
+last#[lɑːst]#cuối cùng, sau chót
+left#[left]#phía bên trái
+like#[laɪk]#thích ưa, chuộng
+line#[laɪn]#hàng, đường dây, đường kẻ
+little#[ˈlɪtl]#nhỏ bé, bé bỏng
+long#[lɒŋ]#dài, xa, lâu
+look#[lʊk]#nhìn, xem, ngó
+make#[meɪk]#làm, chế tạo
+man#[mæn]#đàn ông, nam nhi
+many#[ˈmeni]#nhiều
+may#[meɪ]#có thể, có lẽ
+me#[mi]#tôi, tao, tớ
+more#[mɔː(r)]#nhiều hơn, lớn hơn, đông hơn
+most#[məʊst]#lớn nhất, nhiều nhất
+mr#[ˈmɪstə(r)]#danh hiệu chỉ một người đàn ông, ông
+must#[məst]#phải, cần phải, nên
+my#[maɪ]#của tôi
+name#[neɪm]#tên, danh tánh
+never#[ˈnevə(r)]#không bao giờ, chẳng bao giờ
+new#[njuː]#mới, mới mẻ, mới lạ
+next#[nekst]#bên cạnh, tiếp sau, lần sau
+no#[nəʊ]#không
+not#[nɒt]#không
+now#[naʊ]#bây giờ, hiện nay, ngày nay
+number#[ˈnʌmbə(r)]#số
+of#[əv]#thuộc, của, ở
+off#[ɒf]#tắt, ra khỏi, đứt
+old#[əʊld]#cũ, già giặn
+on#[ɒn]#trên, ở trên
+one#[wʌn]#một
+only#[ˈəʊnli]#chỉ có một, duy nhất
+or#[ɔː(r)]#hoặc, hay là
+other#[ˈʌðə(r)]#người khác, vật khác, cái khác
+our#[ɑː(r)]#của chúng ta, của chúng tôi
+out#[aʊt]#ngoài, ở ngoài, ra ngoài
+over#[ˈəʊvə(r)]#lên, lên trên, bên trên
+own#[əʊn]#của chính mình, của riêng mình, tự mình
+part#[pɑːt]#phần, bộ phận
+people#[ˈpiːpl]#người (số nhiều), dân tộc
+place#[pleɪs]#nơi, chỗ, địa điểm
+put#[pʊt]#để, đặt, bỏ
+read#[riːd]#đọc, nghiên cứu
+right#[raɪt]#quyền lợi, phía bên phải, tốt, đúng
+same#[seɪm]#đều đều, đơn điệu, giống hệt, như nhau
+say#[seɪ]#nói, lời nói
+see#[siː]#thấy, trông thấy, nhìn thấy
+she#[ʃi]#nó, bà ấy, chị ấy, cô ấy...
+should#[ʃəd]#nên
+show#[ʃəʊ]#cho xem, cho thấy, trưng bày
+small#[smɔːl]#nhỏ, bé, chật
+so#[səʊ]#như thế, như vậy
+some#[sʌm]#một ít, một vài, dăm ba
+something#[ˈsʌmθɪŋ]#một điều gì đó, một việc gì đó, cái gì đó
+sound#[saʊnd]#âm thanh, nghe như, nghe có vẻ
+still#[stɪl]#vẫn, vẫn còn
+such#[sʌtʃ]#như thế, như vậy, như là
+take#[teɪk]#cầm, nắm, giữ
+tell#[tel]#nói, nói lên, nói ra
+than#[ðən]#hơn (để diễn đạt sự so sánh)
+that#[ðæt]#người ấy, người đó, vật đó
+the#[ðiː]#cái, con, người...
+them#[ðəm]#chúng, chúng nó, họ
+then#[ðen]#khi đó, lúc đó, sau đó
+there#[ðeə(r)]#ở nơi đó, tại nơi đó
+these#[ðiːz]#cái này, điều này, việc này
+they#[ðeɪ]#chúng, chúng nó, họ
+thing#[θɪŋ]#đồ, vật, thứ, điều
+think#[θɪŋk]#nghĩ, suy nghĩ, ngẫm nghĩ
+this#[ðɪs]#cái này, điều này, việc này
+three#[θriː]#số ba
+through#[θruː]#qua, xuyên qua, thông qua
+time#[taɪm]#thời gian, thì giờ
+to#[tə]#theo hướng, hướng tới, đến
+together#[təˈɡeðə(r)]#cùng với, cùng nhau, lại với nhau
+too#[tuː]#cũng, quá
+two#[tuː]#số hai
+under#[ˈʌndə(r)]#dưới, ở dưới
+up#[ʌp]#ở trên, lên trên, lên
+us#[əs]#chúng tôi, chúng ta
+use#[juːz]#dùng, sử dụng
+very#[ˈveri]#rất, lắm, hết sức
+want#[wɒnt]#muốn, muốn có, đòi hỏi
+water#[ˈwɔːtə(r)]#dung dịch nước, nước
+way#[weɪ]#đường, đường đi, lối đi
+we#[wi]#chúng tôi, chúng ta
+well#[wel]#tốt, giỏi, hay
+what#[wɒt]#gì, thế nào
+when#[wen]#vào lúc nào, vào dịp nào, khi nào
+where#[weə(r)]#đâu, ở đâu, ở nơi nào
+which#[wɪtʃ]#gì, cái nào, người nào, ai (ngụ ý chọn lựa)
+while#[waɪl]#lúc, chốc, lát
+who#[huː]#ai, người nào, kẻ nào
+why#[waɪ]#tại sao, vì sao
+will#[wɪl]#sẽ (tương lai)
+with#[wɪð]#với, cùng, cùng với
+wordEntry#[wɜːd]#từ
+work#[wɜːk]#làm, làm việc
+world#[wɜːld]#thế giới, toàn cầu
+write#[raɪt]#viết
+year#[jɪə(r)]#năm
+you#[ju]#anh, chị, ông, bà...
+your#[jɔː(r)]#của anh, của chị, của ngài...
+able#[ˈeɪbl]#có năng lực, có tài
+above#[əˈbʌv]#trên, hơn, ở trên
+across#[əˈkrɒs]#qua, ngang, ngang qua
+add#[æd]#thêm vào, làm tăng thêm
+against#[əˈɡenst]#chống lại, ngược lại, phản đối
+ago#[əˈɡəʊ]#trước đây, về trước
+almost#[ˈɔːlməʊst]#hầu như, gần như, súyt
+among#[əˈmʌŋ]#giữa, ở giữa, trong số
+animal#[ˈænɪml]#động vật, thú vật
+answer#[ˈɑːnsə(r)]#trả lời, đáp lại, câu trả lời
+become#[bɪˈkʌm]#trở nên, trở thành
+behind#[bɪˈhaɪnd]#sau, ở đằng sau
+being#['bi:iη]#sự tồn tại
+better#[ˈbetə(r)]#tốt hơn, khá hơn, hay hơn
+black#[blæk]#màu đen, đen tối, ảm đạm
+best#[best]#tốt nhất, hay nhất, đẹp nhất, giỏi nhất
+body#[ˈbɒdi]#thân thể, thân xác
+book#[bʊk]#sách
+boy#[bɔɪ]#con trai
+brought#[brɔːt]#cầm lại, đem lại, mang lại
+call#[kɔːl]#gọi, kêu gọi, gọi là
+cannot#['kænɔt]#không thể
+car#[kɑː(r)]#xe ô tô
+certain#['sə:tn]#chắc, chắc chắn
+change#[tʃeɪndʒ]#đổi, thay, thay đổi
+children#[]#những đứa trẻ, những đứa bé
+city#[ˈsɪti]#thành phố, thành thị, đô thị
+close#[kləʊz]#đóng lại, kết thúc, chấm dứt
+cold#[kəʊld]#lạnh, lạnh lẽo, nguội
+country#[ˈkʌntri]#quốc gia, đất nước, tổ quốc
+course#[kɔːs]#tiến trình, dòng, quá trình diễn biến
+cut#[kʌt]#cắt, chặt, chém
+dog#[dɒɡ]#con chó
+door#[dɔː(r)]#cửa,cánh cửa ra vào (nhà, xe ô tô...)
+draw#[drɔː]#kéo, lôi kéo, lôi cuốn
+during#[ˈdjʊərɪŋ]#trong lúc, trong thời gian
+early#[ˈɜːli]#sớm, ban đầu, đầu mùa
+earth#[ɜːθ]#đất, mặt đất, quả đất
+eat#[iːt]#ăn
+enough#[ɪˈnʌf]#đủ, đủ dùng
+ever#[ˈevə(r)]#bao giờ, từ trước đến giờ, từng
+example#[ɪɡˈzɑːmpl]#thí dụ, ví dụ, mẫu
+eye#[aɪ]#mắt, con mắt
+face#[feɪs]#mặt
+family#[ˈfæməli]#gia đình, gia quyến
+far#[fɑː(r)]#xa, xa xôi, xa xăm
+father#[ˈfɑːðə(r)]#cha, bố
+feel#[fiːl]#cảm giác, cảm thấy
+feet#[fiːt]#chân, bàn chân
+fire#[ˈfaɪə(r)]#lửa, ánh lửa
+fish#[fɪʃ]#cá, đánh cá
+five#[faɪv]#số năm
+food#[fuːd]#đồ ăn, thức ăn, món ăn
+form#[fɔːm]#hình dạng, hình thức
+four#[fɔː(r)]#số bốn
+front#[frʌnt]#đằng trước, phía trước, trước mặt
+green#[ɡriːn]#xanh lá cây, xanh lục
+ground#[ɡraʊnd]#mặt đất, đất
+group#[ɡruːp]#nhóm
+grow#[ɡrəʊ]#mọc lên, lớn lên
+half#[hɑːf]#(một) nửa, phân chia đôi
+hand#[hænd]#tay, bàn tay
+hard#[hɑːd]#cứng, khó khăn, chăm chỉ, siêng năng
+heard#[hɜːd]#nghe
+high#[haɪ]#cao, cao giá, đắt
+himself#[hɪmˈself]#tự nó, tự mình
+however#[haʊˈevə(r)]#tuy nhiên, tuy thế, tuy vậy
+idea#[aɪˈdɪə]#quan niệm, tư tưởng, ý tưởng
+important#[ɪmˈpɔːtnt]#quan trọng, trọng đại, trọng yếu
+inside#[ˌɪnˈsaɪd]#mặt trong, phía trong, bên trong
+keep#[kiːp]#giữ, giữ lại, tuân thủ
+kind#[kaɪnd]#loại, hạng, thứ
+land#[lænd]#đất, đất liền, đất trồng
+later#[ˈleɪtə(r)]#đến sau, theo sau
+learn#[lɜːn]#học, học tập, nghiên cứu
+let#[let]#để cho, cho phép
+letter#[ˈletə(r)]#chữ cái, mẫu tự
+life#[laɪf]#cuộc sống, sự sinh sống, đời sống
+light#[laɪt]#ánh sáng
+live#[lɪv]#sống
+living#[ˈlɪvɪŋ]#cuộc sống, sinh hoạt
+making#[ˈmeɪkɪŋ]#sự làm, sự chế tạo, cách làm
+mean#[miːn]#nghĩa là, có nghĩa là
+money#[ˈmʌni]#tiền, tiền tệ, tiền bạc
+morning#[ˈmɔːnɪŋ]#buổi sáng
+mother#[ˈmʌðə(r)]#mẹ, mẹ đẻ
+move#[muːv]#chuyển, di chuyển, chuyển dịch
+mrs#[ˈmɪsɪz]#quý bà (danh hiệu chỉ một phụ nữ đã có chồng)
+near#[nɪə(r)]#gần, cận
+night#[naɪt]#đêm, tối, cảnh tối tăm
+nothing#[ˈnʌθɪŋ]#không gì, không cái gì
+once#[wʌns]#một lần, một khi
+open#[ˈəʊpən]#mở
+order#[ˈɔːdə(r)]#thứ bậc, thứ tự
+page#[peɪdʒ]#trang (sách...)
+paper#[ˈpeɪpə(r)]#giấy, (số nhiều) giấy tờ
+parts#[]#phần, bộ phận
+perhaps#[pəˈhæps]#có lẽ, có thể
+picture#[ˈpɪktʃə(r)]#bức tranh, bức ảnh, bức vẽ
+play#[pleɪ]#chơi, nô đùa, đùa giỡn
+point#[pɔɪnt]#điểm, vấn đề, mặt
+ready#[ˈredi]#sẵn sàng, sẵn lòng
+red#[red]#màu đỏ
+remember#[rɪˈmembə(r)]#nhớ, nhớ lại, ghi nhớ
+rest#[rest]#sự nghỉ ngơi, lúc nghỉ ngơi
+room#[ruːm]#buồng, phòng
+run#[rʌn]#chạy, chạy vội
+school#[skuːl]#trường học, học đường
+sea#[siː]#biển
+second#[ˈsek.ənd]#thứ hai, thứ nhì
+sentence#[ˈsentəns]#(ngôn ngữ học) câu
+several#[ˈsevrəl]#vài
+short#[ʃɔːt]#ngắn, cụt, lùn
+shown#[ʃəʊn]#cho xem, cho thấy, trưng bày
+since#[sɪns]#từ lâu, từ đó, từ khi
+six#[sɪks]#số sáu
+slide#[slaɪd]#trượt, lướt qua, đi qua
+sometime#[ˈsʌmtaɪm]#một lúc nào đó, trước kia
+soon#[suːn]#sớm
+space#[speɪs]#không gian, không trung, khoảng không
+state#[steɪt]#trạng thái, tình trạng
+story#[ˈstɔːri]#câu chuyện, truyện
+sun#[sʌn]#mặt trời
+sure#[ʃʊə(r)]#chắc, chắc chắn
+table#[ˈteɪbl]#cái bàn, bàn ăn
+though#[ðəʊ]#dù, dù cho, mặc dù
+today#[təˈdeɪ]#hôm nay, bây giờ, ngày nay, thời nay
+told#[təʊld]#nói, nói với
+took#[tʊk]#cầm, nắm, giữ
+top#[tɒp]#chóp, đỉnh, ngọn
+toward#[]#về phía, hướng về
+tree#[triː]#cây
+try#[traɪ]#thử, thử xem, làm thử
+turn#[tɜːn]#lượt, phiên, xoay
+united#[juˈnaɪtɪd]#đoàn kết, hoà hợp, liên hiệp
+until#[ənˈtɪl]#trước khi, cho đến khi
+upon#[əˈpɒn]#trên, ở trên
+usually#[ˈjuːʒuəli]#thường thường, thường lệ
+white#[waɪt]#trắng, tái mét, trắng bệch
+whole#[həʊl]#toàn bộ, toàn thể
+wind#[wɪnd]#gió
+without#[wɪˈðaʊt]#không, không có
+yes#[jes]#vâng, phải, dạ, ừ
+yet#[jet]#chưa, còn chưa, dù sao
+young#[jʌŋ]#trẻ, trẻ tuổi, thiếu niên
+alone#[əˈləʊn]#một mình, trơ trọi, cô đơn, đơn độc
+already#[ɔːlˈredi]#đã, rồi, đã... rồi
+although#[ɔːlˈðəʊ]#dẫu cho, mặc dù
+america#[]#châu mỹ
+anything#[ˈeniθɪŋ]#bất cứ việc gì, bất cứ vật gì
+area#[ˈeəriə]#vùng, khu vực
+ball#[bɔːl]#quả bóng, quả banh
+beautiful#[ˈbjuːtɪfl]#đẹp, hay
+beginning#[bɪˈɡɪnɪŋ]#phần đầu, lúc bắt đầu, lúc khởi đầu
+bill#[bɪl]#hoá đơn, cước phí
+birds#[]#những con chim
+blue#[blu:]#màu xanh
+boat#[bəʊt]#tàu thuyền
+bottom#[ˈbɒtəm]#phần dưới cùng, đáy
+box#[bɒks]#hộp, thùng, bao
+bring#[brɪŋ]#cầm lại, đem lại, mang lại
+build#[bɪld]#xây, xây dựng, xây cất
+building#[ˈbɪldɪŋ]#công trình kiến trúc, công trình xây dựng, tòa nhà
+care#[keə(r)]#trông nom, chăm sóc, nuôi nấng
+carefully#[ˈkeəfəli]#cẩn thận, chu đáo
+carry#[ˈkæri]#mang, vác, khuân, chở
+center#[ˈsentə(r)]#trung tâm, điểm giữa
+check#[tʃek]#kiểm tra, kiểm soát
+class#[klɑːs]#lớp học
+coming#[ˈkʌmɪŋ]#sự đến, sự tới
+common#[ˈkɒmən]#thông thường, bình thường, phổ biến
+complete#[kəmˈpliːt]#hoàn thành, làm xong
+dark#[dɑːk]#tối, tối tăm, tối mò
+deep#[diːp]#sâu, sâu xa, sâu sắc
+distance#[ˈdɪstəns]#khoảng cách, tầm xa
+doing#[ˈduːɪŋ]#việc làm, hành động, hành vi
+dry#[draɪ]#khô, cạn, ráo
+easy#[ˈiːzi]#dễ, dễ dàng
+either#[ˈiːðə(r)]#hoặc
+else#[els]#khác, nữa, nếu không
+everyone#[ˈevriwʌn]#mọi người, tất cả mọi người
+everything#[ˈevriθɪŋ]#mọi vật, mọi cái, tất cả mọi thứ
+fact#[fækt]#thực tế
+fall#[fɔːl]#rơi, rơi xuống, rơi vào
+fast#[fɑːst]#nhanh, mau
+field#[fiːld]#đồng ruộng, cánh đồng
+finally#[ˈfaɪnəli]#cuối cùng, sau cùng
+fine#[faɪn]#tốt, khả quan, giỏi
+floor#[flɔː(r)]#sàn (nhà, cầu...)
+follow#[ˈfɒləʊ]#đi theo, đi theo sau, theo dõi
+foot#[fʊt]#chân, bàn chân
+friend#[frend]#bạn
+full#[fʊl]#đầy, đầy đủ, no nê
+game#[ɡeɪm]#trò chơi, cuộc thi đấu
+getting#[ˈɡetɪŋ]#đợi ích
+girl#[ɡɜːl]#con gái
+glass#[ɡlɑːs]#kính, thuỷ tinh, cái cốc, cái ly
+gold#[ɡəʊld]#vàng, tiền vàng
+happened#[ˈhæpənd]#xảy đến, xảy ra
+heart#[hɑːt]#trái tim, người yêu quí, ngườii thân yêu (tiếng xưng hô âu yếm)
+heavy#[ˈhevi]#nặng, nặng nề
+hold#[həʊld]#cầm, nắm, giữ
+horse#[hɔːs]#con ngựa
+hot#[hɒt]#nóng, nóng bức
+hour#[ˈaʊə(r)]#giờ, tiếng (đồng hồ)
+hundred#[ˈhʌndrəd]#một trăm (100)
+ice#[aɪs]#băng, cục đá đông lạnh, nước đá
+indian#[ˈɪndiən]#người ấn độ
+instead#[ɪnˈsted]#thay cho, thay vì
+itself#[ɪtˈself]#bản thân cái đó, bản thân điều đó, bản thân con vật đó
+job#[dʒɒb]#việc, công việc
+language#[ˈlæŋɡwɪdʒ]#tiếng, ngôn ngữ
+lay#[leɪ]#nằm xuống
+least#[liːst]#tối thiểu, nhỏ nhất, ít nhất, kém nhất
+leave#[liːv]#để lại, bỏ lại, bỏ quên
+let's#[]#chúng ta hãy
+list#[lɪst]#danh sách, sổ, bản kê khai
+longer#[]#nữa, hơn nữa, lâu hơn nữa
+low#[ləʊ]#mức thấp, con số thấp
+main#[meɪn]#phần chính, phần cốt yếu, phần chủ yếu
+map#[mæp]#bản đồ
+matter#[ˈmætə(r)]#việc quan trọng, chuyện quan trọng
+mind#[maɪnd]#tinh thần, tâm trí, trí óc
+miss#[mɪs]#cô gái, thiếu nữ
+moon#[muːn]#mặt trăng, ánh trăng
+mountain#[ˈmaʊntən]#núi
+moving#[ˈmuːvɪŋ]#động, hoạt động
+music#[ˈmjuːzɪk]#nhạc, âm nhạc
+needed#[ˈniːdɪd]#cần, đòi hỏi
+notice#[ˈnəʊtɪs]#chú ý, để ý, nhận biết
+outside#[ˌaʊtˈsaɪd]#bề ngoài, bên ngoài
+past#[pɑːst]#quá khứ, dĩ vãng
+pattern#[ˈpætn]#mẫu hàng, mẫu vải
+person#[ˈpɜːsn]#con người, người
+piece#[piːs]#mảnh, mẩu, miếng
+plant#[plɑːnt]#thực vật
+poor#[pɔː(r)]#nghèo, túng, bần cùng
+possible#[ˈpɒsəbl]#có thể, có thể thực hiện được, có thể làm được
+power#[ˈpaʊə(r)]#khả năng, tài năng, năng lực
+probably#[ˈprɒbəbli]#có khả năng, có lẽ, có thể
+problem#[ˈprɒbləm]#vấn đề
+question#[ˈkwestʃən]#câu hỏi
+quickly#[ˈkwɪkli]#nhanh, nhanh chóng
+quite#[kwaɪt]#khá
+rain#[reɪn]#mưa, cơn mưa
+real#[ˈriːəl]#thiết thực, thực tế, có thực
+river#[ˈrɪvə(r)]#dòng sông
+road#[rəʊd]#con đường
+rock#[rɒk]#đá
+round#[raʊnd]#tròn, vòng quanh, xung quanh
+scientist#[ˈsaɪəntɪst]#nhà khoa học, người nghiên cứu khoa học
+shall#[ʃəl]#sẽ, nhất định sẽ
+ship#[ʃɪp]#tàu thuỷ, tàu
+simple#[ˈsɪmpl]#đơn, đơn giản
+size#[saɪz]#kích thước, độ lớn
+sky#[skaɪ]#trời, bầu trời
+slowly#[ˈsləʊli]#chậm, chầm chậm
+snow#[snəʊ]#tuyết
+someone#[ˈsʌmwʌn]#một người nào đó
+special#[ˈspeʃl]#đặc biệt, riêng biệt
+stand#[stænd]#đứng
+start#[stɑːt]#bắt đầu
+state#[steɪt]#quốc gia, bang
+stay#[steɪ]#ở lại, lưu lại
+stop#[stɒp]#ngừng, nghỉ, thôi
+strong#[strɒŋ]#mạnh, tốt
+suddenly#[ˈsʌdənli]#đột ngột, bỗng nhiên
+summer#[ˈsʌmə(r)]#mùa hè
+surface#[ˈsɜːfɪs]#bề mặt, bề ngoài
+system#[ˈsɪstəm]#hệ thống, chế độ
+talk#[tɔːk]#nói chuyện, chuyện trò
+tall#[tɔːl]#cao
+ten#[ten]#mười
+themselves#[ðəmˈselvz]#bản thân họ, chính họ, tự họ
+third#[θɜːd]#thứ ba
+tiny#[ˈtaɪni]#rất nhỏ, nhỏ xíu, bé tí
+town#[taʊn]#thị trấn, thị xã, thành phố (nhỏ)
+tried#[traɪd]#đã được thử nghiệm
+voice#[vɔɪs]#tiếng, giọng nói (do nói hoặc hát)
+walk#[wɔːk]#đi, đi bộ
+warm#[wɔːm]#ấm, ấm áp, giữ ấm
+watch#[wɒtʃ]#nhìn xem, quan sát, để ý xem
+weather#[ˈweðə(r)]#thời tiết, tiết trời
+whether#[ˈweðə(r)]#có... không, có... chăng
+wide#[waɪd]#rộng, rộng lớn
+wild#[waɪld]#hoang dã
+winter#[ˈwɪntə(r)]#mùa đông
+within#[wɪˈðɪn]#trong vòng thời gian, trong khoảng thời gian
+writing#[ˈraɪtɪŋ]#sự viết, sự viết tay, sự viết lách
+age#[eɪdʒ]#tuổi
+ask#[ɑːsk]#hỏi
+baby#[ˈbeɪbi]#đứa bé mới sinh, trẻ thơ
+base#[beɪs]#cơ sở, nền tảng, chỗ dựa, điểm tựa
+beside#[bɪˈsaɪd]#bên, bên cạnh
+bright#[braɪt]#sáng, sáng chói
+business#[ˈbɪznəs]#việc buôn bán, việc kinh doanh
+buy#[baɪ]#mua
+case#[keɪs]#trường hợp, cảnh ngộ, hoàn cảnh
+catch#[kætʃ]#bắt lấy, nắm lấy, tóm lấy
+child#[tʃaɪld]#đứa bé, đứa trẻ
+choose#[tʃuːz]#chọn, lựa chọn, kén chọn
+circle#[ˈsɜːkl]#đường tròn, hình tròn
+clear#[klɪə(r)]#trong, trong trẻo, trong sạch
+color#[ˈkʌlə(r)]#màu sắc
+copy#[ˈkɒpi]#bản sao, bản chép lại
+correct#[kəˈrekt]#đúng, chính xác
+difference#[ˈdɪfrəns]#sự khác nhau, tình trạng khác nhau
+direction#[dəˈrekʃn]#phương hướng, chiều
+dried#[draɪd]#khô, sấy khô
+easily#[ˈiːzəli]#dễ dàng
+edge#[edʒ]#bờ, gờ, cạnh, rìa, lề
+egg#[eɡ]#trứng
+eight#[eɪt]#số tám
+energy#[ˈenədʒi]#năng lượng
+especially#[ɪˈspeʃəli]#đặc biệt là, nhất là
+europe#[ˈjʊərəp]#liên minh châu âu
+exactly#[ɪɡˈzæktli]#chính xác, đúng đắn
+except#[ɪkˈsept]#trừ ra, loại ra
+explain#[ɪkˈspleɪn]#giải thích, thanh minh
+famous#[ˈfeɪməs]#nổi tiếng, nổi danh, trứ danh
+farm#[fɑːm]#trang trại, đồn điền
+fell#[fel]#đấm ngã, đánh ngã
+figure#[ˈfɪɡə(r)]#con số
+flat#[flæt]#mặt phẳng, bằng phẳng
+fly#[flaɪ]#bay
+forest#[ˈfɒrɪst]#rừng
+free#[friː]#tự do
+french#[frentʃ]#(thuộc) pháp
+fun#[fʌn]#sự vui đùa, sự vui thích
+government#[ˈɡʌvənmənt]#chính phủ, nội các
+grass#[ɡrɑːs]#bãi cỏ, đồng cỏ
+hair#[heə(r)]#tóc, lông (người, thú, cây...)
+happy#[ˈhæpi]#sung sướng, hạnh phúc
+heat#[hiːt]#đốt nóng, nung nóng
+history#[ˈhɪstri]#sử học, lịch sử
+human#[ˈhjuːmən]#con người
+information#[ˌɪnfəˈmeɪʃn]#thông tin
+iron#[ˈaɪən]#bàn là, bàn ủi
+king#[kɪŋ]#vua, quốc vương
+late#[leɪt]#chậm, muộn, trễ
+leg#[leɡ]#chân, cẳng (người, thú...)
+length#[leŋkθ]#bề dài, chiều dài, độ dài
+listen#[ˈlɪsn]#nghe, lắng nghe
+lost#[lɒst]#thua, mất
+lot#[lɒt]#nhiều
+lower#[ˈləʊ.ər]#thấp hơn, ở dưới, bậc thấp
+machine#[məˈʃiːn]#máy, máy móc
+mark#[mɑːk]#đánh dấu, ghi dấu
+maybe#[ˈmeɪbi]#có thể, có lẽ
+measure#[ˈmeʒə(r)]#sự đo lường, đơn vị đo lường
+meet#[miːt]#gặp gỡ, tụ họp
+middle#[ˈmɪdl]#giữa, trung
+milk#[mɪlk]#sữa
+minute#[ˈmɪnɪt]#phút
+modern#[ˈmɒdn]#hiện đại, tân tiến
+moment#[ˈməʊmənt]#chốc, lúc, lát
+month#[mʌnθ]#tháng
+mouth#[maʊθ]#mồm, miệng, mõm
+natural#[ˈnætʃrəl]#(thuộc) tự nhiên, (thuộc) thiên nhiên
+nearly#[ˈnɪəli]#gần, sắp, suýt
+necessary#[ˈnesəsəri]#cần, cần thiết, thiết yếu
+north#[nɔːθ]#hướng bắc, phương bắc, phía bắc
+object#[ˈɒbdʒɪkt]#phản đối, chống đối lại
+ocean#[ˈəʊʃn]#đại dương, biển
+oil#[ɔɪl]#dầu
+pay#[peɪ]#trả (tiền lương...), nộp, thanh toán
+per#[pə(r)]#cho mỗi
+plan#[plæn]#kế hoạch, dự kiến, dự định
+plane#[pleɪn]#mặt, mặt bằng, mặt phẳng
+present#[ˈpreznt]#quà biếu, đồ tặng
+product#[ˈprɒdʌkt]#sản vật, sản phẩm
+rather#[ˈrɑːðə(r)]#thà... hơn, thích... hơn
+reach#[riːtʃ]#đến, tới, đi đến
+reason#[ˈriːzn]#lý do
+record#[ˈrekɔːd]#ghi, ghi chép
+running#[ˈrʌnɪŋ]#cuộc chạy đua
+seems#[siːmz]#có vẻ như, dường như
+sent#[sent]#gửi, sai, phái
+seven#[ˈsevn]#số bảy
+shape#[ʃeɪp]#hình, hình dạng, hình thù
+side#[saɪd]#mặt, bên
+single#[ˈsɪŋɡl]#đơn độc, cô đơn
+skin#[skɪn]#da, bì
+soft#[sɒft]#mềm, dẻo
+soil#[sɔɪl]#đất
+south#[saʊθ]#hướng nam, phương nam, phía nam
+speak#[spiːk]#nói
+speed#[spiːd]#tốc độ, tốc lực
+spring#[sprɪŋ]#mùa xuân, suối
+square#[skweə(r)]#vuông
+star#[stɑː(r)]#sao, ngôi sao, tinh tú
+step#[step]#bước, bước đi
+store#[stɔː(r)]#cửa hàng, cửa hiệu
+straight#[streɪt]#thẳng, thẳng thắn, chân thật
+strange#[streɪndʒ]#lạ, xa lạ, không quen biết
+street#[striːt]#phố, đường phố
+subject#[ˈsʌbdʒɪkt]#chủ đề, vấn đề
+suppose#[səˈpəʊz]#giả sử, giả thiết, giả định
+teacher#[ˈtiːtʃə(r)]#giáo viên, cán bộ giảng dạy
+thousand#[ˈθaʊznd]#nghìn, hàng nghìn
+thus#[ðʌs]#vậy, như vậy, như thế
+travel#[ˈtrævl]#đi du lịch, du hành
+trip#[trɪp]#cuộc đi chơi, cuộc dạo chơi, cuộc du ngoạn
+trouble#[ˈtrʌbl]#điều lo lắng, điều phiền muộn
+unit#[ˈjuːnɪt]#đơn vị (để tính toán, để diễn tả, biểu hiện các đại lượng)
+village#[ˈvɪlɪdʒ]#làng, xã
+wall#[wɔːl]#tường, vách, thành lũy
+war#[wɔː(r)]#chiến tranh
+week#[wiːk]#tuần lễ, tuầ
+whose#[huːz]#của ai
+window#[ˈwɪndəʊ]#cửa sổ
+wish#[wɪʃ]#lòng mong muốn, lòng ao ước
+women#[]#đàn bà, phụ nữ
+wood#[wʊd]#gỗ
+wrote#[rəʊt]#viết
+yellow#[ˈjeləʊ]#màu vàng
+yourself#[jɔːˈself]#tự anh, tự chị, chính anh...
+action#[ˈækʃn]#hành động, hành vi
+addition#[əˈdɪʃn]#sự thêm, phần thêm
+afraid#[əˈfreɪd]#e rằng, lo rằng
+afternoon#[ˌɑːftəˈnuːn]#buổi chiều
+ahead#[əˈhed]#trước, về phía trước, ở thẳng phía trước
+amount#[əˈmaʊnt]#lượng, số lượng
+ancient#[ˈeɪnʃənt]#xưa, cổ
+anyone#[ˈeniwʌn]#bất cứ người nào, bất cứ ai
+arm#[ɑːm]#cánh tay
+bad#[bæd]#xấu, tồi, dở
+bear#[beə(r)]#chịu, chịu đựng
+beyond#[bɪˈjɒnd]#ở xa, ở phía bên kia
+bit#[bit]#một chút, một tí
+blood#[blʌd]#máu, huyết
+board#[bɔːd]#bảng
+break#[breɪk]#làm gãy, bẻ gãy, làm đứt
+broken#['broukən]#bị gãy, bị vỡ
+brother#[ˈbrʌðə(r)]#anh, em trai
+brown#[braʊn]#màu nâu
+busy#[ˈbɪzi]#bận rộn, bận
+capital#[ˈkæpɪtl]#thủ đô, thủ phủ
+cat#[kæt]#con mèo
+cattle#[ˈkætl]#thú nuôi, gia súc
+cause#[kɔːz]#nguyên nhân, nguyên do, căn nguyên
+century#[ˈsentʃəri]#trăm năm, thế kỷ
+chance#[tʃɑːns]#cơ hội
+clean#[kliːn]#sạch, sạch sẽ
+clothes#[kləʊðz]#quần áo
+coast#[kəʊst]#bờ biển
+control#[kənˈtrəʊl]#điều khiển, chỉ huy, kiểm soát
+cool#[kuːl]#mát mẻ, mát, hơi lạnh
+corn#[kɔːn]#ngô
+corner#[ˈkɔːnə(r)]#góc (tường, nhà, phố...)
+cover#[ˈkʌvə(r)]#che, phủ, bao phủ
+cross#[krɒs]#đi qua, vượt, đi ngang qua
+dead#[ded]#chết
+deal#[diːl]#thỏa thuận
+death#[deθ]#sự chết, cái chết
+decide#[dɪˈsaɪd]#quyết định
+difficult#[ˈdɪfɪkəlt]#khó, khó khăn, gay go
+drive#[draɪv]#lái xe đưa đi, lái xe dẫn đi
+engine#[ˈendʒɪn]#máy, động cơ
+evening#[ˈiːvnɪŋ]#buổi chiều, buổi tối, tối đêm
+farmer#[ˈfɑːmə(r)]#người tá điền, người nông dân
+fight#[faɪt]#đấu tranh, chiến đấu, đánh nhau
+fill#[fɪl]#làm đầy, đổ đầy
+finger#[ˈfɪŋɡə(r)]#ngón tay
+force#[fɔːs]#ép buộc, cưỡng ép, bắt buộc
+forward#[ˈfɔːwəd]#ở trước, phía trước
+fresh#[freʃ]#trong sạch, tươi mát
+garden#[ˈɡɑːdn]#vườn
+general#[ˈdʒenrəl]#chung chung, tổng
+glad#[ɡlæd]#vui lòng, sung sướng, vui mừng
+greater#[]#lớn hơn
+greatest#[]#lớn nhất
+guess#[ɡes]#đoán, phỏng đoán
+happen#[ˈhæpən]#xảy đến, xảy ra
+higher#[ˈhaɪə(r)]#cao hơn
+hit#[hɪt]#đánh trúng , đấm trúng
+hole#[həʊl]#lỗ, lỗ thủng
+hope#[həʊp]#hy vọng
+huge#[hjuːdʒ]#to lớn, đồ sộ, khổng lồ
+interest#[ˈɪntrəst]#sự quan tâm, sự chú ý
+island#[ˈaɪlənd]#hòn đảo
+lady#[ˈleɪdi]#nữ, đàn bà
+largest#[]#lớn nhất
+lead#[liːd]#sự lãnh đạo, sự dẫn đầu
+level#[ˈlevl]#trình độ, vị trí, cấp, mức
+love#[lʌv]#yêu, thương, yêu mến
+material#[məˈtɪəriəl]#nguyên liệu, vật liệu
+meat#[miːt]#thịt
+method#[ˈmeθəd]#phương pháp, cách thức
+missing#[ˈmɪsɪŋ]#vắng, thiếu, khuyết
+needs#[niːdz]#có sự cần thiết
+nor#[nɔː(r)]#mà... cũng không, và... không
+nose#[nəʊz]#mũi (người)
+note#[nəʊt]#lời ghi, lời ghi chép
+opposite#[ˈɒpəzɪt]#đối nhau, ngược nhau
+pair#[peə(r)]#đôi, cặp
+party#[ˈpɑːti]#đảng, tiệc, buổi liên hoan
+pass#[pɑːs]#đi qua, đi ngang qua
+period#[ˈpɪəriəd]#kỳ, thời kỳ, thời gian
+please#[pliːz]#làm vui lòng, làm hài lòng, làm vừa lòng
+position#[pəˈzɪʃn]#vị trí, chỗ (của một vật gì)
+practice#[ˈpræktɪs]#luyện tập, thực hành
+pretty#[ˈprɪti]#xinh, xinh xắn, xinh đẹp
+produce#[prəˈdjuːs]#làm, sản xuất, chế tạo
+pull#[pʊl]#lôi, kéo, giật
+quiet#[ˈkwaɪət]#yên lặng, êm ả, không ồn ào
+race#[reɪs]#cuộc đua, cuộc chạy đua
+region#[ˈriːdʒən]#vùng, miền
+result#[rɪˈzʌlt]#kết quả (của cái gì)
+return#[rɪˈtɜːn]#trở lại, trở về
+rich#[rɪtʃ]#giàu, giàu có, có nhiều tiền
+ride#[raɪd]#đi, cưỡi (ngựa..)
+ring#[rɪŋ]#chiếc nhẫn
+rule#[ruːl]#phép tắc, quy tắc, nguyên tắc
+sand#[sænd]#cát
+science#[ˈsaɪəns]#khoa học
+section#[ˈsekʃn]#bộ phận, phần
+seed#[siːd]#hạt, hạt giống
+send#[send]#gửi, sai, phái
+sense#[sens]#giác quan
+set#[set]#bố trí, để, đặt
+sharp#[ʃɑːp]#sắt, nhọn, bén
+sight#[saɪt]#tầm nhìn, thị lực
+sign#[saɪn]#dấu, dấu hiệu, ký hiệu
+silver#[ˈsɪlvə(r)]#bạc
+similar#[ˈsɪmələ(r)]#giống nhau, như nhau, tương tự
+sit#[sɪt]#ngồi
+son#[sʌn]#con trai
+song#[sɒŋ]#bài hát, điệu hát
+spread#[spred]#giăng ra, bày ra
+stick#[stɪk]#cái gậy
+stone#[stəʊn]#đá
+tail#[teɪl]#đuôi (thú vật, chim, cá...)
+team#[tiːm]#đội, tổ
+teeth#[tiːθ]#răng
+temperature#[ˈtemprətʃə(r)]#nhiệt độ
+test#[test]#thử, kiểm tra
+therefore#[ˈðeəfɔː(r)]#do đó, cho nên, vì thế, vậy thì
+thick#[θɪk]#dày
+thin#[θɪn]#mỏng, mảnh
+train#[treɪn]#xe lửa
+various#[ˈveəriəs]#khác nhau, không giống nhau
+wait#[weɪt]#chờ, đợi
+wave#[weɪv]#sóng, gợn nước
+weight#[weɪt]#trọng lượng, sức nặng, cân nặng
+west#[west]#hướng tây, phương tây
+wife#[waɪf]#vợ
+wrong#[rɒŋ]#sai, không đúng
+according#[əˈkɔːd]#theo, y theo
+act#[ækt]#hành động, cử chỉ, hành vi
+actually#[ˈæktʃuəli]#thực sự, trên thực tế
+alike#[əˈlaɪk]#giống nhau, như nhau, đều nhau
+apart#[əˈpɑːt]#về một bên, qua một bên
+attention#[əˈtenʃn]#sự chú ý
+bank#[bæŋk]#nhà băng, ngân hàng
+basic#[ˈbeɪsɪk]#cơ bản, cơ sở
+beat#[biːt]#đánh đập, nện, đấm
+blow#[bləʊ]#thổi (gió)
+bone#[bəʊn]#xương
+bread#[bred]#bánh mì
+careful#[ˈkeəfl]#cẩn thận, thận trọng
+chair#[tʃeə(r)]#ghế
+chief#[tʃiːf]#thủ lĩnh, lãnh tụ
+christmas#[ˈkrɪsməs]#lễ nô en
+church#[tʃɜːtʃ]#nhà thờ
+cloth#[klɒθ]#vải
+cloud#[klaʊd]#mây, đám mây
+column#[ˈkɒləm]#một, trụ
+compare#[kəmˈpeə(r)]#so sánh
+contain#[kənˈteɪn]#chứa đựng, bao hàm
+continued#[kənˈtɪnjuːd]#liên tục
+cost#[kɒst]#giá
+cotton#[ˈkɒtn]#vải bông
+count#[kaʊnt]#đếm, tính
+dance#[dɑːns]#sự nhảy múa, sự khiêu vũ
+describe#[dɪˈskraɪb]#diễn tả, mô tả, miêu tả
+desert#[ˈdezət]#sa mạc
+dinner#[ˈdɪnə(r)]#bữa tối
+doctor#[ˈdɒktə(r)]#bác sĩ y khoa
+dollar#[ˈdɒlə(r)]#đồng đô la ( mỹ)
+drop#[drɒp]#chảy nhỏ giọt, rơi nhỏ giọt, rơi
+ear#[ɪə(r)]#tai
+east#[iːst]#hướng đông, phương đông, phía đông
+electric#[ɪˈlektrɪk]#điện, có điện, phát điện
+element#[ˈelɪmənt]#yếu tố
+enjoy#[ɪnˈdʒɔɪ]#thích thú, khoái
+equal#[ˈiːkwəl]#ngang, bằng
+exercise#[ˈeksəsaɪz]#làm, thi hành, thực hiện (nhiệm vụ, chức vụ...)
+experiment#[ɪkˈsperɪmənt]#cuộc thí nghiệm
+familiar#[fəˈmɪliə(r)]#thuộc gia đình
+farther#[ˈfɑːðə(r)]#xa hơn, thêm hơn, hơn nữa
+fear#[fɪə(r)]#sự sợ, sự sợ hãi
+forth#[fɔːθ]#về phía trước, ra phía trước
+gas#[ɡæs]#khí, hơi đốt
+gray#[ɡreɪ]#(màu) xám
+grown#[ɡrəʊn]#lớn, trưởng thành
+hardly#[ˈhɑːdli]#khó khăn, chật vật
+hat#[hæt]#mũ
+hill#[hɪl]#đồi
+hurt#[hɜːt]#vết thương, chỗ bị đau
+imagine#[ɪˈmædʒɪn]#tưởng tượng, hình dung
+include#[ɪnˈkluːd]#bao gồm, gồm có
+indeed#[ɪnˈdiːd]#thực vậy, thực mà
+key#[kiː]#chìa khoá
+kitchen#[ˈkɪtʃɪn]#nhà bếp
+knowledge#[ˈnɒlɪdʒ]#sự hiểu biết, tri thức
+law#[lɔː]#pháp luật, luật
+lie#[laɪ]#nói dối, nói láo
+major#[ˈmeɪdʒə(r)]#chuyên ngành
+metal#[ˈmetl]#kim loại
+movement#[ˈmuːvmənt]#sự chuyển động, sự vận động
+nation#[ˈneɪʃn]#nước, quốc gia, dân tộc
+nature#[ˈneɪtʃə(r)]#tự nhiên, thiên nhiên, tạo hoá
+nine#[naɪn]#chín
+none#[nʌn]#không chút nào, tuyệt không
+office#[ˈɒfɪs]#cơ quan, (trụ) sở, văn phòng, phòng làm việc
+onto#[ˈɒntə]#về phía trên, lên trên
+original#[əˈrɪdʒənl]#(thuộc) gốc, (thuộc) nguồn gốc
+paragraph#[ˈpærəɡrɑːf]#đoạn văn
+parent#[ˈpeərənt]#cha mẹ
+particular#[pəˈtɪkjələ(r)]#riêng biệt, cá biệt, đặc thù
+path#[pɑːθ]#đường mòn, đường nhỏ
+pick#[pɪk]#quyền lựa chọn
+president#[ˈprezɪdənt]#hiệu trưởng, chủ tịch, tổng thống
+pressure#[ˈpreʃə(r)]#sức ép, áp lực
+process#[ˈprəʊ.ses]#quá trình, sự tiến triển
+public#[ˈpʌblɪk]#chung, công, công cộng
+quick#[kwɪk]#nhanh, mau
+report#[rɪˈpɔːt]#bản báo cáo, biên bản
+rope#[rəʊp]#dây thừng, dây chão
+rose#[rəʊz]#hoa hồng, cây hoa hồng
+row#[rəʊ]#hàng, dây
+safe#[seɪf]#an toàn, chắc chắn
+salt#[sɔːlt]#muối
+scale#[skeɪl]#tỷ lệ, quy mô, phạm vi
+sell#[sel]#bán (hàng hoá)
+separate#[ˈseprət]#làm rời ra, phân ra, chia ra
+sheep#[ʃiːp]#con cừu
+shoe#[ʃuː]#giày
+shore#[ʃɔː(r)]#bờ biển
+simply#[ˈsɪmpli]#đơn giản, mộc mạc, hồn nhiên
+sing#[sɪŋ]#hát, ca hát
+sister#[ˈsɪstə(r)]#chị, em gái
+sold#[səʊld]#bán (hàng hoá)
+soldier#[ˈsəʊldʒə(r)]#lính, quân lính, quân nhân
+solve#[sɒlv]#giải quyết (một vấn đề)
+speech#[spiːtʃ]#bài nói, bài diễn văn
+spend#[spend]#tiêu, tiêu pha
+steel#[stiːl]#thép
+string#[strɪŋ]#dây, băng, dải
+student#[ˈstjuːdnt]#học sinh đại học, sinh viên
+studied#[ˈstʌdid]#cẩn trọng, có suy nghĩ
+sugar#[ˈʃʊɡə(r)]#đường
+television#[ˈtelɪvɪʒn]#sự truyền hình
+term#[tɜːm]#thời hạn, kỳ hạn
+throughout#[θruːˈaʊt]#từ đầu đến cuối, khắp, suốt
+tired#[ˈtaɪəd]#mệt, mệt mỏi, nhọc
+total#[ˈtəʊtl]#tổng cộng, toàn bộ
+touch#[tʌtʃ]#sờ, mó, đụng, chạm
+trade#[treɪd]#buôn bán, trao đổi mậu dịch
+truck#[trʌk]#xe tải
+twice#[twaɪs]#hai lần
+type#[taɪp]#đánh máy
+uncle#[ˈʌŋkl]#chú, bác, cậu, dượng
+unless#[ənˈles]#trừ phi, trừ khi, nếu không
+useful#[ˈjuːsfl]#có ích, dùng được
+value#[ˈvæljuː]#giá trị
+verb#[vɜːb]#(ngôn ngữ học) động từ
+visit#[ˈvɪzɪt]#thăm, thăm hỏi, thăm viếng
+wear#[weə(r)]#mang, đeo, mặc
+wheel#[wiːl]#bánh xe
+wing#[wɪŋ]#cánh (chim, sâu bọ...)
+wire#[ˈwaɪə(r)]#dây (kim loại)
+won#[wʌn]#thắng cuộc, thắng
+wonder#[ˈwʌndə(r)]#muốn biết, tự hỏi
+worker#[ˈwɜːkə(r)]#người lao động, người làm việc
+yard#[jɑːd]#sân (có rào xung quanh)
+alive#[əˈlaɪv]#sống, còn sống, đang sống
+angry#[ˈæŋɡri]#giận, tức giận, cáu
+army#[ˈɑːmi]#quân đội
+average#[ˈævərɪdʒ]#số trung bình, mức trung bình
+bag#[bæɡ]#bao, túi, bị
+band#[bænd]#dàn nhạc, ban nhạc
+branch#[brɑːntʃ]#chi nhánh
+breakfast#[ˈbrekfəst]#bữa ăn sáng, bữa điểm tâm
+breath#[breθ]#hơi thở, hơi
+bus#[bʌs]#xe buýt
+cabin#['kæbin]#nhà gỗ nhỏ, túp lều
+captain#[ˈkæptɪn]#người cầm đầu, người chỉ huy, thủ lĩnh
+cell#[sel]#phòng nhỏ
+cent#[sent]#đồng xu
+certainly#[ˈsɜːtnli]#chắc, nhất định
+changing#[ˈtʃeɪndʒɪŋ]#hay thay đổi, hay biến đổi
+coal#[kəʊl]#than đá
+coat#[kəʊt]#áo choàng, áo khoát
+community#[kəˈmjuːnəti]#cộng đồng, dân chúng, nhân dân
+company#[ˈkʌmpəni]#công ty
+completely#[kəmˈpliːtli]#hoàn toàn, đầy đủ, trọn vẹn
+compound#[ˈkɒmpaʊnd]#phức, phức hợp, đa hợp
+condition#[kənˈdɪʃn]#điều kiện
+consider#[kənˈsɪdə(r)]#cân nhắc, xem xét, suy xét
+correctly#[kəˈrektli]#đúng đắn, nghiêm chỉnh
+crop#[krɒp]#vụ, mùa
+crowd#[kraʊd]#đám đông
+current#[ˈkʌrənt]#hiện hành, đang lưu hành
+danger#[ˈdeɪndʒə(r)]#sự nguy hiểm, mối hiểm nghèo
+dear#[dɪə(r)]#thân yêu, thân mến, yêu quý
+degree#[dɪˈɡriː]#bằng cấp
+develop#[dɪˈveləp]#phát triển, mở mang, mở rộng
+die#[daɪ]#chết, mất, từ trần
+directly#[dəˈrektli]#thẳng, trực tiếp
+discover#[dɪˈskʌvə(r)]#khám phá ra, tìm ra, phát hiện ra
+divide#[dɪˈvaɪd]#chia, chia ra, chia cắt
+double#[ˈdʌbl]#đôi, hai, gâp đôi
+dress#[dres]#quần áo
+drink#[drɪŋk]#uống (rượu, nước...)
+dust#[dʌst]#bụi
+easier#[]#dễ dàng hơn
+effect#[ɪˈfekt]#tác động, ảnh hưởng
+electricity#[ɪˌlekˈtrɪsəti]#điện, điện lực
+empty#[ˈempti]#trống, rỗng, trống không
+entire#[ɪnˈtaɪə(r)]#toàn bộ, toàn thể, toàn vẹn
+everybody#[ˈevribɒdi]#mọi người, tất cả mọi người
+exciting#[ɪkˈsaɪtɪŋ]#kích thích, kích động
+expect#[ɪkˈspekt]#chờ đợi, trông đợi, mong ngóng
+experience#[ɪkˈspɪəriəns]#kinh nghiệm
+express#[ɪkˈspres]#diễn tả ,biểu lộ, bày tỏ
+fair#[feə(r)]#hội chợ, chợ phiên
+feed#[fiːd]#cho ăn, nuôi
+final#[ˈfaɪnl]#cuối cùng
+finish#[ˈfɪnɪʃ]#hoàn thành, kết thúc, làm xong
+fruit#[fruːt]#quả, trái cây
+further#[ˈfɜːðə(r)]#thêm nữa, hơn nữa
+future#[ˈfjuːtʃə(r)]#tương lai
+greek#[ɡriːk]#người hy lạp, tiếng hy lạp
+guide#[ɡaɪd]#dẫn đường, chỉ đường, hướng dẫn
+gun#[ɡʌn]#súng
+herself#[hɜːˈself]#tự nó, tự cô ta, tự chị ta...
+hungry#[ˈhʌŋɡri]#đói, cảm thấy đói
+instrument#[ˈɪnstrəmənt]#nhạc cụ
+join#[dʒɔɪn]#kết hợp, nhập vào
+jump#[dʒʌmp]#nhảy
+laid#[leɪd]#xếp, để, đặt
+liquid#[ˈlɪkwɪd]#chất lỏng, chất nước
+loud#[laʊd]#to, ầm ĩ, inh ỏi (tiếng)
+market#[ˈmɑːkɪt]#chợ, thị trường
+member#[ˈmembə(r)]#thành viên, hội viên
+mine#[maɪn]#của tôi
+motion#[ˈməʊʃn]#cử động, cử chỉ, dáng đi
+myself#[maɪˈself]#tự tôi, chính tôi
+neck#[nek]#cổ
+news#[njuːz]#tin, tin tức
+nice#[naɪs]#xinh đẹp, tốt, tử tế
+noise#[nɔɪz]#tiếng, tiếng ồn ào, tiếng om sòm
+noun#[naʊn]#(ngôn ngữ học) danh từ
+oxygen#[ˈɒksɪdʒən]#(hoá học) oxy
+paid#[peɪd]#trả (tiền lương...), thanh toán
+phrase#[freɪz]#nhóm từ, thành ngữ
+plain#[pleɪn]#rõ ràng, rõ rệt
+poem#[ˈpəʊɪm]#bài thơ
+population#[ˌpɒpjuˈleɪʃn]#số dân, dân cư
+proper#[ˈprɒpə(r)]#đúng, thích đáng, thích hợp
+proud#[praʊd]#tự hào, hãnh diện
+provide#[prəˈvaɪd]#cung cấp, chu cấp
+purpose#[ˈpɜːpəs]#mục đích, ý định
+quietly#[ˈkwaɪətli]#yên lặng, yên tĩnh, êm ả
+raise#[reɪz]#nâng lên, đỡ dậy
+range#[reɪndʒ]#dãy, hàng
+rate#[reɪt]#tỷ lệ, tốc độ
+regular#[ˈreɡjələ(r)]#đều đều, không thay đổi, thường lệ
+represent#[ˌreprɪˈzent]#miêu tả, hình dung
+rise#[raɪz]#dậy, trở dậy, mọc (mặt trời, mặt trăng...)
+scientific#[ˌsaɪənˈtɪfɪk]#(thuộc) khoa học, có tính khoa học
+season#[ˈsiːzn]#mùa (trong năm)
+seat#[siːt]#ghế, chỗ ngồi
+share#[ʃeə(r)]#chia,chia sẻ, san sẻ
+shot#[ʃɒt]#đạn, viên đạn
+shoulder#[ˈʃəʊldə(r)]#vai
+slow#[sləʊ]#chậm, chậm chạp
+smile#[smaɪl]#nụ cười, vẻ mặt tươi cười
+solid#[ˈsɒlɪd]#rắn, đặc
+solution#[səˈluːʃn]#giải pháp, cách giải quyết
+sort#[sɔːt]#thứ, loại, hạng
+southern#[ˈsʌðən]#phía nam
+stage#[steɪdʒ]#giai đoạn
+statement#[ˈsteɪtmənt]#sự bày tỏ, sự trình bày, sự phát biểu
+station#[ˈsteɪʃn]#trạm, điểm, đồn
+steam#[stiːm]#hơi nước
+stream#[striːm]#dòng suối, dòng sông nhỏ
+strength#[streŋkθ]#sức mạnh, sức lực, sức khoẻ
+supply#[səˈplaɪ]#sự cung cấp, sự tiếp tế
+surprise#[səˈpraɪz]#làm ngạc nhiên, làm kinh ngạc
+symbol#[ˈsɪmbl]#biểu tượng
+till#[tɪl]#đến, tới
+tomorrow#[təˈmɒrəʊ]#mai, ngày mai
+tube#[tjuːb]#ống, đặt ống
+twelve#[twelv]#mười hai
+twenty#[ˈtwenti]#hai mươi
+usual#[ˈjuːʒuəl]#thường, thông thường, thường lệ
+valley#[ˈvæli]#thung lũng
+variety#[vəˈraɪəti]#đa dạng
+vowel#[ˈvaʊəl]#(ngôn ngữ học) nguyên âm
+wet#[wet]#ẩm, ướt, thấm nước
+wooden#[ˈwʊdn]#bằng gỗ
+worth#[wɜːθ]#giá, đáng giá
+airplane#[ˈeəpleɪn]#máy bay, tàu bay
+angle#[ˈæŋɡl]#góc
+apple#[ˈæpl]#quả táo
+art#[ɑːt]#nghệ thuật, mỹ thuật
+atlantic#[ətˈlæn.tɪk]#(thuộc) đại tây dương
+atmosphere#[ˈætməsfɪə(r)]#khí quyển, không khí
+bar#[bɑː(r)]#thanh, thỏi
+barn#[bɑːn]#kho thóc
+baseball#[ˈbeɪsbɔːl]#bóng chày
+beauty#[ˈbjuːti]#vẻ đẹp, sắc đẹp, nhan sắc
+believe#[bɪˈliːv]#tin tưởng, cho rằng
+bell#[bel]#cái chuông
+belong#[bɪˈlɒŋ]#thuộc về, thuộc quyền sở hữu
+beneath#[bɪˈniːθ]#ở dưới, thấp kém
+bottle#[ˈbɒtl]#chai, lọ
+bowl#[bəʊl]#cái bát
+broad#[brɔːd]#rộng
+chapter#[ˈtʃæptə(r)]#chương (sách)
+chart#[tʃɑːt]#bản đồ
+chinese#[ˌtʃaɪˈniːz]#người trung quốc, tiếng trung quốc
+clearly#[ˈklɪəli]#rõ ràng, sáng sủa, sáng tỏ
+climate#[ˈklaɪmət]#khí hậu, thời tiết
+clock#[klɒk]#đồng hồ
+closely#[ˈkləʊsli]#gần gũi, thân mật
+clothing#[ˈkləʊðɪŋ]#quần áo, y phục
+coffee#[ˈkɒfi]#cà phê
+cow#[kaʊ]#bò cái
+cry#[kraɪ]#khóc, khóc lóc
+dad#[dæd]#ba, cha, bố
+dangerous#[ˈdeɪndʒərəs]#nguy hiểm, hiểm nghèo
+deer#[dɪə(r)]#hươu, nai
+desk#[desk]#bàn học sinh, bàn viết, bàn làm việc
+detail#[ˈdiːteɪl]#chi tiết, tiểu tiết
+development#[dɪˈveləpmənt]#sự phát triển, sự khai triển
+driver#[ˈdraɪvə(r)]#người lái (ô tô, xe điện...)
+event#[ɪˈvent]#sự việc, sự kiện
+everywhere#[ˈevriweə(r)]#ở mọi nơi, khắp nơi, khắp chốn
+fat#[fæt]#béo, mập, béo phì
+favorite#[]#yêu thích, được ưa thích
+fence#[fens]#hàng rào
+fifty#[ˈfɪfti]#năm mươi
+flight#[flaɪt]#sự bay, chuyến bay
+flow#[fləʊ]#sự chảy, dòng chảy
+flower#[ˈflaʊə(r)]#hoa, bông hoa
+forget#[fəˈɡet]#quên, không nhớ đến
+fourth#[fɔːθ]#thứ tư, thứ bốn
+friendly#[ˈfrendli]#thân mật, thân thiết, thân thiện
+generally#[ˈdʒenrəli]#nói chung, đại thể
+german#[ˈdʒɜːmən]#người đức, tiếng đức
+giant#[ˈdʒaɪənt]#người khổng lồ
+golden#[ˈɡəʊldən]#bằng vàng
+grain#[ɡreɪn]#thóc lúa, hạt ngũ cốc
+handle#[ˈhændl]#quản lý, xử lý, chỉ huy
+height#[haɪt]#chiều cao, bề cao, độ cao
+hurry#[ˈhʌri]#sự vội vàng, sự hấp tấp
+immediately#[ɪˈmiːdiətli]#ngay lập tức, tức thì
+industry#[ˈɪndəstri]#công nghiệp, kỹ nghệ
+instance#[ˈɪnstəns]#trường hợp cá biệt
+knife#[naɪf]#con dao
+lake#[leɪk]#hồ
+latin#[ˈlætɪn]#tiếng la tinh
+leader#[ˈliːdə(r)]#lãnh tụ, người lãnh đạo, người chỉ huy
+likely#[ˈlaɪkli]#có thể đúng, có thể xảy ra, có khả năng...
+lunch#[lʌntʃ]#bữa ăn trưa
+mass#[mæs]#khối lượng
+master#[ˈmɑːstə(r)]#chủ, chủ nhân
+mile#[maɪl]#dặm, lý
+mix#[mɪks]#trộn, trộn lẫn, pha lẫn
+model#[ˈmɒdl]#kiểu, mẫu, mô hình
+mud#[mʌd]#bùn
+muscle#[ˈmʌsl]#bắp thịt, cơ
+nearby#[ˌnɪəˈbaɪ]#gần, không xa
+nearest#[]#gần nhất
+nest#[nest]#tổ, ổ (chim, chuột...)
+newspaper#[ˈnjuːzpeɪpə(r)]#báo
+nobody#[ˈnəʊbədi]#không ai, không người nào
+observe#[əbˈzɜːv]#quan sát, theo dõi
+pacific#[pəˈsɪfɪk]#hoà bình
+peace#[piːs]#hoà bình, thái bình
+plate#[pleɪt]#đĩa (để đựng thức ăn)
+plenty#[ˈplenti]#nhiều (số lượng, khối lượng)
+popular#[ˈpɒpjələ(r)]#phổ biến, thịnh hành
+powerful#[ˈpaʊəfl]#hùng mạnh, hùng cường
+push#[pʊʃ]#xô, đẩy
+railroad#[ˈreɪlrəʊd]#đường sắt, đường xe lửa
+rapidly#[ˈræpɪdli]#nhanh chóng, mau lẹ
+root#[ruːt]#gốc, rễ (cây)
+rubber#[ˈrʌbə(r)]#cao su
+sad#[sæd]#buồn rầu, buồn bã
+sail#[seɪl]#buồm, cánh buồm
+save#[seɪv]#cứu nguy
+score#[skɔː(r)]#sổ điểm, sổ bán thắng
+serious#[ˈsɪəriəs]#đứng đắn, nghiêm trang, nghiêm nghị
+service#[ˈsɜːvɪs]#dịch vụ, sự phục vụ
+sheet#[ʃiːt]#lá, tấm, tờ
+shop#[ʃɒp]#cửa hàng, cửa hiệu
+silent#[ˈsaɪlənt]#im lặng, không nói, làm thinh
+smell#[smel]#khứu giác, khả năng có thể ngửi
+smoke#[sməʊk]#khói
+smooth#[smuːð]#nhẵn, trơn, mượt
+source#[sɔːs]#nguồn sông, nguồi suối
+spell#[spel]#đánh vần, viết theo chính tả
+storm#[stɔːm]#dông tố, cơn bão
+structure#[ˈstrʌktʃə(r)]#kết cấu, cấu trúc
+supper#[ˈsʌpə(r)]#bữa cơm tối
+support#[səˈpɔːt]#sự ủng hộ
+sweet#[swiːt]#ngọt
+swim#[swɪm]#sự bơi lội
+telephone#[ˈtelɪfəʊn]#điện thoại
+threw#[θruː]#sự ném, sự vứt
+throw#[θrəʊ]#ném, vứt, quăng
+tone#[təʊn]#giọng
+tool#[tuːl]#dụng cụ, đồ dùng
+track#[træk]#dấu, vết
+trail#[treɪl]#đường, đường mòn
+understanding#[ˌʌndəˈstændɪŋ]#sự hiểu biết, sự am hiểu
+upper#[ˈʌpə(r)]#trên, cao, thượng
+view#[vjuː]#sự nhìn, sự thấy, tầm nhìn
+wagon#[ˈwæɡən]#xe ngựa, xe bò (chở hàng)
+western#[ˈwestən]#về phía tây, ở phía tây
+whatever#[wɒtˈevə(r)]#sao cũng được, như thế nào cũng được
+wheat#[wiːt]#cây lúa mì
+whenever#[wenˈevə(r)]#bất cứ lúc nào, lúc nào
+whom#[huːm]#ai, người nào
+win#[wɪn]#sự thắng cuộc
+wonderful#[ˈwʌndəfl]#kỳ lạ, phi thường
+ability#[əˈbɪləti]#năng lực, khả năng, tố chất
+agree#[əˈɡriː]#đồng ý, tán thành
+ant#[ænt]#con kiến
+asia#[ˈeɪʒə]#châu á
+asleep#[əˈsliːp]#ngủ, đang ngủ
+attack#[əˈtæk]#tấn công, công kích
+balance#[ˈbæləns]#số còn lại, số dư
+bat#[bæt]#gậy
+battle#['bætl]#trận đánh, cuộc chiến đấu
+ben#[ben]#đỉnh núi
+block#[blɒk]#khuôn nhà lớn, nhà khối (ở giữa bốn con đường)
+bow#[baʊ]#cây cung
+brain#[breɪn]#óc, não
+brave#[breɪv]#gan dạ, can đảm, dũng cảm
+bridge#[brɪdʒ]#cái cầu
+cave#[keɪv]#hang động
+charge#[tʃɑːdʒ]#nhiệm vụ, bổn phận, trách nhiệm
+chemical#[ˈkemɪkl]#(thuộc) hoá học
+clay#[kleɪ]#đất sét, sét
+climb#[klaɪm]#leo, trèo, leo trèo
+composition#[ˌkɒmpəˈzɪʃn]#cấu tạo, thành phần
+congress#[ˈkɒŋɡres]#đại hội, hội nghị
+copper#[ˈkɒpə(r)]#cảnh sát, mật thám, cớm
+crew#[kruː]#ban nhóm, đội
+cup#[kʌp]#tách, chén
+daughter#[ˈdɔːtə(r)]#con gái
+design#[dɪˈzaɪn]#thiết kế
+determine#[dɪˈtɜːmɪn]#định, xác định, định rõ
+direct#[dəˈrekt]#hướng dẫn, chỉ đạo
+discuss#[dɪˈskʌs]#thảo luận, bàn cãi, tranh luận
+division#[dɪˈvɪʒn]#sự chia, sự phân chia
+drawn#[drɔːn]#kéo
+earlier#[]#sớm hơn
+education#[ˌedʒuˈkeɪʃn]#sự giáo dục
+enemy#[ˈenəmi]#kẻ thù, kẻ địch, địch thủ
+enter#[ˈentə(r)]#đi vào
+equipment#[ɪˈkwɪpmənt]#sự trang bị
+escape#[ɪˈskeɪp]#sự trốn thoát
+european#[ˌjʊərəˈpiːən]#châu âu
+excited#[ɪkˈsaɪtɪd]#bị kích thích, bị kích động
+expression#[ɪkˈspreʃn]#sự vắt, sự ép, sự bóp
+extra#[ˈekstrə]#thêm, phụ, ngoại
+factory#[ˈfæktri]#nhà máy, xí nghiệp, xưởng
+feathers#[]#lông vũ, lông (chim)
+fellow#[ˈfeləʊ]#bạn đồng chí
+fighting#[ˈfaɪtɪŋ]#sự chiến đấu, sự đánh nhau
+fought#[fɔːt]#đấu tranh, chiến đấu, đánh nhau
+frank#[fræŋk]#ngay thật, thẳng thắn, bộc trực
+freedom#[ˈfriːdəm]#sự tự do, nền tự do
+funny#[ˈfʌni]#buồn cười, ngồ ngộ, khôi hài
+fur#[fɜː(r)]#bộ lông mao, loài thú
+growth#[ɡrəʊθ]#sự lớn mạnh, sự phát triển
+hall#[hɔːl]#phòng lớn, đại sảnh
+health#[helθ]#sức khoẻ
+hunt#[hʌnt]#cuộc đi săn, sự đi săn
+including#[ɪnˈkluːdɪŋ]#bao gồm cả, kể cả
+increase#[ɪnˈkriːs]#sự tăng, sự tăng thêm
+indicate#[ˈɪndɪkeɪt]#chỉ, cho biết, biểu lộ, biểu thị
+individual#[ˌɪndɪˈvɪdʒuəl]#riêng, riêng lẻ, cá nhân
+japanese#[ˌdʒæpəˈniːz]#người nhật bản, tiếng nhật bản
+kill#[kɪl]#giết, giết chết, làm chết
+laugh#[lɑːf]#cười, cười vui, cười cợt
+library#[ˈlaɪbrəri]#thư viện, phòng đọc sách
+lift#[lɪft]#sự nâng lên, sự nhấc lên
+lion#[ˈlaɪən]#con sư tử
+local#[ˈləʊkl]#địa phương
+lose#[luːz]#mất, lạc, thất lạc
+lovely#[ˈlʌvli]#đẹp đẽ, xinh, đáng yêu
+lying#[ˈlaɪɪŋ]#sự nói dối, thói nói dối
+magic#[ˈmædʒɪk]#ma thuật, yêu thuật
+manner#[ˈmænə(r)]#cách, lối, thói, kiểu
+mark#[mɑːk]#dấu, vết, lằn
+may#[meɪ]#có thể, có lẽ
+mostly#[ˈməʊstli]#hầu hết, phần lớn
+national#[ˈnæʃnəl]#quốc gia
+neighbor#[ˈneɪ·bər]#hàng xóm
+ordinary#[ˈɔːdnri]#thường, thông thường, bình thường
+parallel#[ˈpærəlel]#song song
+park#[pɑːk]#vườn hoa, công viên
+particularly#[pəˈtɪkjələli]#đặc thù, cá biệt, riêng biệt
+pencil#[ˈpensl]#bút chì
+perfect#[ˈpɜːfɪkt]#hoàn hảo, đầy đủ
+planet#[ˈplænɪt]#(thiên văn học) hành tinh
+planned#[]#có kế hoạch
+pleasant#[ˈpleznt]#vui vẻ, dễ thương (người...)
+pocket#[ˈpɒkɪt]#túi tiền
+police#[pəˈliːs]#cảnh sát, công an
+political#[pəˈlɪtɪkl]#về chính trị, về chính phủ
+post#[pəʊst]#hòm thư, thùng thư
+potato#[pəˈteɪtəʊ]#cây khoai tây, củ khoai tây
+price#[praɪs]#giá
+print#[prɪnt]#chữ in, sự in ra
+program#[ˈprəʊɡræm]#chương trình
+property#[ˈprɒpəti]#quyền sở hữu, tài sản, của cải, vật sở hữu
+prove#[pruːv]#chứng tỏ, chứng minh
+remain#[rɪˈmeɪn]#còn lại, vẫn
+riding#[ˈraɪdɪŋ]#môn cưỡi ngựa
+roll#[rəʊl]#sự lăn tròn
+roman#[ˈrəʊmən]#(thuộc) la mã
+roof#[ruːf]#mái nhà, nóc
+rough#[rʌf]#thô lỗ, sống sượng, lỗ mãng
+scene#[siːn]#cảnh tượng, quang cảnh
+search#[sɜːtʃ]#tìm kiếm, khám xét, lục soát
+secret#[ˈsiːkrət]#thầm kín, bí mật, riêng tư
+series#[ˈsɪəriːz]#loạt, dãy, chuỗi, đợt
+serve#[sɜːv]#phục vụ, phụng sự, phụ trách
+settler#[ˈsetlə(r)]#người giải quyết (vấn đề)
+shin#[ʃɪn]#cẳng chân, ống quyển
+shut#[ʃʌt]#đóng, khép
+signal#[ˈsɪɡnəl]#dấu hiệu, tín hiệu, hiệu lệnh
+sir#[sɜː(r)]#thưa ông, thưa ngài
+skill#[skɪl]#kỹ năng, kỹ xảo
+smallest#[]#nhỏ nhất
+social#[ˈsəʊʃl]#có tính chất xã hội
+softly#[ˈsɒftli]#một cách dịu dàng, một cách êm ái
+struck#[strʌk]#đánh, đập
+studying#[]#sự tìm tòi, sự nghiên cứu
+success#[səkˈses]#sự thành công, sự thắng lợi, sự thành đạt
+suit#[suːt]#bộ com lê, bộ quần áo
+sunlight#[ˈsʌnlaɪt]#ánh sáng mặt trời
+swimming#[ˈswɪmɪŋ]#sự bơi
+taste#[teɪst]#vị
+taught#[tɔːt]#dạy, dạy học, dạy bảo
+thank#[θæŋk]#cám ơn, biết ơn
+tip#[tɪp]#đầu, mút, đỉnh, chóp
+title#[ˈtaɪtl]#nhan đề, danh hiệu
+tongue#[tʌŋ]#cái lưỡi
+valuable#[ˈvæljuəbl]#có giá trị lớn, quý giá
+vast#[vɑːst]#rộng lớn, mênh mông, bao la
+vegetable#[ˈvedʒtəbl]#rau
+wash#[wɒʃ]#rửa, giặt
+weak#[wiːk]#yếu, yếu ớt
+activity#[ækˈtɪvəti]#sự tích cực, sự hoạt động, sự nhanh nhẹn
+appearance#[əˈpɪərəns]#sự xuất hiện, sự hiện ra sự ló ra
+article#[ˈɑːtɪkl]#bài báo, điều khoản, mục
+aunt#[ɑːnt]#cô, dì, thím, mợ, bác gái
+automobile#[ˈɔːtəməbiːl]#xe ô tô
+avoid#[əˈvɔɪd]#tránh, tránh xa
+basket#[ˈbɑːskɪt]#cái rổ, cái giỏ, cái thúng
+birthday#[ˈbɜːθdeɪ]#ngày sinh, lễ sinh nhật
+cage#[keɪdʒ]#lồng, chuồng, cũi
+cake#[keɪk]#bánh ngọt
+central#[ˈsentrəl]#ở giữa, ở trung tâm
+character#[ˈkærəktə(r)]#tính nết, tính cách
+chicken#[ˈtʃɪkɪn]#gà con, gà giò
+chosen#[ˈtʃəʊzn]#chọn, lựa chọn, kén chọn
+club#[klʌb]#hội, câu lạc bộ
+cook#[kʊk]#người nấu ăn, người làm bếp
+court#[kɔːt]#ve vãn, tán tỉnh, tỏ tình
+cream#[kriːm]#kem
+daily#[ˈdeɪli]#hằng ngày
+darkness#[ˈdɑːknəs]#bóng tối, cảnh tối tăm
+diagram#[ˈdaɪəɡræm]#biểu đồ
+dick#[dɪk]#mật thám, thám tử
+disappear#[ˌdɪsəˈpɪə(r)]#biến đi, biến mất
+doubt#[daʊt]#sự nghi ngờ, sự ngờ vực
+dozen#[ˈdʌzn]#tá (mười hai)
+dream#[driːm]#giấc mơ, giấc mộng
+drive#[draɪv]#lái xe, điều khiển xe
+effort#[ˈefət]#sự cố gắng, sự nổ lực
+establish#[ɪˈstæblɪʃ]#lập, thành lập, thiết lập
+exact#[ɪɡˈzækt]#chính xác, đúng, đúng dắn
+excitement#[ɪkˈsaɪtmənt]#sự kích thích, sự kích động
+fifteen#[ˌfɪfˈtiːn]#mười lăm
+flag#[flæɡ]#lá cờ
+fly#[flaɪ]#bay
+football#[ˈfʊtbɔːl]#quả bóng đá, môn bóng đá
+foreign#[ˈfɒrən]#(thuộc) nước ngoài
+frame#[freɪm]#dàn xếp, bố trí, bố cục
+frequently#[ˈfriːkwəntli]#thường xuyên
+frighten#[ˈfraɪtn]#làm hoảng sợ, làm sợ
+function#[ˈfʌŋkʃn]#chức năng
+gate#[ɡeɪt]#cổng
+gently#[ˈdʒentli]#nhẹ nhàng, êm ái, dịu dàng
+gradually#[ˈɡrædʒuəli]#dần dần, từ từ
+hard#[hɑːd]#cứng, rắn
+hide#[haɪd]#trốn, ẩn nấp, náu
+hurried#[ˈhʌrid]#vội vàng, hấp tấp
+identity#[aɪˈdentəti]#tính đồng nhất, sự giống hệt
+importance#[ɪmˈpɔːtns]#sự quan trọng, tầm quan trọng
+impossible#[ɪmˈpɒsəbl]#không thể làm được
+india#[]#ấn độ
+invent#[ɪnˈvent]#phát minh, sáng chế
+italian#[i'tæljən]#người ý, tiếng ý
+jar#[dʒɑː(r)]#vại, lọ, bình
+journey#[ˈdʒɜːni]#cuộc hành trình
+joy#[dʒɔɪ]#sự vui mừng, sự hân hoan, sự vui sướng
+lesson#[ˈlesn]#bài học
+lip#[lɪp]#môi
+log#[lɒɡ]#người đần, người ngu
+london#[]#luân đôn (tên thủ đô nước anh)
+loose#[luːs]#lỏng, lỏng lẽo
+massage#[ˈmæsɑːʒ]#sự xoa bóp
+minerals#[]#khoáng sản
+outer#[ˈaʊtə(r)]#ở phía ngoài, ở xa hơn
+paint#[peɪnt]#sơn, quét sơn
+papa#[pəˈpɑː]#ba, bố
+paris#[]#thủ đô của nước pháp
+particles#[]#hạt
+personal#[ˈpɜːsənl]#cá nhân, tư, riêng
+physical#[ˈfɪzɪkl]#(thuộc) vật chất
+pie#[paɪ]#bánh
+pipe#[paɪp]#ống dẫn (khí, nước, dầu...)
+pole#[pəʊl]#cái sào, cái cọc
+pond#[pɒnd]#ao nước
+progress#[ˈprəʊɡres]#sự tiến hành, sự xúc tiến
+quarter#[ˈkwɔːtə(r)]#một phần tư
+rays#[]#tia
+recent#[ˈriːsnt]#gần đây, xảy ra gần đây
+recognize#[ˈrekəɡnaɪz]#công nhận, thừa nhận, chấp nhận
+replace#[rɪˈpleɪs]#thay thế
+rhythm#[ˈrɪðəm]#nhịp điệu
+rod#[rɒd]#cái que, cái gậy
+ruler#[ˈruːlə(r)]#cái thước kẻ
+safety#[ˈseɪfti]#sự an toàn, sự chắc chắn
+sally#[ˈsæli]#cuộc đi chơi, cuộc đi dạo
+sang#[sæŋ]#hát, ca hát
+setting#[ˈsetɪŋ]#sự đặt, sự để
+shell#[ʃel]#vỏ, bao, mai
+sick#[sɪk]#ốm, đau, ốm yếu
+situation#[ˌsɪtʃuˈeɪʃn]#vị trí, địa thế
+slightly#[ˈslaɪtli]#mỏng mảnh, yếu ớt
+spirit#[ˈspɪrɪt]#tinh thần, tâm hồn, linh hồn
+steady#[ˈstedi]#vững, vững chắc, vững vàng
+stepped#[]#có bậc
+strike#[straɪk]#đánh, đập
+successful#[səkˈsesfl]#thành công, thắng lợi, thành đạt
+sudden#[ˈsʌdn]#thình lình, đột ngột
+sum#[sʌm]#tổng số, (toán) tổng
+terrible#[ˈterəbl]#dễ sợ, ghê gớm, khủng khiếp
+tie#[taɪ]#buộc, cột, trói
+traffic#[ˈtræfɪk]#sự đi lại, sự giao thông
+unusual#[ʌnˈjuːʒuəl]#không thường, không thông thường, không quen
+volume#[ˈvɒljuːm]#âm lượng
+whale#[weɪl]#cá voi
+wise#[waɪz]#khôn, khôn ngoan
+yesterday#[ˈjestədeɪ]#hôm qua
+account#[əˈkaʊnt]#sổ sách, kế toán
+allow#[əˈlaʊ]#cho phép, thừa nhận, công nhận
+anywhere#[ˈeniweə(r)]#bất kỳ chỗ nào, bất cứ nơi đâu
+attached#[əˈtætʃt]#đính kèm
+audience#[ˈɔːdiəns]#người xem, khán giả, bạn đọc
+available#[əˈveɪləbl]#sẵn có để dùng, sẵn sàng để dùng
+balloon#[bəˈluːn]#khí cầu, quả bóng
+bare#[beə(r)]#trần, trần truồng, trống không
+bark#[bɑːk]#tiếng sủa
+begun#[bɪˈɡʌn]#bắt đầu, mở đầu, khởi đầu
+bent#[bent]#xu hướng, khuynh hướng
+biggest#[]#lớn nhất
+bill#[bɪl]#hóa đơn
+blank#[blæŋk]#để trống, để trắng
+breathing#[ˈbriːðɪŋ]#sự thở, sự hô hấp
+butter#[ˈbʌtə(r)]#bơ
+cap#[kæp]#mũ lưỡi trai, mũ vải
+card#[kɑːd]#cạc, thiếp, thẻ
+chain#[tʃeɪn]#dãy, chuỗi, loạt
+cheese#[t∫i:z]#phó mát, bánh phó mát
+chest#[tʃest]#rương, hòm, tủ, két
+choice#[tʃɔɪs]#sự lựa, sự chọn, sự lựa chọn
+circus#[ˈsɜːkəs]#rạp xiếc, gánh xiếc
+citizen#[ˈsɪtɪzn]#người dân thành thị
+classroom#[ˈklɑːsruːm]#lớp học
+college#[ˈkɒlɪdʒ]#trường đại học, trường cao đẳng
+consist#[kənˈsɪst]#bao gồm, gồm có
+continent#[ˈkɒntɪnənt]#lục địa, đại lục
+conversation#[ˌkɒnvəˈseɪʃn]#cuộc nói chuyện, cuộc chuyện trò
+courage#[ˈkʌrɪdʒ]#sự can đảm, sự dũng cảm, dũng khí
+cowboy#[ˈkaʊbɔɪ]#cao bồi
+creature#[ˈkriːtʃə(r)]#sinh vật, loài vật
+date#[deɪt]#ngày tháng
+depend#[dɪˈpend]#phụ thuộc, tuỳ thuộc
+differ#[ˈdɪfə(r)]#không đồng ý, không tán thành, bất đồng
+discovery#[dɪˈskʌvəri]#sự khám phá ra, sự tìm ra, sự phát hiện ra
+disease#[dɪˈziːz]#bệnh, bệnh tật
+duck#[dʌk]#con vịt, vịt cái
+due#[djuː]#vì
+entirely#[ɪnˈtaɪəli]#toàn bộ, toàn vẹn, trọn vẹn
+environment#[ɪnˈvaɪrənmənt]#môi trường, hoàn cảnh
+exclaimed#[ɪkˈskleɪmd]#kêu lên, la lên
+factor#[ˈfæktə(r)]#nhân tố
+fog#[fɒɡ]#sương mù
+forgot#[fəˈɡɒt]#quên, không nhớ đến
+frozen#[ˈfrəʊzn]#đóng băng
+fuel#[ˈfjuːəl]#chất đốt, nhiên liệu
+furniture#[ˈfɜːnɪtʃə(r)]#đồ nội thất
+gather#[ˈɡæðə(r)]#tập hợp, tụ họp lại
+gentle#[ˈdʒentl]#hiền lành, dịu dàng, hoà nhã
+globe#[ɡləʊb]#quả cầu
+grandfather#[ˈɡrænfɑːðə(r)]#ông
+greatly#[ˈɡreɪtli]#cao thượng, cao cả
+helpful#[ˈhelpfl]#giúp đỡ, giúp ích, có ích
+hidden#[ˈhɪdn]#che giấu, che đậy, giấu giếm
+honor#[]#danh dự
+husband#[ˈhʌzbənd]#chồng
+involved#[ɪnˈvɒlvd]#rắc rối, phức tạp
+japan#[dʒəˈpæn]#nhật bản
+jet#[dʒet]#đen nhánh, đen hạt huyền
+layer#[ˈleɪə(r)]#lớp, tầng
+leaf#[liːf]#lá cây
+leather#[ˈleðə(r)]#da thuộc
+load#[ləʊd]#tải
+lonely#[ˈləʊnli]#cô đơn
+march#[mɑːtʃ]#tháng ba
+meal#[miːl]#bữa ăn
+medicine#[ˈmedsn]#y học, y khoa
+merely#[ˈmɪəli]#chỉ, đơn thuần
+mice#[maɪs]#con chuột (số nhiều)
+molecular#[məˈlekjələ(r)]#(thuộc) phân tử
+musical#[ˈmjuːzɪkl]#(thuộc) âm nhạc
+native#[ˈneɪtɪv]#(thuộc) nơi sinh
+negro#[ˈniːɡrəʊ]#người da đen
+noon#[nuːn]#trưa, buổi trưa
+occur#[əˈkɜː(r)]#xảy ra, xảy đến, xuất hiện
+orange#[ˈɒrɪndʒ]#quả cam, cây cam
+ought#[]#phải
+pack#[pæk]#đóng gói
+partly#[ˈpɑːtli]#một phần, phần nào
+pet#[pet]#thú cưng
+pine#[paɪn]#cây thông
+pink#[pɪŋk]#màu hồng
+pitch#[pɪtʃ]#hắc ín
+pool#[puːl]#bể bơi
+prepare#[prɪˈpeə(r)]#sửa soạn, chuẩn bị
+press#[pres]#báo chí
+prevent#[prɪˈvent]#ngăn ngừa, ngăn trở, ngăn ngừa
+pure#[pjʊə(r)]#trong, trong sạch, nguyên chất
+queen#[kwiːn]#nữ hoàng, bà hoàng, bà chúa
+rabbit#[ˈræbɪt]#con thỏ
+ranch#[rɑːntʃ]#trang trại
+realize#[ˈriːəlaɪz]#thấy rõ, hiểu rõ, nhận thức rõ
+receive#[rɪˈsiːv]#nhận, lĩnh, thu
+recently#[ˈriːsntli]#gần đây, mới đây
+rice#[raɪs]#lúa, gạo, cơm
+rising#[ˈraɪzɪŋ]#sự mọc (mặt trời, mặt trăng...)
+rocket#[ˈrɒkɪt]#pháo hoa, pháo sáng, pháo thăng thiên
+saturday#[ˈsætədeɪ]#thứ bảy
+save#[seɪv]#cứu nguy, cứu vãn, cứu vớt
+shade#[ʃeɪd]#bóng, bóng tối
+shadow#[ˈʃædəʊ]#bóng tối, bóng râm, bóng mát
+shirt#[ʃɜːt]#áo sơ mi
+shoot#[ʃuːt]#bắn
+silence#[ˈsaɪləns]#sự yên lặng, sự yên tĩnh
+snake#[sneɪk]#con rắn
+somewhere#[ˈsʌmweə(r)]#ở một nơi nào đó
+spoken#[ˈspəʊkən]#nói, nói chuyện, nói lên
+standard#[ˈstændəd]#tiêu chuẩn, chuẩn, mẫu
+straw#[strɔː]#rơm
+strip#[strɪp]#mảnh, dải
+substance#[ˈsʌbstəns]#chất, vật chất
+suggest#[səˈdʒest]#gợi, đề nghị
+sunday#[ˈsʌndeɪ]#chủ nhật
+teach#[tiːtʃ]#dạy, dạy học
+tear#[teər]#nước mắt, lệ
+thirty#[ˈθɜːti]#số ba mươi
+thread#[θred]#chỉ, sợi chỉ, sợi dây
+throat#[θrəʊt]#họng, cuống họng
+tight#[taɪt]#chặt, khít
+tin#[tɪn]#thiếc, hộp thiếc
+triangle#[ˈtraɪæŋɡl]#hình tam giác
+truth#[truːθ]#sự thật, lẽ phải, chân lý
+union#[ˈjuːniən]#sự hợp nhất, sự kết hợp, sự liên kết
+warn#[wɔːn]#cảnh cáo, răn
+whisper#[ˈwɪspə(r)]#tiếng nói thầm, tiếng xì xào
+wool#[wʊl]#len, lông cừu, lông chiên
+aid#[eɪd]#sự giúp đỡ, sự cứu giúp, sự viện trợ
+aloud#[əˈlaʊd]#đọc lớn tiếng
+anyway#[ˈeniweɪ]#dù sao
+arrow#[ˈærəʊ]#tên, mũi tên
+aside#[ə'said]#về một bên, sang một bên
+atomic#[əˈtɒmɪk]#(thuộc) nguyên tử
+author#[ˈɔːθə(r)]#tác giả
+basis#[ˈbeɪsɪs]#nền tảng, cơ sở
+bean#[biːn]#đậu
+becoming#[bɪˈkʌmɪŋ]#thích hợp, thích nghi
+bicycle#[ˈbaɪsɪkl]#xe đạp
+blanket#[ˈblæŋkɪt]#mền, chăn
+brush#[brʌʃ]#bàn chải
+buffalo#[ˈbʌfələʊ]#con trâu
+burn#[bɜːn]#vết cháy, vết bỏng
+burst#[bɜːst]#nổ, nổ tung
+bush#[bʊʃ]#bụi cây, bụi rậm
+collect#[kəˈlekt]#tập hợp, tụ hợp lại, thu thập
+colony#[ˈkɒləni]#thuộc địa
+combination#[ˌkɒmbɪˈneɪʃn]#sự kết hợp, sự phối hợp
+combine#[kəmˈbaɪn]#kết hợp, phối hợp
+comfortable#[ˈkʌmftəbl]#dễ chịu, thoải mái, khoan khoái
+complex#[ˈkɒmpleks]#phức tạp, rắc rối
+composed#[kəmˈpəʊzd]#bình tĩnh, điềm tĩnh
+concerned#[kənˈsɜːnd]#lo lắng, lo âu, quan tâm
+connected#[kəˈnektɪd]#kết nối
+construction#[kənˈstrʌkʃn]#sự xây dựng
+couple#[ˈkʌpl]#đôi, cặp
+create#[kriˈeɪt]#tạo, tạo nên, tạo ra
+curious#[ˈkjʊəriəs]#tò mò, hiếu kỳ, thọc mạch
+dig#[dɪɡ]#đào bới, xới, cuốc (đất...)
+dirt#[dɜːt]#đồ bẩn thỉu, đồ dơ bẩn
+distant#[ˈdɪstənt]#xa, cách, xa cách
+dot#[dɒt]#chấm nhỏ, điểm
+elephant#[ˈelɪfənt]#con voi
+etc#[ˌet ˈsetərə]#vân vân ( v. v)
+evidence#[ˈevɪdəns]#chứng cớ, bằng chứng
+examine#[ɪɡˈzæmɪn]#khám xét, xem xét, thẩm tra
+excellent#[ˈeksələnt]#xuất sắc, ưu tú
+fail#[feɪl]#trượt, hỏng
+fastened#[ˈfɑːsnd]#bị trói chặt
+feature#[ˈfiːtʃə(r)]#nét đặc biệt, điểm đặc trưng
+gain#[ɡeɪn]#lợi, lời, lợi lộc
+graph#[ɡrɑːf]#đồ thị
+hearing#[ˈhɪərɪŋ]#thính giác, tầm nghe
+highway#[ˈhaɪweɪ]#đường cái, quốc lộ
+improve#[ɪmˈpruːv]#cải tiến, cải thiện, cải tạo
+influence#[ˈɪnfluəns]#ảnh hưởng, tác dụng
+july#[dʒuˈlaɪ]#tháng bảy
+june#[dʒuːn]#tháng sáu
+lack#[læk]#thiếu, không có
+lamp#[læmp]#đèn
+locate#[ləʊˈkeɪt]#xác định vị trí, định vị
+luck#[lʌk]#vận may, vận đỏ
+mail#[meɪl]#thư từ, bưu kiện, bưu phẩm
+married#[ˈmærid]#cưới, kết hôn
+mighty#[ˈmaɪti]#to lớn, vĩ đại, hùng vĩ
+mirror#[ˈmɪrə(r)]#gương
+motor#[ˈməʊtə(r)]#động cơ
+mouse#[maʊs]#con chuột (số ít)
+needle#[ˈniːdl]#cây kim
+nod#[nɒd]#gật đầu
+numeral#[ˈnjuːmərəl]#số, chữ số
+offer#[ˈɒfə(r)]#biếu, tặng, dâng, hiến
+oldest#[]#già nhất
+operation#[ˌɒpəˈreɪʃn]#sự hoạt động, quá trình hoạt động
+orbit#[ˈɔːbɪt]#quỹ đạo
+organized#[ˈɔːɡənaɪzd]#tổ chức, cấu tạo, thiết lập
+outline#[ˈaʊtlaɪn]#nét ngoài, đường nét
+pain#[peɪn]#sự đau đớn, sự đau khổ
+pan#[pæn]#xoong, chảo
+pen#[pen]#bút, ngòi bút
+picture#[ˈpɪktʃə(r)]#bức tranh, bức ảnh, bức vẽ
+pig#[pɪɡ]#lợn heo
+pile#[paɪl]#đóng cọc, đóng cừ
+planning#[ˈplænɪŋ]#sự lập kế hoạch
+pony#[ˈpəʊni]#ngựa con
+principal#[ˈprɪnsəpl]#giám đốc, hiệu trưởng
+production#[prəˈdʌkʃn]#sự sản xuất, sự chế tạo
+refer#[rɪˈfɜː(r)]#xem, tham khảo
+religious#[rɪˈlɪdʒəs]#(thuộc) tôn giáo
+repeat#[rɪˈpiːt]#sự nhắc lại, sự lặp lại
+research#[rɪˈsɜːtʃ]#sự nghiên cứu
+respect#[rɪˈspekt]#sự tôn trọng, sự kính trọng
+review#[rɪˈvjuː]#sự xem lại, sự xét lại
+route#[ruːt]#tuyến đường, đường đi
+silk#[sɪlk]#tơ, chỉ tơ
+slept#[slept]#giấc ngủ, sự ngủ
+spite#[spaɪt]#mặc dù
+stretch#[stretʃ]#kéo ra, căng ra, duỗi ra
+strong#[strɒŋ]#khoẻ, tráng kiện
+stuck#[stʌk]#sa lầy, mắc, kẹt, vướng
+swing#[swɪŋ]#đu đưa, lúc lắc, đánh đu
+task#[tɑːsk]#nhiệm vụ, nghĩa vụ, phận sự
+tax#[tæks]#thuế, cước
+tea#[tiː]#cây chè
+tent#[tent]#lều, rạp, tăng
+theory#[ˈθɪəri]#thuyết, học thuyết
+thrown#[θrəʊn]#ném, vứt, quăng
+tonight#[təˈnaɪt]#đêm nay, tối nay
+topic#[ˈtɒpɪk]#đề tài, chủ đề
+tower#[ˈtaʊə(r)]#tháp
+transportation#[ˌtrænspɔːˈteɪʃn]#sự chuyên chở, sự vận tải
+trick#[trɪk]#mưu mẹo, thủ đoạn đánh lừa
+underline#[ˌʌndəˈlaɪn]#đường gạch dưới
+unknown#[ˌʌnˈnəʊn]#không biết, chưa từng ai biết
+upward#[ˈʌpwəd]#đi lên, hướng lên, lên
+waste#[weɪst]#lãng phí
+wherever#[weərˈevə(r)]#ở bất cứ nơi nào, bất kỳ ở đâu
+willing#[ˈwɪlɪŋ]#bằng lòng, vui lòng
+worry#[ˈwʌri]#sự lo lắng, điều lo nghĩ
+worse#[wɜːs]#xấu hơn, tồi hơn, dở hơn
+youth#[juːθ]#tuổi trẻ, tuổi xuân, tuổi thanh niên
+accept#[əkˈsept]#nhận, chấp nhận, chấp thuận
+accident#[ˈæksɪdənt]#sự rủi ro, tai nạn, tai biến
+active#[ˈæktɪv]#tích cực, hoạt động
+additional#[əˈdɪʃənl]#thêm vào, phụ vào, tăng thêm
+adjective#[ˈædʒɪktɪv]#(ngôn ngữ học) tính từ
+affect#[əˈfekt]#ảnh hưởng, tác động
+alphabet#[ˈælfəbet]#bảng chữ cái, hệ thống chữ cái
+announced#[əˈnaʊnst]#được công bố, thông báo rộng rãi
+anybody#[ˈenibɒdi]#bất kỳ ai, bất cứ ai
+april#[ˈeɪprəl]#tháng tư
+arrange#[əˈreɪndʒ]#sắp xếp, sắp đặt
+aware#[əˈweə(r)]#biết, nhận thấy, nhận thức thấy
+badly#[ˈbædli]#xấu, tồi, dở, bậy
+bee#[biː]#con ong
+belt#[belt]#dây lưng, thắt lưng
+bite#[baɪt]#cắn, ngoạm
+blind#[blaɪnd]#đui mù
+bound#[baund]#biên giới, giới hạn
+castle#[ˈkɑːsl]#lâu dài
+characteristic#[ˌkærəktəˈrɪstɪk]#riêng biệt, đặc thù, đặc trưng
+compass#[ˈkʌmpəs]#la bàn
+consonant#[ˈkɒnsənənt]#(ngôn ngữ học) phụ âm
+curve#[kɜːv]#đường cong, đường vòng, chỗ quanh co
+definition#[ˌdefɪˈnɪʃn]#sự định nghĩa, lời định nghĩa
+dish#[dɪʃ]#đĩa (đựng thức ăn)
+earn#[ɜːn]#kiếm được (tiền...)
+eddy#[ˈedi]#xoáy nước
+eventually#[ɪˈventʃuəli]#cuối cùng
+explore#[ɪkˈsplɔː(r)]#thăm dò, thám hiểm
+fairly#[ˈfeəli]#công bằng, không thiên vị
+fewer#[]#ít hơn
+fifth#[fɪfθ]#thứ năm
+gasoline#[ˈɡæsəliːn]#dầu lửa, dầu hoả
+gift#[ɡɪft]#quà tặng, quà biếu
+grade#[ɡreɪd]#lớp (học)
+halfway#[ˌhɑːfˈweɪ]#nửa chừng
+hang#[hæŋ]#treo, mắc
+herd#[hɜːd]#bầy, đàn (vật nuôi)
+hollow#[ˈhɒləʊ]#rỗng, trống rỗng, đói meo (bụng)
+income#[ˈɪnkʌm]#thu nhập, doanh thu, lợi tức
+industrial#[ɪnˈdʌstriəl]#(thuộc) công nghiệp
+introduce#[ˌɪntrəˈdjuːs]#giới thiệu
+judge#[dʒʌdʒ]#quan toà, thẩm phán
+loss#[lɒs]#sự mất
+lucky#[ˈlʌki]#đỏ, gặp may, may mắn
+machinery#[məˈʃiːnəri]#máy móc, máy
+mad#[mæd]#điên, cuồng, mất trí
+magnet#[ˈmæɡnət]#nam châm
+mars#[mɑːz]#sao hỏa
+military#[ˈmɪlətri]#(thuộc) quân đội
+mistake#[mɪˈsteɪk]#lỗi, sai lầm, lỗi lầm
+mood#[muːd]#tâm trạng, tính khí
+nail#[neɪl]#móng (tay, chân)
+naturally#[ˈnætʃrəli]#một cách tự nhiên
+negative#[ˈneɡətɪv]#không, phủ định, phủ nhận
+obtain#[əbˈteɪn]#đạt được, giành được, thu được
+origin#[ˈɒrɪdʒɪn]#gốc, nguồn gốc, căn nguyên
+owner#[ˈəʊnə(r)]#người chủ, chủ nhân
+passage#[ˈpæsɪdʒ]#đoạn (bài văn, sách...)
+percent#[pəˈsent]#phần trăm
+perfectly#[ˈpɜːfɪktli]#hoàn toàn, hoàn hảo
+pilot#[ˈpaɪlət]#phi công
+pleasure#[ˈpleʒə(r)]#điều thú vị, điều vui thú
+plural#[ˈplʊərəl]#số nhiều
+plus#[plʌs]#cộng với
+poet#[ˈpəʊɪt]#nhà thơ, thi sĩ
+porch#[pɔːtʃ]#cổng (ra vào)
+pot#[pɒt]#ấm, bình, lọ, nồi
+powder#[ˈpaʊdə(r)]#phấn (đánh mặt)
+previous#[ˈpriːviəs]#trước
+primitive#[ˈprɪmətɪv]#nguyên thuỷ, ban sơ
+principle#[ˈprɪnsəpl]#gốc, nguồn gốc
+prize#[praɪz]#giải thưởng, phầm thưởng
+purple#[ˈpɜːpl]#màu tía
+raw#[rɔː]#sống (chưa nấu chín)
+reader#[ˈriːdə(r)]#người đọc, độc giả
+remove#[rɪˈmuːv]#dời đi, di chuyển, cất dọn
+salmon#[ˈsæmən]#cá hồi
+screen#[skriːn]#màn, tấm chắn
+seldom#[ˈseldəm]#ít khi, hiếm khi
+select#[sɪˈlekt]#lựa chọn, chọn lọc
+society#[səˈsaɪəti]#xã hội
+somebody#[ˈsʌmbədi]#người nào đó
+specific#[spəˈsɪfɪk]#rõ ràng, cụ thể
+spider#[ˈspaɪdə(r)]#con nhện
+sport#[spɔːt]#thể thao (nói chung)
+stair#[steə(r)]#bậc thang
+stare#[steə(r)]#nhìn chòng chọc, nhìn chằm chằm
+steep#[stiːp]#dốc, dốc đứng
+stomach#[ˈstʌmək]#bụng, dạ dày
+stove#[stəʊv]#bếp lò
+stranger#[ˈstreɪndʒə(r)]#người lạ, người không quen biết
+struggle#[ˈstrʌɡl]#cuộc đấu tranh, cuộc chiến đấu
+surround#[səˈraʊnd]#vây quanh, bao vây
+syllable#[ˈsɪləbl]#âm tiết
+tank#[tæŋk]#xe tăng
+tape#[teɪp]#băng ghi âm, băng điện tín
+tightly#[ˈtaɪtli]#chặt chẽ, sít sao
+trace#[treɪs]#dấu, vết, vết tích, dấu hiệu
+tribe#[traɪb]#bộ tộc, bộ lạc
+trunk#[trʌŋk]#thân (cây, cột, người, thú)
+universe#[ˈjuːnɪvɜːs]#thế giới, thiên hạ, vũ trụ
+visitor#[ˈvɪzɪtə(r)]#khách, người đến thăm
+vote#[vəʊt]#bỏ phiếu, bầu cử
+weigh#[weɪ]#cân nặng, nặng
+younger#[]#em
+zero#[ˈzɪərəʊ]#zêrô, số không
+aboard#[əˈbɔːd]#trên tàu
+accurate#[ˈækjərət]#đúng đắn, chính xác, xác đáng
+actual#[ˈæktʃuəl]#thực sự, thực tế, có thật
+adventure#[ədˈventʃə(r)]#sự phiêu lưu, sự mạo hiểm
+apartment#[əˈpɑːtmənt]#buồng, căn phòng, căn hộ
+applied#[əˈplaɪd]#ứng dụng
+appropriate#[əˈprəʊpriət]#thích hợp, thích đáng
+arrive#[əˈraɪv]#đi đến, đạt tới
+atom#[ˈætəm]#nguyên tử
+bay#[beɪ]#(địa lý,địa chất) vịnh
+behavior#[]#thái độ, hành vi
+bend#[bent∫]#bẻ cong
+bet#[bet]#đánh cuộc, đánh cá
+birth#[bɜːθ]#sự sinh đẻ
+brass#[brɑːs]#đồng thau
+breathe#[briːð]#hít, thở
+brief#[briːf]#ngắn, vắn tắt, gọn
+buried#[ˈberid]#được chôn cất, chôn vùi
+camera#[ˈkæmrə]#máy ảnh
+capture#['kæpt∫ə]#bắt giữ, bắt
+chamber#[ˈtʃeɪmbə(r)]#buồng, phòng, buồng ngủ
+command#[kəˈmɑːnd]#lệnh, mệnh lệnh
+crack#[kræk]#làm nứt, làm rạn, làm vỡ
+dawn#[dɔːn]#bình minh, rạng đông
+declared#[dɪˈkleəd]#công khai, công nhiên, không úp mở
+diameter#[daɪˈæmɪtə(r)]#(toán học) đường kính
+difficulty#[ˈdɪfɪkəlti]#sự khó khăn, nỗi khó khăn
+dirty#[ˈdɜːti]#bẩn thỉu, dơ bẩn, dơ dáy
+dull#[dʌl]#tối dạ, ngu đần, đần độn
+duty#[ˈdjuːti]#bổn phận, nhiệm vụ, trách nhiệm
+eager#[ˈiːɡə(r)]#háo hức, hăm hở, thiết tha
+eleven#[ɪˈlevn]#mười một
+engineer#[ˌendʒɪˈnɪə(r)]#kỹ sư
+equally#[ˈiːkwəli]#bằng nhau, ngang nhau, như nhau
+equator#[ɪˈkweɪtə(r)]#xích đạo
+fierce#[fɪəs]#hung dữ, dữ tợn, hung tợn
+firm#[fɜːm]#hãng, công ty
+fix#[fɪks]#sửa chữa
+flame#[fleɪm]#ngọn lửa
+former#[ˈfɔːmə(r)]#trước, cũ, xưa, nguyên
+forty#[ˈfɔːti]#bốn mươi
+fox#[fɒks]#con cáo
+frog#[frɒɡ]#con ếch
+fully#[ˈfʊli]#đầy đủ, hoàn toàn
+goose#[ɡuːs]#con ngỗng(ngỗng cái)
+gravity#[ˈɡrævəti]#vẻ nghiêm trang, vẻ nghiêm nghị
+guard#[ɡɑːd]#bảo vệ, gác, canh giữ
+gulf#[ɡʌlf]#vịnh
+handsome#[ˈhænsəm]#đẹp
+harbor#[]#hải cảng, bến tàu
+hay#[heɪ]#cỏ khô (cho súc vật ăn)
+hello#[həˈləʊ]#chào
+horn#[hɔːn]#sừng (trâu bò...)
+hospital#[ˈhɒspɪtl]#bệnh viện, nhà thương
+ill#[ɪl]#đau yếu, ốm
+interior#[ɪnˈtɪəriə(r)]#ở trong, ở phía trong
+jungle#[ˈdʒʌŋɡl]#rừng nhiệt đới
+labor#[]#lao động
+limited#[ˈlɪmɪtɪd]#có hạn, hạn chế, hạn định
+location#[ləʊˈkeɪʃn]#vị trí
+mainly#[ˈmeɪnli]#chính, chủ yếu
+manage#[ˈmænɪdʒ]#quản lý, trông nom
+mental#[ˈmentl]#(thuộc) tâm thần, tinh thần
+mixture#[ˈmɪkstʃə(r)]#sự pha trộn, sự hỗn hợp
+movie#[ˈmuːvi]#phim xi nê
+nearer#[]#gần, cận
+nervous#[ˈnɜːvəs]#lo lắng, căn thẳng
+noted#[ˈnəʊtɪd]#nổi tiếng, có danh tiếng
+october#[ɒkˈtəʊbə(r)]#tháng mười
+officer#[ˈɒfɪsə(r)]#nhân viên, viên chức
+opinion#[əˈpɪnjən]#ý kiến, quan điểm
+opportunity#[ˌɒpəˈtjuːnəti]#cơ hội, thời cơ
+organization#[ˌɔːɡənaɪˈzeɪʃn]#tổ chức, cơ quan
+package#[ˈpækɪdʒ]#gói đồ, kiện hàng
+pale#[peɪl]#tái đi, nhợt nhạt, xanh xám
+plastic#[ˈplæstɪk]#nhựa
+pole#[pəʊl]#cái sào
+port#[pɔːt]#cảng
+pour#[pɔː(r)]#rót, đổ, giội, trút
+private#[ˈpraɪvət]#riêng, tư, cá nhân
+properly#[ˈprɒpəli]#đúng, chính xác
+protection#[prəˈtekʃn]#sự bảo vệ, sự bảo hộ
+pupil#[ˈpjuːpl]#học trò, học sinh
+rear#[rɪə(r)]#bộ phận đằng sau, phía sau
+refuse#[rɪˈfjuːz]#từ chối, khước từ, cự tuyệt
+roar#[rɔː(r)]#tiếng gầm, tiếng rống
+rome#[rəʊm]#la mã
+russia#[]#nước nga
+russian#[ˈrʌʃn]#người nga, tiếng nga
+saddle#[ˈsædl]#yên ngựa, yên xe
+settle#[ˈsetl]#giải quyết, dàn xếp, hoà giải
+shelf#[ʃelf]#giá, kệ
+shelter#[ˈʃeltə(r)]#che, che chở, bảo vệ
+shine#[ʃaɪn]#ánh sáng, ánh nắng
+sink#[sɪŋk]#thùng rửa bát, chậu rửa bát
+slab#[slæb]#thanh, tấm
+slave#[sleɪv]#người nô lệ
+somehow#[ˈsʌmhaʊ]#bằng cách này cách khác
+split#[splɪt]#chia ra, tách ra
+stock#[stɒk]#hàng tồn kho
+tide#[taɪd]#thuỷ triều, con nước, nước thủy triều
+torn#[tɔːn]#nước mắt, lệ
+troops#[]#( số nhiều) quân đội, lính
+tropical#[ˈtrɒpɪkl]#(thuộc) nhiệt đới
+typical#[ˈtɪpɪkl]#tiêu biểu, điển hình
+unhappy#[ʌnˈhæpi]#buồn rầu, khổ sở, không vui
+vertical#[ˈvɜːtɪkl]#thẳng đứng, đứng
+victory#[ˈvɪktəri]#sự chiến thắng, sự thắng cuộc
+voyage#[ˈvɔɪɪdʒ]#cuộc du lịch xa bằng đường biển
+welcome#[ˈwelkəm]#được hoan nghênh
+whistle#[ˈwɪsl]#huýt sáo, huýt còi, thổi còi
+widely#[ˈwaɪdli]#rộng rãi, khắp nơi
+worried#[ˈwʌrid]#cảm thấy lo lắng, tỏ ra lo lắng
+wrapped#[ræpt]#được bao bọc
+writer#[ˈraɪtə(r)]#người viết, nhà văn, tác giả
+acre#[ˈeɪkə(r)]#cánh đồng, đồng cỏ
+adult#[ˈædʌlt]#người lớn, người đã trưởng thành
+advice#[ədˈvaɪs]#lời khuyên, lời chỉ bảo
+arrangement#[əˈreɪndʒmənt]#sự sắp xếp, sự sắp đặt
+attempt#[əˈtempt]#sự cố gắng, sự thử
+august#[ɔːˈɡʌst]#tháng tám
+autumn#[ˈɔːtəm]#mùa thu
+border#[ˈbɔːdə(r)]#biên giới
+breeze#[briːz]#gió nhẹ
+brick#[brɪk]#gạch
+calm#[kɑːm]#bình tĩnh, điềm tĩnh
+canal#[kəˈnæl]#kênh, sông đào
+cast#[kɑːst]#sự đúc, khuôn đúc
+chose#[tʃəʊz]#chọn, lựa chọn, kén chọn
+claw#[klɔː]#móng vuốt (mèo, chim)
+coach#[kəʊtʃ]#người kèm học, thầy dạy tư (luyện thi...)
+constantly#[ˈkɒnstəntli]#luôn luôn, liên miên
+contrast#[ˈkɒntrɑːst]#sự tương phản, sự trái ngược
+cookies#[]#bánh quy
+custom#[ˈkʌstəm]#phong tục, tục lệ
+damage#[ˈdæmɪdʒ]#làm hư hại, làm hỏng
+deeply#[ˈdiːpli]#sâu xa, sâu sắc
+depth#[depθ]#chiều sâu, bề sâu, độ sâu
+discussion#[dɪˈskʌʃn]#sự thảo luận, sự bàn cãi, sự tranh luận
+doll#[dɒl]#con búp bê
+donkey#[ˈdɒŋki]#con lừa
+essential#[ɪˈsenʃl]#cần thiết, thiết yếu, cốt yếu
+exchange#[ɪksˈtʃeɪndʒ]#sự đổi, sự đổi chác, sự trao đổi
+exist#[ɪɡˈzɪst]#tồn tại, sống, hiện có
+explanation#[ˌekspləˈneɪʃn]#sự giải thích, sự thanh minh
+facing#[ˈfeɪsɪŋ]#sự đương đầu (với một tình thế)
+film#[fɪlm]#phim, phim ảnh
+fine#[faɪn]#tốt, khả quan
+floating#[ˈfləʊtɪŋ]#nổi
+folk#[fəʊk]#dân tộc, dân gian
+fort#[fɔːt]#pháo đài, công sự
+garage#[ˈɡærɑːʒ]#ga ra, nhà để ô tô
+grandmother#[ˈɡrænmʌðə(r)]#bà
+habit#[ˈhæbɪt]#thói quen, tập quán
+happily#[ˈhæpɪli]#sung sướng, hạnh phúc
+heading#[ˈhedɪŋ]#đề mục nhỏ, tiêu đề
+hunter#[ˈhʌntə(r)]#người đi săn
+image#[ˈɪmɪdʒ]#hình, hình ảnh
+independent#[ˌɪndɪˈpendənt]#độc lập
+instant#[ˈɪnstənt]#lúc, chốc lát
+january#[ˈdʒænjuəri]#tháng giêng
+kid#[kɪd]#đứa trẻ con, thằng bé
+label#[ˈleɪbl]#nhãn, nhãn hiệu
+lee#[liː]#chỗ che, chỗ tránh gió
+lung#[lʌŋ]#phổi
+manufacturing#[ˌmænjuˈfæktʃərɪŋ]#sự chế tạo, sự sản xuất
+martin#[ˈmɑːtɪn]#chim nhạn
+mathematics#[ˌmæθəˈmætɪks]#môn toán, toán học
+melted#[ˈmeltɪd]#bị tan ra, chảy ra
+memory#[ˈmeməri]#trí nhớ, ký ức
+mill#[mɪl]#cối xay, máy xay, nhà máy xay
+mission#[ˈmɪʃn]#sứ mệnh, nhiệm vụ
+monkey#[ˈmʌŋki]#con khỉ
+mount#[maʊnt]#leo, trèo lên
+mysterious#[mɪˈstɪəriəs]#thần bí, huyền bí
+neighborhood#[ˈneɪ·bərˌhʊd]#hàng xóm, láng giềng
+norway#[]#nước na uy
+nut#[nʌt]#(thực vật học) quả hạch
+occasionally#[əˈkeɪʒnəli]#thỉnh thoảng, từng thời kỳ
+official#[əˈfɪʃl]#chính quyền, văn phòng
+ourselves#[ɑːˈselvz]#bản thân chúng ta, bản thân chúng tôi
+palace#[ˈpæləs]#cung, điện, lâu đài
+plates#[]#bản, tấm phiếu, lá (kim loại)
+poetry#[ˈpəʊətri]#chất thơ, thi vị
+policeman#[pəˈliːsmən]#cảnh sát, công an
+positive#[ˈpɒzətɪv]#khả quan
+possibly#[ˈpɒsəbli]#có lẽ, có thể
+practical#[ˈpræktɪkl]#thực hành, thực tế, thực tiễn
+pride#[praɪd]#sự kiêu hãnh, sự hãnh diện
+promised#[ˈprɒmɪst]#lời hứa, điều hứa
+recall#[rɪˈkɔːl]#nhớ, nhớ lại, hồi tưởng
+relationship#[rɪˈleɪʃnʃɪp]#mối quan hệ, mối liên hệ
+remarkable#[rɪˈmɑːkəbl]#đáng chú ý
+require#[rɪˈkwaɪə(r)]#đòi hỏi, yêu cầu
+rhyme#[raɪm]#(thơ ca) văn
+rocky#[ˈrɒki]#nhiều đá
+rub#[rʌb]#cọ xát, chà xát
+rush#[rʌʃ]#sự vội vàng, sự gấp
+sale#[seɪl]#sự bán
+satellite#[ˈsætəlaɪt]#vệ tinh, vệ tinh nhân tạo
+satisfied#[ˈsætɪsfaɪd]#cảm thấy hài lòng, cảm thấy vừa ý
+scared#[skeəd]#bị hoảng sợ
+selection#[sɪˈlekʃn]#sự lựa chọn, sự chọn lọc
+shake#[ʃeɪk]#sự rung, sự lắc
+shallow#[ˈʃæləʊ]#nông, cạn
+shout#[ʃaʊt]#sự la hét, sự hò hét
+silly#[ˈsɪli]#ngờ nghệch, ngớ ngẩn, khờ dại
+slight#[slaɪt]#nhẹ, qua loa, sơ sài
+slip#[slɪp]#sự trượt chân
+slope#[sləʊp]#độ dốc
+soap#[səʊp]#xà phòng
+solar#[ˈsəʊlə(r)]#hệ mặt trời
+species#[ˈspiːʃiːz]#loại, hạng, thứ
+spin#[spɪn]#quay
+stiff#[stɪf]#cứng, cứng đơ, ngay đơ
+swung#[swʌŋ]#đu đưa, lúc lắc
+tales#[]#câu chuyện
+thumb#[θʌm]#ngón tay cái
+tobacco#[təˈbækəʊ]#thuốc lá
+toy#[tɔɪ]#đồ chơi (của trẻ con)
+trap#[træp]#bẫy, cạm bẫy
+treat#[triːt]#đối xử, đối đãi
+tune#[tjuːn]#điệu (hát...), giai điệu
+university#[ˌjuːnɪˈvɜːsəti]#trường đại học
+vapor#[ˈveɪpə(r)]#hơi, hơi nước
+vessel#[ˈvesl]#bình, chậu, lọ, thùng
+wealth#[welθ]#sự giàu có, sự giàu sang
+wolf#[wʊlf]#chó sói
+zoo#[zuː]#vườn bách thú, vườn thú

@@ -6,21 +6,13 @@ import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Modality;
+import javafx.scene.text.*;
 import javafx.stage.Popup;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import views.TestAPI;
 
@@ -63,9 +55,14 @@ public class mainDictionaryTab_ctrl {
 
     //? wifa = word infomation area
     @FXML
-    private TextArea wifa_meaning;
-    @FXML
     private Label wifa_word;
+    @FXML
+    private TextArea wifa_meaning_raw;
+    @FXML
+    private TextFlow wifa_meaning;
+    @FXML
+    private ScrollPane wifa_scrollpane;
+
 
     private boolean is_editing = false;
 
@@ -73,8 +70,9 @@ public class mainDictionaryTab_ctrl {
     private String current_meaning = null;
 
     //? search, history, favorite
-    private ToggleGroup SHF_group = new ToggleGroup();
+    private final ToggleGroup SHF_group = new ToggleGroup();
 
+    private static final double DEFAULT_POPUP_TIME = 1.2;
 
     @FXML
     void initialize() {
@@ -85,23 +83,37 @@ public class mainDictionaryTab_ctrl {
     }
 
     private void init_search_area() {
-        search_box.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ENTER)
+        search_box.setOnAction(e -> {
+            if (!word_list_box.getItems().isEmpty()) {
+                word_list_box.getSelectionModel().select(0);
+                word_list_box.requestFocus();
+                word_list_box.getFocusModel().focus(0);
+                word_list_box.scrollTo(0);
                 on_choose_word(word_list_box.getItems().get(0));
+            }
         });
         search_box.setOnKeyTyped(e -> {
-            if (e.getCode() != KeyCode.ENTER)
-                System.out.println("current word: " + search_box.getText());
+            System.out.println("current word: " + search_box.getText());
             update_wordlist();
         });
 
         word_list_box.setOnMouseClicked(e -> {
             on_choose_word(word_list_box.getSelectionModel().getSelectedItem());
         });
+        word_list_box.getFocusModel().focusedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (word_list_box.isFocused() && newVal != null) {
+                on_choose_word(newVal);
+            }
+        });
     }
 
     private void init_word_information_area() {
-        wifa_meaning.setEditable(false);
+        wifa_meaning_raw.setDisable(true);
+        wifa_meaning_raw.setEditable(false);
+        wifa_meaning_raw.setVisible(false);
+        wifa_scrollpane.setFitToWidth(true);
+
+        update_word_info_area(null, null);
     }
 
     private void init_fuction_button() {
@@ -116,7 +128,7 @@ public class mainDictionaryTab_ctrl {
         });
         save_edit_button.setDisable(true);
 
-        wifa_meaning.focusedProperty().addListener((ov, oldV, newV) -> {
+        wifa_meaning_raw.focusedProperty().addListener((ov, oldV, newV) -> {
             if (!newV)  // focus lost
                 if (is_editing) finish_edit_word();
         });
@@ -162,7 +174,7 @@ public class mainDictionaryTab_ctrl {
         label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
         label.setPrefSize(400, 100);
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
         delay.setOnFinished(event -> popup.hide());
         delay.play();
 
@@ -181,7 +193,7 @@ public class mainDictionaryTab_ctrl {
         label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
         label.setPrefSize(400, 100);
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
         delay.setOnFinished(event -> popup.hide());
         delay.play();
 
@@ -200,7 +212,7 @@ public class mainDictionaryTab_ctrl {
         label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
         label.setPrefSize(400, 100);
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
         delay.setOnFinished(event -> popup.hide());
         delay.play();
 
@@ -218,7 +230,25 @@ public class mainDictionaryTab_ctrl {
         label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
         label.setPrefSize(400, 100);
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
+        delay.setOnFinished(event -> popup.hide());
+        delay.play();
+
+        popup.getContent().add(label);
+        popup.show(wifa_word.getScene().getWindow());
+    }
+
+    private void popup_word_removed(String word) {
+        Popup popup = new Popup();
+        popup.setAutoHide(true);
+        Label label = new Label("Removed word from dictionary\n\"" + word + "\"");
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setAlignment(javafx.geometry.Pos.CENTER);
+        label.setFont(new Font(25));
+        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
+        label.setPrefSize(400, 100);
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
         delay.setOnFinished(event -> popup.hide());
         delay.play();
 
@@ -238,8 +268,13 @@ public class mainDictionaryTab_ctrl {
         save_edit_button.setDisable(false);
         System.out.println("start edit word: " + word);
         is_editing = true;
-        wifa_meaning.setEditable(true);
-        wifa_meaning.requestFocus();
+        wifa_meaning.setVisible(false);
+        wifa_meaning.setDisable(true);
+        wifa_scrollpane.setDisable(true);
+        wifa_meaning_raw.setDisable(false);
+        wifa_meaning_raw.setVisible(true);
+        wifa_meaning_raw.setEditable(true);
+        wifa_meaning_raw.requestFocus();
     }
 
     private void finish_edit_word() {
@@ -248,9 +283,15 @@ public class mainDictionaryTab_ctrl {
         save_edit_button.setDisable(true);
         System.out.println("finish edit word: " + wifa_word.getText());
         is_editing = false;
-        wifa_meaning.setEditable(false);
-        String meaning = wifa_meaning.getText();
+        wifa_meaning_raw.setEditable(false);
+        wifa_meaning_raw.setVisible(false);
+        wifa_meaning_raw.setDisable(true);
+        wifa_meaning.setVisible(true);
+        wifa_meaning.setDisable(false);
+        wifa_scrollpane.setDisable(false);
+        String meaning = wifa_meaning_raw.getText();
         TestAPI.testEditWord(wifa_word.getText(), meaning);
+        update_word_info_area(wifa_word.getText(), meaning);
         popup_word_updated(wifa_word.getText());
     }
 
@@ -264,7 +305,8 @@ public class mainDictionaryTab_ctrl {
         TestAPI.testRemoveWord(wifa_word.getText());
         TestAPI.removeFavoriteWord(wifa_word.getText());
         update_wordlist();
-
+        update_word_info_area(null, null);
+        popup_word_removed(wifa_word.getText());
     }
 
     private void allow_add_word() {
@@ -285,6 +327,7 @@ public class mainDictionaryTab_ctrl {
         TestAPI.testAddWord(word, "");
         popup_word_added(word);
         update_wordlist();
+        on_choose_word(word);
     }
 
     private void toggle_favorite() {
@@ -342,9 +385,81 @@ public class mainDictionaryTab_ctrl {
             favorite_toggle_button.setSelected(true);
         else
             favorite_toggle_button.setSelected(false);
-        wifa_meaning.setText(TestAPI.getWordMeaning(word));
-        wifa_word.setText(word);
+
+        update_word_info_area(word, TestAPI.getWordMeaning(word));
+
         if (SHF_group.getSelectedToggle() != history_button)
             TestAPI.addSearchHistory(word);
+    }
+
+    private void update_word_info_area(String word, String meaning) {
+        if (word == null) {
+            speak_button.setDisable(true);
+            wifa_word.setText("");
+            wifa_meaning_raw.setText("");
+            wifa_meaning.getChildren().clear();
+            return;
+        }
+        speak_button.setDisable(false);
+        wifa_word.setText(word);
+        wifa_meaning_raw.setText(TestAPI.getWordMeaning(word));
+        wifa_meaning.getChildren().clear();
+
+        String[] lines = meaning.split("\n");
+
+        for (String line : lines) {
+
+
+            line = line.trim();
+
+            if (line.startsWith("/")) {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("pronounce");
+                text.setText(word + "  -  " + line + '\n');
+                text.setFont(Font.font("System", FontWeight.THIN, FontPosture.ITALIC, 20.0));
+                text.setFill(Color.BLACK);
+                wifa_meaning.getChildren().add(text);
+
+            } else if (line.startsWith("*")) {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("type");
+                line = line.replace("*", "").trim();
+                text.setText(line + '\n');
+                text.setFont(Font.font("System", FontWeight.BOLD, FontPosture.REGULAR, 22.0));
+                text.setFill(Color.RED);
+                text.setUnderline(true);
+                wifa_meaning.getChildren().add(text);
+
+            } else if (line.startsWith("=")) {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("example");
+                String[] parts = line.replace("=", "").split("\\+");
+                String str1 = "   Ex: " + parts[0].trim();
+                String str2 = "   " + "  => " + parts[1].trim();
+                text.setText(str1 + '\n' + str2 + '\n');
+                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+                text.setFill(Color.BLUE);
+                wifa_meaning.getChildren().add(text);
+            } else if (line.startsWith("-")) {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("meaning");
+                text.setText(line + '\n');
+                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+                text.setFill(Color.BLACK);
+                wifa_meaning.getChildren().add(text);
+            } else {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("undefined");
+                text.setText(line + '\n');
+                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+                text.setFill(Color.BLACK);
+                wifa_meaning.getChildren().add(text);
+            }
+        }
     }
 }

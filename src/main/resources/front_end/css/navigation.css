@@ -59,9 +59,10 @@
 }
 
 .nav-button:hover {
-    -fx-background-color: green1;
+    -fx-background-color: linear-gradient(to right, white5, white4);
 }
 
 .nav-button.focused {
-    -fx-background-color: white1;
+    /*-fx-background-color: white1;*/
+    -fx-background-color: linear-gradient(to right, white3, white1);
 }
