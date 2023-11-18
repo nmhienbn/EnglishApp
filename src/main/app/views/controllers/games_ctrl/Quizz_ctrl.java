@@ -37,6 +37,8 @@ public class Quizz_ctrl extends Game_ctrl {
     private final MainQuizz mainQuizz = MainQuizz.getInstance();
 
     @FXML
+    AnchorPane game_sc;
+    @FXML
     public GridPane choices;
     @FXML
     StackPane fQ;
@@ -46,6 +48,8 @@ public class Quizz_ctrl extends Game_ctrl {
     public AnchorPane fA, fB, fC, fD;
     @FXML
     public Text ansA, ansB, ansC, ansD;
+    @FXML
+    public Button helpButton;
     @FXML
     public HBox titleHBox;
     @FXML
@@ -69,6 +73,32 @@ public class Quizz_ctrl extends Game_ctrl {
         mainQuizz.quizz_ctrl = this;
         setTooltip(restartButton, "Restart");
         setTooltip(exitButton, "Exit");
+        game_sc.setOnMouseClicked(e -> {
+            if (notificationPane.isVisible() &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), helpButton)) {
+                dimSc.setVisible(false);
+                notificationPane.setVisible(false);
+                notificationPane.setTranslateX(0);
+                notificationPane.setTranslateY(0);
+                notificationPane.setOnMousePressed(null);
+                notificationPane.setOnMouseDragged(null);
+            }
+        });
+    }
+
+    @FXML
+    public void showHelp() {
+        if (notificationPane.isVisible()) {
+            dimSc.setVisible(false);
+            notificationPane.setVisible(false);
+        } else {
+            GameNotification.instructionQuizz(notificationPane);
+            dimSc.toFront();
+            dimSc.setVisible(true);
+            notificationPane.toFront();
+            notificationPane.setVisible(true);
+        }
     }
 
     @FXML

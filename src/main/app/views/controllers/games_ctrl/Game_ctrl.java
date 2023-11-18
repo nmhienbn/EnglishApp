@@ -1,6 +1,7 @@
 package views.controllers.games_ctrl;
 
 import javafx.animation.SequentialTransition;
+import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -10,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.util.Duration;
 import views.animations.GameAnimations;
+import views.games.GameNotification;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -19,9 +21,14 @@ import java.util.stream.Stream;
 
 public abstract class Game_ctrl {
     public BorderPane notificationPane;
+    public Button helpButton;
+    public Button restartButton;
+    public Button exitButton;
     public Region dimSc;
 
     abstract public void restart();
+    abstract public void showHelp();
+    abstract public void exitGame();
 
     protected void initWords(String path, ArrayList<String> words) {
         InputStream winning_words = getClass().getResourceAsStream(path);
@@ -42,12 +49,12 @@ public abstract class Game_ctrl {
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
         });
-        node.setOnMouseEntered(e -> {
-            node.setStyle("-fx-background-color: #ced4da");
-        });
-        node.setOnMouseExited(e -> {
-            node.setStyle("-fx-background-color: transparent");
-        });
+//        node.setOnMouseEntered(e -> {
+//            node.setStyle("-fx-background-color: #ced4da");
+//        });
+//        node.setOnMouseExited(e -> {
+//            node.setStyle("-fx-background-color: transparent");
+//        });
     }
 
     public abstract void showStartGame();
