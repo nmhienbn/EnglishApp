@@ -1,0 +1,67 @@
+@import "theme.css";
+
+.root {
+    -fx-background-color: white1;
+    -fx-pref-width: 1100;
+    -fx-pref-height: 700;
+    -fx-min-width: 1100;
+    -fx-min-height: 700;
+}
+
+#home {
+    -fx-background-size: 40 40;
+
+}
+
+#main_dictionary {
+    -fx-background-size: 45 45;
+}
+
+#quizz {
+    -fx-background-size: 45 45;
+}
+
+#google {
+    -fx-background-size: 40 40;
+}
+
+#wordle {
+    -fx-background-size: 40 40;
+}
+
+#ctw {
+    -fx-background-size: 40 40;
+}
+
+.navbutton-tooltip {
+    -fx-font: normal bold 15 Langdon;
+    -fx-base: #AE3522;
+    -fx-text-fill: orange;
+}
+
+#nav-panel {
+    -fx-pref-width: 100;
+    -fx-background-color: linear-gradient(to bottom, #655180, #27282E);
+    -fx-spacing: 2.5px;
+}
+
+.nav-button {
+    -fx-pref-width: 100;
+    -fx-pref-height: 75;
+
+    -fx-border-radius: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+
+    -fx-background-position: 50% 50%;
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-color: transparent;
+}
+
+.nav-button:hover {
+    -fx-background-color: green1;
+}
+
+.nav-button.focused {
+    -fx-background-color: white1;
+}

@@ -34,10 +34,6 @@
     -fx-text-fill: -text-fill-color;
 }
 
-.tile-with-letter {
-    -fx-border-color: -unlocked-border-color;
-}
-
 .valid-letter {
     -fx-background-color: -present-color;
     -fx-border-color: -present-color;
@@ -85,10 +81,12 @@
 
 .keyboardCorrectColor {
     -fx-background-color: -correct-color;
+    -fx-text-fill: white;
 }
 
 .keyboardValidColor {
     -fx-background-color: -present-color;
+    -fx-text-fill: white;
 }
 
 .keyboardAbsentColor {

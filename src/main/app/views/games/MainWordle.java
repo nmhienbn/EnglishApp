@@ -183,7 +183,7 @@ public class MainWordle extends Game {
             Label label = getLabel(gridPane, CUR_ROW, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
             GameAnimations.scaleTrans(label, 1.2, 1, 150).play();
-            setLabelStyleClass(gridPane, CUR_ROW, CUR_COLUMN, "tile-with-letter");
+            setLabelStyleClass(gridPane, CUR_ROW, CUR_COLUMN, "default-tile");
             if (CUR_COLUMN < MAX_COLUMN)
                 CUR_COLUMN++;
         }

@@ -91,9 +91,6 @@ public class Quizz_ctrl extends Game_ctrl {
         // Create Question
         mainQuizz.createQuestion(question, ansA, ansB, ansC, ansD);
 
-        // Create Grid
-        mainQuizz.createGrid(choices);
-
         // Create Game Title
         mainQuizz.createGameTitle(titleHBox);
     }
@@ -134,6 +131,7 @@ public class Quizz_ctrl extends Game_ctrl {
     }
 
     public void showStartGame() {
+        mainQuizz.resetGrid(choices);
         ParallelTransition parallelTransition = new ParallelTransition();
         int duration = 200;
         if (sequentialTransition != null) {
@@ -155,5 +153,8 @@ public class Quizz_ctrl extends Game_ctrl {
                 GameAnimations.scaleTrans(fC, 0, 1, duration),
                 GameAnimations.scaleTrans(fD, 0, 1, duration));
         sequentialTransition.play();
+        sequentialTransition.setOnFinished(event -> {
+            mainQuizz.createGrid(choices);
+        });
     }
 }
