@@ -31,45 +31,15 @@
                         </padding>
                         <ImageView fitHeight="50" fitWidth="50">
                         </ImageView>
-                        <Button fx:id="helpButton" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="50.0"
-                                prefWidth="50.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
-                            <graphic>
-                                <ImageView accessibleRole="BUTTON" fitHeight="50" fitWidth="50" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../game/images/help.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
+                        <Button fx:id="helpButton" onMouseClicked="#showHelp"/>
 
                         <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
                             <padding>
                                 <Insets bottom="8" left="27" right="30"/>
                             </padding>
                         </HBox>
-                        <Button fx:id="restartButton" onMouseClicked="#restart" mnemonicParsing="false"
-                                prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
-                            <graphic>
-                                <ImageView accessibleRole="BUTTON" fitHeight="50" fitWidth="50" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../game/images/restart.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button fx:id="exitButton" onMouseClicked="#exitGame" mnemonicParsing="false" prefHeight="50.0"
-                                prefWidth="50.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
-                            <graphic>
-                                <ImageView accessibleRole="BUTTON" fitHeight="50" fitWidth="50" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../game/images/exit.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
+                        <Button fx:id="restartButton" onMouseClicked="#restart"/>
+                        <Button fx:id="exitButton" onMouseClicked="#exitGame"/>
 
 
                         <padding>

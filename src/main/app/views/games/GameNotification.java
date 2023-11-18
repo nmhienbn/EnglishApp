@@ -225,6 +225,41 @@ public class GameNotification {
         helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
     }
 
+    public static void instructionQuizz(BorderPane helpPane) {
+        helpPane.setPrefWidth(500);
+        helpPane.setPrefHeight(400);
+        helpPane.setLayoutX(250);
+        helpPane.setLayoutY(80);
+        VBox vbox = new VBox(5);
+        vbox.setPadding(new Insets(0, 0, 0, 0));
+
+        Label ins = new Label("HOW TO PLAY");
+        ins.setTextAlignment(TextAlignment.CENTER);
+        ins.getStyleClass().setAll("h2", "strong");
+
+        Line line = new Line();
+        line.setStroke(Paint.valueOf("b8b8b8"));
+        line.setEndX(490);
+
+        ImageView img = new ImageView(new Image("game/quizz_ex.png",
+                480, 480, true, false));
+
+        Label insParagraph = new Label("Choose the missing word from one of the four options A, B, C, D.");
+        insParagraph.setTextAlignment(TextAlignment.LEFT);
+        insParagraph.getStyleClass().setAll("lead");
+        insParagraph.setStyle("-fx-line-spacing: -0.2em;");
+
+        vbox.setAlignment(Pos.CENTER);
+        vbox.getChildren().addAll(ins, line, img, insParagraph);
+
+
+        helpPane.setCenter(vbox);
+        helpPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
+                "-fx-border-color: #000000; -fx-border-width: 2px;" +
+                "-fx-border-radius: 5; -fx-background-radius: 5;");
+        helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+    }
+
     private static HBox giveExampleWord(String sampleWord, String typeExample, int index) {
         String[] letter = sampleWord.split("");
         HBox WordHBox = new HBox(3);

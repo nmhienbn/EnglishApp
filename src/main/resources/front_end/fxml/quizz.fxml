@@ -22,7 +22,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
+<AnchorPane fx:id="game_sc" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
             stylesheets="@../css/quizz.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
@@ -37,37 +37,16 @@
                         </padding>
                         <ImageView fitHeight="50" fitWidth="50">
                         </ImageView>
-                        <ImageView fitHeight="50" fitWidth="50">
-                        </ImageView>
+                        <Button fx:id="helpButton" onMouseClicked="#showHelp"/>
 
                         <HBox fx:id="titleHBox" alignment="CENTER" prefHeight="50.0">
                             <padding>
                                 <Insets bottom="8" left="27" right="30"/>
                             </padding>
                         </HBox>
-                        <Button fx:id="restartButton" mnemonicParsing="false" onMouseClicked="#restart"
-                                prefHeight="50.0" prefWidth="50.0"
-                                style="-fx-background-color: rgba(255, 255, 255, 0);">
-                            <graphic>
-                                <ImageView accessibleRole="BUTTON" fitHeight="50" fitWidth="50" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../game/images/restart.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button fx:id="exitButton" mnemonicParsing="false" onMouseClicked="#exitGame" prefHeight="50.0"
-                                prefWidth="50.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
-                            <graphic>
-                                <ImageView accessibleRole="BUTTON" fitHeight="50" fitWidth="50" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../game/images/exit.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
+
+                        <Button fx:id="restartButton" onMouseClicked="#restart"/>
+                        <Button fx:id="exitButton" onMouseClicked="#exitGame"/>
 
 
                         <padding>
