@@ -32,7 +32,7 @@ public class GameNotification {
     private static double xOffset = 0;
     private static double yOffset = 0;
 
-    public static void endGameNotification(boolean guessed, String winningWord,
+    public static void endGameNotification(boolean isWin, String winningWord,
                                            Game_ctrl game_ctrl, String[] messages) {
         BorderPane mainPane = game_ctrl.notificationPane;
         mainPane.setPrefWidth(400);
@@ -46,13 +46,14 @@ public class GameNotification {
         Text ins = new Text();
         ins.setTextAlignment(TextAlignment.CENTER);
         ins.getStyleClass().setAll("h1", "strong");
+        ins.setFill(Paint.valueOf("FFFFFF"));
 
         Line line = new Line();
-        line.setStroke(Paint.valueOf("b8b8b8"));
+        line.setStroke(Paint.valueOf("FFFFFF"));
         line.setEndX(400);
 
         Label mainLabel = new Label();
-        if (guessed) {
+        if (isWin) {
             ins.setText("CONGRATULATIONS!");
             mainLabel.setText(messages[0]);
         } else {
@@ -60,9 +61,11 @@ public class GameNotification {
             mainLabel.setText(messages[1]);
         }
         mainLabel.getStyleClass().setAll("lead", "big-font");
+        mainLabel.setTextFill(Paint.valueOf("FFFFFF"));
 
         Label answer = new Label(winningWord.toUpperCase());
         answer.getStyleClass().setAll("h1", "strong");
+        answer.setTextFill(Paint.valueOf("FFFFFF"));
 
         ImageView playAgainButton = new ImageView(new Image("front_end/graphic/icons/play_again.png",
                 200, 50, true, false));
@@ -81,9 +84,13 @@ public class GameNotification {
         vbox.getChildren().addAll(ins, line, mainLabel, answer, playAgainButton);
 
         mainPane.setCenter(vbox);
-        mainPane.setStyle("-fx-background-color: rgba(255, 255, 255, 1); -fx-padding: 3;" +
-                "-fx-border-radius: 30; -fx-background-radius: 30;" +
-                "-fx-border-color: black; -fx-border-width: 3;");
+        String style = "-fx-background-color: ";
+        if (isWin)
+            style += "linear-gradient(to top, #95FC51, #5B9931);";
+        else
+            style += "linear-gradient(to top, #C92A2C, #7D1A1C);";
+        style += "-fx-padding: 3; -fx-background-radius: 30;";
+        mainPane.setStyle(style);
 
         game_ctrl.dimSc.setVisible(true);
         game_ctrl.dimSc.toFront();
