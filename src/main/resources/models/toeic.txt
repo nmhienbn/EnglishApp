@@ -1,0 +1,699 @@
+﻿.
+1. contracts#[]#hợp đồng
+abide#[əˈbaɪd]#tôn trọng, tuân theo
+agreement#[əˈɡriːmənt]#sự thoả thuận
+assurance#[əˈʃʊərəns]#bảo đảm, chắc chắn
+cancellation#[ˌkænsəˈleɪʃn]#sự bãi bỏ, hủy bỏ
+determine#[dɪˈtɜːmɪn]#quyết định, xác định, định rõ
+engage#[ɪnˈɡeɪdʒ]#tham gia, cam kết
+obligate#[ˈɒblɪɡeɪt]#bắt buộc, ép buộc
+party#[ˈpɑːti]#đảng, phái, nhóm
+provision#[prəˈvɪʒn]#điều khoản, sự cung cấp
+resolve#[rɪˈzɒlv]#giải quyết, sự kiên quyết
+specific#[spəˈsɪfɪk]#riêng biệt, cụ thể, rõ ràng, rành mạch
+
+2. marketing#[]#tiếp thị
+attract#[əˈtrækt]#hấp dẫn, lôi cuốn, thu hút
+compare#[kəmˈpeə(r)]#so sánh, đối chiếu
+competition#[ˌkɒmpəˈtɪʃn]#sự cạnh tranh, cuộc thi đấu
+consume#[kənˈsjuːm]#tiêu thụ, tiêu dùng
+convince#[kənˈvɪns]#thuyết phục
+currently#[ˈkʌrəntli]#hiện thời, hiện nay, lúc này
+fad#[fæd]#mốt nhất thời, sự thích thú tạm thời
+inspiration#[ˌɪnspəˈreɪʃn]#truyền cảm hứng, gây cảm hứng
+market#[ˈmɑːkɪt]#thị trường, chợ
+persuasion#[pəˈsweɪʒn]#sự thuyết phục, làm cho tin
+productive#[prəˈdʌktɪv]#năng xuất, có hiệu quả
+satisfaction#[ˌsætɪsˈfækʃn]#sự làm thỏa mãn, sự hài lòng
+
+3. warranties#[]#sự bảo đảm, bảo hành
+characteristic#[ˌkærəktəˈrɪstɪk]#đặc trưng, đặc điểm
+consequence#[ˈkɒnsɪkwəns]#kết quả, hậu quả, hệ quả
+consider#[kənˈsɪdə(r)]#cân nhắc, suy xét
+cover#[ˈkʌvə(r)]#che, phủ, bao gồm
+expiration#[ˌekspəˈreɪʃn]#sự mãn hạn, sự hết hạn, sự kết thúc
+frequently#[ˈfriːkwəntli]#thường xuyên, một cách thường xuyên
+imply#[ɪmˈplaɪ]#ngụ ý, hàm ý
+promise#[ˈprɒmɪs]#hứa hẹn, cam đoan, bảo đảm
+protect#[prəˈtekt]#bảo vệ, bảo hộ, che chở
+reputation#[ˌrepjuˈteɪʃn]#danh tiếng, thanh danh
+require#[rɪˈkwaɪə(r)]#đòi hỏi, yêu cầu
+variety#[vəˈraɪəti]#đa dạng, nhiều
+
+4. business planning#[]#kế hoạch kinh doanh
+address#[əˈdres]#địa chỉ, diễn văn, bài nói chuyện
+avoid#[əˈvɔɪd]#tránh, tránh khỏi
+demonstrate#[ˈdemənstreɪt]#bày tỏ, biểu lộ, chứng minh
+develop#[dɪˈveləp]#phát triển, tiến triển
+evaluate#[ɪˈvæljueɪt]#đánh giá, định giá, ước lượng
+gather#[ˈɡæðə(r)]#tập hợp, tụ thập, thu thập
+offer#[ˈɒfə(r)]#đề xuất, đề nghị
+primarily#[praɪˈmerəli]#chính, chủ yếu
+risk#[rɪsk]#sự nguy hiểm, sự rủi ro
+strategy#[ˈstrætədʒi]#chiến lược
+strong#[strɒŋ]#khỏe, mạnh, tốt
+substitution#[ˌsʌbstɪˈtjuːʃn]#sự đổi, sự thay thế
+
+5. conferences#[]#hội nghị
+accommodate#[əˈkɒmədeɪt]#điều tiết, điều chỉnh, làm cho phù hợp
+arrangement#[əˈreɪndʒmənt]#dàn xếp, sắp xếp
+association#[əˌsəʊsiˈeɪʃn]#hội, hội liên hiệp, đoàn thể
+attend#[əˈtend]#tham dự, có mặt
+get in touch#[]#liên lạc với, giữ quan hệ với, có dính líu đến
+hold#[həʊld]#cầm, nắm, tổ chức
+location#[ləʊˈkeɪʃn]#vị trí, khu đất
+overcrowded#[ˌəʊvəˈkraʊdɪd]#chật ních, đông nghịt
+register#[ˈredʒɪstə(r)]#ghi vào sổ sách, đăng ký
+select#[sɪˈlekt]#chọn lựa, chọn lọc, tuyển chọn
+session#[ˈseʃn]#phiên, kỳ, buổi (họp, học)
+take part in#[]#tham dự, tham gia
+
+6. computers#[]#máy vi tính
+access#[ˈækses]#truy cập
+allocate#[ˈæləkeɪt]#chỉ định, định rõ
+compatible#[kəmˈpætəbl]#tương thích, tương hợp
+delete#[dɪˈliːt]#xóa đi, bỏ đi, gạch đi
+display#[dɪˈspleɪ]#hiển thị, trưng bày
+duplicate#[ˈdjuːplɪkeɪt]#sao lại, làm thành 2 bản
+failure#[ˈfeɪljə(r)]#thất bại, bất thành
+figure out#[]#hiểu ra, suy ra, đoán ra
+ignore#[ɪɡˈnɔː(r)]#bỏ qua, phớt lờ, không để ý tới
+search#[sɜːtʃ]#tìm kiếm, tìm hiểu
+shut down#[]#tắt máy, ngừng hoạt động, chấm dứt
+warning#[ˈwɔːnɪŋ]#cảnh báo, báo trước
+
+7. office technology#[]#công nghệ văn phòng
+affordable#[əˈfɔːdəbl]#có đủ khả năng, có đủ điều kiện
+as needed#[]#khi cần, lúc cần, cần thiết
+be in charge of#[]#hịu trách nhiệm về
+capacity#[kəˈpæsəti]#sức chứa, dung tích, khả năng
+durable#[ˈdjʊərəbl]#bền, lâu, lâu bền
+initiative#[ɪˈnɪʃətɪv]#bền, lâu, lâu bền
+physically#[ˈfɪzɪkli]#thể chất, một cách vật lý
+provide#[prəˈvaɪd]#người cung cấp, nhà cung cấp
+recur#[rɪˈkɜː(r)]#lặp lại, diễn lại, tái diễn
+reduction#[rɪˈdʌkʃn]#giảm thiểu, hạ, thu nhỏ
+stay on top of#[]#nắm bắt tình hình, hiểu biết thông tin mới nhất
+stock#[stɒk]#kho/hàng dự trữ, vốn, cổ phần
+
+8. office procedures#[]#thủ tục văn phòng
+appreciation#[əˌpriːʃiˈeɪʃn]#sự đánh giá, nhận thức, sự cảm kích
+be made of#[]#làm bằng (cái gì), gồm có (cái gì)
+bring in#[]#thuê, mướn
+casually#[ˈkæʒuəli]#tình cờ, ngẫu nhiên
+code#[kəʊd]#quy tắc, luật lệ, đạo lý
+expose#[ɪkˈspəʊz]#phơi bày, bộc lộ, phô ra
+glimpse#[ɡlɪmps]#nhìn lướt qua, thoáng qua
+out of#[ˈaʊt ˌəv]#hết, mất, không còn
+outdated#[ˌaʊtˈdeɪtɪd]#hết hạn, lỗi thời, lạc hậu
+practice#[ˈpræktɪs]#sự thực hành, rèn luyện, tập luyện
+reinforce#[ˌriːɪnˈfɔːs]#tăng cường, củng cố, gia cố
+verbally#[ˈvɜːbəli]#bằng miệng, bằng lời nói
+
+
+9. electronics#[]#điện tử
+disk#[dɪsk]#đĩa (vi tính, thể thao, đĩa hát...)
+facilitate#[fəˈsɪlɪteɪt]#làm cho dễ dàng, làm cho thuận tiện
+network#[ˈnetwɜːk]#kết nối, liên kết, mạng lưới
+popularity#[ˌpɒpjuˈlærəti]#phổ biến, nổi tiếng
+process#[ˈprəʊ.ses]#quá trình, sự tiến triển
+replace#[rɪˈpleɪs]#thay thế, đặt vào lại chỗ cũ
+revolution#[ˌrevəˈluːʃn]#sự xoay vòng, cuộc cách mạng
+sharp#[ʃɑːp]#sắc, bén, rõ rệt
+skill#[skɪl]#kỹ năng, kỹ xảo
+software#[ˈsɒftweə(r)]#phần mềm, chương trình máy tính
+store#[stɔː(r)]#cửa hàng, cửa hiệu, kho hàng
+technically#[ˈteknɪkli]#một cách chuyên môn
+
+10. correspondence#[]#thư tín
+assemble#[əˈsembl]#thu thập, lắp ráp, tập hợp
+beforehand#[bɪˈfɔːhænd]#sẵn, có sẵn, trước
+complication#[ˌkɒmplɪˈkeɪʃn]#sự phức tạp, sự rắc rối
+courier#[ˈkʊriə(r)]#người đưa tin, người đưa thư, người chuyển phát
+express#[ɪkˈspres]#nhanh, hỏa tốc, tốc hành
+fold#[fəʊld]#nếp gấp, gấp lại
+layout#[]#sự bổ trí trang giấy
+mention#[ˈmenʃn]#sự đề cập
+petition#[pəˈtɪʃn]#sự cầu xin, đơn kiến nghị, đơn thỉnh cầu
+proof#[pruːf]#bằng chứng, chứng cớ
+register#[ˈredʒɪstə(r)]#đăng ký
+revise#[rɪˈvaɪz]#duyệt lại, sửa lại
+
+11. job advertising and recruiting#[]#quảng cáo công việc và tuyển dụng
+abundant#[əˈbʌndənt]#nhiều, phong phú, thừa
+accomplishment#[əˈkʌmplɪʃmənt]#thành tựu, thành tích, sự hoàn thành
+bring together#[]#gom lại, nhóm lại, họp lại
+candidate#[ˈkændɪdət]#ứng cử viên, thí sinh, người dự thi
+come up with#[]#ý định
+commensurate (+with)#[]#xứng với, tương xứng với
+match#[mætʃ]#đối thủ, người ngang tài sức
+profile#[ˈprəʊfaɪl]#tiểu sử sơ lược, bản tóm lược các đặc tính
+qualification#[ˌkwɒlɪfɪˈkeɪʃn]#khả năng, năng lực, trình độ
+recruit#[rɪˈkruːt]#tuyển dụng
+submit#[səbˈmɪt]#trình, đệ trình, biện hộ
+time consuming#[ˈtaɪm kənsjuːmɪŋ]#tốn nhiều thời gian
+
+12. applying and interviewing#[]#ứng tuyển và phỏng vấn
+ability#[əˈbɪləti]#năng lực, khả năng, tài năng
+apply#[əˈplaɪ]#nộp, ứng tuyển
+background#[ˈbækɡraʊnd]#kiến thức, kinh nghiệm, quá trình đào tạo
+be ready for#[]#sẵn sàng cho
+call in#[ˈkɔːl ɪn]#yêu cầu, mời tới
+confidence#[ˈkɒnfɪdəns]#sự tin cậy, tin tưởng
+constantly#[ˈkɒnstəntli]#luôn luôn, liên tục, liên miên
+expert#[ˈekspɜːt]#chuyên gia, chuyên viên
+follow up#[ˈfɒləʊ ʌp]#tiếp theo, kế tiếp
+hesitant#[ˈhezɪtənt]#do dự, lưỡng lự, ngập ngừng
+present#[ˈpreznt]#đưa ra, bày tỏ, giới thiệu
+weakly#[ˈwiːkli]#một cách yếu ớt, yếu, ốm yếu
+
+13. hiring and training#[]#thuê mướn và đào tạo
+conduct#[kənˈdʌkt]#tiến hành, cư xử
+generate#[ˈdʒenəreɪt]#sinh ra, tạo ra, phát ra
+hire#[ˈhaɪə(r)]#thuê, mướn
+keep up with#[]#theo kịp, bắt kịp, đạt cho bằng được
+look up to#[]#tôn kính, kính trọng, khâm phục
+mentor#[ˈmentɔː(r)]#người cố vấn
+on track#[]#theo dõi, đi tìm
+reject#[rɪˈdʒekt]#từ chối, loại bỏ
+set up#[ˈset ʌp]#thiết lập, tạo dựng
+success#[səkˈses]#thành công, thành đạt, thắng lợi
+training#[ˈtreɪnɪŋ]#huấn luyện, dạy dỗ, đào tạo
+update#[ˌʌpˈdeɪt]#cập nhật
+
+14. salaries and benefits#[]#lương và lợi ích
+basis#[ˈbeɪsɪs]#nền tảng, cơ sở, căn cứ
+be aware of#[]#am hiểu về
+benefit#[ˈbenɪfɪt]#chế độ đãi ngộ, lợi ích, phúc lợi
+compensate#[ˈkɒmpenseɪt]#bù, đền bù, bồi thường
+delicately#[ˈdelɪkətli]#khôn khéo, nhạy bén
+eligible#[ˈelɪdʒəbl]#thích hợp, đủ tư cách, đủ tiêu chuẩn
+flexibly#[ˈfleksəbli]#mềm dẻo, linh hoạt, linh động
+negotiate#[nɪˈɡəʊʃieɪt]#thương lượng, đàm phán, điều đình
+raise#[reɪz]#nâng lên, tăng lên, tăng lương
+retire#[rɪˈtaɪə(r)]#nghỉ hưu
+vested#[ˈvestɪd]#được trao, được ban, được phong
+wage#[weɪdʒ]#tiền công, tiền lương (thường trả theo giờ)
+
+15. promotions, pensions, and awards#[]#thăng chức, lương hưu và thưởng
+achievement#[əˈtʃiːvmənt]#thành tích, thành tựu
+contribute#[kənˈtrɪbjuːt]#đóng góp, góp phần
+dedication#[ˌdedɪˈkeɪʃn]#cống hiến, hiến dâng, tận tụy
+look forward to#[]#mong đợi, mong chờ, trông mong
+look to#[]#tin vào, trông cậy vào, mong đợi ở (ai)
+loyal#[ˈlɔɪəl]#trung thành, trung nghĩa, trung kiên
+merit#[ˈmerɪt]#công lao, công trạng
+obviously#[ˈɒbviəsli]#rõ ràng, hiển nhiên
+productive#[prəˈdʌktɪv]#có năng suất, có hiệu quả, sinh lợi cao
+promote#[prəˈməʊt]#thăng tiến, thăng chức
+recognition#[ˌrekəɡˈnɪʃn]#(sự) công nhận, thừa nhận, nhận ra
+value#[ˈvæljuː]#giá trị
+
+16. shopping#[]#mua sắm
+bargain#[ˈbɑːɡən]#trả giá, mặc cả, món hời
+bear#[beə(r)]#chịu đựng, cam chịu
+behavior#[]#thái độ, hành vi, cách cư xử
+check out#[tʃek]#thanh toán, quầy thanh toán
+comfort#[ˈkʌmfət]#sự thoải mái, thoải mái, dễ dàng
+expand#[ɪkˈspænd]#mở rộng, trải rộng, giãn ra
+explore#[ɪkˈsplɔː(r)]#khảo sát, thăm dò, khám phá
+item#[ˈaɪtəm]#món, mục, mặt hàng
+mandatory#[ˈmændətəri]#lệnh, bắt buộc
+merchandise#[ˈmɜːtʃəndaɪs]#hàng hóa
+strictly#[ˈstrɪktli]#nghiêm ngặt, nghiêm khắc
+trend#[trend]#khuynh hướng, xu hướng
+
+17. ordering supplies#[]#đặt hàng
+diversify#[daɪˈvɜːsɪfaɪ]#đa dạng hóa, làm cho thành nhiều dạng
+enterprise#[ˈentəpraɪz]#công trình, dự án lớn
+essentially#[ɪˈsenʃəli]#cần thiết
+everyday#[ˈevrideɪ]#hàng ngày, thường ngày, thông thường
+function#[ˈfʌŋkʃn]#chức năng, nhiệm vụ
+maintain#[meɪnˈteɪn]#bảo quản, giữ gìn, duy trì
+obtain#[əbˈteɪn]#đạt được, thu được, giành được
+prerequisite#[ˌpriːˈrekwəzɪt]#điều kiện tiên quyết, cần trước hết
+quality#[ˈkwɒləti]#chất lượng, phẩm chất
+smooth#[smuːð]#êm thấm, suôn sẻ, trôi chảy
+source#[sɔːs]#nguồn, nguồn gốc
+stationery#[ˈsteɪʃənri]#đồ dùng văn phòng
+
+18. shipping#[]#vận chuyển
+accurate#[ˈækjərət]#‹một cách› chính xác, đúng đắn, xác đáng
+carrier#[ˈkæriə(r)]#(người)chuyên chở, vận chuyển
+catalog#[]#sách danh mục chi tiết
+fulfill#[]#thực hiện, thi hành, hoàn thành
+integral#[ˈɪntɪɡrəl]#cần thiết, không thể thiếu
+inventory#[ˈɪnvəntri]#sự kiểm kê, hàng tồn kho
+minimize#[ˈmɪnɪmaɪz]#giảm thiểu, giảm đến mức tối thiểu
+on hand#[]#có thể dùng được, có sẵn
+remember#[rɪˈmembə(r)]#nhớ, ghi nhớ
+ship#[ʃɪp]#tàu thủy, máy bay
+sufficiently#[səˈfɪʃntli]#đủ, có đủ
+supply#[səˈplaɪ]#cung cấp, đáp ứng
+
+19. invoices#[]#hóa đơn
+charge#[tʃɑːdʒ]#tính phí
+compile#[kəmˈpaɪl]#soạn, biên soạn, soạn thảo
+customer#[ˈkʌstəmə(r)]#khách hàng
+discount#[ˈdɪskaʊnt]#giảm giá, chiết khấu, khấu trừ
+efficient#[ɪˈfɪʃnt]#có hiệu quả, có hiệu suất, có năng suất
+estimate#[ˈestɪmeɪt]#ước lượng
+impose#[ɪmˈpəʊz]#bắt chịu, bắt gánh vác
+mistake#[mɪˈsteɪk]#lỗi, sai, nhầm
+order#[ˈɔːdə(r)]#đơn đặt hàng, thứ tự, trật tự
+promptly#[ˈprɒmptli]#mau lẹ, nhanh chóng, ngay lập tức
+rectify#[ˈrektɪfaɪ]#sửa lại, hiệu chỉnh
+terms#[tɜːmz]#điều khoản
+
+20. inventory#[]#hàng tồn kho
+adjustment#[əˈdʒʌstmənt]#điều chỉnh, chỉnh lý, sự sửa lại cho đúng
+automatic#[ˌɔːtəˈmætɪk]#một cách tự động
+crucial#[ˈkruːʃl]#cốt yếu, chủ yếu, có tính quyết định
+discrepancy#[dɪˈskrepənsi]#cốt yếu, chủ yếu, có tính quyết định
+disturb#[dɪˈstɜːb]#quấy rầy, quấy rối
+liability#[ˌlaɪəˈbɪləti]#trách nhiệm, nghĩa vụ
+reflection#[rɪˈflekʃn]#phản ánh, phản chiếu, phản xạ
+run#[rʌn]#vận hành, hoạt động, thực hiện
+scan#[skæn]#xem lướt, xem qua, kiểm tra nhanh
+subtract#[səbˈtrækt]#trừ đi, khấu trừ
+tedious#[ˈtiːdiəs]#chán ngắt, tẻ nhạt, nhạt nhẽo
+verify#[ˈverɪfaɪ]#kiểm tra lại, thẩm tra, xác minh
+
+21. banking#[]#ngân hàng
+accept#[əkˈsept]#chấp nhận, thừa nhận, công nhận
+balance#[ˈbæləns]#số dư tài khoản
+borrow#[ˈbɒrəʊ]#vay, mượn
+cautiously#[ˈkɔːʃəsli]#thận trọng, cẩn thận
+deduct#[dɪˈdʌkt]#lấy đi, trừ đi, khấu trừ
+dividend#[ˈdɪvɪdend]#tiền lãi cổ phần
+down payment#[]#phần tiền trả trước ban đầu
+mortgage#[ˈmɔːɡɪdʒ]#sự cầm cố, sự thế chấp
+restricted#[rɪˈstrɪktɪd]#bị hạn chế, bị giới hạn
+signature#[ˈsɪɡnətʃə(r)]#chữ ký, ký hiệu, dấu hiệu
+take out#[teɪk]#rút (tiền)
+transaction#[trænˈzækʃn]#sự giao dịch
+
+22. accounting#[]#kế toán
+accounting#[əˈkaʊntɪŋ]#công việc kế toán
+accumulate#[əˈkjuːmjəleɪt]#tích lũy, tích góp, gom góp
+asset#[ˈæset]#tài sản, của cải
+audit#[ˈɔːdɪt]#kiểm toán
+budget#[ˈbʌdʒɪt]#ngân sách, ngân quỹ
+build up#[ˈbɪld ʌp]#tăng cường, gom lại, tích lạ
+client#[ˈklaɪənt]#khách, khách hàng
+debt#[det]#nợ, món nợ
+outstanding#[aʊtˈstændɪŋ]#còn tồn tại, chưa giải quyết xong, chưa trả nợ
+profitably#[ˈprɒfɪtəbli]#có lợi, có ích, sinh lãi
+reconcile#[ˈrekənsaɪl]#hòa giải, giảng hòa, chỉnh lý
+turnover#[ˈtɜːnəʊvə(r)]#doanh số, doanh thu
+
+23. investments#[]#sự đầu tư
+aggressively#[əˈɡresɪvli]#hung hăng, hùng hổ
+attitude#[ˈætɪtjuːd]#quan điểm, thái độ
+commit#[kəˈmɪt]#cam kết
+conservative#[kənˈsɜːvətɪv]#bảo thủ, dè dặt, thận trọng
+fund#[fʌnd]#nguồn tiền, quỹ dự trữ
+invest#[ɪnˈvest]#đầu tư
+long term#[ˌlɒŋ ˈtɜːm]#dài hạn, dài ngày, lâu dài
+portfolio#[pɔːtˈfəʊliəʊ]#danh mục đầu tư, danh sách vốn đầu tư
+pull out#[ˈpʊl aʊt]#rút ra, rút khỏi
+resource#[rɪˈsɔːs]#tài nguyên, tài sản
+return#[rɪˈtɜːn]#tiền lãi, tiền lời
+wisely#[]#khôn ngoan, thông thái, uyên bác
+
+24. taxes#[]#thuế
+calculation#[ˌkælkjuˈleɪʃn]#sự tính toán
+deadline#[ˈdedlaɪn]#thời hạn chót
+file#[faɪl]#sắp xếp, sắp đặt
+fill out#[]#hoàn tất, hoàn thành, điền vào (cho đầy đủ)
+give up#[]#bỏ, từ bỏ
+joint#[dʒɔɪnt]#chung, cùng, gia nhập
+owe#[əʊ]#nợ, mắc nợ
+penalty#[ˈpenəlti]#khoản tiền phạt
+preparation#[ˌprepəˈreɪʃn]#sự chuẩn bị, sửa soạn
+refund#[ˈriːfʌnd]#trả lại, hoàn lại tiền
+spouse#[spaʊs]#chồng, vợ
+withhold#[wɪðˈhəʊld]#kìm lại, giữ lại, ngăn cản
+
+25. financial statements#[]#bản báo cáo tài chính
+desire#[dɪˈzaɪə(r)]#thèm muốn, khao khát, ao ước
+detail#[ˈdiːteɪl]#chi tiết, tỉ mỉ
+forecast#[ˈfɔːkɑːst]#dự báo, dự đoán, đoán trước
+level#[ˈlevl]#mức, cấp bậc, trình độ
+overall#[ˌəʊvərˈɔːl]#toàn bộ, toàn thể, nói chung
+perspective#[pəˈspektɪv]#quan điểm, cách nhìn
+project#[ˈprɒdʒekt]#kế hoạch, đồ án, dự án
+realistic#[ˌriːəˈlɪstɪk]#hiện thực, thực tế
+target#[ˈtɑːɡɪt]#mục tiêu, mục đích
+translation#[trænzˈleɪʃn]#bản dịch, bài dịch
+typically#[ˈtɪpɪkli]#tiêu biểu, điển hình
+yield#[jiːld]#sản lượng, lợi tức, hoa lợi
+
+26. property and departments#[]#bất động sản và căn hộ
+adjacent#[əˈdʒeɪsnt]#kế bên, liền kề, sát cạnh
+collaboration#[kəˌlæbəˈreɪʃn]#sự cộng tác, hợp tác
+concentrate#[ˈkɒnsntreɪt]#tập trung
+conducive#[kənˈdjuːsɪv]#có ích, có lợi
+disruption#[dɪsˈrʌpʃn]#sự phá vỡ
+hamper#[ˈhæmpə(r)]#cản trở, gây trở ngại
+inconsiderately#[ˌɪnkənˈsɪdərətli]#thiếu thận trọng, thiếu suy nghĩ
+lobby#[ˈlɒbi]#hành lang, sảnh chờ
+move up#[]#tiến lên, thăng tiến
+opt#[ɒpt]#chọn lựa, chọn, quyết định
+open to#[]#tiếp thu, dùng được cho ai đó
+scrutiny#[ˈskruːtəni]#sự nhìn chăm chú
+
+27. board meetings and committees#[]#họp hội đồng quản trị và ủy ban
+adhere to#[]#tuân thủ, tôn trọng triệt để
+agenda#[əˈdʒendə]#nhật ký công tác, chương trình nghị sự
+bring up#[]#đưa ra
+conclude#[kənˈkluːd]#kết luận, quyết định
+go ahead#[ɡəʊ]#cho phép, tiếp tục
+goal#[ɡəʊl]#mục tiêu, mục đích
+lengthy#[ˈleŋkθi]#lâu, dài, dài dòng
+matter#[ˈmætə(r)]#nội dung, chủ đề, vấn đề
+periodically#[ˌpɪəriˈɒdɪkli]#một cách định kỳ
+priority#[praɪˈɒrəti]#ưu tiên, được xét trước
+progress#[ˈprəʊɡres]#sự tiến tới, sự tiến triển
+waste#[weɪst]#lãng phí, đồ bỏ đi, đồ thải ra
+
+28. quality control#[]#quản lý chấtlượng
+brand#[brænd]#nhãn hiệu, nhãn hàng, chi nhánh
+conform#[kənˈfɔːm]#làm cho phù hợp, làm cho thích hợp
+defect#[ˈdiːfekt]#nhược điểm, khuyết điểm
+enhance#[ɪnˈhɑːns]#nâng cao, tăng cường
+garment#[ˈɡɑːmənt]#quần áo
+inspect#[ɪnˈspekt]#thanh tra, kiểm tra, xem xét kỹ
+perceptive#[pəˈseptɪv]#nhận thức được, cảm giác được, cảm thụ được
+repel#[rɪˈpel]#chống lại, đẩy lùi
+take back#[]#rút lại, lấy lại, kéo lại
+throw out#[]#vứt bỏ, bỏ đi, đuổi đi
+uniformly#[ˈjuːnɪfɔːmli]#đồng đều thống nhất, không thay đổi
+wrinkle#[ˈrɪŋkl]#nếp nhăn, nhàu
+
+29. product development#[]#phát triển sản phẩm
+anxious#[ˈæŋkʃəs]#lo âu, băn khoăn
+ascertain#[ˌæsəˈteɪn]#biết chắc, xác định rõ ràng, tìm hiểu chắc chắn
+assume#[əˈsjuːm]#giả sử, cho rằng
+decade#[ˈdekeɪd]#thập niên, thập kỷ
+examine#[ɪɡˈzæmɪn]#khám xét, xem xét, khảo sát
+experiment#[ɪkˈsperɪmənt]#cuộc thí nghiệm, sự thí nghiệm
+logical#[ˈlɒdʒɪkl]#hợp lý, hợp với lôgic, theo lôgic
+research#[rɪˈsɜːtʃ]#sự nghiên cứu
+responsibility#[rɪˌspɒnsəˈbɪləti]#trách nhiệm, bổn phận
+solve#[sɒlv]#giải, giải quyết, làm sáng tỏ
+supervisor#[ˈsuːpəvaɪzə(r)]#người giám sát
+systematically#[ˌsɪstəˈmætɪkli]#có hệ thống, có phương pháp
+
+30. renting and leasing#[]#thuê và cho thuê
+apprehensive#[ˌæprɪˈhensɪv]#sợ hãi, e sợ
+circumstance#[ˈsɜːkəmstəns]#trường hợp, hoàn cảnh, tình huống
+condition#[kənˈdɪʃn]#điều kiện, hoàn cảnh
+due to#[]#bởi, vì, do, tại
+fluctuate#[ˈflʌktʃueɪt]#dao động, lên xuống, thay đổi thất thường
+get out of#[]#từ bỏ, rời bỏ, tránh né
+indicator#[ˈɪndɪkeɪtə(r)]#chỉ thị
+lease#[liːs]#hợp đồng cho thuê
+lock into#[]#nhốt, giam
+occupy#[ˈɒkjupaɪ]#sở hữu, chiếm hữu, chiếm giữ
+option#[ˈɒpʃn]#sự lựa chọn, quyền lựa chọn
+subject to#[]#lệ thuộc vào, tùy theo, tuân thủ
+
+31. selecting a restaurant#[]#lựa chọn nhà hàng
+appeal#[əˈpiːl]#lời kêu gọi, cầu khẩn
+arrive#[əˈraɪv]#đến, đi đến, tới nơi
+compromise#[ˈkɒmprəmaɪz]#thỏa hiệp, dàn xếp
+daringly#[ˈdeərɪŋli]#táo bạo, phiêu lưu, dũng cảm
+familiar#[fəˈmɪliə(r)]#quen, quen thuộc, thân thuộc
+guide#[ɡaɪd]#người hướng dẫn, người chỉ dẫn
+majority#[məˈdʒɒrəti]#đa số, phần lớn
+mix#[mɪks]#trộn lẫn, pha lẫn
+rely#[rɪˈlaɪ]#dựa vào, tin cậy vào
+secure#[sɪˈkjʊə(r)]#an toàn, an ninh, bảo đảm
+subjective#[səbˈdʒektɪv]#chủ quan
+suggestion#[səˈdʒestʃən]#đề nghị, ý kiến, sự gợi ý
+
+32. eating out#[]#đi ăn tiệm
+basic#[ˈbeɪsɪk]#cơ bản, cơ sở
+complete#[kəmˈpliːt]#đầy đủ, trọn vẹn, hoàn thành
+excite#[ɪkˈsaɪt]#kích thích, kích động, khuấy động
+flavor#[]#mùi vị, hương vị
+forget#[fəˈɡet]#quên
+ingredient#[ɪnˈɡriːdiənt]#thành phần, thành tố, phần hợp thành
+judge#[dʒʌdʒ]#đánh giá
+mix up#[]#sự lộn xộn
+patron#[ˈpeɪtrən]#khách hàng quen
+predict#[prɪˈdɪkt]#dự đoán, dự báo, tiên tri
+randomly#[ˈrændəmli]#ngẫu nhiên, tình cờ
+remind#[rɪˈmaɪnd]#nhắc nhở, làm nhớ lại
+
+33. ordering lunch#[]#đặt ăn trưa
+burden#[ˈbɜːdn]#gánh nặng
+commonly#[ˈkɒmənli]#thường thường, bình thường
+delivery#[dɪˈlɪvəri]#phân phát, giao, chuyển
+elegance#[ˈelɪɡəns]#thanh lịch, tao nhã
+fall to#[]#bắt đầu vào việc, bắt tay vào việc
+impress#[ɪmˈpres]#gây ấn tượng
+individual#[ˌɪndɪˈvɪdʒuəl]#cá nhân, riêng, riêng lẻ
+list#[lɪst]#danh sách, bản kê khai
+multiple#[ˈmʌltɪpl]#nhiều, phức tạp
+narrow#[ˈnærəʊ]#chật, hẹp
+pick up#[]#đón (ai đó)
+settle#[ˈsetl]#giải quyết, hòa giải, dàn xếp
+
+34. cooking as a career#[]#nghề nấu ăn
+accustom to#[]#làm cho quen, tập cho quen
+apprentice#[əˈprentɪs]#người học việc, người tập sự
+culinary#[ˈkʌlɪnəri]#(thuộc) nấu nướng, bếp núc
+demand#[dɪˈmɑːnd]#đòi hỏi, yêu cầu
+draw#[drɔː]#lôi kéo, thu hút, lôi cuốn
+incorporate#[ɪnˈkɔːpəreɪt]#sáp nhập, hợp nhất
+influx#[ˈɪnflʌks]#sự chảy vào
+method#[ˈmeθəd]#phương pháp, cách thức
+outlet#[ˈaʊtlet]#chỗ thoát ra, lối ra, lối thoát
+profession#[prəˈfeʃn]#nghề, nghề nghiệp
+relinquish#[rɪˈlɪŋkwɪʃ]#bỏ, từ bỏ
+theme#[θiːm]#đề tài, chủ đề
+
+35. events#[]#sự kiện
+assist#[əˈsɪst]#giúp, giúp đỡ, trợ giúp
+co ordinate#[]#phối hợp, kết hợp
+dimension#[daɪˈmenʃn]#kích thước, cỡ, khổ
+exact#[ɪɡˈzækt]#chính xác
+general#[ˈdʒenrəl]#chung chung, tổng quát
+ideally#[aɪˈdiːəli]#lý tưởng, theo lý tưởng
+lead time#[]#khoảng thời gian ở giữa sự bắt đầu và sự hoàn thành của một quá trình
+plan#[plæn]#kế hoạch, đồ á
+proximity#[prɒkˈsɪməti]#sự gần gũi
+regulate#[ˈreɡjuleɪt]#điều chỉnh, chỉnh đốn
+site#[saɪt]#vị trí, địa điểm
+stage#[steɪdʒ]#trình diễn, dàn cảnh
+
+36. general travel#[]#du lịch tổng quan
+agent#[ˈeɪdʒənt]#đại lý, đại diện
+announcement#[əˈnaʊnsmənt]#cáo thị, thông cáo
+beverage#[ˈbevərɪdʒ]#đồ uống, thức uống
+blanket#[ˈblæŋkɪt]#mềm, chăn, lớp phủ
+board#[bɔːd]#lên tàu (máy bay, xe lửa)
+claim#[kleɪm]#đòi hỏi, yêu cầu
+delay#[dɪˈleɪ]#chậm trễ, trì hoãn, hoãn lại
+depart#[dɪˈpɑːt]#rời khỏi, khởi hành
+embarkation#[ˌembɑːˈkeɪʃn]#lên tàu
+itinerary#[aɪˈtɪnərəri]#lịch trình
+prohibit#[prəˈhɪbɪt]#ngăn cấm, ngăn chặn
+valid#[ˈvælɪd]#có giá trị, có hiệu lực
+
+37. airlines#[]#hàng không
+deal with#[]#giải quyết, đối phó, xử lý
+destination#[ˌdestɪˈneɪʃn]#nơi đến, nơi tới, đích đến
+distinguish#[dɪˈstɪŋɡwɪʃ]#phân biệt, nhận ra, nhận biết
+economize#[ɪˈkɒnəmaɪz]#tiết kiệm
+equivalent#[ɪˈkwɪvələnt]#tương đương
+excursion#[ɪkˈskɜːʃn]#chuyến thăm quan, cuộc đi tham quan, cuộc đi chơi
+expense#[ɪkˈspens]#phí tốn, chi phí
+extend#[ɪkˈstend]#gia hạn, mở rộng
+prospective#[prəˈspektɪv]#về sau, sắp tới
+situation#[ˌsɪtʃuˈeɪʃn]#tình huống, hoàn cảnh
+substantially#[səbˈstænʃəli]#lớn lao, đáng kể
+system#[ˈsɪstəm]#hệ thống
+
+38. trains#[]#tàu hỏa
+comprehensive#[ˌkɒmprɪˈhensɪv]#bao gồm, bao hàm, toàn diện
+deluxe#[dɪˈlʌks]#xa xỉ, xa hoa
+directory#[dəˈrektəri]#danh bạ
+duration#[djuˈreɪʃn]#khoảng thời gian
+entitle#[ɪnˈtaɪtl]#cho quyền(làm gì)
+fare#[feə(r)]#cước phí, tiền xe, tiền vé
+offset#[ˈɒfset]#đền bù, bù đắp
+operate#[ˈɒpəreɪt]#hoạt động, thực hiện, tiến hành
+punctually#[ˈpʌŋktʃuəli]#đúng giờ, không chậm trễ
+relatively#[ˈrelətɪvli]#vừa phải, tương đối
+remainder#[rɪˈmeɪndə(r)]#phần còn lại
+remote#[rɪˈməʊt]#xa, xa xôi, xa xăm
+
+39. hotels#[]#khách sạn
+advanced#[ədˈvɑːnst]#sự tiến lên, tiến bộ
+chain#[tʃeɪn]#chuỗi (khách sạn, nhà hàng... )
+check in#[ˈtʃek ɪn]#làm thủ tục đăng ký
+confirm#[kənˈfɜːm]#xác nhận, chứng thực
+expect#[ɪkˈspekt]#mong chờ, mong đợi
+housekeeper#[ˈhaʊskiːpə(r)]#quản gia, người coi nhà
+notify#[ˈnəʊtɪfaɪ]#báo, thông báo, khai báo
+preclude#[prɪˈkluːd]#loại trừ, ngăn ngừa
+quote#[kwəʊt]#trích dẫn
+rate#[reɪt]#mức, giá
+reservation#[ˌrezəˈveɪʃn]#sự dành trước, sự đặt chỗ trước
+service#[ˈsɜːvɪs]#dịch vụ, sự phục vụ
+
+40. car rentals#[]#thuê xe hơi
+busy#[ˈbɪzi]#bận, bận rộn
+coincide#[ˌkəʊɪnˈsaɪd]#trùng hợp, trùng nhau
+confusion#[kənˈfjuːʒn]#sự nhầm lẫn
+contact#[ˈkɒntækt]#liên lạc với ai
+disappoint#[ˌdɪsəˈpɔɪnt]#làm thất vọng
+intend#[ɪnˈtend]#định, dự định
+license#[ˈlaɪsns]#giấy chứng nhận, bản quyền
+nervously#[ˈnɜːvəsli]#lo lắng, bồn chồn, căng thẳng
+optional#[ˈɒpʃənl]#tùy ý, tùy chọn, không bắt buộc
+tempt#[tempt]#cám dỗ, lôi cuốn
+thrill#[θrɪl]#rung cảm, xúc động
+tier#[tɪə(r)]#dãy, tầng, lớp
+
+41. movies#[]#phim ảnh
+attainment#[əˈteɪnmənt]#đạt được, giành được
+combine#[kəmˈbaɪn]#kết hợp, phối hợp
+continue#[kənˈtɪnjuː]#tiếp tục, tiếp diễn
+description#[dɪˈskrɪpʃn]#sự diễn tả, mô tả
+disperse#[dɪˈspɜːs]#giải tán, phân tán
+entertainment#[ˌentəˈteɪnmənt]#sự giải trí, tiêu khiển
+influence#[ˈɪnfluəns]#ảnh hưởng đến, tác động đến
+range#[reɪndʒ]#phạm vi, trình độ
+release#[rɪˈliːs]#công bố, phát hành
+representation#[ˌreprɪzenˈteɪʃn]#đại diện, thay mặt
+separately#[ˈseprətli]#tách rời, riêng rẽ
+successive#[səkˈsesɪv]#kế tiếp, liên tiếp, lần lượt
+
+42. theater#[]#rạp hát
+action#[ˈækʃn]#diễn biến (của vở kịch)
+approach#[əˈprəʊtʃ]#lại gần, tiếp cận
+audience#[ˈɔːdiəns]#khán giả, thính giả, độc giả
+creative#[kriˈeɪtɪv]#sáng tạo
+dialogue#[ˈdaɪəlɒɡ]#cuộc đối thoại, giai thoại
+element#[ˈelɪmənt]#yếu tố, nguyên tố
+experience#[ɪkˈspɪəriəns]#kinh nghiệm, từng trải
+occur#[əˈkɜː(r)]#xuất hiện, xảy ra, xảy đến
+perform#[pəˈfɔːm]#biểu diễn, trình diễn
+rehearse#[rɪˈhɜːs]#diễn tập
+review#[rɪˈvjuː]#sự phê bình, lời phê bình
+sell out#[]#hết vé
+
+43. music#[]#âm nhạc
+available#[əˈveɪləbl]#sẵn có, sẵn sàng
+broaden#[ˈbrɔːdn]#mở rộng, nới rộng
+category#[ˈkætəɡəri]#loại, hạng
+disparate#[ˈdɪspərət]#khác biệt, khác loại, khác hẳn nhau
+divide#[dɪˈvaɪd]#chia ra, phân chia
+favor#[]#chiếu cố, thiên vị
+instinct#[ˈɪnstɪŋkt]#bản năng
+prefer#[prɪˈfɜː(r)]#thích hơn, ưa hơn
+reason#[ˈriːzn]#lý do, lý lẽ
+relaxation#[ˌriːlækˈseɪʃn]#thư giãn, giải trí
+taste#[teɪst]#vị giác, thưởng thức
+urge#[ɜːdʒ]#thúc giục
+
+44. museums#[]#bảo tàng
+acquire#[əˈkwaɪə(r)]#thu được, giành được
+admire#[ədˈmaɪə(r)]#khâm phục, thán phục
+collection#[kəˈlekʃn]#sưu tầm, thu thập
+criticism#[ˈkrɪtɪsɪzəm]#lời phê bình
+express#[ɪkˈspres]#bày tỏ
+fashion#[ˈfæʃn]#thời trang, mốt
+leisure#[ˈleʒə(r)]#thời gian nhàn rỗi
+respond#[rɪˈspɒnd]#hồi âm, phúc đáp
+schedule#[ˈʃedjuːl]#thời gian biểu, lịch trình
+significant#[sɪɡˈnɪfɪkənt]#quan trọng, đầy ý nghĩa
+specialize#[ˈspeʃəlaɪz]#chuyên môn hóa
+spectrum#[ˈspektrəm]#sự phân bổ theo tính chất, số lượng, hành vi
+
+45. media#[]#truyền thông
+assignment#[əˈsaɪnmənt]#nhiệm vụ, công việc
+choose#[tʃuːz]#chọn, chọn lựa
+constantly#[ˈkɒnstəntli]#trung thành, chung thủy, liên tục
+constitute#[ˈkɒnstɪtjuːt]#tạo thành, thành lập, thiết lập
+decision#[dɪˈsɪʒn]#sự quyết định
+disseminate#[dɪˈsemɪneɪt]#truyền bá phổ biến
+impact#[ˈɪmpækt]#tác động mạnh, ảnh hưởng mạnh
+investigate#[ɪnˈvestɪɡeɪt]#điều tra, nghiên cứu
+link#[lɪŋk]#nối, liên kết
+subscribe#[səbˈskraɪb]#đặt mua báo, tạp chí
+thorough#[ˈθʌrə]#kỹ lưỡng, thấu đáo
+
+45. doctor's office#[]#văn phòng bác sĩ
+annually#[ˈænjuəli]#hàng năm, từng nằm, thường niên
+appointment#[əˈpɔɪntmənt]#cuộc hẹn, sự hẹn gặp
+assess#[əˈses]#ước định, định giá
+diagnose#[ˈdaɪəɡnəʊz]#chẩn đoán
+effective#[ɪˈfektɪv]#có hiệu quả
+instrument#[ˈɪnstrəmənt]#dụng cụ, công cụ, thiết bị đo đạc
+manage#[ˈmænɪdʒ]#quản lý, trông nom, điều khiển
+prevent#[prɪˈvent]#ngăn ngừa, phòng ngừa
+recommendation#[ˌrekəmenˈdeɪʃn]#sự giới thiệu, tiến cử
+record#[ˈrekɔːd]#ghi lại
+refer#[rɪˈfɜː(r)]#tham khảo, xem
+serious#[ˈsɪəriəs]#nghiêm trọng
+
+47. dentist's office#[]#phòng khám răng
+aware#[əˈweə(r)]#biết, nhận thấy, nhận thức thấy
+catch up#[kætʃ]#làm kịp, kịp thời gian
+distraction#[dɪˈstrækʃn]#sự sao nhãng
+encouragement#[ɪnˈkʌrɪdʒmənt]#khuyến khích, cổ vũ
+evident#[ˈevɪdənt]#rõ ràng, hiển nhiên, rành rành
+habit#[ˈhæbɪt]#thói quen, tập quán
+illuminate#[ɪˈluːmɪneɪt]#chiếu sáng, rọi sáng
+irritate#[ˈɪrɪteɪt]#kích ứng, kích thích
+overview#[ˈəʊvəvjuː]#chung, tổng quan, tổng quát
+position#[pəˈzɪʃn]#vị trí, chỗ, thế
+regularly#[ˈreɡjələli]#đều đặn, thường xuyên
+restore#[rɪˈstɔː(r)]#phục hồi, khôi phục
+
+48. health insurance#[]#bảo vệ sức khỏe
+allow#[əˈlaʊ]#cho phép
+alternative#[ɔːlˈtɜːnətɪv]#thay phiên, luân phiên
+aspect#[ˈæspekt]#bề ngoài, diện mạo
+concern#[kənˈsɜːn]#lo lắng, lo ngại, quan tâm
+emphasize#[ˈemfəsaɪz]#nhấn mạnh, làm nổi bật
+incur#[ɪnˈkɜː(r)]#gánh chịu, chịu lấy
+personnel#[ˌpɜːsəˈnel]#cán bộ, nhân viên
+policy#[ˈpɒləsi]#chính sách, đường lối
+portion#[ˈpɔːʃn]#phần, phần chia
+regardless#[rɪˈɡɑːdləs]#không đếm xỉa tới, bất chấp
+salary#[ˈsæləri]#tiền lương
+suit#[suːt]#làm cho phù hợp, thích hợp
+
+49. hospitals#[]#bệnh viện
+admit#[ədˈmɪt]#cho vào, nhận vào
+authorize#[ˈɔːθəraɪz]#cho quyền, ủy quyền, cho phép
+designate#[ˈdezɪɡneɪt]#chỉ rõ, định rõ
+escort#[ˈeskɔːt]#vệ sĩ, đội hộ tống
+identify#[aɪˈdentɪfaɪ]#nhận dạng, nhận biết
+mission#[ˈmɪʃn]#sứ mệnh, nhiệm vụ
+permit#[pəˈmɪt]#giấy phép, sự cho phép
+pertinent#[ˈpɜːtɪnənt]#thích hợp, thích đáng
+procedure#[prəˈsiːdʒə(r)]#thủ tục, các bước tiến hành
+result#[rɪˈzʌlt]#kết quả, đáp số
+statement#[ˈsteɪtmənt]#sự trình bày
+usually#[ˈjuːʒuəli]#thông thường, thường lệ
+
+50. pharmacy#[]#nhà thuốc
+consult#[kənˈsʌlt]#hỏi ý kiến, tham khảo
+control#[kənˈtrəʊl]#kiểm soát, điều khiển, chỉ huy
+convenient#[kənˈviːniənt]#thuận lợi, thuận tiện
+detect#[dɪˈtekt]#phát hiện ra, khám phá ra
+factor#[ˈfæktə(r)]#nhân tố
+interaction#[ˌɪntərˈækʃn]#sự tương tác, ảnh hưởng lẫn nhau
+limit#[ˈlɪmɪt]#giới hạn, hạn định, ranh giới
+monitor#[ˈmɒnɪtə(r)]#màn hình vi tính, lớp trưởng
+potential#[pəˈtenʃl]#tiềm tàng, tiềm năng
+sample#[ˈsɑːmpl]#mẫu, hàng mẫu
+sense#[sens]#khả năng phán đoán
+volunteer#[ˌvɒlənˈtɪə(r)]#tình nguyện viên, người xung phong

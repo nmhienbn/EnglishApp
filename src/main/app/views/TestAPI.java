@@ -22,7 +22,7 @@ public class TestAPI {
     private static final HashSet<String> favoriteWords = new HashSet<>();
     private static final DictionaryManagement wordSet = DictionaryManagement.getInstance();
     private static final String favoriteWordsPath = TestAPI.class.getClassLoader().getResource("models/favorite_words.txt").getPath();
-    private static final Queue<String> search_history = new LinkedList<>();
+    private static final LinkedList<String> search_history = new LinkedList<>();
     private static final int MAX_SEARCH_HISTORY = 50;
 
     private static void LoadFavoriteWords() {
@@ -77,8 +77,8 @@ public class TestAPI {
                 break;
             }
         }
-        search_history.add(word);
-        if (search_history.size() > MAX_SEARCH_HISTORY) search_history.poll();
+        search_history.addFirst(word);
+        if (search_history.size() > MAX_SEARCH_HISTORY) search_history.removeLast();
     }
 
 
@@ -169,5 +169,5 @@ public class TestAPI {
     public static void SaveDict() {
         wordSet.dictionaryExportToFile(wordSet.DEFAULT_DICTIONARY_PATH);
     }
-
+    
 }
