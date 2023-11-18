@@ -109,7 +109,7 @@ public class MainCatchWord extends Game {
             Label label = getLabel(gridPane, 1, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
             GameAnimations.scaleTrans(label, 1.3, 1, 150).play();
-            setLabelStyleClass(gridPane, 1, CUR_COLUMN, "tile-with-letter");
+            setLabelStyleClass(gridPane, 1, CUR_COLUMN, "default-tile");
             if (CUR_COLUMN < MAX_COLUMN) {
                 CUR_COLUMN++;
                 if (winningWord.charAt(CUR_COLUMN - 1) == ' ') {

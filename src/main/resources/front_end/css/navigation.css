@@ -41,7 +41,7 @@
 
 #nav-panel {
     -fx-pref-width: 100;
-    -fx-background-color: nav_color0;
+    -fx-background-color: linear-gradient(to bottom, #655180, #27282E);
     -fx-spacing: 2.5px;
 }
 

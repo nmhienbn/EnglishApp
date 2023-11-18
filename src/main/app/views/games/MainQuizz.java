@@ -94,6 +94,16 @@ public class MainQuizz extends Game {
         }
     }
 
+    public void resetGrid(GridPane gridPane) {
+        for (Node node : gridPane.getChildren()) {
+            if (node instanceof AnchorPane anchorPane) {
+                anchorPane.setOnMouseEntered(null);
+                anchorPane.setOnMouseExited(null);
+                anchorPane.setOnMouseClicked(null);
+            }
+        }
+    }
+
     public void getRandomWord() {
         now_level++;
         if (now_level >= QUESTIONS.size()) {
