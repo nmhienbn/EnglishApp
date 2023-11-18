@@ -11,6 +11,32 @@
     -selected-color: blue;
 }
 
+#helpButton, #restartButton, #exitButton {
+    -fx-pref-height: 50;
+    -fx-pref-width: 50;
+    -fx-background-color: transparent;
+}
+
+#helpButton {
+    -fx-graphic: url("../../game/images/help.png");
+}
+
+#restartButton {
+    -fx-graphic: url("../../game/images/restart.png");
+}
+
+#exitButton {
+    -fx-graphic: url("../../game/images/exit.png");
+}
+
+#helpButton:hover, #restartButton:hover {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
+}
+
+#exitButton:hover {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 60%, grey, darkgray 40%, transparent);
+}
+
 .valid-letter,
 .absent-letter,
 .correct-letter,

@@ -37,7 +37,7 @@ public class MainQuizz extends Game {
     private int now_level = 0;
 
     public void createGameTitle(HBox titleHBox) {
-        Label label = new Label("QUIZZ NIGHT");
+        Label label = new Label("QUIZZ");
         label.getStyleClass().add("default-tile");
         titleHBox.getChildren().add(label);
     }
