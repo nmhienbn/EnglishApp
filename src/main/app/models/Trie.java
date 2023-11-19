@@ -6,12 +6,10 @@ import java.util.HashMap;
 public class Trie{
 
     private class Node {
-        static int numberOfNode = 0;
         Node[] child; // Children of node.
         Word word = null;
 
         Node() {
-            ++numberOfNode;
             child = new Node[30];
         }
     }
@@ -162,6 +160,11 @@ public class Trie{
         }
     }
 
+    /**
+     * Find all words with a string as prefix
+     * @param str prefix
+     * @return
+     */
     public ArrayList<Word> getProposedString(String str) {
         String s = str.toLowerCase();
         proposedString = new ArrayList<>();
@@ -176,5 +179,32 @@ public class Trie{
         findAllWordTargets(p);
 
         return proposedString;
+    }
+
+    /**
+     * Delete a branch
+     * @param cur root of the branch
+     * @param freeMemory true if free memory after deleting, false otherwise
+     */
+    private void deleteBranch(Node cur, boolean freeMemory) {
+        if (cur == null) {
+            return;
+        }
+
+        for (int i = 0; i < 30; ++i) {
+            deleteBranch(cur.child[i], freeMemory);
+            if (freeMemory) {
+                cur.child[i] = null;
+            }
+        }
+
+        cur.word = null;
+    }
+
+    /**
+     * Clear trie.
+     */
+    public void clear() {
+        deleteBranch(root, false);
     }
 }

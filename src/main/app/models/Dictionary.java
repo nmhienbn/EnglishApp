@@ -77,4 +77,11 @@ public class Dictionary implements DictionaryInterface {
             addWord(tmp[0], tmp[1].replaceAll("\\\\", "\n"));
         }
     }
+
+    /**
+     * Clear all data from dictionary.
+     */
+    public void clear() {
+        trie.clear();
+    }
 }

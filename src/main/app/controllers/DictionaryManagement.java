@@ -70,14 +70,16 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public void deleteAWordFromCommandline() {
-
+    public void dictionaryClear() {
+        dictionary.clear();
     }
 
     @Override
     public void dictionaryInsertFromFile(String filePath) {
         if (filePath == null) {
             filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\models\\dictionaries.txt";
+        } else {
+            //filePath = System.getProperty("user.dir") + "\\src\\main\\resources" + filePath;
         }
         String fin1 = filePath;
 
@@ -112,4 +114,17 @@ public class DictionaryManagement implements DictionaryManagementInterface {
         System.out.println("Dictionary has been exported to file!");
     }
 
+    public static void main(String[] args) {
+        getInstance().dictionaryInsertFromFile(getInstance().ORIGINAL_DICTIONARY_PATH);
+        ArrayList<Word> ins = getInstance().getAllWords();
+        System.out.println(ins.size());
+
+        getInstance().dictionaryClear();
+        ins = getInstance().getAllWords();
+        System.out.println(ins.size());
+
+        getInstance().dictionaryInsertFromFile(getInstance().DEFAULT_DICTIONARY_PATH);
+        ins = getInstance().getAllWords();
+        System.out.println(ins.size());
+    }
 }
