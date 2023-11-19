@@ -14,7 +14,8 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="game_sc" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0"
-            stylesheets="@../css/wordle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+            style="-fx-background-color: dee2e6;" stylesheets="@../css/wordle.css" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="main-screen" AnchorPane.bottomAnchor="15.0"
                     AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
@@ -50,7 +51,7 @@
                 <GridPane fx:id="gridPane" alignment="CENTER" focusTraversable="true" hgap="5"
                           onKeyPressed="#onKeyPressed" vgap="5">
                     <BorderPane.margin>
-                        <Insets bottom="15.0"/>
+                        <Insets bottom="5.0"/>
                     </BorderPane.margin>
                     <columnConstraints>
                         <ColumnConstraints/>
@@ -65,19 +66,9 @@
 
             <bottom>
                 <VBox>
-                    <GridPane fx:id="keyboardRow1" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
-                        <padding>
-                            <Insets top="10.0"/>
-                        </padding>
-                    </GridPane>
-
+                    <GridPane fx:id="keyboardRow1" alignment="BOTTOM_CENTER" hgap="4" vgap="2"/>
                     <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="2"/>
-
-                    <GridPane fx:id="keyboardRow3" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
-                        <padding>
-                            <Insets bottom="10.0"/>
-                        </padding>
-                    </GridPane>
+                    <GridPane fx:id="keyboardRow3" alignment="BOTTOM_CENTER" hgap="4" vgap="2"/>
                 </VBox>
             </bottom>
 
