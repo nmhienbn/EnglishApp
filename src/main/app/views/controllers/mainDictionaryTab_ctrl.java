@@ -6,6 +6,8 @@ import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
@@ -113,7 +115,7 @@ public class mainDictionaryTab_ctrl {
         wifa_meaning_raw.setVisible(false);
         wifa_scrollpane.setFitToWidth(true);
 
-        update_word_info_area(null, null);
+        update_word_info_area(null, null, null);
     }
 
     private void init_fuction_button() {
@@ -291,7 +293,7 @@ public class mainDictionaryTab_ctrl {
         wifa_scrollpane.setDisable(false);
         String meaning = wifa_meaning_raw.getText();
         TestAPI.testEditWord(wifa_word.getText(), meaning);
-        update_word_info_area(wifa_word.getText(), meaning);
+        update_word_info_area(wifa_word.getText(), meaning, null);
         popup_word_updated(wifa_word.getText());
     }
 
@@ -305,7 +307,7 @@ public class mainDictionaryTab_ctrl {
         TestAPI.testRemoveWord(wifa_word.getText());
         TestAPI.removeFavoriteWord(wifa_word.getText());
         update_wordlist();
-        update_word_info_area(null, null);
+        update_word_info_area(null, null, null);
         popup_word_removed(wifa_word.getText());
     }
 
@@ -386,24 +388,32 @@ public class mainDictionaryTab_ctrl {
         else
             favorite_toggle_button.setSelected(false);
 
-        update_word_info_area(word, TestAPI.getWordMeaning(word));
+        update_word_info_area(word, TestAPI.getWordMeaning(word), word_list_box);
 
         if (SHF_group.getSelectedToggle() != history_button)
             TestAPI.addSearchHistory(word);
     }
 
-    private void update_word_info_area(String word, String meaning) {
+    private void update_word_info_area(String word, String meaning, Parent caller) {
+
+        for (Node node : wifa_meaning.getChildren()) {
+            if (node instanceof Text text)
+                text.setVisible(false);
+        }
+        wifa_meaning.getChildren().clear();
+        wifa_meaning.requestLayout();
+        wifa_meaning.requestFocus();
+        if (caller != null) caller.requestFocus();
+
         if (word == null) {
             speak_button.setDisable(true);
             wifa_word.setText("");
             wifa_meaning_raw.setText("");
-            wifa_meaning.getChildren().clear();
             return;
         }
         speak_button.setDisable(false);
         wifa_word.setText(word);
         wifa_meaning_raw.setText(TestAPI.getWordMeaning(word));
-        wifa_meaning.getChildren().clear();
 
         String[] lines = meaning.split("\n");
 
