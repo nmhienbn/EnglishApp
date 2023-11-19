@@ -8,6 +8,31 @@
     -fx-min-height: 700;
 }
 
+#mainPane {
+    -fx-background-radius: 1%;
+}
+
+#closeButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 10 0 0;
+    -fx-alignment: center;
+    -fx-graphic: url('../graphic/icons/close.png');
+}
+
+#closeButton:hover {
+    -fx-background-color: #C42B1C;
+}
+
+#minimizeButton {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-graphic: url('../graphic/icons/minimize-sign.png');
+}
+
+#minimizeButton:hover {
+    -fx-background-color: #D1D1D1;
+}
+
 #home {
     -fx-background-size: 40 40;
 
@@ -39,10 +64,18 @@
     -fx-text-fill: orange;
 }
 
+#titleBar {
+    -fx-pref-width: 1000;
+    -fx-pref-height: 30;
+    -fx-background-color: linear-gradient(to bottom, #856BA8, #655180);
+    -fx-background-radius: 10 10 0 0;
+}
+
 #nav-panel {
     -fx-pref-width: 100;
     -fx-background-color: linear-gradient(to bottom, #655180, #27282E);
     -fx-spacing: 2.5px;
+    -fx-background-radius: 0 0 0 10;
 }
 
 .nav-button {
