@@ -30,7 +30,7 @@
                   <Shadow />
                </effect>
             </TextField>
-            <HBox prefHeight="43.0" prefWidth="226.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox prefHeight="43.0" prefWidth="170.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ToggleButton fx:id="search_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group">
                      <tooltip>
@@ -55,6 +55,11 @@
                <tooltip>
                   <Tooltip text="Thêm từ" />
                </tooltip></Button>
+            <Button fx:id="reset_dictionary_button" layoutX="230.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="51.0" styleClass="function-button">
+               <tooltip>
+                  <Tooltip text="Khơi tạo lại dữ liệu từ điển" />
+               </tooltip>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane id="word_info_area" layoutX="322.0" layoutY="14.0" prefHeight="670.0" prefWidth="671.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">

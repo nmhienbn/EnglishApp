@@ -57,6 +57,9 @@ public class mainDictionaryTab_ctrl {
     @FXML
     private ToggleButton favorite_toggle_button;
 
+    @FXML
+    private Button reset_dictionary_button;
+
     //? wifa = word infomation area
     @FXML
     private Label wifa_word;
@@ -144,6 +147,8 @@ public class mainDictionaryTab_ctrl {
         add_word_button.setOnAction(e -> try_add_word());
 
         favorite_toggle_button.setOnAction(e -> toggle_favorite());
+
+        reset_dictionary_button.setOnAction(e -> reset_dictionary());
     }
 
     private void init_toggle_button() {
@@ -180,6 +185,7 @@ public class mainDictionaryTab_ctrl {
         setup_tooltip(edit_word_button.getTooltip(), edit_word_button);
         setup_tooltip(save_edit_button.getTooltip(), save_edit_button);
         setup_tooltip(favorite_toggle_button.getTooltip(), favorite_toggle_button);
+        setup_tooltip(reset_dictionary_button.getTooltip(), reset_dictionary_button);
     }
 
     private void setup_tooltip(Tooltip tt, Node node) {
@@ -320,6 +326,31 @@ public class mainDictionaryTab_ctrl {
         });
     }
 
+    private void alert_confirm_reset() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.initStyle(StageStyle.UNDECORATED);
+        alert.getDialogPane().setStyle(
+                "-fx-border-color: black;"
+                        + "-fx-border-width: 2px;"
+        );
+        alert.getDialogPane().getStyleClass().add("alert-dialog");
+        //alert.setTitle("Remove word ?");
+        alert.setHeaderText("Bạn có chắc muốn khởi tạo lại từ điển không ?");
+
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
+
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+
+        alert.showAndWait().ifPresent(type -> {
+            if (type == buttonTypeYes) {
+                TestAPI.resetDictionaryData();
+                update_wordlist();
+                update_word_info_area(null, null, null);
+            }
+        });
+    }
+
     //*--------------------------------------------------------------------------------------*//
 
     private void try_start_edit_word() {
@@ -403,6 +434,10 @@ public class mainDictionaryTab_ctrl {
         } else {
             TestAPI.removeFavoriteWord(word);
         }
+    }
+
+    private void reset_dictionary() {
+        alert_confirm_reset();
     }
 
     private void update_wordlist() {
