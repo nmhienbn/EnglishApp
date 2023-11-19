@@ -59,7 +59,7 @@
                               <Button id="speak-button" fx:id="speak_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="45.0" styleClass="function-button" />
                            </children>
                         </HBox>
-                        <HBox alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="686.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="TOP_RIGHT" layoutX="459.0" prefHeight="47.0" prefWidth="227.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="459.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ToggleButton fx:id="favorite_toggle_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
                               <Button fx:id="save_edit_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
@@ -74,17 +74,20 @@
                <center>
                   <AnchorPane BorderPane.alignment="CENTER">
                      <children>
-                        <TextArea id="word-info-meaning" fx:id="wifa_meaning_raw" maxHeight="1.7976931348623157E308" prefHeight="623.0943620463808" prefWidth="685.5849303330091" promptText="Nghĩa của từ @raw" styleClass="function-button" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TextArea id="word-info-meaning" fx:id="wifa_meaning_raw" maxHeight="1.7976931348623157E308" prefHeight="623.0943620463808" prefWidth="685.5849303330091" promptText="Nghĩa của từ @raw" styleClass="function-button" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextArea>
                         <ScrollPane fx:id="wifa_scrollpane" hbarPolicy="NEVER" prefHeight="345.0" prefWidth="686.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
-                              <AnchorPane prefHeight="200.0" prefWidth="684.0">
+                              <AnchorPane prefHeight="605.0" prefWidth="685.0">
                                  <children>
                                     <TextFlow fx:id="wifa_meaning" layoutX="14.0" maxWidth="-Infinity" prefHeight="322.0" prefWidth="657.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0" />
                                  </children>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
                               </AnchorPane>
                            </content>
                         </ScrollPane>

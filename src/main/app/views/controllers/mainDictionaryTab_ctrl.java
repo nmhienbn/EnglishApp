@@ -119,6 +119,7 @@ public class mainDictionaryTab_ctrl {
     }
 
     private void init_fuction_button() {
+        speak_button.getStyleClass().add("function-button");
         speak_button.setOnAction(e -> {
             speak_button.setDisable(true);
             TestAPI.SpeakAPI(wifa_word.getText(), "en");
