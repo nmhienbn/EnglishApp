@@ -9,6 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Duration;
 import views.File_loader;
 import views.animations.GameAnimations.AnimatedGif;
@@ -23,6 +28,12 @@ public class mainPanel_ctrl {
 
     @FXML
     public BorderPane mainPane;
+    @FXML
+    public HBox titleBar;
+    @FXML
+    public Button closeButton;
+    @FXML
+    public Button minimizeButton;
     @FXML
     private Button logoImg;
 
@@ -77,6 +88,8 @@ public class mainPanel_ctrl {
         Wordle_ctrl.mainPanelCtrl = this;
         CTW_ctrl.mainPanelCtrl = this;
         Quizz_ctrl.mainPanelCtrl = this;
+
+        setTitleBarEvent();
     }
 
     public void setButton(Button button, String filename, double durationMs) {
@@ -142,4 +155,29 @@ public class mainPanel_ctrl {
             mainPane.setCenter(game_tab);
     }
 
+    final Delta dragDelta = new Delta();
+    private void setTitleBarEvent(){
+        closeButton.setOnAction(e -> {
+            closeButton.getScene().getWindow().hide();
+        });
+
+        minimizeButton.setOnAction(e -> {
+            Stage stage = (Stage) minimizeButton.getScene().getWindow();
+            stage.setIconified(true);
+        });
+
+        titleBar.setOnMousePressed(evt -> {
+            Stage stage = (Stage) titleBar.getScene().getWindow();
+            dragDelta.x = stage.getX() - evt.getScreenX();
+            dragDelta.y = stage.getY() - evt.getScreenY();
+        });
+
+        titleBar.setOnMouseDragged(evt -> {
+            Stage stage = (Stage) titleBar.getScene().getWindow();
+            stage.setX(evt.getScreenX() + dragDelta.x);
+            stage.setY(evt.getScreenY() + dragDelta.y);
+        });
+    }
+
+    static class Delta { double x, y; }
 }
