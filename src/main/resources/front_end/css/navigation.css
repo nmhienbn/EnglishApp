@@ -67,7 +67,7 @@
 #titleBar {
     -fx-pref-width: 1000;
     -fx-pref-height: 30;
-    -fx-background-color: linear-gradient(to bottom, #856BA8, #655180);
+    -fx-background-color: linear-gradient(to top, #655180, #27282E);
     -fx-background-radius: 10 10 0 0;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .nav-button:hover {
-    -fx-background-color: linear-gradient(to right, white5, white4);
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
 }
 
 .nav-button.focused {
