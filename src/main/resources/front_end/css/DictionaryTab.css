@@ -133,7 +133,7 @@
 }
 
 .function-button:hover {
-    -fx-background-color: white2;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
 }
 
 .function-button .pressed {}
@@ -147,7 +147,7 @@
 }
 
 .SHF_group:hover {
-    -fx-background-color: white2;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
 }
 
 .SHF_group:selected {
