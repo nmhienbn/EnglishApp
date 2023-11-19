@@ -65,7 +65,6 @@
     -fx-background-image: url(../graphic/icons/search.png);
     -fx-background-repeat: stretch;
     -fx-background-size: 35;
-
     -fx-background-position: 50% 50%;
 }
 
@@ -81,6 +80,13 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 35;
+}
+
+#reset_dictionary_button {
+    -fx-background-image: url(../graphic/icons/backup.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 55% 50%;
+    -fx-background-size: 42;
 }
 
 /*---------------------------------------------------------------------------------------------------*/
@@ -133,7 +139,7 @@
 }
 
 .function-button:hover {
-    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
+    -fx-background-color: white2
 }
 
 .function-button .pressed {}
@@ -147,7 +153,7 @@
 }
 
 .SHF_group:hover {
-    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, grey, darkgray 50%, transparent);
+    -fx-background-color: white2
 }
 
 .SHF_group:selected {

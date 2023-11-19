@@ -70,6 +70,10 @@ public class TestAPI {
         favoriteWords.remove(word);
     }
 
+    public static void clearFavoriteWords() {
+        favoriteWords.clear();
+    }
+
     public static void addSearchHistory(String word) {
         for (String s : search_history) {
             if (s.equals(word)) {
@@ -81,11 +85,20 @@ public class TestAPI {
         if (search_history.size() > MAX_SEARCH_HISTORY) search_history.removeLast();
     }
 
-
     public static Iterable<String> SearchHistory() {
         return search_history;
     }
 
+    public static void clearSearchHistory() {
+        search_history.clear();
+    }
+
+    public static void resetDictionaryData() {
+        clearFavoriteWords();
+        clearSearchHistory();
+        wordSet.dictionaryClear();
+        wordSet.dictionaryInsertFromFile(wordSet.ORIGINAL_DICTIONARY_PATH);
+    }
 
     public static ArrayList<String> getword(String key) {
         ArrayList<Word> words;
@@ -169,5 +182,5 @@ public class TestAPI {
     public static void SaveDict() {
         wordSet.dictionaryExportToFile(wordSet.DEFAULT_DICTIONARY_PATH);
     }
-    
+
 }
