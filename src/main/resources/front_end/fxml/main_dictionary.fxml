@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -31,13 +32,29 @@
             </TextField>
             <HBox prefHeight="43.0" prefWidth="226.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ToggleButton fx:id="search_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group" />
-                  <ToggleButton fx:id="history_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group" />
-                  <ToggleButton fx:id="favorite_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group" />
+                  <ToggleButton fx:id="search_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group">
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Tìm kiếm trong từ điển">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></ToggleButton>
+                  <ToggleButton fx:id="history_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group">
+                     <tooltip>
+                        <Tooltip text="Lịch sử tìm kiếm" />
+                     </tooltip></ToggleButton>
+                  <ToggleButton fx:id="favorite_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="SHF_group">
+                     <tooltip>
+                        <Tooltip text="Từ yêu thích" />
+                     </tooltip></ToggleButton>
                </children>
             </HBox>
             <ListView fx:id="word_list_box" prefHeight="200.0" prefWidth="275.0" styleClass="textwindow" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
-            <Button id="add-button" fx:id="add_word_button" layoutX="234.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" styleClass="function-button" />
+            <Button id="add-button" fx:id="add_word_button" layoutX="234.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" styleClass="function-button">
+               <tooltip>
+                  <Tooltip text="Thêm từ" />
+               </tooltip></Button>
          </children>
       </AnchorPane>
       <AnchorPane id="word_info_area" layoutX="322.0" layoutY="14.0" prefHeight="670.0" prefWidth="671.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
@@ -56,15 +73,30 @@
                                     <Insets left="10.0" right="10.0" />
                                  </padding>
                               </Label>
-                              <Button id="speak-button" fx:id="speak_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="45.0" styleClass="function-button" />
+                              <Button id="speak-button" fx:id="speak_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="45.0" styleClass="function-button">
+                                 <tooltip>
+                                    <Tooltip text="Phát âm" />
+                                 </tooltip></Button>
                            </children>
                         </HBox>
-                        <HBox alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="686.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="TOP_RIGHT" layoutX="459.0" prefHeight="47.0" prefWidth="227.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="459.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <ToggleButton fx:id="favorite_toggle_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
-                              <Button fx:id="save_edit_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
-                              <Button id="edit-button" fx:id="edit_word_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
-                              <Button id="remove-button" fx:id="remove_word_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button" />
+                              <ToggleButton fx:id="favorite_toggle_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button">
+                                 <tooltip>
+                                    <Tooltip text="Thêm vào yêu thích" />
+                                 </tooltip></ToggleButton>
+                              <Button fx:id="save_edit_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button">
+                                 <tooltip>
+                                    <Tooltip text="Lưu" />
+                                 </tooltip></Button>
+                              <Button id="edit-button" fx:id="edit_word_button" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button">
+                                 <tooltip>
+                                    <Tooltip text="Chỉnh sửa" />
+                                 </tooltip></Button>
+                              <Button id="remove-button" fx:id="remove_word_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" styleClass="function-button">
+                                 <tooltip>
+                                    <Tooltip text="Xóa từ" />
+                                 </tooltip></Button>
                            </children>
                         </HBox>
                         <Line endX="684.0" opacity="0.73" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0" />
@@ -74,17 +106,20 @@
                <center>
                   <AnchorPane BorderPane.alignment="CENTER">
                      <children>
-                        <TextArea id="word-info-meaning" fx:id="wifa_meaning_raw" maxHeight="1.7976931348623157E308" prefHeight="623.0943620463808" prefWidth="685.5849303330091" promptText="Nghĩa của từ @raw" styleClass="function-button" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TextArea id="word-info-meaning" fx:id="wifa_meaning_raw" maxHeight="1.7976931348623157E308" prefHeight="623.0943620463808" prefWidth="685.5849303330091" promptText="Nghĩa của từ @raw" styleClass="function-button" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextArea>
                         <ScrollPane fx:id="wifa_scrollpane" hbarPolicy="NEVER" prefHeight="345.0" prefWidth="686.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
-                              <AnchorPane prefHeight="200.0" prefWidth="684.0">
+                              <AnchorPane prefHeight="605.0" prefWidth="685.0">
                                  <children>
                                     <TextFlow fx:id="wifa_meaning" layoutX="14.0" maxWidth="-Infinity" prefHeight="322.0" prefWidth="657.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0" />
                                  </children>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
                               </AnchorPane>
                            </content>
                         </ScrollPane>
