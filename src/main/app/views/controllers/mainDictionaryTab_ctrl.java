@@ -6,6 +6,7 @@ import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -15,6 +16,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.stage.Popup;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import views.TestAPI;
 
@@ -82,6 +84,7 @@ public class mainDictionaryTab_ctrl {
         init_word_information_area();
         init_fuction_button();
         init_toggle_button();
+        init_tooltip();
     }
 
     private void init_search_area() {
@@ -166,6 +169,34 @@ public class mainDictionaryTab_ctrl {
             }
         });
     }
+
+    private void init_tooltip() {
+        setup_tooltip(search_button.getTooltip(), search_button);
+        setup_tooltip(favorite_button.getTooltip(), favorite_button);
+        setup_tooltip(history_button.getTooltip(), history_button);
+        setup_tooltip(speak_button.getTooltip(), speak_button);
+        setup_tooltip(add_word_button.getTooltip(), add_word_button);
+        setup_tooltip(remove_word_button.getTooltip(), remove_word_button);
+        setup_tooltip(edit_word_button.getTooltip(), edit_word_button);
+        setup_tooltip(save_edit_button.getTooltip(), save_edit_button);
+        setup_tooltip(favorite_toggle_button.getTooltip(), favorite_toggle_button);
+    }
+
+    private void setup_tooltip(Tooltip tt, Node node) {
+        if (node == null) {
+            System.out.println("ERROR: tooltip owner node is null");
+            return;
+        }
+        tt.setShowDelay(new Duration(.1));
+        tt.setOnShown(s -> {
+            //Get button current bounds on computer screen
+            Bounds bounds = node.localToScreen(node.getBoundsInLocal());
+            tt.setX(bounds.getCenterX() - tt.getWidth() / 2);
+            tt.setY(bounds.getMaxY() - 1);
+        });
+    }
+
+    //*--------------------------------------------------------------------------------------*//
 
     private void popup_word_not_exist(String word) {
         Popup popup = new Popup();
@@ -259,6 +290,38 @@ public class mainDictionaryTab_ctrl {
         popup.show(wifa_word.getScene().getWindow());
     }
 
+    //*--------------------------------------------------------------------------------------*//
+    private void alert_confirm_remove_word(String word) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.initStyle(StageStyle.UNDECORATED);
+        alert.getDialogPane().setStyle(
+                "-fx-border-color: black;"
+                        + "-fx-border-width: 2px;"
+        );
+        alert.getDialogPane().getStyleClass().add("alert-dialog");
+        //alert.setTitle("Remove word ?");
+        alert.setHeaderText("Bạn có chắc muốn xóa từ này không ?");
+        alert.setContentText(word);
+
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
+
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+
+        alert.showAndWait().ifPresent(type -> {
+            if (type == buttonTypeYes) {
+                System.out.println("remove word: " + word);
+                TestAPI.testRemoveWord(word);
+                TestAPI.removeFavoriteWord(word);
+                update_wordlist();
+                popup_word_removed(word);
+                update_word_info_area(null, null, null);
+            }
+        });
+    }
+
+    //*--------------------------------------------------------------------------------------*//
+
     private void try_start_edit_word() {
         String word = wifa_word.getText();
         if (word == null || word.isEmpty()) return;
@@ -304,12 +367,7 @@ public class mainDictionaryTab_ctrl {
             popup_word_not_exist(wifa_word.getText());
             return;
         }
-        System.out.println("remove word: " + wifa_word.getText());
-        TestAPI.testRemoveWord(wifa_word.getText());
-        TestAPI.removeFavoriteWord(wifa_word.getText());
-        update_wordlist();
-        update_word_info_area(null, null, null);
-        popup_word_removed(wifa_word.getText());
+        alert_confirm_remove_word(wifa_word.getText());
     }
 
     private void allow_add_word() {
