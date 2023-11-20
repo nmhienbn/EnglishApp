@@ -72,8 +72,15 @@ public class MainWordle extends Game {
         if (wordle_ctrl.notificationPane.isVisible()) {
             return;
         }
-        label.toFront();
-        label.setStyle("-fx-border-color: BLUE;");
+        super.onMouseEntered(label);
+    }
+
+    @Override
+    protected void onMouseExited(Label label) {
+        if (wordle_ctrl.notificationPane.isVisible()) {
+            return;
+        }
+        super.onMouseExited(label);
     }
 
     /**

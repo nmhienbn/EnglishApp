@@ -28,6 +28,10 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .1, 0, 0, 0);
 }
 
+#swap_lang_button:hover {
+    -fx-background-color: #C2C2C2;
+}
+
 #translate_button {
     -fx-background-image: url(../graphic/icons/translate_button_background.png);
     -fx-background-size: 40;
@@ -36,6 +40,10 @@
 
     -fx-background-color: nav_color0;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .1, 0, 0, 0);
+}
+
+#translate_button:hover {
+    -fx-background-color: nav_color1;
 }
 
 .textwindow {

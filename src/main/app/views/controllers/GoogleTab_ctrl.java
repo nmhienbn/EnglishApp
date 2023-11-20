@@ -3,17 +3,13 @@ package views.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.effect.ColorAdjust;
-import javafx.scene.effect.DropShadow;
 import views.TestAPI;
-import views.animations.GameAnimations;
 
 public class GoogleTab_ctrl {
     @FXML
@@ -55,15 +51,6 @@ public class GoogleTab_ctrl {
                 doTranslate();
             }
         });
-        translate_button.setOnMouseEntered(e -> {
-            ScaleTransition scaleTransition = GameAnimations.scaleTrans(translate_button, 1, 1.1, 150);
-            scaleTransition.play();
-        });
-        translate_button.setOnMouseExited(e -> {
-            ScaleTransition scaleTransition = GameAnimations.scaleTrans(translate_button, 1.1, 1, 150);
-            scaleTransition.play();
-        });
-
         text2.setEditable(false);
         setLang_label();
 
@@ -73,15 +60,6 @@ public class GoogleTab_ctrl {
             lang2 = temp;
             setLang_label();
         });
-        swap_lang_button.setOnMouseEntered(e -> {
-            ScaleTransition scaleTransition = GameAnimations.scaleTrans(swap_lang_button, 1, 1.1, 150);
-            scaleTransition.play();
-        });
-        swap_lang_button.setOnMouseExited(e -> {
-            ScaleTransition scaleTransition = GameAnimations.scaleTrans(swap_lang_button, 1.1, 1, 150);
-            scaleTransition.play();
-        });
-
         speak_button1.setOnAction(e -> {
             if (speak_button1.isDisable()) return;
             speak_button1.setDisable(true);
