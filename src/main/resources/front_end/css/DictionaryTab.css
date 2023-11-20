@@ -122,6 +122,10 @@
     -fx-opacity: 0;
 }
 
+.list-cell {
+    -fx-font-size: 16.0;
+}
+
 .function-button {
     -fx-background-color: transparent;
     -fx-opacity: 0.7;

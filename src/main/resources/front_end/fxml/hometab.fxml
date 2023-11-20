@@ -1,31 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="1000.0" style="-fx-background-color: dee2e6;" xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: dee2e6;" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox layoutX="14.0" layoutY="14.0" prefHeight="672.0" prefWidth="771.0">
-            <children>
-                <ImageView fitHeight="150.0" fitWidth="762.0" pickOnBounds="true" preserveRatio="true"/>
-                <Label contentDisplay="BOTTOM" prefHeight="43.0" prefWidth="772.0" text="DICTIONARY TITLE"
-                       textAlignment="RIGHT">
-                    <font>
-                        <Font name="Arial" size="50.0"/>
-                    </font>
-                </Label>
-                <Label contentDisplay="BOTTOM" layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="772.0"
-                       text="Description" textAlignment="RIGHT">
-                    <font>
-                        <Font name="Arial" size="40.0"/>
-                    </font>
-                </Label>
-            </children>
-        </VBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="22.0" layoutY="17.0" prefHeight="672.0" prefWidth="963.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="938.0">
+               <children>
+                    <VBox layoutX="14.0" prefHeight="672.0" prefWidth="920.0" AnchorPane.leftAnchor="20.0">
+                        <children>
+                            <Label contentDisplay="BOTTOM" prefHeight="43.0" prefWidth="772.0" text="Từ điển Duolingo " textAlignment="RIGHT">
+                                <font>
+                                    <Font name="Arial" size="50.0" />
+                                </font>
+                           <padding>
+                              <Insets top="150.0" />
+                           </padding>
+                            </Label>
+                        <VBox fx:id="Introduction" prefWidth="100.0">
+                           <children>
+                              <Label styleClass="header" text="Introduction" />
+                              <Label styleClass="text" text="Bài tập lớn lập trình hướng đối tượng" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="members" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefWidth="503.0" styleClass="header" text="Team Members:">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" top="20.0" />
+                                 </padding>
+                              </Label>
+                              <Label styleClass="text" text="- Vũ Văn Minh - 22021116">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="text" text="- Nguyễn Minh Hiển - 22021106">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="text" text="- Nguyễn Đăng Quân - 22021121">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox fx:id="Preview" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label styleClass="header" text="Preview" />
+                              <ImageView fx:id="preview_dictionary" fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <ImageView fx:id="preview_google" fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <ImageView fx:id="preview_games" fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </VBox>
+                        </children>
+                    </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
     </children>
 </AnchorPane>
