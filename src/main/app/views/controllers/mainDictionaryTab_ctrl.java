@@ -278,6 +278,25 @@ public class mainDictionaryTab_ctrl {
         popup.show(wifa_word.getScene().getWindow());
     }
 
+    private void popup_word_not_added(String word) {
+        Popup popup = new Popup();
+        popup.setAutoHide(true);
+        Label label = new Label(
+                "Error: Cannot add word to dictionary\n" + "\"" + word + "\"");
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setAlignment(javafx.geometry.Pos.CENTER);
+        label.setFont(new Font(25));
+        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
+        label.setPrefSize(500, 150);
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
+        delay.setOnFinished(event -> popup.hide());
+        delay.play();
+
+        popup.getContent().add(label);
+        popup.show(wifa_word.getScene().getWindow());
+    }
+
     private void popup_word_removed(String word) {
         Popup popup = new Popup();
         popup.setAutoHide(true);
@@ -416,10 +435,15 @@ public class mainDictionaryTab_ctrl {
             popup_exist(word);
             return;
         }
-        TestAPI.testAddWord(word, "");
-        popup_word_added(word);
-        update_wordlist();
-        on_choose_word(word);
+
+        boolean success = TestAPI.testAddWord(word, "");
+        if (success) {
+            popup_word_added(word);
+            update_wordlist();
+            on_choose_word(word);
+        } else {
+            popup_word_not_added(word);
+        }
     }
 
     private void toggle_favorite() {
