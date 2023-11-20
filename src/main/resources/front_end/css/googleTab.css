@@ -10,6 +10,10 @@
     -fx-background-color: transparent;
 }
 
+.speak_button:hover {
+    -fx-background-color: white2;
+}
+
 .mainbg {
     -fx-background-color: white1;
 }
