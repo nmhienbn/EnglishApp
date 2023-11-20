@@ -143,12 +143,12 @@ public class TestAPI {
         return wordSet.dictionaryLookup(word) != null;
     }
 
-    public static void testAddWord(String word, String meaning) {
+    public static boolean testAddWord(String word, String meaning) {
         if (wordSet.dictionaryLookup(word) != null) {
             System.out.println("Word already exists");
-            return;
+            return false;
         }
-        wordSet.dictionaryAddWord(word, meaning);
+        return wordSet.dictionaryAddWord(word, meaning);
     }
 
     public static void testEditWord(String word, String meaning) {
