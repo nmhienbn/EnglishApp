@@ -19,7 +19,7 @@
 }
 
 #swap_lang_button {
-    -fx-background-image: url(../graphic/icons/swap.png);
+    -fx-background-image: url(../graphic/icons/googleTab/swap.png);
     -fx-background-size: 40;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 7% 60%;
@@ -33,7 +33,7 @@
 }
 
 #translate_button {
-    -fx-background-image: url(../graphic/icons/translate_button_background.png);
+    -fx-background-image: url(../graphic/icons/googleTab/translate_button_background.png);
     -fx-background-size: 40;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 10% 50%;

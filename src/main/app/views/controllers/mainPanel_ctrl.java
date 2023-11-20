@@ -10,10 +10,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Duration;
 import views.File_loader;
 import views.animations.GameAnimations.AnimatedGif;
@@ -58,7 +55,7 @@ public class mainPanel_ctrl {
     @FXML
     void initialize() throws IOException {
         colorAdjust.setSaturation(-1);
-        AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/logo.gif").
+        AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/mainPanel/logo.gif").
                 toExternalForm(), 5000);
         logoImg.setGraphic(ani.getView());
         setTooltip(logoImg, "DUOLINGO");
@@ -71,10 +68,10 @@ public class mainPanel_ctrl {
         setNavButton(google_translate_button, "Google Translate");
         setNavButton(game_button, "Game");
 
-        setButton(home_button, "/front_end/graphic/icons/home.gif", 2000);
-        setButton(main_dictionary_button, "/front_end/graphic/icons/book.gif", 2000);
-        setButton(google_translate_button, "/front_end/graphic/icons/google_translate.gif", 2000);
-        setButton(game_button, "/front_end/graphic/icons/game.gif", 2000);
+        setButton(home_button, "/front_end/graphic/icons/mainPanel/home.gif", 2000);
+        setButton(main_dictionary_button, "/front_end/graphic/icons/mainPanel/book.gif", 2000);
+        setButton(google_translate_button, "/front_end/graphic/icons/mainPanel/google_translate.gif", 2000);
+        setButton(game_button, "/front_end/graphic/icons/mainPanel/game.gif", 2000);
 
         home_tab = File_loader.getInstance().fxml_homeTab();
         main_dictionary_tab = File_loader.getInstance().fxml_mainDictionaryTab();

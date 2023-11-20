@@ -3,7 +3,7 @@
 /*---------------------------------------------------------------------------------------------------*/
 
 #add-button {
-    -fx-background-image: url(../graphic/icons/plus.png);
+    -fx-background-image: url(../graphic/icons/dictTab/plus.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 20 20;
@@ -19,42 +19,42 @@
 }
 
 #edit-button {
-    -fx-background-image: url(../graphic/icons/edit.png);
+    -fx-background-image: url(../graphic/icons/dictTab/edit.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 30;
 }
 
 #save_edit_button {
-    -fx-background-image: url(../graphic/icons/save.png);
+    -fx-background-image: url(../graphic/icons/dictTab/save.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 30;
 }
 
 #remove-button {
-    -fx-background-image: url(../graphic/icons/delete.png);
+    -fx-background-image: url(../graphic/icons/dictTab/delete.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 30;
 }
 
 #add_favorite_button {
-    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-image: url(../graphic/icons/dictTab/favourite.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 30;
 }
 
 #favorite_toggle_button {
-    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-image: url(../graphic/icons/dictTab/favourite.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 30;
 }
 
 #favorite_toggle_button:selected {
-    -fx-background-image: url(../graphic/icons/favourite_true.png);
+    -fx-background-image: url(../graphic/icons/dictTab/favourite_true.png);
     -fx-background-size: 35;
 
 
@@ -62,28 +62,28 @@
 
 /*---------------------------------------------------------------------------------------------------*/
 #search_button {
-    -fx-background-image: url(../graphic/icons/search.png);
+    -fx-background-image: url(../graphic/icons/dictTab/search.png);
     -fx-background-repeat: stretch;
     -fx-background-size: 35;
     -fx-background-position: 50% 50%;
 }
 
 #history_button {
-    -fx-background-image: url(../graphic/icons/history.png);
+    -fx-background-image: url(../graphic/icons/dictTab/history.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 35;
 }
 
 #favorite_button {
-    -fx-background-image: url(../graphic/icons/favourite.png);
+    -fx-background-image: url(../graphic/icons/dictTab/favourite.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50% 50%;
     -fx-background-size: 35;
 }
 
 #reset_dictionary_button {
-    -fx-background-image: url(../graphic/icons/backup.png);
+    -fx-background-image: url(../graphic/icons/dictTab/backup.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: 55% 50%;
     -fx-background-size: 42;
