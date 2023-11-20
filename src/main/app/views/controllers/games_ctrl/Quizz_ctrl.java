@@ -76,7 +76,11 @@ public class Quizz_ctrl extends Game_ctrl {
         game_sc.setOnMouseClicked(e -> {
             if (notificationPane.isVisible() &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), helpButton)) {
+                    inHierarchy(e.getPickResult().getIntersectedNode(), helpButton) &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), fA) &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), fB) &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), fC) &&
+                    inHierarchy(e.getPickResult().getIntersectedNode(), fD)) {
                 dimSc.setVisible(false);
                 notificationPane.setVisible(false);
                 notificationPane.setTranslateX(0);

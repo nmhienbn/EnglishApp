@@ -92,8 +92,15 @@ public class MainCatchWord extends Game {
         if (ctw_ctrl.notificationPane.isVisible()) {
             return;
         }
-        label.toFront();
-        label.setStyle("-fx-border-color: BLUE;");
+        super.onMouseEntered(label);
+    }
+
+    @Override
+    protected void onMouseExited(Label label) {
+        if (ctw_ctrl.notificationPane.isVisible()) {
+            return;
+        }
+        super.onMouseExited(label);
     }
 
     @Override
