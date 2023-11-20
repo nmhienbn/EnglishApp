@@ -57,7 +57,7 @@
                </tooltip></Button>
             <Button fx:id="reset_dictionary_button" layoutX="226.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="51.0" styleClass="function-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <tooltip>
-                  <Tooltip text="Khơi tạo lại dữ liệu từ điển" />
+                  <Tooltip text="Khởi tạo lại dữ liệu từ điển" />
                </tooltip>
             </Button>
          </children>

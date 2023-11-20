@@ -67,7 +67,7 @@ public class GameNotification {
         answer.getStyleClass().setAll("h1", "strong");
         answer.setTextFill(Paint.valueOf("FFFFFF"));
 
-        ImageView playAgainButton = new ImageView(new Image("front_end/graphic/icons/play_again.png",
+        ImageView playAgainButton = new ImageView(new Image("game/images/play_again.png",
                 200, 50, true, false));
         playAgainButton.setOnMouseEntered(e -> {
             ScaleTransition scaleTransition = GameAnimations.scaleTrans(playAgainButton, 1, 1.4, 150);

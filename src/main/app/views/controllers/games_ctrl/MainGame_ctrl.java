@@ -30,9 +30,9 @@ public class MainGame_ctrl {
 
     @FXML
     void initialize() throws IOException {
-        setButton(quizz_button, "/front_end/graphic/icons/quizz.gif", 2000);
-        setButton(wordle_button, "/front_end/graphic/icons/wordle.gif", 2000);
-        setButton(ctw_button, "/front_end/graphic/icons/ctw.gif", 2000);
+        setButton(quizz_button, "/front_end/graphic/icons/gameTab/quizz.gif", 2000);
+        setButton(wordle_button, "/front_end/graphic/icons/gameTab/wordle.gif", 2000);
+        setButton(ctw_button, "/front_end/graphic/icons/gameTab/ctw.gif", 2000);
 
         quizz_ctrl = new Quizz_ctrl();
         quizz_tab = File_loader.getInstance().fxml_quizz_Tab(quizz_ctrl);
