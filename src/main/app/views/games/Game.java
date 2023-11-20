@@ -2,10 +2,13 @@ package views.games;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import views.animations.GameAnimations;
 
 public abstract class Game {
 
@@ -44,7 +47,7 @@ public abstract class Game {
                 Label label = new Label(Letters[i][j]);
                 label.setOnMouseClicked(e -> onLetterClicked(gridPane, keyboardRows, label.getText()));
                 label.setOnMouseEntered(e -> onMouseEntered(label));
-                label.setOnMouseExited(e -> label.setStyle("-fx-border-color: transparent;"));
+                label.setOnMouseExited(e -> onMouseExited(label));
                 if (i == 2 && (j == 0 || j == Letters[i].length - 1)) {
                     label.getStyleClass().add("keyboardTileSymbol");
                 } else {
@@ -56,7 +59,15 @@ public abstract class Game {
     }
 
     protected void onMouseEntered(Label label) {
-        label.setStyle("-fx-border-color: BLUE; -fx-border-width: 5; -fx-border-radius: 5;");
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setBrightness(0.4);
+        label.setEffect(colorAdjust);
+    }
+
+    protected void onMouseExited(Label label) {
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setBrightness(0);
+        label.setEffect(colorAdjust);
     }
 
     /**
