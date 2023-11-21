@@ -192,7 +192,6 @@ public class DictionaryCommandline {
                 "[6] Search\n" +
                 "[7] Game\n" +
                 "[8] Import from file\n" +
-                "2\n" +
                 "[9] Export to file");
         int req;
         Scanner cin = new Scanner(System.in);
