@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public interface DictionaryManagementInterface {
-    Dictionary dictionary = Dictionary.getInstance();
 
     /**
      * Clear all the words in dictionary

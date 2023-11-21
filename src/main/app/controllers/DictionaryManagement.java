@@ -1,6 +1,9 @@
 package controllers;
 
 import controllers.googleapi.GoogleTranslate;
+
+import models.Dictionary;
+import models.Trie;
 import models.Word;
 
 import java.io.*;
@@ -11,6 +14,7 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     public final String ORIGINAL_DICTIONARY_PATH = this.getClass().getResource("/models/original_dictionaries.txt").getPath();
     public final String DEFAULT_DICTIONARY_PATH = this.getClass().getResource("/models/dictionaries.txt").getPath();
     private static DictionaryManagement ins = null;
+    private Dictionary dictionary = Dictionary.getInstance();
 
     public static DictionaryManagement getInstance() {
         if (ins == null) {
@@ -19,6 +23,9 @@ public class DictionaryManagement implements DictionaryManagementInterface {
         return ins;
     }
 
+    private DictionaryManagement() {
+
+    }
 
     @Override
     public ArrayList<Word> getAllWords() {

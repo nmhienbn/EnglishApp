@@ -17,9 +17,9 @@ public class Dictionary implements DictionaryInterface {
         return instance;
     }
 
-    Trie trie;
+    private Trie trie = null;
 
-    Dictionary() {
+    private Dictionary() {
         trie = new Trie();
     }
 
