@@ -22,6 +22,11 @@ public interface DictionaryManagementInterface {
     void dictionaryInsertFromFile(String filePath);
 
     /**
+     * Insert from dictionaries.txt
+     */
+    void insertFromFile();
+
+    /**
      * Get all words.
      */
     ArrayList<Word> getAllWords();

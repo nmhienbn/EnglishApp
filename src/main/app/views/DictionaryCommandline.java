@@ -3,6 +3,7 @@ package views;
 import controllers.DictionaryManagement;
 import models.Trie;
 import models.Word;
+import views.games.CommandlineWordle;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -139,6 +140,18 @@ public class DictionaryCommandline {
      * update word.
      */
     public void updateWord() {
+        String str, mean;
+        Scanner cin = new Scanner(System.in);
+        System.out.print("Mời nhập từ cần sửa: ");
+        str = cin.nextLine();
+        System.out.print("Mời nhập nghĩa mới của từ: ");
+        mean = cin.nextLine();
+
+        if (manager.dictionaryEditWord(str, mean)) {
+            System.out.println("Update successfully!");
+        } else {
+            System.out.println("Update failed!");
+        }
         paused();
     }
 
@@ -146,6 +159,26 @@ public class DictionaryCommandline {
      * Play game.
      */
     public void playGame() {
+
+        game_label: while (true) {
+            int gameId;
+            Scanner cin = new Scanner(System.in);
+            System.out.println("Chọn một trò chơi:\n" +
+                    "[1] Wordle");
+            System.out.print("Mời nhập trò chơi cần chơi: ");
+            gameId = cin.nextInt();
+
+            switch (gameId) {
+                case 1:
+                    CommandlineWordle.main(new String[0]);
+                    break game_label;
+                default:
+                    System.out.println("Invalid request!");
+                    break;
+            }
+        }
+
+        CommandlineWordle.main(null);
         paused();
     }
 
@@ -166,7 +199,7 @@ public class DictionaryCommandline {
                 "[9] Export to file");
         int req;
         Scanner cin = new Scanner(System.in);
-        System.out.print("Mời nhập lựa chọn: ");
+        System.out.print("Your action: ");
         req = cin.nextInt();
 
         return req;
@@ -211,7 +244,7 @@ public class DictionaryCommandline {
                     dict.manager.dictionaryExportToFile(null);
                     break;
                 default:
-                    System.out.println("Invalid request!");
+                    System.out.println("“Action not supported");
                     break;
             }
         }
