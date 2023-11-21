@@ -134,19 +134,6 @@ public class DatabaseSQLite {
         return res;
     }
 
-    public void showDatabase() {
-        String sqlQuery = ".SHOW";
-        try {
-            preparedStatement = connection.prepareStatement(sqlQuery);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString(1));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-
     public static void main(String[] args) throws FileNotFoundException {
         try {
             // Load the SQLite JDBC driver
@@ -154,7 +141,7 @@ public class DatabaseSQLite {
 
             // Connect to the SQLite database
             connection = DriverManager.getConnection(jdbcURL);
-//ins.showDatabase();
+
             ArrayList<Word>  tmp1 = ins.getAllWords();
             for (Word word : tmp1) {
                 System.out.println(word.getWordTarget());

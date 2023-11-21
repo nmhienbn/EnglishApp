@@ -93,6 +93,7 @@ public class Quizz_ctrl extends Game_ctrl {
 
     @FXML
     public void showHelp() {
+        super.showHelp();
         if (notificationPane.isVisible()) {
             dimSc.setVisible(false);
             notificationPane.setVisible(false);
@@ -107,6 +108,7 @@ public class Quizz_ctrl extends Game_ctrl {
 
     @FXML
     public void restart() {
+        super.restart();
         for (Node node : restartButton.getChildrenUnmodifiable()) {
             if (node != null) {
                 RotateTransition rotateTransition = GameAnimations.rotateTrans(node, 0, 360 * 3);
@@ -154,6 +156,7 @@ public class Quizz_ctrl extends Game_ctrl {
 
     @FXML
     public void exitGame() {
+        super.exitGame();
         mainPanelCtrl.mainPane.setCenter(mainPanelCtrl.game_tab);
         sequentialTransition.stop();
         sequentialTransition = null;
