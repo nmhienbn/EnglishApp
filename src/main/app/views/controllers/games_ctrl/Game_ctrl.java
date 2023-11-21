@@ -1,17 +1,13 @@
 package views.controllers.games_ctrl;
 
-import javafx.animation.SequentialTransition;
-import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.util.Duration;
-import views.animations.GameAnimations;
-import views.games.GameNotification;
+import views.controllers.AppControllers;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -19,7 +15,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-public abstract class Game_ctrl {
+public abstract class Game_ctrl extends AppControllers {
     public BorderPane notificationPane;
     public Button helpButton;
     public Button restartButton;

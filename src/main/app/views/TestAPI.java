@@ -1,7 +1,7 @@
 package views;
 
 import controllers.DictionaryManagement;
-import controllers.googleapi.GoogleTranslate;
+import controllers.GoogleTranslate;
 import models.Word;
 
 import java.io.*;

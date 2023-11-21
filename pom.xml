@@ -75,6 +75,14 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/algs4.jar</systemPath>
         </dependency>
+
+        <dependency>
+            <groupId>com.sample1</groupId>
+            <artifactId>sample1</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/GifAnimation.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

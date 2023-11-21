@@ -6,7 +6,7 @@ import java.net.URL;
 import views.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import views.controllers.games_ctrl.MainGame_ctrl;
+import views.controllers.MainGame_ctrl;
 import views.controllers.games_ctrl.Quizz_ctrl;
 
 public class File_loader {
@@ -39,71 +39,13 @@ public class File_loader {
         return getUrl("front_end/css/" + name).toExternalForm();
     }
 
-    public Parent fxml_mainPanel() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/main.fxml"));
+    public Parent fxml_loadTab(String path, AppControllers controllerObject) {
+        FXMLLoader loader = new FXMLLoader(getUrl(path));
 
-        Object controllerObject = new mainPanel_ctrl();
-        loader.setController(controllerObject);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_homeTab() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/hometab.fxml"));
-
-        // Object controllerObject = new mainPanel_ctrl();
-        // loader.setController(controllerObject);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_mainDictionaryTab() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/main_dictionary.fxml"));
-
-        Object controllerObject = new mainDictionaryTab_ctrl();
-        loader.setController(controllerObject);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_google_translate_Tab() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/google_tab.fxml"));
-
-        Object controllerObject = new GoogleTab_ctrl();
-        loader.setController(controllerObject);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_mainGameTab() {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/game.fxml"));
-
-        Object controllerObject = new MainGame_ctrl();
-        loader.setController(controllerObject);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_quizz_Tab(Quizz_ctrl quizz_ctrl) {
-        FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/quizz.fxml"));
-
-        loader.setController(quizz_ctrl);
-        return FXMLloader_load(loader);
-    }
-
-    public Parent fxml_wordle_Tab(Object controllerObject) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/wordle.fxml"));
+        if (controllerObject != null) {
             loader.setController(controllerObject);
-            return FXMLloader_load(loader);
-        } catch (Exception e) {
-            return null;
         }
-    }
-
-    public Parent fxml_ctw_Tab(Object controllerObject) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getUrl("front_end/fxml/ctw.fxml"));
-            loader.setController(controllerObject);
-            return FXMLloader_load(loader);
-        } catch (Exception e) {
-            return null;
-        }
+        return FXMLloader_load(loader);
     }
 
 }
