@@ -1,10 +1,8 @@
 package controllers;
 
-import javazoom.jl.decoder.JavaLayerException;
 import models.Dictionary;
 import models.Word;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -92,10 +90,9 @@ public interface DictionaryManagementInterface {
     /**
      * Speek text.
      *
-     * @param text     content of text to speek
+     * @param text     content of text to speak
      * @param language language of text, vi for vietnamese, en for english, ...
-     * @throws IOException
-     * @throws JavaLayerException
+     * @throws IOException if cannot speak
      */
-    void speek(String text, String language) throws IOException;
+    void speak(String text, String language) throws IOException;
 }

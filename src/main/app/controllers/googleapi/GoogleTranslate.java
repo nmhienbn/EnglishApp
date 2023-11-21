@@ -2,13 +2,17 @@ package controllers.googleapi;
 // Free Endpoint: https://github.com/ssut/py-googletrans/issues/268
 // Java Request: https://www.baeldung.com/java-http-request
 
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
+import views.animations.GameAnimations;
+
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 public class GoogleTranslate {
+    public static GameAnimations.AnimatedGif ani;
     /**
      * Translate text from source language to target language.
      * sourceLanguage = en (English), vn (Vietnamese), ... or an auto (auto detect)
@@ -59,32 +63,33 @@ public class GoogleTranslate {
 
     /**
      * Speek text.
-     * @param text content of text to speek
+     *
+     * @param text     content of text to speak
      * @param language language of text, vi for vietnamese, en for english, ...
-     * @throws IOException
-     * @throws JavaLayerException
+     * @throws IOException if it cannot speak, throw IOException
      */
-    public static void speek(String text, String language) throws IOException {
+    public static void speak(String text, String language) throws IOException {
         // https://translate.google.com.vn/translate_tts?ie=UTF-8&q=Ki%E1%BA%BFt%20gi%C3%A0%20Tr%C3%AAn&tl=vi&client=tw-ob
         String urlStr = String.format("https://translate.google.com.vn/translate_tts?ie=UTF-8&q=%s&tl=%s&client=tw-ob",
                 URLEncoder.encode(text, StandardCharsets.UTF_8), language);
 
-        try {
-            URL url = new URL(urlStr);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-            InputStream audio = con.getInputStream();
-            new Player(audio).play();
-            con.disconnect();
-        } catch (Exception e) {
-            System.out.println("Error: " + e.toString());
-        }
+        Media hit = new Media(urlStr);
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.setAutoPlay(true);
+        if (ani != null) ani.play();
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.stop();
+            if (ani != null) {
+                ani.jumpTo(Duration.ZERO);
+                ani.stop();
+            }
+        });
     }
 
-    public static void main(String[] args) throws IOException, JavaLayerException {
+    public static void main(String[] args) throws IOException {
         // Test translate
         System.out.println(GoogleTranslate.translate("tôi đi ăn cơm", "vi", "en"));
 
-        GoogleTranslate.speek("Tôi thích H lắm", "vi");
+        GoogleTranslate.speak("Neeko is the best decision!", "vi");
     }
 }

@@ -2,7 +2,7 @@
   <configuration default="false" name="javafx" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="views.DictionaryApplication" />
     <module name="EnglishApp" />
-    <option name="VM_PARAMETERS" value=" --module-path &quot;.\lib\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+    <option name="VM_PARAMETERS" value=" --module-path &quot;.\lib\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.media,javafx.fxml" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
