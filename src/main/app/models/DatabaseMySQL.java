@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DatabaseMySQL {
-    private static DatabaseMySQL ins = new DatabaseMySQL();
+    private static final DatabaseMySQL ins = new DatabaseMySQL();
     private static final String jdbcURL = "jdbc:mysql://localhost:3307/englishapp";
     private static String username = "root";
     private static String password = "minhhien";

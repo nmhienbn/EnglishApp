@@ -40,9 +40,13 @@ public class DictionaryCommandline {
         System.out.printf("%-8s| %-" + maxLen + "s | %s\n", s1, s2, s3);
 
         for (int i = 0; i < proposedString.size(); ++i) {
+            String[] meaning = proposedString.get(i).getWordExplain().split("\n");
             System.out.printf("%-8d| %-" + maxLen + "s | %s\n", i + 1,
-                    proposedString.get(i).getWordTarget(),
-                    proposedString.get(i).getWordExplain());
+                    proposedString.get(i).getWordTarget(), meaning[0]);
+            for (int j = 1; j < meaning.length; ++j) {
+                System.out.printf("%-8s| %-" + maxLen + "s | %s\n", " ",
+                        " ", meaning[j]);
+            }
         }
 
         paused();
