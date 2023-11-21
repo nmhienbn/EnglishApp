@@ -9,14 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
-import views.controllers.mainPanel_ctrl;
+import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
 import views.games.MainWordle;
 
 import java.util.ArrayList;
 
 public class Wordle_ctrl extends Game_ctrl {
-    public static mainPanel_ctrl mainPanelCtrl = null;
+    public static MainPanel_ctrl mainPanelCtrl = null;
 
     private final MainWordle mainWordle = MainWordle.getInstance();
 
@@ -46,7 +46,7 @@ public class Wordle_ctrl extends Game_ctrl {
     public static final ArrayList<String> winningWords = new ArrayList<>();
 
     @FXML
-    void initialize() {
+    protected void initialize() {
         initializeWordLists();
         createUI();
         mainWordle.wordle_ctrl = this;

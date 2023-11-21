@@ -1,9 +1,6 @@
 package controllers;
 
-import controllers.googleapi.GoogleTranslate;
-
 import models.Dictionary;
-import models.Trie;
 import models.Word;
 
 import java.io.*;

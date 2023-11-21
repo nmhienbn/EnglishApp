@@ -10,14 +10,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
-import views.controllers.mainPanel_ctrl;
+import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
 import views.games.MainCatchWord;
 
 import java.util.ArrayList;
 
 public class CTW_ctrl extends Game_ctrl {
-    public static mainPanel_ctrl mainPanelCtrl = null;
+    public static MainPanel_ctrl mainPanelCtrl = null;
     private final MainCatchWord mainCTW = MainCatchWord.getInstance();
 
     @FXML
@@ -48,7 +48,7 @@ public class CTW_ctrl extends Game_ctrl {
     public static final ArrayList<String> winningWords = new ArrayList<>();
 
     @FXML
-    void initialize() {
+    protected void initialize() {
         initializeWordLists();
         createUI();
         mainCTW.ctw_ctrl = this;
