@@ -536,8 +536,6 @@ public class mainDictionaryTab_ctrl {
         String[] lines = meaning.split("\n");
 
         for (String line : lines) {
-
-
             line = line.trim();
 
             if (line.startsWith("/")) {
@@ -565,9 +563,34 @@ public class mainDictionaryTab_ctrl {
                 text.getStyleClass().add("word-info-text");
                 text.getStyleClass().add("example");
                 String[] parts = line.replace("=", "").split("\\+");
-                String str1 = "   Ex: " + parts[0].trim();
-                String str2 = "   " + "  => " + parts[1].trim();
-                text.setText(str1 + '\n' + str2 + '\n');
+                if (parts.length == 1) {
+                    String str = "   Ex: " + parts[0].trim();
+                    text.setText(str + '\n');
+                } else {
+                    StringBuilder strb = new StringBuilder();
+                    strb.append("   Ex: ").append(parts[0].trim());
+                    for (int i = 1; i < parts.length; i++) {
+                        strb.append("\n   ").append("  => ").append(parts[i].trim());
+                    }
+                    text.setText(strb.toString() + '\n');
+                }
+                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+                text.setFill(Color.BLUE);
+                wifa_meaning.getChildren().add(text);
+            } else if (line.startsWith("+")) {
+                Text text = new Text();
+                text.getStyleClass().add("word-info-text");
+                text.getStyleClass().add("example");
+                String[] parts = line.split("\\+");
+
+                StringBuilder strb = new StringBuilder();
+                //String str = "   Ex: " + parts[0].trim();
+                for (String part : parts) {
+                    //str += "\n   " + "  => " + parts[i].trim();
+                    strb.append("   ").append("  => ").append(part.trim()).append("\n");
+                }
+                text.setText(strb.toString());
+
                 text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
                 text.setFill(Color.BLUE);
                 wifa_meaning.getChildren().add(text);
