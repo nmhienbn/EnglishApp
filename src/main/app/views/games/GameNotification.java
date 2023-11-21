@@ -10,19 +10,38 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.util.Duration;
+import models.Dictionary;
 import org.kordamp.bootstrapfx.BootstrapFX;
+import views.DictionaryApplication;
 import views.animations.GameAnimations;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.Game_ctrl;
 import views.controllers.games_ctrl.Wordle_ctrl;
 
+import java.io.File;
+
 
 public class GameNotification {
+    static Media media = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\click.mp3").toURI().toString());
+    static MediaPlayer mediaPlayer = new MediaPlayer(media);
+
+    static Media win = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\win.mp3").toURI().toString());
+    static MediaPlayer mediaWin = new MediaPlayer(win);
+
+    static Media lose = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\lose.mp3").toURI().toString());
+    static MediaPlayer mediaLose = new MediaPlayer(lose);
+
 
     private GameNotification() {
     }
@@ -54,9 +73,19 @@ public class GameNotification {
 
         Label mainLabel = new Label();
         if (isWin) {
+            mediaWin.play();
+            mediaWin.setOnEndOfMedia(() -> {
+                mediaWin.stop();
+                mediaWin.seek(Duration.ZERO);
+            });
             ins.setText("CONGRATULATIONS!");
             mainLabel.setText(messages[0]);
         } else {
+            mediaLose.play();
+            mediaLose.setOnEndOfMedia(() -> {
+                mediaLose.stop();
+                mediaLose.seek(Duration.ZERO);
+            });
             ins.setText("GAME OVER!");
             mainLabel.setText(messages[1]);
         }
@@ -78,6 +107,7 @@ public class GameNotification {
             scaleTransition.play();
         });
         playAgainButton.setOnMouseClicked(e -> {
+            mediaPlayer.play();
             reallyRestart(game_ctrl);
         });
 

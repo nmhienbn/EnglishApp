@@ -6,25 +6,50 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import views.controllers.AppControllers;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public abstract class Game_ctrl extends AppControllers {
+    static Media media = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\click.mp3").toURI().toString());
+    static MediaPlayer mediaPlayer = new MediaPlayer(media);
+
     public BorderPane notificationPane;
     public Button helpButton;
     public Button restartButton;
     public Button exitButton;
     public Region dimSc;
 
-    abstract public void restart();
-    abstract public void showHelp();
-    abstract public void exitGame();
+    public void restart() {
+        mediaPlayer.play();
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.stop();
+            mediaPlayer.seek(Duration.ZERO);
+        });
+    }
+    public void showHelp() {
+        mediaPlayer.play();
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.stop();
+            mediaPlayer.seek(Duration.ZERO);
+        });
+    }
+    public void exitGame() {
+        mediaPlayer.play();
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.stop();
+            mediaPlayer.seek(Duration.ZERO);
+        });
+    }
 
     protected void initWords(String path, ArrayList<String> words) {
         InputStream winning_words = getClass().getResourceAsStream(path);

@@ -5,15 +5,21 @@ import javafx.animation.Animation;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import views.File_loader;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.Quizz_ctrl;
 import views.controllers.games_ctrl.Wordle_ctrl;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MainGame_ctrl extends AppControllers {
+    static Media media = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\click.mp3").toURI().toString());
+    static MediaPlayer mediaPlayer = new MediaPlayer(media);
     public static MainPanel_ctrl mainPanelCtrl = null;
     @FXML
     private Button quizz_button;
@@ -57,6 +63,11 @@ public class MainGame_ctrl extends AppControllers {
             ani.stop();
         });
         button.setOnAction(e -> {
+            mediaPlayer.play();
+            mediaPlayer.setOnEndOfMedia(() -> {
+                mediaPlayer.stop();
+                mediaPlayer.seek(Duration.ZERO);
+            });
             OnButtonPress(button);
         });
     }
