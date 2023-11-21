@@ -58,7 +58,7 @@ public class mainPanel_ctrl {
         AnimatedGif ani = new AnimatedGif(getClass().getResource("/front_end/graphic/icons/mainPanel/logo.gif").
                 toExternalForm(), 5000);
         logoImg.setGraphic(ani.getView());
-        setTooltip(logoImg, "DUOLINGO");
+        setTooltip(logoImg, "BILINGO");
         ani.setCycleCount(Animation.INDEFINITE);
         ani.setAutoReverse(true);
         ani.play();

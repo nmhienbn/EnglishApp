@@ -1,6 +1,7 @@
 package controllers;
 
 import controllers.googleapi.GoogleTranslate;
+
 import models.Dictionary;
 import models.Trie;
 import models.Word;
@@ -70,8 +71,8 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
-    public void speek(String text, String language) throws IOException {
-        GoogleTranslate.speek(text, language);
+    public void speak(String text, String language) throws IOException {
+        GoogleTranslate.speak(text, language);
     }
 
     @Override

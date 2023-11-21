@@ -132,7 +132,7 @@ public class TestAPI {
         if (text == null || text.isEmpty()) return;
         try {
             System.out.println("start speak: " + text);
-            wordSet.speek(text, lang);
+            wordSet.speak(text, lang);
             System.out.println("end speak: " + text);
         } catch (Exception e) {
             System.out.println("SPEAK API ERROR");

@@ -3,6 +3,8 @@ package views.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import controllers.googleapi.GoogleTranslate;
+import javafx.animation.Animation;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import views.TestAPI;
+import views.animations.GameAnimations;
 
 public class GoogleTab_ctrl {
     @FXML
@@ -60,14 +63,26 @@ public class GoogleTab_ctrl {
             lang2 = temp;
             setLang_label();
         });
+        GameAnimations.AnimatedGif ani1 = new GameAnimations.AnimatedGif(
+                getClass().getResource("/front_end/graphic/icons/speak.gif").
+                        toExternalForm(), 500);
+        ani1.setCycleCount(Animation.INDEFINITE);
+        speak_button1.setGraphic(ani1.getView());
         speak_button1.setOnAction(e -> {
             if (speak_button1.isDisable()) return;
+            GoogleTranslate.ani = ani1;
             speak_button1.setDisable(true);
             TestAPI.SpeakAPI(text1.getText(), lang1);
             speak_button1.setDisable(false);
         });
+        GameAnimations.AnimatedGif ani2 = new GameAnimations.AnimatedGif(
+                getClass().getResource("/front_end/graphic/icons/speak.gif").
+                        toExternalForm(), 500);
+        ani2.setCycleCount(Animation.INDEFINITE);
+        speak_button2.setGraphic(ani2.getView());
         speak_button2.setOnAction(e -> {
             if (speak_button2.isDisable()) return;
+            GoogleTranslate.ani = ani2;
             speak_button2.setDisable(true);
             TestAPI.SpeakAPI(text2.getText(), lang2);
             speak_button2.setDisable(false);

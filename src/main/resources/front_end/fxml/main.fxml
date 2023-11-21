@@ -45,7 +45,7 @@
     <top>
         <HBox fx:id="titleBar">
             <Region focusTraversable="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: white;" text="DUOLINGO">
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: white;" text="BILINGO">
                 <font>
                     <Font name="System Bold" size="25.0" />
                 </font>

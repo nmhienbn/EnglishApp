@@ -1,8 +1,8 @@
 package views;
 
-import controllers.googleapi.GoogleTranslate;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.scene.ImageCursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.scene.ImageCursor;
 import javafx.stage.StageStyle;
 
 public class DictionaryApplication extends Application {
@@ -46,7 +45,7 @@ public class DictionaryApplication extends Application {
         }
         setCursor(scene);
 
-        stage.setTitle("DUOLINGO");
+        stage.setTitle("BILINGO");
         stage.setScene(scene);
 
         stage.setResizable(false);
