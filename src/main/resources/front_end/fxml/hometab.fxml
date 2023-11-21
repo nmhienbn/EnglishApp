@@ -16,7 +16,7 @@
                <children>
                     <VBox layoutX="14.0" prefHeight="672.0" prefWidth="920.0" AnchorPane.leftAnchor="20.0">
                         <children>
-                            <Label contentDisplay="BOTTOM" prefHeight="43.0" prefWidth="772.0" text="Từ điển Duolingo " textAlignment="RIGHT">
+                            <Label contentDisplay="BOTTOM" prefHeight="43.0" prefWidth="772.0" text="Từ điển Bilingo " textAlignment="RIGHT">
                                 <font>
                                     <Font name="Arial" size="50.0" />
                                 </font>

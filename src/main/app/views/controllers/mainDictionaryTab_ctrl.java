@@ -2,6 +2,8 @@ package views.controllers;
 
 import java.util.ArrayList;
 
+import controllers.googleapi.GoogleTranslate;
+import javafx.animation.Animation;
 import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,6 +21,7 @@ import javafx.stage.Popup;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import views.TestAPI;
+import views.animations.GameAnimations;
 
 public class mainDictionaryTab_ctrl {
 
@@ -126,8 +129,14 @@ public class mainDictionaryTab_ctrl {
 
     private void init_fuction_button() {
         speak_button.getStyleClass().add("function-button");
+        GameAnimations.AnimatedGif ani = new GameAnimations.AnimatedGif(
+                getClass().getResource("/front_end/graphic/icons/speak.gif").
+                        toExternalForm(), 500);
+        ani.setCycleCount(Animation.INDEFINITE);
+        speak_button.setGraphic(ani.getView());
         speak_button.setOnAction(e -> {
             speak_button.setDisable(true);
+            GoogleTranslate.ani = ani;
             TestAPI.SpeakAPI(wifa_word.getText(), "en");
             speak_button.setDisable(false);
         });

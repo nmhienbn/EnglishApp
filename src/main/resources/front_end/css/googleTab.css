@@ -1,7 +1,7 @@
 @import "theme.css";
 
 .speak_button {
-    -fx-background-image: url(../graphic/icons/speak.png);
+    /*-fx-background-image: url(../graphic/icons/speak.png);*/
     -fx-background-repeat: no-repeat;
     -fx-background-size: 30;
     -fx-background-position: 50%;
