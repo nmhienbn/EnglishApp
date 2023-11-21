@@ -6,7 +6,7 @@ import views.DictionaryCommandline;
 import java.util.Scanner;
 
 public class TestDict {
-    private static final DictionaryManagement wordSet = new DictionaryManagement();
+    private static final DictionaryManagement wordSet = DictionaryManagement.getInstance();
     private static final DictionaryCommandline cmd = new DictionaryCommandline();
     private static final Dictionary dict = Dictionary.getInstance();
 
