@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import views.controllers.MainPanel_ctrl;
 
 public class DictionaryApplication extends Application {
     public static void main(String[] args) throws Exception {
@@ -22,7 +23,7 @@ public class DictionaryApplication extends Application {
     @Override
     public void start(Stage stage) {
 
-        Parent root = File_loader.getInstance().fxml_mainPanel();
+        Parent root = File_loader.getInstance().fxml_loadTab("front_end/fxml/main.fxml", new MainPanel_ctrl());
 
         if (root == null)
             System.out.println("null");

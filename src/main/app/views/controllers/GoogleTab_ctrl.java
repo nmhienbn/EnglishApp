@@ -1,9 +1,7 @@
 package views.controllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import controllers.googleapi.GoogleTranslate;
+import controllers.GoogleTranslate;
+import javaGif.AnimatedGif;
 import javafx.animation.Animation;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,9 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import views.TestAPI;
-import views.animations.GameAnimations;
 
-public class GoogleTab_ctrl {
+public class GoogleTab_ctrl extends AppControllers {
     @FXML
     private Label lang_label1;
 
@@ -43,7 +40,7 @@ public class GoogleTab_ctrl {
     private String lang2 = "vi";
 
     @FXML
-    void initialize() {
+    protected void initialize() {
         //assert text1 != null : "fx:id=\"text1\" was not injected: check your FXML file 'google_tab.fxml'.";
         //assert text2 != null : "fx:id=\"text2\" was not injected: check your FXML file 'google_tab.fxml'.";
         //assert translate_button != null : "fx:id=\"translate_button\" was not injected: check your FXML file 'google_tab.fxml'.";
@@ -63,7 +60,7 @@ public class GoogleTab_ctrl {
             lang2 = temp;
             setLang_label();
         });
-        GameAnimations.AnimatedGif ani1 = new GameAnimations.AnimatedGif(
+        AnimatedGif ani1 = new AnimatedGif(
                 getClass().getResource("/front_end/graphic/icons/speak.gif").
                         toExternalForm(), 500);
         ani1.setCycleCount(Animation.INDEFINITE);
@@ -75,7 +72,7 @@ public class GoogleTab_ctrl {
             TestAPI.SpeakAPI(text1.getText(), lang1);
             speak_button1.setDisable(false);
         });
-        GameAnimations.AnimatedGif ani2 = new GameAnimations.AnimatedGif(
+        AnimatedGif ani2 = new AnimatedGif(
                 getClass().getResource("/front_end/graphic/icons/speak.gif").
                         toExternalForm(), 500);
         ani2.setCycleCount(Animation.INDEFINITE);

@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
-import views.controllers.mainPanel_ctrl;
+import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
 import views.games.MainQuizz;
 
@@ -20,7 +20,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Quizz_ctrl extends Game_ctrl {
-    public static mainPanel_ctrl mainPanelCtrl = null;
+    public static MainPanel_ctrl mainPanelCtrl = null;
 
     public static class Quizz {
         public String question;
@@ -67,7 +67,7 @@ public class Quizz_ctrl extends Game_ctrl {
     public static final ArrayList<Quizz> QUESTIONS = new ArrayList<>();
 
     @FXML
-    void initialize() {
+    protected void initialize() {
         initializeQuizzLists();
         createUI();
         mainQuizz.quizz_ctrl = this;
