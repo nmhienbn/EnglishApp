@@ -1,6 +1,6 @@
 package controllers;
 
-import controllers.googleapi.GoogleTranslate;
+import controllers.GoogleTranslate;
 import models.Dictionary;
 import models.Word;
 
