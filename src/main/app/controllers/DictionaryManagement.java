@@ -99,6 +99,11 @@ public class DictionaryManagement implements DictionaryManagementInterface {
     }
 
     @Override
+    public void insertFromFile() {
+        dictionaryInsertFromFile(null);
+    }
+
+    @Override
     public void dictionaryExportToFile(String fout) {
         try {
             PrintStream fileOutputStream = new PrintStream(new FileOutputStream(fout));
