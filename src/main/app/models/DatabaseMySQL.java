@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DatabaseMySQL {
+public class DatabaseMySQL extends Database {
     private static final DatabaseMySQL ins = new DatabaseMySQL();
     private static final String jdbcURL = "jdbc:mysql://localhost:3307/englishapp";
     private static String username = "root";
@@ -33,6 +33,7 @@ public class DatabaseMySQL {
         password = cin.next();
     }
 
+    @Override
     public String dictionaryLookup(String wordTarget) throws SQLException {
 
         // SQL query to select the explanation for the given word
@@ -54,6 +55,7 @@ public class DatabaseMySQL {
         }
     }
 
+    @Override
     public ArrayList<Word> dictionarySearcher(String wordTarget) throws SQLException {
 
         // SQL query to select the explanation for the given word
@@ -77,6 +79,7 @@ public class DatabaseMySQL {
         return res;
     }
 
+    @Override
     public boolean dictionaryAddWord(String wordTarget, String wordExplain) throws SQLException {
         if (dictionaryLookup(wordTarget) != null) {
             return false;
@@ -91,6 +94,7 @@ public class DatabaseMySQL {
         return rowsAffected > 0;
     }
 
+    @Override
     public boolean dictionaryDeleteWord(String wordTarget) throws SQLException {
         // Disable safe delete mode
         connection.setAutoCommit(false);
@@ -111,6 +115,7 @@ public class DatabaseMySQL {
         return rowsAffected > 0;
     }
 
+    @Override
     public ArrayList<Word> getAllWords() throws SQLException {
         return dictionarySearcher("");
     }
@@ -121,7 +126,7 @@ public class DatabaseMySQL {
         try {
             // Establish a database connection
             connection = DriverManager.getConnection(jdbcURL, username, password);
-            ArrayList<Word>  tmp1 = ins.getAllWords();
+            ArrayList<Word> tmp1 = ins.getAllWords();
             for (Word word : tmp1) {
                 System.out.println(word.getWordTarget());
             }
