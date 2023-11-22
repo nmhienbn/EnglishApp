@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Commandline" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="views.DictionaryCommandline" />
+    <module name="EnglishApp" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
