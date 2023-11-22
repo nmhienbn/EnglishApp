@@ -16,13 +16,13 @@ Final Project for OOP (INT2204 2)
 
 ## Table of contents
 - [Chức năng](#Chức năng)
-  - [Sử dụng từ điển](##Sử-dụng-từ-điển)
-  - [Dịch thuật](##Dịch-thuật)
-  - [Trò chơi](##Trò-chơi)
+  - [Sử dụng từ điển](#Sử-dụng-từ-điển)
+  - [Dịch thuật](#Dịch-thuật)
+  - [Trò chơi](#Trò-chơi)
 - [Công nghệ sử dụng](#Công-nghệ-sử-dụng)
-  - [JavaFX](##JavaFX)
-  - [Google Translate API](##Google-Translate-API)
-  - [Trie](##Trie)
+  - [JavaFX](#JavaFX)
+  - [Google Translate API](#Google-Translate-API)
+  - [Trie](#Trie)
 
 # Chức năng
 Các tính năng mà ứng dụng sẽ hỗ trợ.
