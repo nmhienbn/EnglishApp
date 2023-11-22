@@ -15,7 +15,7 @@ Final Project for OOP (INT2204 2)
 - Được viết bằng ngôn ngữ Java và hỗ trợ bởi thư viện JavaFX để tạo ra giao diện đồ hoạ thú vị, đẹp mắt.
 
 ## Table of contents
-- [Chức năng](#Chức năng)
+- [Chức năng](#Chức-năng)
   - [Sử dụng từ điển](#Sử-dụng-từ-điển)
   - [Dịch thuật](#Dịch-thuật)
   - [Trò chơi](#Trò-chơi)
