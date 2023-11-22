@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class DatabaseSQLite {
+public class DatabaseSQLite extends Database {
     private static final DatabaseSQLite ins = new DatabaseSQLite();
     private static final String jdbcURL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\SQLite\\engData.db";
     private static Connection connection = null;
@@ -60,6 +60,7 @@ public class DatabaseSQLite {
         return res;
     }
 
+    @Override
     public String dictionaryLookup(String wordTarget) throws SQLException {
         // SQL query to select the explanation for the given word
         String sqlQuery = "SELECT * FROM engviet WHERE Word = ?";
@@ -80,6 +81,7 @@ public class DatabaseSQLite {
         }
     }
 
+    @Override
     public ArrayList<Word> dictionarySearcher(String wordTarget) throws SQLException {
         // SQL query to select the explanation for the given word
         String sqlQuery = "SELECT * FROM engviet WHERE Word LIKE ?";
@@ -102,6 +104,22 @@ public class DatabaseSQLite {
         return res;
     }
 
+    @Override
+    public boolean dictionaryAddWord(String wordTarget, String wordExplain) throws SQLException {
+        if (dictionaryLookup(wordTarget) != null) {
+            return false;
+        }
+        // SQL query to insert a new word into the dictionary table
+        String sqlQuery = "INSERT INTO dictionary (word_target, word_explain) VALUES (?, ?)";
+        preparedStatement = connection.prepareStatement(sqlQuery);
+        preparedStatement.setString(1, wordTarget);
+        preparedStatement.setString(2, wordExplain);
+        int rowsAffected = preparedStatement.executeUpdate();
+
+        return rowsAffected > 0;
+    }
+
+    @Override
     public boolean dictionaryDeleteWord(String wordTarget) throws SQLException {
         if (dictionaryLookup(wordTarget) == null) {
             return false;
@@ -115,6 +133,7 @@ public class DatabaseSQLite {
         return rowsAffected > 0;
     }
 
+    @Override
     public ArrayList<Word> getAllWords() throws SQLException {
         ArrayList<Word> res = new ArrayList<>();
         // SQL query to select the explanation for the given word
