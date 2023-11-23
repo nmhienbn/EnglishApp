@@ -27,8 +27,11 @@ Final Project for OOP (INT2204 2)
 # Chức năng
 Các tính năng mà ứng dụng sẽ hỗ trợ.
 ## Sử dụng từ điển
-- Tra cứu từ vựng tiếng Anh.
+- Tra cứu từ vựng tiếng Anh: phát âm, từ loại, nghĩa, từ đồng nghĩa, trái nghĩa.
 - Thêm/sửa/xóa từ vựng.
+- Nghe phát âm của từ vựng.
+- Thêm từ vựng vào mục yêu thích.
+- Khởi tạo lại dữ liệu từ điển về ban đầu.
 <p align="center">
 <img height="330" width="495" src="https://i.imgur.com/MWu7cYe.png"> 
 </p>
@@ -59,3 +62,6 @@ Các kĩ thuật, công nghệ sử dụng để xây dựng ứng dụng.
 - Sử dụng cấu trúc dữ liệu Trie để lưu trữ từ điển.
 - Trie còn được sử dụng để tìm kiếm/sửa/xóa từ vựng với tốc độ nhanh chóng.
 - Trie cho kết quả chính xác 100% với độ phức tạp tuyến tính so với HashMap có khả năng bị trùng và độ phức tạp khó tính toán.
+## Hỗ trợ xử lý dữ liệu dưới dạng MySQL/SQLite
+## Cây kế thừa của từ điển
+![](./UML.png)
