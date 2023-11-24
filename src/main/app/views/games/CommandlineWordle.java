@@ -11,23 +11,23 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class CommandlineWordle {
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    private static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-    private static final String ANSI_GRAY_BACKGROUND = "\u001B[100m";
-    private static final String ALPHABET = "q w e r t y u i o p\n a s d f g h j k l\n  z x c v b n m";//"abcdefghijklmnopqrstuvwxyz";
+    private static final String NOCOLOR = "\u001B[0m";
+    private static final String GREEN = "\u001B[42m";
+    private static final String YELLOW = "\u001B[43m";
+    private static final String GRAY = "\u001B[100m";
+    private static final String KEYBOARD = "q w e r t y u i o p\n a s d f g h j k l\n  z x c v b n m";//"abcdefghijklmnopqrstuvwxyz";
 
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String[] guesses = new String[6];
-        List<String> vocabulary = new ArrayList<>();
+        String[] words = new String[6];
+        List<String> wordList = new ArrayList<>();
         char[] answer;
 
         String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\game\\winning-words.txt";
         try (Scanner cin = new Scanner(new FileReader(filePath))) {
             while (cin.hasNextLine()) {
-                vocabulary.add(cin.nextLine());
+                wordList.add(cin.nextLine());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -35,9 +35,9 @@ public class CommandlineWordle {
         }
 
 
-        // Set blank guesses
+        // Set blank words
         for (int i = 0; i < 6; i++) {
-            guesses[i] = "-----";
+            words[i] = "-----";
         }
 
         gameLoop: while (true) {
@@ -72,27 +72,27 @@ public class CommandlineWordle {
             ArrayList<Character> yellow = new ArrayList<>();
 
 
-            answer = vocabulary.get((int) (Math.random() * 2308)).toCharArray();
+            answer = wordList.get((int) (Math.random() * 2308)).toCharArray();
             System.out.println("Begin!");
 
             while (guessIndex < 6) {
-                StringBuilder alphabetInfo = new StringBuilder();
+                StringBuilder KEYBOARDInfo = new StringBuilder();
 
-                for (int i = 0; i < ALPHABET.length(); i++) {
-                    if (green.contains(ALPHABET.charAt(i))) {
-                        alphabetInfo.append(ANSI_GREEN_BACKGROUND);
-                    } else if (yellow.contains(ALPHABET.charAt(i))) {
-                        alphabetInfo.append(ANSI_YELLOW_BACKGROUND);
-                    } else if (gray.contains(ALPHABET.charAt(i))) {
-                        alphabetInfo.append(ANSI_GRAY_BACKGROUND);
+                for (int i = 0; i < KEYBOARD.length(); i++) {
+                    if (green.contains(KEYBOARD.charAt(i))) {
+                        KEYBOARDInfo.append(GREEN);
+                    } else if (yellow.contains(KEYBOARD.charAt(i))) {
+                        KEYBOARDInfo.append(YELLOW);
+                    } else if (gray.contains(KEYBOARD.charAt(i))) {
+                        KEYBOARDInfo.append(GRAY);
                     } else {
-                        alphabetInfo.append(ALPHABET.charAt(i));
+                        KEYBOARDInfo.append(KEYBOARD.charAt(i));
                         continue;
                     }
-                    alphabetInfo.append(ALPHABET.charAt(i)).append(ANSI_RESET);
+                    KEYBOARDInfo.append(KEYBOARD.charAt(i)).append(NOCOLOR);
                 }
-                System.out.println("\n" + String.join("\n", guesses));
-                System.out.println(alphabetInfo + "\n");
+                System.out.println("\n" + String.join("\n", words));
+                System.out.println(KEYBOARDInfo + "\n");
                 System.out.print("Guess: ");
                 String guess = input.nextLine().toLowerCase();
                 String[] guessColors = new String[5];
@@ -105,24 +105,24 @@ public class CommandlineWordle {
 
                 correct = true;
 
-                // Exit the program
-                if (guess.equals("stop") || guess.equals("exit")) {
-                    break gameLoop;
-                }
-
-                // Give up
-                if (guess.equals("next") || guess.equals("new") || guess.equals("skip")) {
+                if (guess.equals("next") || guess.equals("skip") || guess.equals("new")) {
                     correct = false;
                     break;
                 }
+
+                // Exit the program
+                if (guess.equals("exit") || guess.equals("stop")) {
+                    break gameLoop;
+                }
+
 
                 if (guess.length() != 5) {
                     System.out.println("Must be 5 letters!");
                     continue;
                 }
 
-                if (!vocabulary.contains(guess)) {
-                    System.out.println("Not in the vocabulary!");
+                if (!wordList.contains(guess)) {
+                    System.out.println("Not in the wordList!");
                     continue;
                 }
 
@@ -134,7 +134,7 @@ public class CommandlineWordle {
                     current = guess.charAt(i);
 
                     if (current == answerInfo[i]) {
-                        guessColors[i] = ANSI_GREEN_BACKGROUND + current + ANSI_RESET;
+                        guessColors[i] = GREEN + current + NOCOLOR;
                         answerInfo[new String(answerInfo).indexOf(current)] = '0';
                         if (!green.contains(current)) green.add(current);
                     }
@@ -147,7 +147,7 @@ public class CommandlineWordle {
                         correct = false;
 
                         if (new String(answerInfo).contains(String.valueOf(current))) {
-                            guessColors[i] = ANSI_YELLOW_BACKGROUND + current + ANSI_RESET;
+                            guessColors[i] = YELLOW + current + NOCOLOR;
                             answerInfo[new String(answerInfo).indexOf(current)] = '0';
                             if (!yellow.contains(current)) yellow.add(current);
                         } else {
@@ -158,7 +158,7 @@ public class CommandlineWordle {
                 }
 
 
-                guesses[guessIndex] = String.join("", guessColors);
+                words[guessIndex] = String.join("", guessColors);
 
                 guessIndex++;
 
@@ -171,9 +171,9 @@ public class CommandlineWordle {
                 System.out.println("The answer was: " + new String(answer));
             }
 
-            // Reset guesses
+            // Reset words
             for (int i = 0; i < guessIndex; i++) {
-                guesses[i] = "-----";
+                words[i] = "-----";
             }
         }
     }
