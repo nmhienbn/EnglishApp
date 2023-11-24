@@ -201,9 +201,9 @@ public class MainWordle extends Game {
     @Override
     protected void onBackspaceChosen(GridPane gridPane) {
         boolean cmp = Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "");
-        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1) && !cmp) {
+        if (CUR_COLUMN == 1 || !cmp) {
             resetTile(gridPane, CUR_ROW, CUR_COLUMN);
-        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN) || CUR_COLUMN == MAX_COLUMN) {
+        } else {
             resetTile(gridPane, CUR_ROW, --CUR_COLUMN);
         }
     }
@@ -292,5 +292,4 @@ public class MainWordle extends Game {
         CUR_ROW = 1;
         wordle_ctrl.gridRequestFocus();
     }
-
 }

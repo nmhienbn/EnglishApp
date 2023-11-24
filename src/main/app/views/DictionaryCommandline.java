@@ -1,9 +1,7 @@
 package views;
 
 import controllers.DictionaryManagement;
-import models.Trie;
 import models.Word;
-import views.games.CommandlineWordle;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -159,27 +157,7 @@ public class DictionaryCommandline {
      * Play game.
      */
     public void playGame() {
-
-        game_label: while (true) {
-            int gameId;
-            Scanner cin = new Scanner(System.in);
-            System.out.println("Chọn một trò chơi:\n" +
-                    "[1] Wordle");
-            System.out.print("Mời nhập trò chơi cần chơi: ");
-            gameId = cin.nextInt();
-
-            switch (gameId) {
-                case 1:
-                    CommandlineWordle.main(new String[0]);
-                    break game_label;
-                default:
-                    System.out.println("Invalid request!");
-                    break;
-            }
-        }
-
-        CommandlineWordle.main(null);
-        paused();
+        getRequest();
     }
 
     /**
