@@ -32,23 +32,25 @@ Các tính năng mà ứng dụng sẽ hỗ trợ.
 - Nghe phát âm của từ vựng.
 - Thêm từ vựng vào mục yêu thích.
 - Khởi tạo lại dữ liệu từ điển về ban đầu.
-<p align="center">
-<img height="330" width="495" src="https://i.imgur.com/MWu7cYe.png"> 
-</p>
+![](./preview/prev2.png)
 
 ## Dịch thuật
 - Sử dụng công cụ dịch thuật của Google Translate để dịch từ vựng, câu văn.
 - Hỗ trợ chức năng đọc đoạn văn
-<p align="center">
-<img height="330" width="495" src="https://i.imgur.com/d0LhsE9.png"> 
-</p>
+![](./preview/prev3.png)
 
 ## Trò chơi 
 - Giúp người học giải trí
 - Mang tính học thuật, hỗ trợ việc học từ vựng
-<p align="center">
-<img height="330" width="495" src="https://i.imgur.com/nr1ZcBx.png"> 
-</p>
+![](./preview/prev4.png)
+- Ba game:
+  * Trắc nghiệm (Quizz)
+  ![](./preview/prev5.png)
+  * Tìm từ (Wordle)
+  ![](./preview/prev6.png)
+  * Đuổi hình bắt chữ (Catch the word)
+  ![](./preview/prev7.png)
+
 
 # Công nghệ sử dụng
 Các kĩ thuật, công nghệ sử dụng để xây dựng ứng dụng.

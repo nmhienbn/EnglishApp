@@ -3,12 +3,10 @@ package views.games;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import views.animations.GameAnimations;
 
 public abstract class Game {
 
@@ -19,7 +17,7 @@ public abstract class Game {
     protected int CUR_COLUMN = 1;
     protected int MAX_COLUMN = 5;
     protected int MAX_ROW = 6;
-    protected String winningWord;
+    protected String winWord;
 
     /**
      * Variables for the keyboard.
@@ -48,11 +46,11 @@ public abstract class Game {
                 label.setOnMouseClicked(e -> onLetterClicked(gridPane, keyboardRows, label.getText()));
                 label.setOnMouseEntered(e -> onMouseEntered(label));
                 label.setOnMouseExited(e -> onMouseExited(label));
+                String styleClass = "keyboardTile";
                 if (i == 2 && (j == 0 || j == Letters[i].length - 1)) {
-                    label.getStyleClass().add("keyboardTileSymbol");
-                } else {
-                    label.getStyleClass().add("keyboardTile");
+                    styleClass += "Symbol";
                 }
+                label.getStyleClass().add(styleClass);
                 keyboardRows[i].add(label, j, i + 1);
             }
         }
@@ -80,15 +78,28 @@ public abstract class Game {
      */
     protected Label getLabel(GridPane gridPane, int searchRow, int searchColumn) {
         for (Node child : gridPane.getChildren()) {
-            Integer r = GridPane.getRowIndex(child);
-            Integer c = GridPane.getColumnIndex(child);
-            int row = (r == null ? 0 : r);
-            int col = (c == null ? 0 : c);
-            if (row == searchRow && col == searchColumn && (child instanceof Label)) {
-                return (Label) child;
+            if (Integer.valueOf(searchRow).equals(GridPane.getRowIndex(child))
+                    && Integer.valueOf(searchColumn).equals(GridPane.getColumnIndex(child))
+                    && child instanceof Label label) {
+                return label;
             }
         }
         return null;
+    }
+
+    /**
+     * Sets the style class of the letter at the specified row and column
+     *
+     * @param gridPane     the gridPane that contains the letter
+     * @param searchRow    the row of the letter
+     * @param searchColumn the column of the letter
+     */
+    protected void setDefaultTile(GridPane gridPane, int searchRow, int searchColumn) {
+        Label label = getLabel(gridPane, searchRow, searchColumn);
+        if (label == null) {
+            return;
+        }
+        label.getStyleClass().add("default-tile");
     }
 
     /**
@@ -101,9 +112,10 @@ public abstract class Game {
      */
     protected String getLabelText(GridPane gridPane, int searchRow, int searchColumn) {
         Label label = getLabel(gridPane, searchRow, searchColumn);
-        if (label != null)
-            return label.getText().toLowerCase();
-        return null;
+        if (label == null) {
+            return null;
+        }
+        return label.getText().toLowerCase();
     }
 
     /**
@@ -116,24 +128,10 @@ public abstract class Game {
      */
     protected void setLabelText(GridPane gridPane, int searchRow, int searchColumn, String input) {
         Label label = getLabel(gridPane, searchRow, searchColumn);
-        if (label != null) {
-            label.setText(input.toUpperCase());
+        if (label == null) {
+            return;
         }
-    }
-
-    /**
-     * Sets the style class of the letter at the specified row and column
-     *
-     * @param gridPane     the gridPane that contains the letter
-     * @param searchRow    the row of the letter
-     * @param searchColumn the column of the letter
-     * @param styleclass   the style class to be set
-     */
-    protected void setLabelStyleClass(GridPane gridPane, int searchRow, int searchColumn, String styleclass) {
-        Label label = getLabel(gridPane, searchRow, searchColumn);
-        if (label != null) {
-            label.getStyleClass().add(styleclass);
-        }
+        label.setText(input.toUpperCase());
     }
 
     /**
@@ -158,13 +156,9 @@ public abstract class Game {
      * @return the letter at the specified row and column
      */
     protected Label getLabel(GridPane gridPane, String letter) {
-        Label label;
         for (Node child : gridPane.getChildren()) {
-            if (child instanceof Label) {
-                label = (Label) child;
-                if (letter.equalsIgnoreCase(label.getText())) {
-                    return label;
-                }
+            if (child instanceof Label label && letter.equalsIgnoreCase(label.getText())) {
+                return label;
             }
         }
         return null;
@@ -177,10 +171,10 @@ public abstract class Game {
      * @return the word from the current row
      */
     protected String getWordFromCurrentRow(GridPane gridPane) {
-        StringBuilder input = new StringBuilder();
+        StringBuilder res = new StringBuilder();
         for (int j = 1; j <= MAX_COLUMN; j++)
-            input.append(getLabelText(gridPane, CUR_ROW, j));
-        return input.toString();
+            res.append(getLabelText(gridPane, CUR_ROW, j));
+        return res.toString();
     }
 
     /**
@@ -193,11 +187,10 @@ public abstract class Game {
     public void onKeyPressed(GridPane gridPane, GridPane[] keyboardRows, KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
             onBackspaceChosen(gridPane);
+        } else if (keyEvent.getCode() == KeyCode.ENTER) {
+            onEnterChosen(gridPane, keyboardRows);
         } else if (keyEvent.getCode().isLetterKey()) {
             onLetterChosen(gridPane, keyEvent.getText());
-        }
-        if (keyEvent.getCode() == KeyCode.ENTER) {
-            onEnterChosen(gridPane, keyboardRows);
         }
     }
 
@@ -225,7 +218,7 @@ public abstract class Game {
      * @param row      the row of the letter
      * @param col      the column of the letter
      */
-    protected abstract void resetTitle(GridPane gridPane, int row, int col);
+    protected abstract void resetTile(GridPane gridPane, int row, int col);
 
     /**
      * A letter is chosen

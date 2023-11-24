@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Dictionary implements DictionaryInterface {
+public class Dictionary {
 
     private static Dictionary instance = null;
 
@@ -23,32 +23,58 @@ public class Dictionary implements DictionaryInterface {
         trie = new Trie();
     }
 
-    @Override
+    /**
+     * Add a word to dictionary.
+     *
+     * @param str string to be added.
+     * @return true if the word is added successfully.
+     */
     public boolean addWord(String str, String meaning) {
         return trie.addWord(str, meaning);
     }
 
-    @Override
+    /**
+     * Edit a word in dictionary.
+     *
+     * @param str     string to be edited.
+     * @param meaning meaning of edited word
+     * @return true if the word is successful edited
+     */
     public boolean editWord(String str, String meaning) {
         return trie.editWord(str, meaning);
     }
 
-    @Override
+    /**
+     * Delete a word from dictionary.
+     *
+     * @param str string to be deleted.
+     * @return true if the word is deleted successfully.
+     */
     public boolean deleteWord(String str) {
         return trie.deleteWord(str);
     }
 
-    @Override
+    /**
+     * Get all words from dictionary.
+     */
     public ArrayList<Word> queryAllWords() {
         return trie.queryAllWords();
     }
 
-    @Override
+    /**
+     * Get all words with prefix is str in dictionary.
+     *
+     * @param str string to search.
+     */
     public ArrayList<Word> getProposedString(String str) {
         return trie.getProposedString(str);
     }
 
-    @Override
+    /**
+     * Return the Word that its target is str in dictionary.
+     *
+     * @param str string to lookup.
+     */
     public Word lookupWord(String str) {
         return trie.lookupWord(str);
     }
