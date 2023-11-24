@@ -133,9 +133,9 @@ public class MainCatchWord extends Game {
      */
     protected void onBackspaceChosen(GridPane gridPane) {
         boolean cmp = Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "");
-        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1) && !cmp) {
+        if (CUR_COLUMN == 1 || !cmp) {
             resetTile(gridPane, CURRENT_ROW, CUR_COLUMN);
-        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN) || CUR_COLUMN == MAX_COLUMN) {
+        } else {
             CUR_COLUMN--;
             if (winWord.charAt(CUR_COLUMN - 1) == ' ') {
                 CUR_COLUMN--;
