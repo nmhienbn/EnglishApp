@@ -93,35 +93,36 @@ public class MainWordle extends Game {
         SequentialTransition effects = new SequentialTransition();
         for (int i = 1; i <= MAX_COLUMN; i++) {
             Label label = getLabel(gridPane, searchRow, i);
-            String styleClass;
-            if (label != null) {
-                String currentCharacter = String.valueOf(label.getText().charAt(0)).toLowerCase();
-                if (String.valueOf(winningWord.charAt(i - 1)).equalsIgnoreCase(currentCharacter)) {
-                    styleClass = LetterStyleClass[0];
-                } else if (winningWord.contains(currentCharacter)) {
-                    styleClass = LetterStyleClass[1];
-                } else {
-                    styleClass = LetterStyleClass[2];
-                }
-
-                // Effects
-                FadeTransition fadeTransition;
-                ScaleTransition scaleTransition;
-
-                // Fade Out
-                fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 100);
-                fadeTransition.setOnFinished(e -> {
-                    label.getStyleClass().clear();
-                    label.getStyleClass().setAll(styleClass);
-                });
-                scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2, 150);
-                effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
-
-                // Fade In
-                fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 100);
-                scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1, 150);
-                effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
+            if (label == null) {
+                continue;
             }
+            String styleClass;
+            String curChar = String.valueOf(label.getText().charAt(0)).toLowerCase();
+            if (String.valueOf(winWord.charAt(i - 1)).equalsIgnoreCase(curChar)) {
+                styleClass = LetterStyleClass[0];
+            } else if (winWord.contains(curChar)) {
+                styleClass = LetterStyleClass[1];
+            } else {
+                styleClass = LetterStyleClass[2];
+            }
+
+            // Effects
+            FadeTransition fadeTransition;
+            ScaleTransition scaleTransition;
+
+            // Fade Out
+            fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 100);
+            fadeTransition.setOnFinished(e -> {
+                label.getStyleClass().clear();
+                label.getStyleClass().setAll(styleClass);
+            });
+            scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2, 150);
+            effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
+
+            // Fade In
+            fadeTransition = GameAnimations.fadeTrans(label, 0.2, 1, 100);
+            scaleTransition = GameAnimations.scaleTrans(label, 1.2, 1, 150);
+            effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
         }
         effects.play();
     }
@@ -133,26 +134,27 @@ public class MainWordle extends Game {
      * @param keyboardRows the keyboard
      */
     protected void updateKeyboardColors(GridPane gridPane, GridPane[] keyboardRows) {
-        String currentWord = getWordFromCurrentRow(gridPane).toLowerCase();
-        for (int i = 1; i <= MAX_COLUMN; i++) {
+        String curWord = getWordFromCurrentRow(gridPane).toLowerCase();
+        for (int i = 0; i < MAX_COLUMN; i++) {
             Label keyboardLabel = new Label();
-            String currentCharacter = String.valueOf(currentWord.charAt(i - 1));
-            String winningCharacter = String.valueOf(winningWord.charAt(i - 1));
+            String curChar = String.valueOf(curWord.charAt(i));
+            String winChar = String.valueOf(winWord.charAt(i));
 
             for (int j = 0; j < Letters.length; j++) {
-                if (contains(Letters[j], currentCharacter)) {
-                    keyboardLabel = getLabel(keyboardRows[j], currentCharacter);
+                if (contains(Letters[j], curChar)) {
+                    keyboardLabel = getLabel(keyboardRows[j], curChar);
                     break;
                 }
             }
 
-            String styleClass;
-            if (currentCharacter.equals(winningCharacter))
-                styleClass = "keyboardCorrectColor";
-            else if (winningWord.contains(currentCharacter))
-                styleClass = "keyboardValidColor";
+            String styleClass = "keyboard";
+            if (curChar.equals(winChar))
+                styleClass += "Correct";
+            else if (winWord.contains(curChar))
+                styleClass += "Valid";
             else
-                styleClass = "keyboardAbsentColor";
+                styleClass += "Absent";
+            styleClass += "Color";
             if (keyboardLabel != null) {
                 keyboardLabel.getStyleClass().clear();
                 keyboardLabel.getStyleClass().add(styleClass);
@@ -176,10 +178,10 @@ public class MainWordle extends Game {
     }
 
     @Override
-    protected void resetTitle(GridPane gridPane, int row, int col) {
+    protected void resetTile(GridPane gridPane, int row, int col) {
         setLabelText(gridPane, row, col, "");
         clearLabelStyleClass(gridPane, row, col);
-        setLabelStyleClass(gridPane, row, col, "default-tile");
+        setDefaultTile(gridPane, row, col);
     }
 
     @Override
@@ -190,7 +192,7 @@ public class MainWordle extends Game {
             Label label = getLabel(gridPane, CUR_ROW, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
             GameAnimations.scaleTrans(label, 1.2, 1, 150).play();
-            setLabelStyleClass(gridPane, CUR_ROW, CUR_COLUMN, "default-tile");
+            setDefaultTile(gridPane, CUR_ROW, CUR_COLUMN);
             if (CUR_COLUMN < MAX_COLUMN)
                 CUR_COLUMN++;
         }
@@ -198,13 +200,11 @@ public class MainWordle extends Game {
 
     @Override
     protected void onBackspaceChosen(GridPane gridPane) {
-        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1)
-                && !Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "")) {
-            resetTitle(gridPane, CUR_ROW, CUR_COLUMN);
-        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN)
-                || (CUR_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), ""))) {
-            CUR_COLUMN--;
-            resetTitle(gridPane, CUR_ROW, CUR_COLUMN);
+        boolean cmp = Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "");
+        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1) && !cmp) {
+            resetTile(gridPane, CUR_ROW, CUR_COLUMN);
+        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN) || CUR_COLUMN == MAX_COLUMN) {
+            resetTile(gridPane, CUR_ROW, --CUR_COLUMN);
         }
     }
 
@@ -212,15 +212,15 @@ public class MainWordle extends Game {
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
         if (CUR_ROW <= MAX_ROW && CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
-            if (guess.equals(winningWord)) {
+            if (guess.equals(winWord)) {
                 updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
-                wordle_ctrl.showEndGameWindow(true, winningWord);
+                wordle_ctrl.showEndGameWindow(true, winWord);
             } else if (isValidGuess(guess)) {
                 updateRowColors(gridPane, CUR_ROW);
                 updateKeyboardColors(gridPane, keyboardRows);
                 if (CUR_ROW == MAX_ROW) {
-                    wordle_ctrl.showEndGameWindow(false, winningWord);
+                    wordle_ctrl.showEndGameWindow(false, winWord);
                 } else {
                     CUR_ROW++;
                     CUR_COLUMN = 1;
@@ -233,7 +233,7 @@ public class MainWordle extends Game {
 
     @Override
     public void getRandomWord() {
-        winningWord = winningWords.get(StdRandom.uniformInt(winningWords.size()));
+        winWord = winningWords.get(StdRandom.uniformInt(winningWords.size()));
     }
 
     /**
@@ -245,7 +245,7 @@ public class MainWordle extends Game {
     protected boolean isValidGuess(String guess) {
         int low = 0, high = winningWords.size() - 1;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
+            int mid = (high + low) / 2;
             int cmp = guess.compareTo(winningWords.get(mid));
             if (cmp == 0) {
                 return true;
@@ -267,12 +267,10 @@ public class MainWordle extends Game {
      */
     public void resetGame(GridPane gridPane, GridPane[] keyboardRows) {
         getRandomWord();
-        Label label;
 
         for (GridPane keyboardRow : keyboardRows) {
             for (Node child : keyboardRow.getChildren()) {
-                if (child instanceof Label) {
-                    label = (Label) child;
+                if (child instanceof Label label) {
                     if (label.getText().equals("enter") || label.getText().equals("backspace")) {
                         continue;
                     }
@@ -283,8 +281,7 @@ public class MainWordle extends Game {
         }
 
         for (Node child : gridPane.getChildren()) {
-            if (child instanceof Label) {
-                label = (Label) child;
+            if (child instanceof Label label) {
                 label.getStyleClass().clear();
                 label.setText("");
                 label.getStyleClass().add("default-tile");

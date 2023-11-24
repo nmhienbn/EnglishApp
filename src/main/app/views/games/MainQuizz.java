@@ -43,7 +43,7 @@ public class MainQuizz extends Game {
     }
 
     @Override
-    protected void resetTitle(GridPane gridPane, int row, int col) {
+    protected void resetTile(GridPane gridPane, int row, int col) {
 
     }
 

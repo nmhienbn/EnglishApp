@@ -79,7 +79,7 @@ public class MainCatchWord extends Game {
         for (int j = 1; j <= MAX_COLUMN; j++) {
             Label label = new Label();
             label.getStyleClass().add("ctw-default-tile");
-            if (winningWord.charAt(j - 1) == ' ') {
+            if (winWord.charAt(j - 1) == ' ') {
                 label.setVisible(false);
                 label.setText(" ");
             }
@@ -104,7 +104,7 @@ public class MainCatchWord extends Game {
     }
 
     @Override
-    protected void resetTitle(GridPane gridPane, int row, int col) {
+    protected void resetTile(GridPane gridPane, int row, int col) {
         setLabelText(gridPane, row, col, "");
     }
 
@@ -116,10 +116,10 @@ public class MainCatchWord extends Game {
             Label label = getLabel(gridPane, 1, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
             GameAnimations.scaleTrans(label, 1.3, 1, 150).play();
-            setLabelStyleClass(gridPane, 1, CUR_COLUMN, "default-tile");
+            setDefaultTile(gridPane, 1, CUR_COLUMN);
             if (CUR_COLUMN < MAX_COLUMN) {
                 CUR_COLUMN++;
-                if (winningWord.charAt(CUR_COLUMN - 1) == ' ') {
+                if (winWord.charAt(CUR_COLUMN - 1) == ' ') {
                     CUR_COLUMN++;
                 }
             }
@@ -132,16 +132,15 @@ public class MainCatchWord extends Game {
      * @param gridPane the gridPane that contains the letters
      */
     protected void onBackspaceChosen(GridPane gridPane) {
-        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1)
-                && !Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "")) {
-            resetTitle(gridPane, CURRENT_ROW, CUR_COLUMN);
-        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN)
-                || (CUR_COLUMN == MAX_COLUMN && Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), ""))) {
+        boolean cmp = Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "");
+        if ((CUR_COLUMN == MAX_COLUMN || CUR_COLUMN == 1) && !cmp) {
+            resetTile(gridPane, CURRENT_ROW, CUR_COLUMN);
+        } else if ((CUR_COLUMN > 1 && CUR_COLUMN < MAX_COLUMN) || CUR_COLUMN == MAX_COLUMN) {
             CUR_COLUMN--;
-            if (winningWord.charAt(CUR_COLUMN - 1) == ' ') {
+            if (winWord.charAt(CUR_COLUMN - 1) == ' ') {
                 CUR_COLUMN--;
             }
-            resetTitle(gridPane, CURRENT_ROW, CUR_COLUMN);
+            resetTile(gridPane, CURRENT_ROW, CUR_COLUMN);
         }
     }
 
@@ -154,8 +153,8 @@ public class MainCatchWord extends Game {
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
         if (CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
-            if (guess.equals(winningWord)) {
-                ctw_ctrl.showEndGameWindow(true, winningWord);
+            if (guess.equals(winWord)) {
+                ctw_ctrl.showEndGameWindow(true, winWord);
             } else {
                 showWrongWord();
             }
@@ -172,8 +171,8 @@ public class MainCatchWord extends Game {
             StdRandom.shuffle(level);
         }
         ord_winningWord = level[now_level];
-        winningWord = winningWords.get(ord_winningWord);
-        MAX_COLUMN = winningWord.length();
+        winWord = winningWords.get(ord_winningWord);
+        MAX_COLUMN = winWord.length();
     }
 
     /**
