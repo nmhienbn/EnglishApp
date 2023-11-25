@@ -116,7 +116,6 @@ public class MainCatchWord extends Game {
             Label label = getLabel(gridPane, 1, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
             GameAnimations.scaleTrans(label, 1.3, 1, 150).play();
-            setDefaultTile(gridPane, 1, CUR_COLUMN);
             if (CUR_COLUMN < MAX_COLUMN) {
                 CUR_COLUMN++;
                 if (winWord.charAt(CUR_COLUMN - 1) == ' ') {

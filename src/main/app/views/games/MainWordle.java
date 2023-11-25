@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
 import views.controllers.games_ctrl.Wordle_ctrl;
 
+import java.util.Collections;
 import java.util.Objects;
 
 import static views.controllers.games_ctrl.Wordle_ctrl.showWordNotFound;
@@ -112,10 +113,7 @@ public class MainWordle extends Game {
 
             // Fade Out
             fadeTransition = GameAnimations.fadeTrans(label, 1, 0.2, 100);
-            fadeTransition.setOnFinished(e -> {
-                label.getStyleClass().clear();
-                label.getStyleClass().setAll(styleClass);
-            });
+            fadeTransition.setOnFinished(e -> label.getStyleClass().setAll(styleClass));
             scaleTransition = GameAnimations.scaleTrans(label, 1, 1.2, 150);
             effects.getChildren().add(new ParallelTransition(fadeTransition, scaleTransition));
 
@@ -156,8 +154,7 @@ public class MainWordle extends Game {
                 styleClass += "Absent";
             styleClass += "Color";
             if (keyboardLabel != null) {
-                keyboardLabel.getStyleClass().clear();
-                keyboardLabel.getStyleClass().add(styleClass);
+                keyboardLabel.getStyleClass().setAll(styleClass);
             }
         }
     }
@@ -180,7 +177,6 @@ public class MainWordle extends Game {
     @Override
     protected void resetTile(GridPane gridPane, int row, int col) {
         setLabelText(gridPane, row, col, "");
-        clearLabelStyleClass(gridPane, row, col);
         setDefaultTile(gridPane, row, col);
     }
 
@@ -192,7 +188,6 @@ public class MainWordle extends Game {
             Label label = getLabel(gridPane, CUR_ROW, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
             GameAnimations.scaleTrans(label, 1.2, 1, 150).play();
-            setDefaultTile(gridPane, CUR_ROW, CUR_COLUMN);
             if (CUR_COLUMN < MAX_COLUMN)
                 CUR_COLUMN++;
         }
@@ -243,20 +238,7 @@ public class MainWordle extends Game {
      * @return true if the guess is a valid word, false otherwise
      */
     protected boolean isValidGuess(String guess) {
-        int low = 0, high = winningWords.size() - 1;
-        while (low <= high) {
-            int mid = (high + low) / 2;
-            int cmp = guess.compareTo(winningWords.get(mid));
-            if (cmp == 0) {
-                return true;
-            }
-            if (cmp > 0) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        return false;
+        return Collections.binarySearch(winningWords, guess) >= 0;
     }
 
     /**
@@ -274,17 +256,15 @@ public class MainWordle extends Game {
                     if (label.getText().equals("enter") || label.getText().equals("backspace")) {
                         continue;
                     }
-                    label.getStyleClass().clear();
-                    label.getStyleClass().add("keyboardTile");
+                    label.getStyleClass().setAll("keyboardTile");
                 }
             }
         }
 
         for (Node child : gridPane.getChildren()) {
             if (child instanceof Label label) {
-                label.getStyleClass().clear();
                 label.setText("");
-                label.getStyleClass().add("default-tile");
+                label.getStyleClass().setAll("default-tile");
             }
         }
 
