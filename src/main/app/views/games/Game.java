@@ -99,7 +99,7 @@ public abstract class Game {
         if (label == null) {
             return;
         }
-        label.getStyleClass().add("default-tile");
+        label.getStyleClass().setAll("default-tile");
     }
 
     /**
@@ -132,20 +132,6 @@ public abstract class Game {
             return;
         }
         label.setText(input.toUpperCase());
-    }
-
-    /**
-     * Clears the style class of the letter at the specified row and column
-     *
-     * @param gridPane     the gridPane that contains the letter
-     * @param searchRow    the row of the letter
-     * @param searchColumn the column of the letter
-     */
-    protected void clearLabelStyleClass(GridPane gridPane, int searchRow, int searchColumn) {
-        Label label = getLabel(gridPane, searchRow, searchColumn);
-        if (label != null) {
-            label.getStyleClass().clear();
-        }
     }
 
     /**

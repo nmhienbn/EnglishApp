@@ -120,6 +120,7 @@
     -fx-background-color: -key-background-color;
     -fx-text-fill: -text-fill-color;
     -fx-font-size: 25px;
+    -fx-font-weight: bold;
     -fx-min-width: 150px;
     -fx-min-height: 58px;
     -fx-text-alignment: center;
