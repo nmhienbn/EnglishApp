@@ -18,9 +18,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
-import models.Dictionary;
 import org.kordamp.bootstrapfx.BootstrapFX;
-import views.DictionaryApplication;
 import views.animations.GameAnimations;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.Game_ctrl;
@@ -50,6 +48,27 @@ public class GameNotification {
     public static CTW_ctrl ctw_ctrl;
     private static double xOffset = 0;
     private static double yOffset = 0;
+
+    private static void setMouseDrag(BorderPane mainPane) {
+        mainPane.setOnMousePressed(e -> {
+            xOffset = e.getSceneX();
+            yOffset = e.getSceneY();
+        });
+
+        mainPane.setOnMouseDragged(e -> {
+            double x = e.getSceneX();
+            double y = e.getSceneY();
+
+            double deltaX = x - xOffset;
+            double deltaY = y - yOffset;
+
+            mainPane.setTranslateX(mainPane.getTranslateX() + deltaX);
+            mainPane.setTranslateY(mainPane.getTranslateY() + deltaY);
+
+            xOffset = x;
+            yOffset = y;
+        });
+    }
 
     public static void endGameNotification(boolean isWin, String winningWord,
                                            Game_ctrl game_ctrl, String[] messages) {
@@ -130,24 +149,7 @@ public class GameNotification {
         ScaleTransition scaleTransition = GameAnimations.scaleTrans(mainPane, 0, 1, 500);
         scaleTransition.play();
 
-        mainPane.setOnMousePressed(e -> {
-            xOffset = e.getSceneX();
-            yOffset = e.getSceneY();
-        });
-
-        mainPane.setOnMouseDragged(e -> {
-            double x = e.getSceneX();
-            double y = e.getSceneY();
-
-            double deltaX = x - xOffset;
-            double deltaY = y - yOffset;
-
-            mainPane.setTranslateX(mainPane.getTranslateX() + deltaX);
-            mainPane.setTranslateY(mainPane.getTranslateY() + deltaY);
-
-            xOffset = x;
-            yOffset = y;
-        });
+        setMouseDrag(mainPane);
     }
 
     public static void reallyRestart(Game_ctrl game_ctrl) {
@@ -215,6 +217,22 @@ public class GameNotification {
                 "-fx-border-color: #000000; -fx-border-width: 2px;" +
                 "-fx-border-radius: 5; -fx-background-radius: 5;");
         helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        setMouseDrag(helpPane);
+    }
+
+    private static HBox giveExampleWord(String sampleWord, String typeExample, int index) {
+        String[] letter = sampleWord.split("");
+        HBox WordHBox = new HBox(3);
+        WordHBox.setAlignment(Pos.CENTER);
+        for (int i = 0; i < letter.length; i++) {
+            Label label = new Label(letter[i]);
+            if (i == index)
+                label.getStyleClass().setAll(typeExample);
+            else
+                label.getStyleClass().setAll("default-letter-example");
+            WordHBox.getChildren().add(label);
+        }
+        return WordHBox;
     }
 
     public static void instructionCTW(BorderPane helpPane) {
@@ -253,6 +271,7 @@ public class GameNotification {
                 "-fx-border-color: #000000; -fx-border-width: 2px;" +
                 "-fx-border-radius: 5; -fx-background-radius: 5;");
         helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        setMouseDrag(helpPane);
     }
 
     public static void instructionQuizz(BorderPane helpPane) {
@@ -288,24 +307,10 @@ public class GameNotification {
                 "-fx-border-color: #000000; -fx-border-width: 2px;" +
                 "-fx-border-radius: 5; -fx-background-radius: 5;");
         helpPane.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        setMouseDrag(helpPane);
     }
 
-    private static HBox giveExampleWord(String sampleWord, String typeExample, int index) {
-        String[] letter = sampleWord.split("");
-        HBox WordHBox = new HBox(3);
-        WordHBox.setAlignment(Pos.CENTER);
-        for (int i = 0; i < letter.length; i++) {
-            Label label = new Label(letter[i]);
-            if (i == index)
-                label.getStyleClass().setAll(typeExample);
-            else
-                label.getStyleClass().setAll("default-letter-example");
-            WordHBox.getChildren().add(label);
-        }
-        return WordHBox;
-    }
-
-    public static void showNotification(BorderPane notificationPane, String notification) {
+    public static void fadedNotification(BorderPane notificationPane, String notification) {
         notificationPane.setPrefWidth(200);
         notificationPane.setPrefHeight(100);
         notificationPane.setLayoutX(400);

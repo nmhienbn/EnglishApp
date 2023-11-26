@@ -112,6 +112,7 @@ public class MainCatchWord extends Game {
     protected void onLetterChosen(GridPane gridPane, String letter) {
         // If the user types a letter while the row is full, nothing changes.
         if (Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "")) {
+            super.onLetterChosen(gridPane, letter);
             setLabelText(gridPane, 1, CUR_COLUMN, letter);
             Label label = getLabel(gridPane, 1, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.3, 150).play();
@@ -132,6 +133,7 @@ public class MainCatchWord extends Game {
      */
     protected void onBackspaceChosen(GridPane gridPane) {
         boolean cmp = Objects.equals(getLabelText(gridPane, 1, CUR_COLUMN), "");
+        super.onBackspaceChosen(gridPane);
         if (CUR_COLUMN == 1 || !cmp) {
             resetTile(gridPane, CURRENT_ROW, CUR_COLUMN);
         } else {
@@ -151,6 +153,7 @@ public class MainCatchWord extends Game {
      */
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
         if (CUR_COLUMN == MAX_COLUMN) {
+            super.onEnterChosen(gridPane, keyboardRows);
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winWord)) {
                 ctw_ctrl.showEndGameWindow(true, winWord);
@@ -163,7 +166,7 @@ public class MainCatchWord extends Game {
     /**
      * Gets a random word from the winningWords list
      */
-    public void getRandomWord() {
+    public void getRandomLevel() {
         now_level++;
         if (now_level >= level.length) {
             now_level = 0;
@@ -181,7 +184,7 @@ public class MainCatchWord extends Game {
      * @param keyboardRows the keyboard
      */
     public void resetGame(ImageView img, GridPane gridPane, GridPane[] keyboardRows) {
-        getRandomWord();
+        getRandomLevel();
         gridPane.getChildren().removeIf(Objects::nonNull);
         createGrid(gridPane, img);
         createKeyBoard(keyboardRows, gridPane);

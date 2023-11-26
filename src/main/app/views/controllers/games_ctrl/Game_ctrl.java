@@ -70,12 +70,28 @@ public abstract class Game_ctrl extends AppControllers {
             tt.setX(bounds.getMaxX() - tt.getWidth() / 2);
             tt.setY(bounds.getMaxY() + 5);
         });
-//        node.setOnMouseEntered(e -> {
-//            node.setStyle("-fx-background-color: #ced4da");
-//        });
-//        node.setOnMouseExited(e -> {
-//            node.setStyle("-fx-background-color: transparent");
-//        });
+    }
+
+    protected void setTooltips() {
+        setTooltip(helpButton, "Instructions");
+        setTooltip(restartButton, "Restart");
+        setTooltip(exitButton, "Exit");
+    }
+
+    protected void showNotification() {
+        dimSc.toFront();
+        dimSc.setVisible(true);
+        notificationPane.toFront();
+        notificationPane.setVisible(true);
+    }
+
+    protected void hideNotification() {
+        dimSc.setVisible(false);
+        notificationPane.setVisible(false);
+        notificationPane.setTranslateX(0);
+        notificationPane.setTranslateY(0);
+        notificationPane.setOnMousePressed(null);
+        notificationPane.setOnMouseDragged(null);
     }
 
     public abstract void showStartGame();

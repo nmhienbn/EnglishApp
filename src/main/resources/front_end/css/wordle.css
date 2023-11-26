@@ -1,14 +1,11 @@
 * {
-    -white-color: white;
     -text-fill-color: black;
     -empty-border-color: #d3d6da;
-    -unlocked-border-color: #878a8c;
     -background-color: white;
     -key-background-color: #d3d6da;
-    -wrong-color: #787c7e;
-    -present-color: #c9b458;
+    -absent-color: #787c7e;
+    -valid-color: #c9b458;
     -correct-color: #6aaa64;
-    -selected-color: blue;
 }
 
 #helpButton, #restartButton, #exitButton {
@@ -57,14 +54,14 @@
 }
 
 .valid-letter {
-    -fx-background-color: -present-color;
-    -fx-border-color: -present-color;
+    -fx-background-color: -valid-color;
+    -fx-border-color: -valid-color;
     -fx-text-fill: white;
 }
 
 .absent-letter {
-    -fx-background-color: -wrong-color;
-    -fx-border-color: -wrong-color;
+    -fx-background-color: -absent-color;
+    -fx-border-color: -absent-color;
     -fx-text-fill: white;
 }
 
@@ -107,12 +104,12 @@
 }
 
 .keyboardValidColor {
-    -fx-background-color: -present-color;
+    -fx-background-color: -valid-color;
     -fx-text-fill: white;
 }
 
 .keyboardAbsentColor {
-    -fx-background-color: -wrong-color;
+    -fx-background-color: -absent-color;
     -fx-text-fill: white;
 }
 
@@ -171,14 +168,14 @@
 }
 
 .valid-letter-example {
-    -fx-background-color: -present-color;
-    -fx-border-color: -present-color;
+    -fx-background-color: -valid-color;
+    -fx-border-color: -valid-color;
     -fx-text-fill: white;
 }
 
 .absent-letter-example {
-    -fx-background-color: -wrong-color;
-    -fx-border-color: -wrong-color;
+    -fx-background-color: -absent-color;
+    -fx-border-color: -absent-color;
     -fx-text-fill: white;
 }
 

@@ -7,8 +7,15 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public abstract class Game {
+    static Media keyboardPress = new Media(new File(System.getProperty("user.dir") +
+            "\\src\\main\\resources\\audio\\keyboard.mp3").toURI().toString());
+    static MediaPlayer keyboardPressPlayer = new MediaPlayer(keyboardPress);
 
     /**
      * Variables for the grid.
@@ -204,7 +211,8 @@ public abstract class Game {
      * @param row      the row of the letter
      * @param col      the column of the letter
      */
-    protected abstract void resetTile(GridPane gridPane, int row, int col);
+    protected void resetTile(GridPane gridPane, int row, int col) {
+    }
 
     /**
      * A letter is chosen
@@ -212,14 +220,20 @@ public abstract class Game {
      * @param gridPane the gridPane that contains the letters
      * @param letter   the letter chosen
      */
-    protected abstract void onLetterChosen(GridPane gridPane, String letter);
+    protected void onLetterChosen(GridPane gridPane, String letter) {
+        keyboardPressPlayer.seek(keyboardPressPlayer.getStartTime());
+        keyboardPressPlayer.play();
+    }
 
     /**
      * Backspace button is pressed
      *
      * @param gridPane the gridPane that contains the letters
      */
-    protected abstract void onBackspaceChosen(GridPane gridPane);
+    protected void onBackspaceChosen(GridPane gridPane) {
+        keyboardPressPlayer.seek(keyboardPressPlayer.getStartTime());
+        keyboardPressPlayer.play();
+    }
 
     /**
      * Enter button is pressed
@@ -227,10 +241,13 @@ public abstract class Game {
      * @param gridPane     the gridPane that contains the letters
      * @param keyboardRows the keyboard
      */
-    protected abstract void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows);
+    protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
+        keyboardPressPlayer.seek(keyboardPressPlayer.getStartTime());
+        keyboardPressPlayer.play();
+    }
 
     /**
      * Gets a random word from the winningWords list
      */
-    public abstract void getRandomWord();
+    public abstract void getRandomLevel();
 }
