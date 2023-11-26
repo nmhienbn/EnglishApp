@@ -71,22 +71,15 @@ public class Quizz_ctrl extends Game_ctrl {
         initializeQuizzLists();
         createUI();
         mainQuizz.quizz_ctrl = this;
-        setTooltip(restartButton, "Restart");
-        setTooltip(exitButton, "Exit");
+        setTooltips();
         game_sc.setOnMouseClicked(e -> {
             if (notificationPane.isVisible() &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), helpButton) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), fA) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), fB) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), fC) &&
                     inHierarchy(e.getPickResult().getIntersectedNode(), fD)) {
-                dimSc.setVisible(false);
-                notificationPane.setVisible(false);
-                notificationPane.setTranslateX(0);
-                notificationPane.setTranslateY(0);
-                notificationPane.setOnMousePressed(null);
-                notificationPane.setOnMouseDragged(null);
+                hideNotification();
             }
         });
     }
@@ -94,16 +87,8 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         super.showHelp();
-        if (notificationPane.isVisible()) {
-            dimSc.setVisible(false);
-            notificationPane.setVisible(false);
-        } else {
-            GameNotification.instructionQuizz(notificationPane);
-            dimSc.toFront();
-            dimSc.setVisible(true);
-            notificationPane.toFront();
-            notificationPane.setVisible(true);
-        }
+        GameNotification.instructionQuizz(notificationPane);
+        showNotification();
     }
 
     @FXML
@@ -113,7 +98,7 @@ public class Quizz_ctrl extends Game_ctrl {
             if (node != null) {
                 RotateTransition rotateTransition = GameAnimations.rotateTrans(node, 0, 360 * 3);
                 rotateTransition.setOnFinished(ae -> {
-                    mainQuizz.getRandomWord();
+                    mainQuizz.getRandomLevel();
                     mainQuizz.createQuestion(question, ansA, ansB, ansC, ansD);
                     showStartGame();
                 });
@@ -151,7 +136,7 @@ public class Quizz_ctrl extends Game_ctrl {
             throw new RuntimeException(e);
         }
 
-        mainQuizz.getRandomWord();
+        mainQuizz.getRandomLevel();
     }
 
     @FXML

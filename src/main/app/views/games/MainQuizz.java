@@ -42,26 +42,6 @@ public class MainQuizz extends Game {
         titleHBox.getChildren().add(label);
     }
 
-    @Override
-    protected void resetTile(GridPane gridPane, int row, int col) {
-
-    }
-
-    @Override
-    protected void onLetterChosen(GridPane gridPane, String letter) {
-
-    }
-
-    @Override
-    protected void onBackspaceChosen(GridPane gridPane) {
-
-    }
-
-    @Override
-    protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
-
-    }
-
     private boolean isScaled = false;
 
     /**
@@ -104,7 +84,7 @@ public class MainQuizz extends Game {
         }
     }
 
-    public void getRandomWord() {
+    public void getRandomLevel() {
         now_level++;
         if (now_level >= QUESTIONS.size()) {
             now_level = 0;

@@ -184,6 +184,7 @@ public class MainWordle extends Game {
     protected void onLetterChosen(GridPane gridPane, String letter) {
         // If the user types a letter while the row is full, nothing changes.
         if (Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "")) {
+            super.onLetterChosen(gridPane, letter);
             setLabelText(gridPane, CUR_ROW, CUR_COLUMN, letter);
             Label label = getLabel(gridPane, CUR_ROW, CUR_COLUMN);
             GameAnimations.scaleTrans(label, 1, 1.2, 150).play();
@@ -196,6 +197,7 @@ public class MainWordle extends Game {
     @Override
     protected void onBackspaceChosen(GridPane gridPane) {
         boolean cmp = Objects.equals(getLabelText(gridPane, CUR_ROW, CUR_COLUMN), "");
+        super.onBackspaceChosen(gridPane);
         if (CUR_COLUMN == 1 || !cmp) {
             resetTile(gridPane, CUR_ROW, CUR_COLUMN);
         } else {
@@ -205,6 +207,7 @@ public class MainWordle extends Game {
 
     @Override
     protected void onEnterChosen(GridPane gridPane, GridPane[] keyboardRows) {
+        super.onEnterChosen(gridPane, keyboardRows);
         if (CUR_ROW <= MAX_ROW && CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winWord)) {
@@ -227,7 +230,7 @@ public class MainWordle extends Game {
     }
 
     @Override
-    public void getRandomWord() {
+    public void getRandomLevel() {
         winWord = winningWords.get(StdRandom.uniformInt(winningWords.size()));
     }
 
@@ -248,7 +251,7 @@ public class MainWordle extends Game {
      * @param keyboardRows the keyboard
      */
     public void resetGame(GridPane gridPane, GridPane[] keyboardRows) {
-        getRandomWord();
+        getRandomLevel();
 
         for (GridPane keyboardRow : keyboardRows) {
             for (Node child : keyboardRow.getChildren()) {
