@@ -4,12 +4,15 @@ import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import views.controllers.AppControllers;
+import views.games.GameNotification;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,11 +26,24 @@ public abstract class Game_ctrl extends AppControllers {
             "\\src\\main\\resources\\audio\\click.mp3").toURI().toString());
     static MediaPlayer mediaPlayer = new MediaPlayer(media);
 
+
+    public AnchorPane game_sc;
     public BorderPane notificationPane;
     public Button helpButton;
     public Button restartButton;
     public Button exitButton;
     public Region dimSc;
+
+    protected void initialize() {
+        initializeGameData();
+        createUI();
+        setTooltips();
+        game_sc.setOnMouseClicked(this::hideNotification);
+    }
+
+    protected abstract void initializeGameData();
+    protected abstract void createUI();
+    protected abstract void hideNotification(MouseEvent e);
 
     public void restart() {
         mediaPlayer.play();

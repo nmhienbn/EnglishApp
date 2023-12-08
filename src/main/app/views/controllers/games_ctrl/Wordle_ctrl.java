@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.MainPanel_ctrl;
@@ -47,18 +48,9 @@ public class Wordle_ctrl extends Game_ctrl {
 
     @FXML
     protected void initialize() {
-        initializeWordLists();
-        createUI();
         mainWordle.wordle_ctrl = this;
         GameNotification.wordle_ctrl = this;
-        setTooltips();
-        game_sc.setOnMouseClicked(e -> {
-            if (notificationPane.isVisible() &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
-                hideNotification();
-                gridRequestFocus();
-            }
-        });
+        super.initialize();
     }
 
     @FXML
@@ -109,7 +101,12 @@ public class Wordle_ctrl extends Game_ctrl {
         mainPanelCtrl.mainPane.setCenter(mainPanelCtrl.game_tab);
     }
 
-    private void createUI() {
+    protected void initializeGameData() {
+        initWords("/game/winning-words.txt", winningWords);
+        mainWordle.getRandomLevel();
+    }
+
+    protected void createUI() {
         // Create Grid
         mainWordle.createGrid(gridPane);
 
@@ -124,17 +121,20 @@ public class Wordle_ctrl extends Game_ctrl {
         mainWordle.createGameTitle(titleHBox);
     }
 
+    protected void hideNotification(MouseEvent e) {
+        if (notificationPane.isVisible() &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
+            hideNotification();
+            gridRequestFocus();
+        }
+    }
+
     public void gridRequestFocus() {
         gridPane.requestFocus();
     }
 
     public static void showWordNotFound() {
         GameNotification.fadedNotification(MainWordle.getInstance().wordle_ctrl.notificationPane, "INVALID WORD!");
-    }
-
-    private void initializeWordLists() {
-        initWords("/game/winning-words.txt", winningWords);
-        mainWordle.getRandomLevel();
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {

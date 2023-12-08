@@ -60,29 +60,22 @@ public class GoogleTab_ctrl extends AppControllers {
             lang2 = temp;
             setLang_label();
         });
+        animatedSpeakerButton(speak_button1, text1, lang1);
+        animatedSpeakerButton(speak_button2, text2, lang2);
+    }
+
+    private void animatedSpeakerButton(Button speakButton1, TextArea text1, String lang1) {
         AnimatedGif ani1 = new AnimatedGif(
                 getClass().getResource("/front_end/graphic/icons/speak.gif").
                         toExternalForm(), 500);
         ani1.setCycleCount(Animation.INDEFINITE);
-        speak_button1.setGraphic(ani1.getView());
-        speak_button1.setOnAction(e -> {
-            if (speak_button1.isDisable()) return;
+        speakButton1.setGraphic(ani1.getView());
+        speakButton1.setOnAction(e -> {
+            if (speakButton1.isDisable()) return;
             GoogleTranslate.ani = ani1;
-            speak_button1.setDisable(true);
+            speakButton1.setDisable(true);
             TestAPI.SpeakAPI(text1.getText(), lang1);
-            speak_button1.setDisable(false);
-        });
-        AnimatedGif ani2 = new AnimatedGif(
-                getClass().getResource("/front_end/graphic/icons/speak.gif").
-                        toExternalForm(), 500);
-        ani2.setCycleCount(Animation.INDEFINITE);
-        speak_button2.setGraphic(ani2.getView());
-        speak_button2.setOnAction(e -> {
-            if (speak_button2.isDisable()) return;
-            GoogleTranslate.ani = ani2;
-            speak_button2.setDisable(true);
-            TestAPI.SpeakAPI(text2.getText(), lang2);
-            speak_button2.setDisable(false);
+            speakButton1.setDisable(false);
         });
     }
 

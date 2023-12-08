@@ -216,18 +216,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         Popup popup = new Popup();
         popup.setAutoHide(true);
         Label label = new Label("Error: Word does not exists");
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(400, 100);
-
-        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
-        delay.play();
-
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        showPopup(popup, label, 400, 100);
         System.out.println("Word does not exists, WORD: \"" + word + "\"");
     }
 
@@ -235,18 +224,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         Popup popup = new Popup();
         popup.setAutoHide(true);
         Label label = new Label("Error: Word exists\n\"" + word + "\"");
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(400, 100);
-
-        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
-        delay.play();
-
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        showPopup(popup, label, 400, 100);
         System.out.println("Word exists, WORD: \"" + word + "\"");
     }
 
@@ -254,36 +232,14 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         Popup popup = new Popup();
         popup.setAutoHide(true);
         Label label = new Label("Word's meaning updated\n\"" + word + "\"");
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(400, 100);
-
-        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
-        delay.play();
-
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        showPopup(popup, label, 400, 100);
     }
 
     private void popup_word_added(String word) {
         Popup popup = new Popup();
         popup.setAutoHide(true);
         Label label = new Label("Added word to dictionary\n\"" + word + "\"");
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(400, 100);
-
-        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
-        delay.play();
-
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        showPopup(popup, label, 400, 100);
     }
 
     private void popup_word_not_added(String word) {
@@ -291,29 +247,22 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         popup.setAutoHide(true);
         Label label = new Label(
                 "Error: Cannot add word to dictionary\n" + "\"" + word + "\"");
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(500, 150);
-
-        PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
-        delay.play();
-
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        showPopup(popup, label, 500, 150);
     }
 
     private void popup_word_removed(String word) {
         Popup popup = new Popup();
         popup.setAutoHide(true);
         Label label = new Label("Removed word from dictionary\n\"" + word + "\"");
+        showPopup(popup, label, 400, 100);
+    }
+
+    private void showPopup(Popup popup, Label label, int width, int height) {
         label.setTextAlignment(TextAlignment.CENTER);
         label.setAlignment(javafx.geometry.Pos.CENTER);
         label.setFont(new Font(25));
         label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(400, 100);
+        label.setPrefSize(width, height);
 
         PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
         delay.setOnFinished(event -> popup.hide());
@@ -545,80 +494,98 @@ public class MainDictionaryTab_ctrl extends AppControllers {
 
         for (String line : lines) {
             line = line.trim();
+            char firstChar = line.charAt(0);
 
-            if (line.startsWith("/")) {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("pronounce");
-                text.setText(word + "  -  " + line + '\n');
-                text.setFont(Font.font("System", FontWeight.THIN, FontPosture.ITALIC, 20.0));
-                text.setFill(Color.BLACK);
-                wifa_meaning.getChildren().add(text);
-
-            } else if (line.startsWith("*")) {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("type");
-                line = line.replace("*", "").trim();
-                text.setText(line + '\n');
-                text.setFont(Font.font("System", FontWeight.BOLD, FontPosture.REGULAR, 22.0));
-                text.setFill(Color.RED);
-                text.setUnderline(true);
-                wifa_meaning.getChildren().add(text);
-
-            } else if (line.startsWith("=")) {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("example");
-                String[] parts = line.replace("=", "").split("\\+");
-                if (parts.length == 1) {
-                    String str = "   Ex: " + parts[0].trim();
-                    text.setText(str + '\n');
-                } else {
-                    StringBuilder strb = new StringBuilder();
-                    strb.append("   Ex: ").append(parts[0].trim());
-                    for (int i = 1; i < parts.length; i++) {
-                        strb.append("\n   ").append("  => ").append(parts[i].trim());
-                    }
-                    text.setText(strb.toString() + '\n');
-                }
-                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
-                text.setFill(Color.BLUE);
-                wifa_meaning.getChildren().add(text);
-            } else if (line.startsWith("+")) {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("example");
-                String[] parts = line.split("\\+");
-
-                StringBuilder strb = new StringBuilder();
-                //String str = "   Ex: " + parts[0].trim();
-                for (String part : parts) {
-                    //str += "\n   " + "  => " + parts[i].trim();
-                    strb.append("   ").append("  => ").append(part.trim()).append("\n");
-                }
-                text.setText(strb.toString());
-
-                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
-                text.setFill(Color.BLUE);
-                wifa_meaning.getChildren().add(text);
-            } else if (line.startsWith("-")) {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("meaning");
-                text.setText(line + '\n');
-                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
-                text.setFill(Color.BLACK);
-                wifa_meaning.getChildren().add(text);
-            } else {
-                Text text = new Text();
-                text.getStyleClass().add("word-info-text");
-                text.getStyleClass().add("undefined");
-                text.setText(line + '\n');
-                text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
-                text.setFill(Color.BLACK);
-                wifa_meaning.getChildren().add(text);
+            switch (firstChar) {
+                case '/' -> highlightPronunciation(word, line);
+                case '*' -> highlightType(line);
+                case '=' -> highlightExample(line);
+                case '+' -> highlightExampleImply(line);
+                case '-' -> highlightMeaning(line);
+                default -> defaultHighlight(line);
             }
         }
+    }
+
+    private void defaultHighlight(String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("undefined");
+        text.setText(line + '\n');
+        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+        text.setFill(Color.BLACK);
+        wifa_meaning.getChildren().add(text);
+    }
+
+    private void highlightMeaning(String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("meaning");
+        text.setText(line + '\n');
+        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+        text.setFill(Color.BLACK);
+        wifa_meaning.getChildren().add(text);
+    }
+
+    private void highlightExampleImply(String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("example");
+        String[] parts = line.split("\\+");
+
+        StringBuilder strb = new StringBuilder();
+        //String str = "   Ex: " + parts[0].trim();
+        for (String part : parts) {
+            //str += "\n   " + "  => " + parts[i].trim();
+            strb.append("   ").append("  => ").append(part.trim()).append("\n");
+        }
+        text.setText(strb.toString());
+
+        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+        text.setFill(Color.BLUE);
+        wifa_meaning.getChildren().add(text);
+    }
+
+    private void highlightExample(String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("example");
+        String[] parts = line.replace("=", "").split("\\+");
+        if (parts.length == 1) {
+            String str = "   Ex: " + parts[0].trim();
+            text.setText(str + '\n');
+        } else {
+            StringBuilder strb = new StringBuilder();
+            strb.append("   Ex: ").append(parts[0].trim());
+            for (int i = 1; i < parts.length; i++) {
+                strb.append("\n   ").append("  => ").append(parts[i].trim());
+            }
+            text.setText(strb.toString() + '\n');
+        }
+        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+        text.setFill(Color.BLUE);
+        wifa_meaning.getChildren().add(text);
+    }
+
+    private void highlightType(String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("type");
+        line = line.replace("*", "").trim();
+        text.setText(line + '\n');
+        text.setFont(Font.font("System", FontWeight.BOLD, FontPosture.REGULAR, 22.0));
+        text.setFill(Color.RED);
+        text.setUnderline(true);
+        wifa_meaning.getChildren().add(text);
+    }
+
+    private void highlightPronunciation(String word, String line) {
+        Text text = new Text();
+        text.getStyleClass().add("word-info-text");
+        text.getStyleClass().add("pronounce");
+        text.setText(word + "  -  " + line + '\n');
+        text.setFont(Font.font("System", FontWeight.THIN, FontPosture.ITALIC, 20.0));
+        text.setFill(Color.BLACK);
+        wifa_meaning.getChildren().add(text);
     }
 }

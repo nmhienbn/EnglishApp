@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.MainPanel_ctrl;
@@ -49,18 +50,9 @@ public class CTW_ctrl extends Game_ctrl {
 
     @FXML
     protected void initialize() {
-        initializeWordLists();
-        createUI();
         mainCTW.ctw_ctrl = this;
         GameNotification.ctw_ctrl = this;
-        setTooltips();
-        game_sc.setOnMouseClicked(e -> {
-            if (notificationPane.isVisible() &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
-                hideNotification();
-                gridRequestFocus();
-            }
-        });
+        super.initialize();
     }
 
     @FXML
@@ -112,7 +104,13 @@ public class CTW_ctrl extends Game_ctrl {
         sequentialTransition.play();
     }
 
-    private void createUI() {
+    protected void initializeGameData() {
+        initWords("/game/ctw_words.txt", winningWords);
+        mainCTW.setLevels(winningWords.size());
+        mainCTW.getRandomLevel();
+    }
+
+    protected void createUI() {
         // Create Game Title
         mainCTW.createGameTitle(titleHBox);
 
@@ -127,18 +125,21 @@ public class CTW_ctrl extends Game_ctrl {
         mainCTW.createKeyBoard(keyboardRows, gridPane);
     }
 
+    @Override
+    protected void hideNotification(MouseEvent e) {
+        if (notificationPane.isVisible() &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
+            hideNotification();
+            gridRequestFocus();
+        }
+    }
+
     public void gridRequestFocus() {
         gridPane.requestFocus();
     }
 
     public static void showWrongWord() {
         GameNotification.fadedNotification(MainCatchWord.getInstance().ctw_ctrl.notificationPane, "WRONG WORD!");
-    }
-
-    private void initializeWordLists() {
-        initWords("/game/ctw_words.txt", winningWords);
-        mainCTW.setLevels(winningWords.size());
-        mainCTW.getRandomLevel();
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {

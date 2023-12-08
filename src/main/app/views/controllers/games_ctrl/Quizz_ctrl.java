@@ -3,9 +3,11 @@ package views.controllers.games_ctrl;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
@@ -37,7 +39,7 @@ public class Quizz_ctrl extends Game_ctrl {
     private final MainQuizz mainQuizz = MainQuizz.getInstance();
 
     @FXML
-    AnchorPane game_sc;
+    public AnchorPane game_sc;
     @FXML
     public GridPane choices;
     @FXML
@@ -68,20 +70,8 @@ public class Quizz_ctrl extends Game_ctrl {
 
     @FXML
     protected void initialize() {
-        initializeQuizzLists();
-        createUI();
         mainQuizz.quizz_ctrl = this;
-        setTooltips();
-        game_sc.setOnMouseClicked(e -> {
-            if (notificationPane.isVisible() &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), fA) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), fB) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), fC) &&
-                    inHierarchy(e.getPickResult().getIntersectedNode(), fD)) {
-                hideNotification();
-            }
-        });
+        super.initialize();
     }
 
     @FXML
@@ -108,7 +98,7 @@ public class Quizz_ctrl extends Game_ctrl {
         }
     }
 
-    private void createUI() {
+    protected void createUI() {
         // Create Question
         mainQuizz.createQuestion(question, ansA, ansB, ansC, ansD);
 
@@ -116,7 +106,7 @@ public class Quizz_ctrl extends Game_ctrl {
         mainQuizz.createGameTitle(titleHBox);
     }
 
-    private void initializeQuizzLists() {
+    protected void initializeGameData() {
         try (InputStream inputStream = getClass().getResourceAsStream("/game/quizz.txt");
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String question;
@@ -137,6 +127,17 @@ public class Quizz_ctrl extends Game_ctrl {
         }
 
         mainQuizz.getRandomLevel();
+    }
+
+    protected void hideNotification(MouseEvent e) {
+        if (notificationPane.isVisible() &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane) &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), fA) &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), fB) &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), fC) &&
+                inHierarchy(e.getPickResult().getIntersectedNode(), fD)) {
+            hideNotification();
+        }
     }
 
     @FXML
