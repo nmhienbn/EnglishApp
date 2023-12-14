@@ -2,14 +2,12 @@ package views.games;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -171,7 +169,7 @@ public class GameNotification {
         helpPane.setLayoutX(250);
         helpPane.setLayoutY(80);
         Parent tmp = File_loader.getInstance().fxml_loadTab(
-                "front_end/fxml/games/wordle_ins.fxml", null);
+                "front_end/fxml/games/instructions/wordle_ins.fxml", null);
         helpPane.setCenter(tmp);
         setMouseDrag(helpPane);
     }
@@ -183,7 +181,7 @@ public class GameNotification {
         helpPane.setLayoutY(80);
 
         Parent tmp = File_loader.getInstance().fxml_loadTab(
-                "front_end/fxml/games/ctw_ins.fxml", null);
+                "front_end/fxml/games/instructions/ctw_ins.fxml", null);
         helpPane.setCenter(tmp);
         setMouseDrag(helpPane);
     }
@@ -195,7 +193,7 @@ public class GameNotification {
         helpPane.setLayoutY(80);
 
         Parent tmp = File_loader.getInstance().fxml_loadTab(
-                "front_end/fxml/games/quizz_ins.fxml", null);
+                "front_end/fxml/games/instructions/quizz_ins.fxml", null);
         helpPane.setCenter(tmp);
         setMouseDrag(helpPane);
     }

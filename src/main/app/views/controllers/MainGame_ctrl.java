@@ -38,26 +38,24 @@ public class MainGame_ctrl extends AppControllers {
     Quizz_ctrl quizz_ctrl;
 
     @FXML
-    protected void initialize() throws IOException {
+    protected void initialize() {
         setButton(quizz_button, "/front_end/graphic/icons/gameTab/quizz.gif", 2000);
         setButton(wordle_button, "/front_end/graphic/icons/gameTab/wordle.gif", 2000);
         setButton(ctw_button, "/front_end/graphic/icons/gameTab/ctw.gif", 2000);
 
         quizz_ctrl = new Quizz_ctrl();
-        quizz_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/quizz.fxml", quizz_ctrl);
+        quizz_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/games/quizz.fxml", quizz_ctrl);
         wordle_ctrl = new Wordle_ctrl();
-        wordle_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/wordle.fxml", wordle_ctrl);
+        wordle_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/games/wordle.fxml", wordle_ctrl);
         ctwTab_ctrl = new CTW_ctrl();
-        ctw_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/ctw.fxml", ctwTab_ctrl);
+        ctw_tab = File_loader.getInstance().fxml_loadTab("front_end/fxml/games/ctw.fxml", ctwTab_ctrl);
     }
 
     public void setButton(Button button, String filename, double durationMs) {
         AnimatedGif ani = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
         ani.setCycleCount(Animation.INDEFINITE);
         button.setGraphic(ani.getView());
-        button.setOnMouseEntered(e -> {
-            ani.play();
-        });
+        button.setOnMouseEntered(e -> ani.play());
         button.setOnMouseExited(e -> {
             ani.jumpTo(Duration.ZERO);
             ani.stop();

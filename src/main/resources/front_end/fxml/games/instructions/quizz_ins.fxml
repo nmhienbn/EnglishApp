@@ -11,8 +11,8 @@
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@../../css/wordle.css"/>
-        <URL value="@../../css/bootstrapfx.css"/>
+        <URL value="@../../../css/wordle.css"/>
+        <URL value="@../../../css/bootstrapfx.css"/>
     </stylesheets>
     <center>
         <VBox spacing="5" alignment="CENTER">
@@ -22,7 +22,7 @@
             <Line endX="490.0" stroke="#b8b8b8"/>
 
             <ImageView>
-                <Image url="@../../../game/quizz_ex.png" requestedWidth="480" requestedHeight="480"
+                <Image url="@../../../../game/quizz_ex.png" requestedWidth="480" requestedHeight="480"
                        preserveRatio="true"/>
             </ImageView>
 

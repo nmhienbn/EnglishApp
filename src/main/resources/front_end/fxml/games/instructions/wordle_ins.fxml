@@ -11,8 +11,8 @@
 <BorderPane fx:id="tmpPane" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@../../css/wordle.css"/>
-        <URL value="@../../css/bootstrapfx.css"/>
+        <URL value="@../../../css/wordle.css"/>
+        <URL value="@../../../css/bootstrapfx.css"/>
     </stylesheets>
     <center>
         <VBox spacing="5">

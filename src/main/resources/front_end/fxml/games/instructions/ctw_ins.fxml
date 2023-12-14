@@ -11,8 +11,8 @@
 <BorderPane fx:id="tmpPane" prefHeight="400" prefWidth="500" xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@../../css/wordle.css"/>
-        <URL value="@../../css/bootstrapfx.css"/>
+        <URL value="@../../../css/wordle.css"/>
+        <URL value="@../../../css/bootstrapfx.css"/>
     </stylesheets>
     <center>
         <VBox alignment="CENTER" spacing="5">
@@ -23,7 +23,7 @@
 
             <ImageView>
                 <Image preserveRatio="true" requestedHeight="480" requestedWidth="480"
-                       url="@../../../game/ctw/CTW_example.png"/>
+                       url="@../../../../game/ctw/CTW_example.png"/>
             </ImageView>
 
             <Label prefHeight="75.0" prefWidth="478.0" style="-fx-line-spacing: -0.2em;" styleClass="lead" text="
