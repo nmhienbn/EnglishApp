@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="tmpPane" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@../../css/wordle.css"/>
+        <URL value="@../../css/bootstrapfx.css"/>
+    </stylesheets>
+    <center>
+        <VBox spacing="5">
+            <HBox alignment="TOP_CENTER">
+                <Label alignment="CENTER" styleClass="h2, strong" text="HOW TO PLAY" textAlignment="CENTER"/>
+            </HBox>
+            <Line endX="490" stroke="#b8b8b8"/>
+            <Label style="-fx-line-spacing: -0.2em;" styleClass="lead" text="
+• Guess the WORDLE in six tries.&#10;
+• Each guess must be a valid five-letter word.&#10;
+• Hit the enter button to submit.&#10;
+• After each guess, the color of the tiles will change&#10;
+to show how close your guess was to the word."/>
+            <Line endX="490" stroke="#b8b8b8"/>
+            <Label styleClass="h3, strong" text="Examples"/>
+
+            <!-- First Example -->
+            <HBox alignment="CENTER" spacing="3">
+                <Label styleClass="correct-letter-example" text="W"/>
+                <Label styleClass="default-letter-example" text="E"/>
+                <Label styleClass="default-letter-example" text="A"/>
+                <Label styleClass="default-letter-example" text="R"/>
+                <Label styleClass="default-letter-example" text="Y"/>
+            </HBox>
+            <Label styleClass="lead" text="The letter W is in the word and in the correct spot."/>
+
+            <!-- Second Example -->
+            <HBox alignment="CENTER" spacing="3">
+                <Label styleClass="default-letter-example" text="P"/>
+                <Label styleClass="valid-letter-example" text="I"/>
+                <Label styleClass="default-letter-example" text="L"/>
+                <Label styleClass="default-letter-example" text="L"/>
+                <Label styleClass="default-letter-example" text="S"/>
+            </HBox>
+            <Label styleClass="lead" text="The letter I is in the word but in the wrong spot."/>
+
+            <!-- Third Example -->
+            <HBox alignment="CENTER" spacing="3">
+                <Label styleClass="default-letter-example" text="V"/>
+                <Label styleClass="default-letter-example" text="A"/>
+                <Label styleClass="absent-letter-example" text="G"/>
+                <Label styleClass="default-letter-example" text="U"/>
+                <Label styleClass="default-letter-example" text="E"/>
+            </HBox>
+            <Label styleClass="lead" text="The letter G is not in the word in any spot."/>
+            <padding>
+                <Insets left="10.0"/>
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>

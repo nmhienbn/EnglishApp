@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="tmpPane" prefHeight="400" prefWidth="500" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@../../css/wordle.css"/>
+        <URL value="@../../css/bootstrapfx.css"/>
+    </stylesheets>
+    <center>
+        <VBox alignment="CENTER" spacing="5">
+
+            <Label styleClass="h2, strong" text="HOW TO PLAY" textAlignment="CENTER"/>
+
+            <Line endX="490.0" stroke="#b8b8b8"/>
+
+            <ImageView>
+                <Image preserveRatio="true" requestedHeight="480" requestedWidth="480"
+                       url="@../../../game/ctw/CTW_example.png"/>
+            </ImageView>
+
+            <Label prefHeight="75.0" prefWidth="478.0" style="-fx-line-spacing: -0.2em;" styleClass="lead" text="
+• The left picture is RAIN&#10;
+• The right picture is BOW&#10;
+• Hence, the answer is RAINBOW."/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -16,7 +16,7 @@
     -fx-background-color: transparent;
     -fx-background-radius: 0 10 0 0;
     -fx-alignment: center;
-    -fx-background-image: url('../graphic/icons/close.png');
+    -fx-background-image: url('../graphic/icons/black_close.png');
     -fx-background-position: 50%;
     -fx-background-size: 20;
     -fx-background-repeat: no-repeat;
@@ -25,6 +25,7 @@
 }
 
 #closeButton:hover {
+    -fx-background-image: url('../graphic/icons/white_close.png');
     -fx-background-color: #C42B1C;
 }
 
@@ -77,13 +78,12 @@
 #titleBar {
     -fx-pref-width: 1000;
     -fx-pref-height: 30;
-    -fx-background-color: linear-gradient(to bottom, #655180, #3f425a);
-
+    -fx-background-color: #F6FBFF;
     -fx-background-radius: 10 10 0 0;
 }
 
 #nav-panel {
-    -fx-background-color: linear-gradient(to bottom, #655180, #27282E);
+    -fx-background-color: linear-gradient(to bottom, #2E253B, #27282E);
 
     -fx-pref-width: 100;
     -fx-spacing: 2.5px;

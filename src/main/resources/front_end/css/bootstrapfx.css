@@ -1,0 +1,47 @@
+.strong {
+    -fx-font-weight: bold;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    -fx-text-fill: inherit;
+    -fx-fill: inherit;
+}
+
+.h1 {
+    -fx-font-size: 36px;
+}
+
+.h2 {
+    -fx-font-size: 30px;
+}
+
+.h3 {
+    -fx-font-size: 24px;
+}
+
+.h4 {
+    -fx-font-size: 18px;
+}
+
+.h5 {
+    -fx-font-size: 14px;
+}
+
+.h6 {
+    -fx-font-size: 12px;
+}
+
+.lead {
+    -fx-font-size: 16px;
+    -fx-font-weight: 300;
+}
+
+#tmpPane {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-padding: 3;
+    -fx-border-color: #000000;
+    -fx-border-width: 3px;
+    -fx-border-insets: -3;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}

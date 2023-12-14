@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import java.net.URL?>
+<BorderPane fx:id="tmpPane" prefWidth="500" prefHeight="400"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@../../css/wordle.css"/>
+        <URL value="@../../css/bootstrapfx.css"/>
+    </stylesheets>
+    <center>
+        <VBox spacing="5" alignment="CENTER">
+
+            <Label text="HOW TO PLAY" styleClass="h2, strong" textAlignment="CENTER"/>
+
+            <Line endX="490.0" stroke="#b8b8b8"/>
+
+            <ImageView>
+                <Image url="@../../../game/quizz_ex.png" requestedWidth="480" requestedHeight="480"
+                       preserveRatio="true"/>
+            </ImageView>
+
+            <Label text="Choose the missing word from one of the four options A, B, C, D."
+                   styleClass="lead" style="-fx-line-spacing: -0.2em;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
