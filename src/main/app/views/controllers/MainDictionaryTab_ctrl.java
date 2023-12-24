@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.stage.Popup;
@@ -174,9 +175,9 @@ public class MainDictionaryTab_ctrl extends AppControllers {
                     update_wordlist();
 
                     if (t2 != search_button) {
-                        disallow_add_word();
+                        disallow_add_word(add_word_button);
                     } else {
-                        allow_add_word();
+                        allow_add_word(add_word_button);
                     }
                 }
             }
@@ -211,65 +212,79 @@ public class MainDictionaryTab_ctrl extends AppControllers {
     }
 
     //*--------------------------------------------------------------------------------------*//
+    static class DictPopup {
+        Popup popup;
+        Label label;
+        int width;
+        int height;
 
-    private void popup_word_not_exist(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label("Error: Word does not exists");
-        showPopup(popup, label, 400, 100);
-        System.out.println("Word does not exists, WORD: \"" + word + "\"");
+        public DictPopup(Popup popup, Label label, int width, int height) {
+            this.popup = popup;
+            this.label = label;
+            this.width = width;
+            this.height = height;
+        }
+
+        static DictPopup popup_word_not_exist(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label("Error: Word does not exists");
+            System.out.println("Word does not exists, WORD: \"" + word + "\"");
+            return new DictPopup(popup, label, 400, 100);
+        }
+
+        static DictPopup popup_exist(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label("Error: Word exists\n\"" + word + "\"");
+            System.out.println("Word exists, WORD: \"" + word + "\"");
+            return new DictPopup(popup, label, 400, 100);
+        }
+
+        static DictPopup popup_word_updated(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label("Word's meaning updated\n\"" + word + "\"");
+            return new DictPopup(popup, label, 400, 100);
+        }
+
+        static DictPopup popup_word_added(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label("Added word to dictionary\n\"" + word + "\"");
+            return new DictPopup(popup, label, 400, 100);
+        }
+
+        static DictPopup popup_word_not_added(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label(
+                    "Error: Cannot add word to dictionary\n" + "\"" + word + "\"");
+            return new DictPopup(popup, label, 500, 150);
+        }
+
+        static DictPopup popup_word_removed(String word) {
+            Popup popup = new Popup();
+            popup.setAutoHide(true);
+            Label label = new Label("Removed word from dictionary\n\"" + word + "\"");
+            return new DictPopup(popup, label, 400, 100);
+        }
     }
 
-    private void popup_exist(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label("Error: Word exists\n\"" + word + "\"");
-        showPopup(popup, label, 400, 100);
-        System.out.println("Word exists, WORD: \"" + word + "\"");
-    }
-
-    private void popup_word_updated(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label("Word's meaning updated\n\"" + word + "\"");
-        showPopup(popup, label, 400, 100);
-    }
-
-    private void popup_word_added(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label("Added word to dictionary\n\"" + word + "\"");
-        showPopup(popup, label, 400, 100);
-    }
-
-    private void popup_word_not_added(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label(
-                "Error: Cannot add word to dictionary\n" + "\"" + word + "\"");
-        showPopup(popup, label, 500, 150);
-    }
-
-    private void popup_word_removed(String word) {
-        Popup popup = new Popup();
-        popup.setAutoHide(true);
-        Label label = new Label("Removed word from dictionary\n\"" + word + "\"");
-        showPopup(popup, label, 400, 100);
-    }
-
-    private void showPopup(Popup popup, Label label, int width, int height) {
-        label.setTextAlignment(TextAlignment.CENTER);
-        label.setAlignment(javafx.geometry.Pos.CENTER);
-        label.setFont(new Font(25));
-        label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, .3), null, null)));
-        label.setPrefSize(width, height);
+    private void showPopup(DictPopup dictPopup) {
+        dictPopup.label.setTextAlignment(TextAlignment.CENTER);
+        dictPopup.label.setAlignment(javafx.geometry.Pos.CENTER);
+        dictPopup.label.setFont(new Font(25));
+        dictPopup.label.setTextFill(Color.WHITE);
+        dictPopup.label.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0, 1), new CornerRadii(10), null)));
+        dictPopup.label.setPrefSize(dictPopup.width, dictPopup.height);
 
         PauseTransition delay = new PauseTransition(Duration.seconds(DEFAULT_POPUP_TIME));
-        delay.setOnFinished(event -> popup.hide());
+        delay.setOnFinished(event -> dictPopup.popup.hide());
         delay.play();
 
-        popup.getContent().add(label);
-        popup.show(wifa_word.getScene().getWindow());
+        dictPopup.popup.getContent().add(dictPopup.label);
+        dictPopup.popup.show(wifa_word.getScene().getWindow());
     }
 
     //*--------------------------------------------------------------------------------------*//
@@ -296,7 +311,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
                 TestAPI.testRemoveWord(word);
                 TestAPI.removeFavoriteWord(word);
                 update_wordlist();
-                popup_word_removed(word);
+                showPopup(DictPopup.popup_word_removed(word));
                 update_word_info_area(null, null, null);
             }
         });
@@ -333,7 +348,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         String word = wifa_word.getText();
         if (word == null || word.isEmpty()) return;
         if (!TestAPI.dictionaryContainWord(word)) {
-            popup_word_not_exist(word);
+            showPopup(DictPopup.popup_word_not_exist(word));
             return;
         }
         edit_word_button.setDisable(true);
@@ -365,23 +380,23 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         String meaning = wifa_meaning_raw.getText();
         TestAPI.testEditWord(wifa_word.getText(), meaning);
         update_word_info_area(wifa_word.getText(), meaning, null);
-        popup_word_updated(wifa_word.getText());
+        showPopup(DictPopup.popup_word_updated(wifa_word.getText()));
     }
 
     private void try_remove_word() {
         if (wifa_word.getText() == null && wifa_word.getText().isEmpty()) return;
         if (!TestAPI.dictionaryContainWord(wifa_word.getText())) {
-            popup_word_not_exist(wifa_word.getText());
+            showPopup(DictPopup.popup_word_not_exist(wifa_word.getText()));
             return;
         }
         alert_confirm_remove_word(wifa_word.getText());
     }
 
-    private void allow_add_word() {
+    private void allow_add_word(Button add_word_button) {
         add_word_button.setDisable(false);
     }
 
-    private void disallow_add_word() {
+    private void disallow_add_word(Button add_word_button) {
         add_word_button.setDisable(true);
     }
 
@@ -389,17 +404,17 @@ public class MainDictionaryTab_ctrl extends AppControllers {
         String word = search_box.getText();
         if (word == null || word.isEmpty()) return;
         if (TestAPI.dictionaryContainWord(word)) {
-            popup_exist(word);
+            showPopup(DictPopup.popup_exist(word));
             return;
         }
 
         boolean success = TestAPI.testAddWord(word, "");
         if (success) {
-            popup_word_added(word);
+            showPopup(DictPopup.popup_word_added(word));
             update_wordlist();
             on_choose_word(word);
         } else {
-            popup_word_not_added(word);
+            showPopup(DictPopup.popup_word_not_added(word));
         }
     }
 
@@ -497,95 +512,98 @@ public class MainDictionaryTab_ctrl extends AppControllers {
             char firstChar = line.charAt(0);
 
             switch (firstChar) {
-                case '/' -> highlightPronunciation(word, line);
-                case '*' -> highlightType(line);
-                case '=' -> highlightExample(line);
-                case '+' -> highlightExampleImply(line);
-                case '-' -> highlightMeaning(line);
-                default -> defaultHighlight(line);
+                case '/' -> wifa_meaning.getChildren().add(HighlightText.highlightPronunciation(word, line));
+                case '*' -> wifa_meaning.getChildren().add(HighlightText.highlightType(line));
+                case '=' -> wifa_meaning.getChildren().add(HighlightText.highlightExample(line));
+                case '+' -> wifa_meaning.getChildren().add(HighlightText.highlightExampleImply(line));
+                case '-' -> wifa_meaning.getChildren().add(HighlightText.highlightMeaning(line));
+                default -> wifa_meaning.getChildren().add(HighlightText.defaultHighlight(line));
             }
         }
     }
 
-    private void defaultHighlight(String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("undefined");
-        text.setText(line + '\n');
-        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
-        text.setFill(Color.BLACK);
-        wifa_meaning.getChildren().add(text);
-    }
+    static class HighlightText {
 
-    private void highlightMeaning(String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("meaning");
-        text.setText(line + '\n');
-        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
-        text.setFill(Color.BLACK);
-        wifa_meaning.getChildren().add(text);
-    }
-
-    private void highlightExampleImply(String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("example");
-        String[] parts = line.split("\\+");
-
-        StringBuilder strb = new StringBuilder();
-        //String str = "   Ex: " + parts[0].trim();
-        for (String part : parts) {
-            //str += "\n   " + "  => " + parts[i].trim();
-            strb.append("   ").append("  => ").append(part.trim()).append("\n");
+        static Text defaultHighlight(String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("undefined");
+            text.setText(line + '\n');
+            text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+            text.setFill(Color.BLACK);
+            return text;
         }
-        text.setText(strb.toString());
 
-        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
-        text.setFill(Color.BLUE);
-        wifa_meaning.getChildren().add(text);
-    }
+        static Text highlightMeaning(String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("meaning");
+            text.setText(line + '\n');
+            text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 20.0));
+            text.setFill(Color.BLACK);
+            return text;
+        }
 
-    private void highlightExample(String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("example");
-        String[] parts = line.replace("=", "").split("\\+");
-        if (parts.length == 1) {
-            String str = "   Ex: " + parts[0].trim();
-            text.setText(str + '\n');
-        } else {
+        static Text highlightExampleImply(String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("example");
+            String[] parts = line.split("\\+");
+
             StringBuilder strb = new StringBuilder();
-            strb.append("   Ex: ").append(parts[0].trim());
-            for (int i = 1; i < parts.length; i++) {
-                strb.append("\n   ").append("  => ").append(parts[i].trim());
+            //String str = "   Ex: " + parts[0].trim();
+            for (String part : parts) {
+                //str += "\n   " + "  => " + parts[i].trim();
+                strb.append("   ").append("  => ").append(part.trim()).append("\n");
             }
-            text.setText(strb.toString() + '\n');
+            text.setText(strb.toString());
+
+            text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+            text.setFill(Color.BLUE);
+            return text;
         }
-        text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
-        text.setFill(Color.BLUE);
-        wifa_meaning.getChildren().add(text);
-    }
 
-    private void highlightType(String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("type");
-        line = line.replace("*", "").trim();
-        text.setText(line + '\n');
-        text.setFont(Font.font("System", FontWeight.BOLD, FontPosture.REGULAR, 22.0));
-        text.setFill(Color.RED);
-        text.setUnderline(true);
-        wifa_meaning.getChildren().add(text);
-    }
+        static Text highlightExample(String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("example");
+            String[] parts = line.replace("=", "").split("\\+");
+            if (parts.length == 1) {
+                String str = "   Ex: " + parts[0].trim();
+                text.setText(str + '\n');
+            } else {
+                StringBuilder strb = new StringBuilder();
+                strb.append("   Ex: ").append(parts[0].trim());
+                for (int i = 1; i < parts.length; i++) {
+                    strb.append("\n   ").append("  => ").append(parts[i].trim());
+                }
+                text.setText(strb.toString() + '\n');
+            }
+            text.setFont(Font.font("System", FontWeight.NORMAL, FontPosture.REGULAR, 18.0));
+            text.setFill(Color.BLUE);
+            return text;
+        }
 
-    private void highlightPronunciation(String word, String line) {
-        Text text = new Text();
-        text.getStyleClass().add("word-info-text");
-        text.getStyleClass().add("pronounce");
-        text.setText(word + "  -  " + line + '\n');
-        text.setFont(Font.font("System", FontWeight.THIN, FontPosture.ITALIC, 20.0));
-        text.setFill(Color.BLACK);
-        wifa_meaning.getChildren().add(text);
+        static Text highlightType(String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("type");
+            line = line.replace("*", "").trim();
+            text.setText(line + '\n');
+            text.setFont(Font.font("System", FontWeight.BOLD, FontPosture.REGULAR, 22.0));
+            text.setFill(Color.RED);
+            text.setUnderline(true);
+            return text;
+        }
+
+        static Text highlightPronunciation(String word, String line) {
+            Text text = new Text();
+            text.getStyleClass().add("word-info-text");
+            text.getStyleClass().add("pronounce");
+            text.setText(word + "  -  " + line + '\n');
+            text.setFont(Font.font("System", FontWeight.THIN, FontPosture.ITALIC, 20.0));
+            text.setFill(Color.BLACK);
+            return text;
+        }
     }
 }

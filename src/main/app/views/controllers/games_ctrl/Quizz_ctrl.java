@@ -39,8 +39,6 @@ public class Quizz_ctrl extends Game_ctrl {
     private final MainQuizz mainQuizz = MainQuizz.getInstance();
 
     @FXML
-    public AnchorPane game_sc;
-    @FXML
     public GridPane choices;
     @FXML
     StackPane fQ;
@@ -50,18 +48,6 @@ public class Quizz_ctrl extends Game_ctrl {
     public AnchorPane fA, fB, fC, fD;
     @FXML
     public Text ansA, ansB, ansC, ansD;
-    @FXML
-    public Button helpButton;
-    @FXML
-    public HBox titleHBox;
-    @FXML
-    public Button restartButton;
-    @FXML
-    public Button exitButton;
-    @FXML
-    public BorderPane notificationPane;
-    @FXML
-    public Region dimSc;
 
     SequentialTransition sequentialTransition;
 

@@ -1,5 +1,6 @@
 package views.controllers.games_ctrl;
 
+import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -7,6 +8,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -27,11 +29,19 @@ public abstract class Game_ctrl extends AppControllers {
     static MediaPlayer mediaPlayer = new MediaPlayer(media);
 
 
+    @FXML
     public AnchorPane game_sc;
+    @FXML
     public BorderPane notificationPane;
+    @FXML
     public Button helpButton;
+    @FXML
+    public HBox titleHBox;
+    @FXML
     public Button restartButton;
+    @FXML
     public Button exitButton;
+    @FXML
     public Region dimSc;
 
     protected void initialize() {

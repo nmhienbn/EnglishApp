@@ -22,26 +22,12 @@ public class Wordle_ctrl extends Game_ctrl {
     private final MainWordle mainWordle = MainWordle.getInstance();
 
     @FXML
-    public AnchorPane game_sc;
-    @FXML
     public GridPane gridPane;
     @FXML
     public GridPane keyboardRow1;
     public GridPane keyboardRow2;
     public GridPane keyboardRow3;
     public GridPane[] keyboardRows;
-    @FXML
-    public Button helpButton;
-    @FXML
-    public HBox titleHBox;
-    @FXML
-    public Button restartButton;
-    @FXML
-    public Button exitButton;
-    @FXML
-    public BorderPane notificationPane;
-    @FXML
-    public Region dimSc;
 
     // Word lists
     public static final ArrayList<String> winningWords = new ArrayList<>();

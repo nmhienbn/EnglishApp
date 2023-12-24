@@ -20,9 +20,6 @@ import java.util.ArrayList;
 public class CTW_ctrl extends Game_ctrl {
     public static MainPanel_ctrl mainPanelCtrl = null;
     private final MainCatchWord mainCTW = MainCatchWord.getInstance();
-
-    @FXML
-    public AnchorPane game_sc;
     @FXML
     public ImageView ImageAns;
     @FXML
@@ -32,18 +29,6 @@ public class CTW_ctrl extends Game_ctrl {
     public GridPane keyboardRow2;
     public GridPane keyboardRow3;
     public GridPane[] keyboardRows;
-    @FXML
-    public Button helpButton;
-    @FXML
-    public HBox titleHBox;
-    @FXML
-    public Button restartButton;
-    @FXML
-    public Button exitButton;
-    @FXML
-    public BorderPane notificationPane;
-    @FXML
-    public Region dimSc;
 
     // Word lists
     public static final ArrayList<String> winningWords = new ArrayList<>();
