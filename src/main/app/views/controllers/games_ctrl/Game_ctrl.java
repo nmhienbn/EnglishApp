@@ -104,21 +104,7 @@ public abstract class Game_ctrl extends AppControllers {
         setTooltip(exitButton, "Exit");
     }
 
-    protected void showNotification() {
-        dimSc.toFront();
-        dimSc.setVisible(true);
-        notificationPane.toFront();
-        notificationPane.setVisible(true);
-    }
 
-    protected void hideNotification() {
-        dimSc.setVisible(false);
-        notificationPane.setVisible(false);
-        notificationPane.setTranslateX(0);
-        notificationPane.setTranslateY(0);
-        notificationPane.setOnMousePressed(null);
-        notificationPane.setOnMouseDragged(null);
-    }
 
     public abstract void showStartGame();
 

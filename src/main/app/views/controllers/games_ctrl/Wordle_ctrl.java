@@ -5,21 +5,20 @@ import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
-import views.games.MainWordle;
+import views.games.GameWordle;
 
 import java.util.ArrayList;
 
 public class Wordle_ctrl extends Game_ctrl {
     public static MainPanel_ctrl mainPanelCtrl = null;
 
-    private final MainWordle mainWordle = MainWordle.getInstance();
+    private final GameWordle mainWordle = GameWordle.getInstance();
 
     @FXML
     public GridPane gridPane;
@@ -35,7 +34,6 @@ public class Wordle_ctrl extends Game_ctrl {
     @FXML
     protected void initialize() {
         mainWordle.wordle_ctrl = this;
-        GameNotification.wordle_ctrl = this;
         super.initialize();
     }
 
@@ -47,8 +45,7 @@ public class Wordle_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         super.showHelp();
-        GameNotification.instructionWordle(notificationPane);
-        showNotification();
+        new GameNotification().showInstruction(this, "wordle");
     }
 
     @FXML
@@ -110,7 +107,7 @@ public class Wordle_ctrl extends Game_ctrl {
     protected void hideNotification(MouseEvent e) {
         if (notificationPane.isVisible() &&
                 inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
-            hideNotification();
+            new GameNotification().hideNotification(dimSc, notificationPane);
             gridRequestFocus();
         }
     }
@@ -120,11 +117,11 @@ public class Wordle_ctrl extends Game_ctrl {
     }
 
     public static void showWordNotFound() {
-        GameNotification.fadedNotification(MainWordle.getInstance().wordle_ctrl.notificationPane, "INVALID WORD!");
+        new GameNotification().fadedNotification(GameWordle.getInstance().wordle_ctrl.notificationPane, "INVALID WORD!");
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, this,
+        new GameNotification().endGameNotification(guessed, winningWord, this,
                 new String[]{"YOU WON!", "THE WINNING WORD WAS:"});
     }
 }

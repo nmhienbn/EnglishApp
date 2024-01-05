@@ -14,8 +14,8 @@ import java.util.Objects;
 import static views.controllers.games_ctrl.CTW_ctrl.showWrongWord;
 import static views.controllers.games_ctrl.CTW_ctrl.winningWords;
 
-public class MainCatchWord extends Game {
-    protected static MainCatchWord instance = null;
+public class GameCatchWord extends GameWithKeyBoard {
+    protected static GameCatchWord instance = null;
     public CTW_ctrl ctw_ctrl = null;
 
     /**
@@ -27,7 +27,7 @@ public class MainCatchWord extends Game {
     protected int now_level;
 
 
-    protected MainCatchWord() {
+    protected GameCatchWord() {
         // Exists only to defeat instantiation.
     }
 
@@ -36,9 +36,9 @@ public class MainCatchWord extends Game {
      *
      * @return the instance of the mainWordle class
      */
-    public static MainCatchWord getInstance() {
+    public static GameCatchWord getInstance() {
         if (instance == null) {
-            instance = new MainCatchWord();
+            instance = new GameCatchWord();
         }
         return instance;
     }

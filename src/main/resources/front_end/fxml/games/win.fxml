@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<BorderPane prefWidth="400"
+            prefHeight="300"
+            xmlns="http://javafx.com/javafx/15"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@../../css/bootstrapfx.css"/>
+    </stylesheets>
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <Label alignment="CENTER" styleClass="h1, strong" textFill="WHITE" text="CONGRATULATIONS!"/>
+            <Line endX="400" stroke="WHITE"/>
+            <Label id="winMessage" styleClass="lead, big-font" text="Your win message here" textFill="WHITE"/>
+            <Label id="winWord" styleClass="h1, strong" text="Your winning word here" textFill="WHITE"/>
+            <ImageView id="playAgainButton">
+                <Image url="@../../../game/images/play_again.png"/>
+            </ImageView>
+        </VBox>
+    </center>
+    <!-- Set background style based on the condition -->
+    <style>
+        -fx-background-color: linear-gradient(to top, #95FC51, #5B9931);
+        -fx-padding: 3;
+        -fx-background-radius: 30;
+    </style>
+</BorderPane>

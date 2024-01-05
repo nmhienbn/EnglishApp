@@ -18,13 +18,13 @@ import java.util.Objects;
 import static views.controllers.games_ctrl.Wordle_ctrl.showWordNotFound;
 import static views.controllers.games_ctrl.Wordle_ctrl.winningWords;
 
-public class MainWordle extends Game {
-    protected static MainWordle instance = null;
+public class GameWordle extends GameWithKeyBoard {
+    protected static GameWordle instance = null;
     public Wordle_ctrl wordle_ctrl = null;
     protected final String[] LetterStyleClass = {"correct-letter", "valid-letter", "absent-letter"};
 
 
-    protected MainWordle() {
+    protected GameWordle() {
         // Exists only to defeat instantiation.
     }
 
@@ -33,9 +33,9 @@ public class MainWordle extends Game {
      *
      * @return the instance of the mainWordle class
      */
-    public static MainWordle getInstance() {
+    public static GameWordle getInstance() {
         if (instance == null) {
-            instance = new MainWordle();
+            instance = new GameWordle();
         }
         return instance;
     }

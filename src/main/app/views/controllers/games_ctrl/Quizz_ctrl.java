@@ -3,17 +3,15 @@ package views.controllers.games_ctrl;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
 import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
-import views.games.MainQuizz;
+import views.games.GameQuizz;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,7 +34,7 @@ public class Quizz_ctrl extends Game_ctrl {
         }
     }
 
-    private final MainQuizz mainQuizz = MainQuizz.getInstance();
+    private final GameQuizz mainQuizz = GameQuizz.getInstance();
 
     @FXML
     public GridPane choices;
@@ -63,8 +61,7 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         super.showHelp();
-        GameNotification.instructionQuizz(notificationPane);
-        showNotification();
+        new GameNotification().showInstruction(this, "quizz");
     }
 
     @FXML
@@ -122,7 +119,7 @@ public class Quizz_ctrl extends Game_ctrl {
                 inHierarchy(e.getPickResult().getIntersectedNode(), fB) &&
                 inHierarchy(e.getPickResult().getIntersectedNode(), fC) &&
                 inHierarchy(e.getPickResult().getIntersectedNode(), fD)) {
-            hideNotification();
+            new GameNotification().hideNotification(dimSc, notificationPane);
         }
     }
 
@@ -135,7 +132,7 @@ public class Quizz_ctrl extends Game_ctrl {
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, this,
+        new GameNotification().endGameNotification(guessed, winningWord, this,
                 new String[]{"YOUR ANSWER IS CORRECT!", "THE CORRECT ANSWER IS"});
     }
 

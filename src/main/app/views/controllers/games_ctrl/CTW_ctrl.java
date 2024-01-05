@@ -5,7 +5,6 @@ import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -13,13 +12,13 @@ import javafx.scene.layout.*;
 import views.animations.GameAnimations;
 import views.controllers.MainPanel_ctrl;
 import views.games.GameNotification;
-import views.games.MainCatchWord;
+import views.games.GameCatchWord;
 
 import java.util.ArrayList;
 
 public class CTW_ctrl extends Game_ctrl {
     public static MainPanel_ctrl mainPanelCtrl = null;
-    private final MainCatchWord mainCTW = MainCatchWord.getInstance();
+    private final GameCatchWord mainCTW = GameCatchWord.getInstance();
     @FXML
     public ImageView ImageAns;
     @FXML
@@ -36,7 +35,6 @@ public class CTW_ctrl extends Game_ctrl {
     @FXML
     protected void initialize() {
         mainCTW.ctw_ctrl = this;
-        GameNotification.ctw_ctrl = this;
         super.initialize();
     }
 
@@ -48,8 +46,7 @@ public class CTW_ctrl extends Game_ctrl {
     @FXML
     public void showHelp() {
         super.showHelp();
-        GameNotification.instructionCTW(notificationPane);
-        showNotification();
+        new GameNotification().showInstruction(this, "ctw");
     }
 
     @FXML
@@ -114,7 +111,7 @@ public class CTW_ctrl extends Game_ctrl {
     protected void hideNotification(MouseEvent e) {
         if (notificationPane.isVisible() &&
                 inHierarchy(e.getPickResult().getIntersectedNode(), notificationPane)) {
-            hideNotification();
+            new GameNotification().hideNotification(dimSc, notificationPane);
             gridRequestFocus();
         }
     }
@@ -124,11 +121,11 @@ public class CTW_ctrl extends Game_ctrl {
     }
 
     public static void showWrongWord() {
-        GameNotification.fadedNotification(MainCatchWord.getInstance().ctw_ctrl.notificationPane, "WRONG WORD!");
+        new GameNotification().fadedNotification(GameCatchWord.getInstance().ctw_ctrl.notificationPane, "WRONG WORD!");
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {
-        GameNotification.endGameNotification(guessed, winningWord, this,
+        new GameNotification().endGameNotification(guessed, winningWord, this,
                 new String[]{"The word you need to catch was", ""});
     }
 }

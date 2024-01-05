@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import views.File_loader;
+import views.controllers.DictTab.MainDictionaryTab_ctrl;
 import views.controllers.games_ctrl.CTW_ctrl;
 import views.controllers.games_ctrl.Quizz_ctrl;
 import views.controllers.games_ctrl.Wordle_ctrl;

@@ -10,12 +10,12 @@ import views.controllers.games_ctrl.Quizz_ctrl;
 
 import static views.controllers.games_ctrl.Quizz_ctrl.QUESTIONS;
 
-public class MainQuizz extends Game {
-    protected static MainQuizz instance = null;
+public class GameQuizz extends Game {
+    protected static GameQuizz instance = null;
     public Quizz_ctrl quizz_ctrl = null;
 
 
-    protected MainQuizz() {
+    protected GameQuizz() {
         // Exists only to defeat instantiation.
     }
 
@@ -24,9 +24,9 @@ public class MainQuizz extends Game {
      *
      * @return the instance of the mainWordle class
      */
-    public static MainQuizz getInstance() {
+    public static GameQuizz getInstance() {
         if (instance == null) {
-            instance = new MainQuizz();
+            instance = new GameQuizz();
         }
         return instance;
     }

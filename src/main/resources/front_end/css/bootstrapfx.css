@@ -36,6 +36,10 @@
     -fx-font-weight: 300;
 }
 
+.big-font {
+    -fx-font-size: 24px;
+}
+
 #tmpPane {
     -fx-background-color: rgba(255, 255, 255, 1);
     -fx-padding: 3;
