@@ -1,7 +1,11 @@
 package models;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Dictionary {
 
@@ -17,7 +21,8 @@ public class Dictionary {
         return instance;
     }
 
-    private Trie trie = null;
+    private volatile Trie trie = null;
+    private volatile int cnt = 0;
 
     private Dictionary() {
         trie = new Trie();
@@ -29,7 +34,8 @@ public class Dictionary {
      * @param str string to be added.
      * @return true if the word is added successfully.
      */
-    public boolean addWord(String str, String meaning) {
+    public synchronized boolean addWord(String str, String meaning) {
+//        System.out.println(++cnt);
         return trie.addWord(str, meaning);
     }
 
@@ -95,13 +101,14 @@ public class Dictionary {
      * Import all words from Scanner.
      * Format: "{English meaning}" + "{Vietnamese meaning}"
      */
-    public void imports(Scanner cin) {
-        String line;
-        while (cin.hasNextLine()) {
-            line = cin.nextLine();
+    public void imports(BufferedReader reader) {
+        ExecutorService executorService = Executors.newFixedThreadPool(30);
+        long start = System.currentTimeMillis();
+        reader.lines().forEach(line -> executorService.submit(() -> {
             String[] tmp = line.split("\t", 2);
             addWord(tmp[0], tmp[1].replaceAll("\\\\", "\n"));
-        }
+        }));
+        System.out.println("Imported in " + (System.currentTimeMillis() - start) + "ms");
     }
 
     /**

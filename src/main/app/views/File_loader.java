@@ -6,8 +6,6 @@ import java.net.URL;
 import views.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import views.controllers.MainGame_ctrl;
-import views.controllers.games_ctrl.Quizz_ctrl;
 
 public class File_loader {
 

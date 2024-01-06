@@ -1,6 +1,6 @@
 package views.controllers.DictTab;
 
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class EditWord {
     MainDictionaryTab_ctrl dictCtrl;
@@ -41,7 +41,7 @@ public class EditWord {
         wifa_meaning.setDisable(false);
         wifa_scrollpane.setDisable(false);
         String meaning = wifa_meaning_raw.getText();
-        TestAPI.testEditWord(wifa_word.getText(), meaning);
+        DictFacade.Dict.edit(wifa_word.getText(), meaning);
         new WordInfoArea(dictCtrl).update_word_info_area(wifa_word.getText(), meaning, null);
         DictPopup.popup_word_updated(wifa_word.getText()).showPopup(dictCtrl);
     }

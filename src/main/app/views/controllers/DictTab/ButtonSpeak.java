@@ -3,7 +3,7 @@ package views.controllers.DictTab;
 import controllers.GoogleTranslate;
 import javaGif.AnimatedGif;
 import javafx.animation.Animation;
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class ButtonSpeak {
     MainDictionaryTab_ctrl dictCtrl;
@@ -24,7 +24,7 @@ public class ButtonSpeak {
         speak_button.setOnAction(e -> {
             speak_button.setDisable(true);
             GoogleTranslate.ani = ani;
-            TestAPI.SpeakAPI(wifa_word.getText(), "en");
+            DictFacade.Dict.speak(wifa_word.getText(), "en");
             speak_button.setDisable(false);
         });
     }

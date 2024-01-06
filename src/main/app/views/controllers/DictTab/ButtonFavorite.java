@@ -1,6 +1,6 @@
 package views.controllers.DictTab;
 
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class ButtonFavorite {
     MainDictionaryTab_ctrl dictCtrl;
@@ -20,13 +20,13 @@ public class ButtonFavorite {
         System.out.println("action toggle favorite called");
         String word = wifa_word.getText();
         if (favorite_toggle_button.isSelected()) {
-            if (word == null || word.isEmpty() || !TestAPI.dictionaryContainWord(word)) {
+            if (word == null || word.isEmpty() || !DictFacade.Dict.contains(word)) {
                 favorite_toggle_button.setSelected(false);
                 return;
             }
-            TestAPI.addFavoriteWord(word);
+            DictFacade.Favourite.add(word);
         } else {
-            TestAPI.removeFavoriteWord(word);
+            DictFacade.Favourite.remove(word);
         }
     }
 }

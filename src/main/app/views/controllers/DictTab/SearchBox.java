@@ -1,11 +1,7 @@
 package views.controllers.DictTab;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class SearchBox {
     MainDictionaryTab_ctrl dictCtrl;
@@ -34,11 +30,11 @@ public class SearchBox {
 
         if (word == null) return;
         //System.out.println("choose word: " + word);
-        favorite_toggle_button.setSelected(TestAPI.isFavoriteWord(word));
+        favorite_toggle_button.setSelected(DictFacade.Favourite.check(word));
 
-        new WordInfoArea(dictCtrl).update_word_info_area(word, TestAPI.getWordMeaning(word), word_list_box);
+        new WordInfoArea(dictCtrl).update_word_info_area(word, DictFacade.Dict.getMeaning(word), word_list_box);
 
         if (SHF_group.getSelectedToggle() != history_button)
-            TestAPI.addSearchHistory(word);
+            DictFacade.History.add(word);
     }
 }

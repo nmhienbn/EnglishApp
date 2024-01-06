@@ -7,12 +7,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
-import views.controllers.games_ctrl.CTW_ctrl;
+import views.controllers.Games.CTW_ctrl;
 
 import java.util.Objects;
 
-import static views.controllers.games_ctrl.CTW_ctrl.showWrongWord;
-import static views.controllers.games_ctrl.CTW_ctrl.winningWords;
+import static views.controllers.Games.CTW_ctrl.showWrongWord;
+import static views.controllers.Games.CTW_ctrl.winningWords;
 
 public class GameCatchWord extends GameWithKeyBoard {
     protected static GameCatchWord instance = null;

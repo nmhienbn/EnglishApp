@@ -64,8 +64,8 @@
                     <Insets />
                 </VBox.margin>
             </Button>
-            <Button id="main_dictionary" fx:id="main_dictionary_button" layoutX="10.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" styleClass="nav-button" textFill="WHITE" />
-            <Button id="google" fx:id="google_translate_button" alignment="CENTER" layoutX="10.0" layoutY="93.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" styleClass="nav-button" textFill="WHITE" />
+            <Button id="main_dictionary" fx:id="dict_button" layoutX="10.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" styleClass="nav-button" textFill="WHITE" />
+            <Button id="google" fx:id="gg_dict_button" alignment="CENTER" layoutX="10.0" layoutY="93.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" styleClass="nav-button" textFill="WHITE" />
             <Button id="quizz" fx:id="game_button" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" styleClass="nav-button" textFill="WHITE" />
         </VBox>
     </left>

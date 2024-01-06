@@ -1,6 +1,6 @@
 package views.controllers.DictTab;
 
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class ButtonAddWord {
     MainDictionaryTab_ctrl dictCtrl;
@@ -19,12 +19,12 @@ public class ButtonAddWord {
 
         String word = search_box.getText();
         if (word == null || word.isEmpty()) return;
-        if (TestAPI.dictionaryContainWord(word)) {
+        if (DictFacade.Dict.contains(word)) {
             DictPopup.popup_exist(word).showPopup(dictCtrl);
             return;
         }
 
-        boolean success = TestAPI.testAddWord(word, "");
+        boolean success = DictFacade.Dict.add(word, "");
         if (success) {
             DictPopup.popup_word_added(word).showPopup(dictCtrl);
             new UpdateWordList().update_wordlist(dictCtrl);

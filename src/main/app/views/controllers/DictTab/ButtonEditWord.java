@@ -1,6 +1,6 @@
 package views.controllers.DictTab;
 
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class ButtonEditWord {
     MainDictionaryTab_ctrl dictCtrl;
@@ -27,7 +27,7 @@ public class ButtonEditWord {
         
         String word = wifa_word.getText();
         if (word == null || word.isEmpty()) return;
-        if (!TestAPI.dictionaryContainWord(word)) {
+        if (!DictFacade.Dict.contains(word)) {
             DictPopup.popup_word_not_exist(word).showPopup(dictCtrl);
             return;
         }

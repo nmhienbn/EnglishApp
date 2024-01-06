@@ -6,9 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import views.animations.GameAnimations;
-import views.controllers.games_ctrl.Quizz_ctrl;
+import views.controllers.Games.Quizz_ctrl;
 
-import static views.controllers.games_ctrl.Quizz_ctrl.QUESTIONS;
+import static views.controllers.Games.Quizz_ctrl.QUESTIONS;
 
 public class GameQuizz extends Game {
     protected static GameQuizz instance = null;

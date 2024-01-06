@@ -9,19 +9,15 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainbg" stylesheets="@../css/googleTab.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainbg" stylesheets="@../css/googleTab.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="translate_button" layoutX="741.0" layoutY="324.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="243.0" text="Dịch" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Button>
-      <Button fx:id="swap_lang_button" alignment="CENTER_RIGHT" layoutX="573.0" layoutY="324.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" text="Hoán đổi" textAlignment="RIGHT">
+      <Button fx:id="swap_lang_button" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="323.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" text="Hoán đổi" textAlignment="RIGHT">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
       <AnchorPane layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="970.0" styleClass="textwindow" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <children>
-            <TextArea fx:id="text1" focusTraversable="false" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <TextArea fx:id="textToTranslate" focusTraversable="false" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -44,7 +40,7 @@
       </AnchorPane>
       <AnchorPane layoutX="15.0" layoutY="381.0" prefHeight="300.0" prefWidth="435.0" styleClass="textwindow" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
-            <TextArea fx:id="text2" focusTraversable="false" prefHeight="250.0" promptText="Bản dịch" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <TextArea fx:id="translatedText" focusTraversable="false" prefHeight="250.0" promptText="Bản dịch" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                <font>
                   <Font size="20.0" />
                </font>

@@ -8,31 +8,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import views.File_loader;
 import views.animations.GameAnimations;
-import views.controllers.games_ctrl.Game_ctrl;
+import views.controllers.Games.Game_ctrl;
 
-import java.io.File;
+import static views.games.GameSound.*;
 
 
 public class GameNotification {
-    static Media media = new Media(new File(System.getProperty("user.dir") +
-            "\\src\\main\\resources\\audio\\click.mp3").toURI().toString());
-    static MediaPlayer mediaPlayer = new MediaPlayer(media);
-
-    static Media win = new Media(new File(System.getProperty("user.dir") +
-            "\\src\\main\\resources\\audio\\win.mp3").toURI().toString());
-    static MediaPlayer mediaWin = new MediaPlayer(win);
-
-    static Media lose = new Media(new File(System.getProperty("user.dir") +
-            "\\src\\main\\resources\\audio\\lose.mp3").toURI().toString());
-    static MediaPlayer mediaLose = new MediaPlayer(lose);
 
     private double xOffset = 0;
     private double yOffset = 0;
@@ -71,10 +58,6 @@ public class GameNotification {
         }
         BorderPane tmpPane = (BorderPane) File_loader.getInstance().fxml_loadTab(link, null);
         mediaPlayer.play();
-        mediaPlayer.setOnEndOfMedia(() -> {
-            mediaPlayer.stop();
-            mediaPlayer.seek(Duration.ZERO);
-        });
         ((Label) tmpPane.lookup("#winMessage")).setText(messages[0]);
         ((Label) tmpPane.lookup("#winWord")).setText(winningWord.toUpperCase());
 
@@ -88,7 +71,7 @@ public class GameNotification {
             scaleTransition.play();
         });
         playAgainButton.setOnMouseClicked(e -> {
-            mediaPlayer.play();
+            mediaClick.play();
             reallyRestart(game_ctrl);
         });
 
@@ -110,10 +93,11 @@ public class GameNotification {
     }
 
     public void showInstruction(Game_ctrl gameCtrl, String gameName) {
+        mediaClick.play();
         BorderPane helpPane = gameCtrl.notificationPane;
         setPanePosition(helpPane, 500, 400, 250, 80);
         Parent tmp = File_loader.getInstance().fxml_loadTab(
-                "front_end/fxml/games/instructions/"+ gameName + "_ins.fxml", null);
+                "front_end/fxml/games/instructions/" + gameName + "_ins.fxml", null);
         helpPane.setCenter(tmp);
         setMouseDrag(helpPane);
         showNotification(gameCtrl.dimSc, helpPane);

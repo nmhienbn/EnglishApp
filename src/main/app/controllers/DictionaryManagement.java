@@ -137,9 +137,9 @@ public class DictionaryManagement {
         }
         String fin1 = filePath;
 
-        try (Scanner cin = new Scanner(new FileReader(fin1))) {
-            dictionary.imports(cin);
-        } catch (FileNotFoundException e) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fin1))) {
+            dictionary.imports(reader);
+        } catch (IOException e) {
             e.printStackTrace();
             return;
         }

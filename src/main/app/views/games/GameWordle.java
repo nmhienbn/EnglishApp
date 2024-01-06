@@ -10,13 +10,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import views.animations.GameAnimations;
-import views.controllers.games_ctrl.Wordle_ctrl;
+import views.controllers.Games.Wordle_ctrl;
 
 import java.util.Collections;
 import java.util.Objects;
 
-import static views.controllers.games_ctrl.Wordle_ctrl.showWordNotFound;
-import static views.controllers.games_ctrl.Wordle_ctrl.winningWords;
+import static views.controllers.Games.Wordle_ctrl.showWordNotFound;
+import static views.controllers.Games.Wordle_ctrl.winningWords;
 
 public class GameWordle extends GameWithKeyBoard {
     protected static GameWordle instance = null;

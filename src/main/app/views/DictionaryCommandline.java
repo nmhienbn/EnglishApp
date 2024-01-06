@@ -2,6 +2,7 @@ package views;
 
 import controllers.DictionaryManagement;
 import models.Word;
+import views.DictFacade.DictFacade;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -184,7 +185,7 @@ public class DictionaryCommandline {
     }
 
     public static void main(String[] args) {
-        TestAPI.LoadDict(false);
+        DictFacade.LoadDict(false);
         DictionaryCommandline dict = new DictionaryCommandline();
 
         while (true) {

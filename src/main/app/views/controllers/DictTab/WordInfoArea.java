@@ -7,7 +7,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class WordInfoArea {
     MainDictionaryTab_ctrl dictCtrl;
@@ -52,7 +52,7 @@ public class WordInfoArea {
         }
         speak_button.setDisable(false);
         wifa_word.setText(word);
-        wifa_meaning_raw.setText(TestAPI.getWordMeaning(word));
+        wifa_meaning_raw.setText(DictFacade.Dict.getMeaning(word));
 
         String[] lines = meaning.split("\n");
 

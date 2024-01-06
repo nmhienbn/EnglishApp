@@ -3,7 +3,7 @@ package views.controllers.DictTab;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.StageStyle;
-import views.TestAPI;
+import views.DictFacade.DictFacade;
 
 public class ButtonResetDictionary {
     MainDictionaryTab_ctrl dictCtrl;
@@ -38,7 +38,7 @@ public class ButtonResetDictionary {
 
         alert.showAndWait().ifPresent(type -> {
             if (type == buttonTypeYes) {
-                TestAPI.resetDictionaryData();
+                DictFacade.resetDictionaryData();
                 new UpdateWordList().update_wordlist(dictCtrl);
                 new WordInfoArea(dictCtrl).update_word_info_area(null, null, null);
             }

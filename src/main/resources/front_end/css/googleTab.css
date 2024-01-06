@@ -32,20 +32,6 @@
     -fx-background-color: #C2C2C2;
 }
 
-#translate_button {
-    -fx-background-image: url(../graphic/icons/googleTab/translate_button_background.png);
-    -fx-background-size: 40;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 10% 50%;
-
-    -fx-background-color: nav_color0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), .1, 0, 0, 0);
-}
-
-#translate_button:hover {
-    -fx-background-color: nav_color1;
-}
-
 .textwindow {
     -fx-background-color: white0;
     -fx-effect: dropshadow(three-pass-box, #27282E, 1, 0, 0, 0);

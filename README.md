@@ -67,3 +67,5 @@ Các kĩ thuật, công nghệ sử dụng để xây dựng ứng dụng.
 ## Hỗ trợ xử lý dữ liệu dưới dạng MySQL/SQLite
 ## Cây kế thừa của từ điển
 ![](./UML.png)
+Có dependencies:
+![](./UMLwithDependencies.png)
