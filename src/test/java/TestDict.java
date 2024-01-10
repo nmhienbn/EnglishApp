@@ -1,9 +1,6 @@
-import controllers.DictionaryManagement;
-import models.Dictionary;
-import models.Trie;
+import models.functions.DictionaryManagement;
+import models.databases.Dictionary;
 import views.DictionaryCommandline;
-
-import java.util.Scanner;
 
 public class TestDict {
     private static final DictionaryManagement wordSet = DictionaryManagement.getInstance();

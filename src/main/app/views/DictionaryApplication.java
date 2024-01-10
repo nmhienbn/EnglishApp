@@ -12,8 +12,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import views.DictFacade.DictFacade;
-import views.controllers.Panel.MainPanel_ctrl;
+import models.DictFacade;
+import controllers.Panel.MainPanel_ctrl;
 
 public class DictionaryApplication extends Application {
     public static void main(String[] args) throws Exception {

@@ -1,8 +1,8 @@
 package views;
 
-import controllers.DictionaryManagement;
-import models.Word;
-import views.DictFacade.DictFacade;
+import models.functions.DictionaryManagement;
+import models.databases.Word;
+import models.DictFacade;
 
 import java.util.ArrayList;
 import java.util.Scanner;
