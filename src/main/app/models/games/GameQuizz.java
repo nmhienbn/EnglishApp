@@ -12,19 +12,7 @@ import controllers.Games.Quizz_ctrl;
 import static controllers.Games.Quizz_ctrl.QUESTIONS;
 
 public class GameQuizz extends Game {
-    protected static GameQuizz instance = null;
-    protected Quizz_ctrl quizz_ctrl = null;
-
-    protected GameQuizz() {
-        // Exists only to defeat instantiation.
-    }
-
-    public static GameQuizz getInstance() {
-        if (instance == null) {
-            instance = new GameQuizz();
-        }
-        return instance;
-    }
+    protected Quizz_ctrl quizzCtrl = null;
 
     private String question;
     private String[] choices;
@@ -34,7 +22,7 @@ public class GameQuizz extends Game {
     @Override
     public void setController(Game_ctrl gameCtrl) {
         this.gameCtrl = gameCtrl;
-        quizz_ctrl = (Quizz_ctrl) gameCtrl;
+        quizzCtrl = (Quizz_ctrl) gameCtrl;
     }
 
     public void createGameTitle(HBox titleHBox) {
@@ -54,7 +42,7 @@ public class GameQuizz extends Game {
         for (Node node : gridPane.getChildren()) {
             if (node instanceof AnchorPane anchorPane) {
                 anchorPane.setOnMouseEntered(event -> {
-                    if (!quizz_ctrl.notificationPane.isVisible() && !isScaled) {
+                    if (!quizzCtrl.notificationPane.isVisible() && !isScaled) {
                         anchorPane.toFront();
                         ScaleTransition scaleTransition = GameAnimations.scaleTrans(anchorPane, 1, 1.2, 150);
                         scaleTransition.play();
@@ -99,7 +87,7 @@ public class GameQuizz extends Game {
     private void onClickedChoice(AnchorPane anchorPane) {
         for (Node node : anchorPane.getChildren()) {
             if (node instanceof Label label) {
-                quizz_ctrl.showEndGameWindow(label.getText().equals(answer), answer);
+                quizzCtrl.showEndGameWindow(label.getText().equals(answer), answer);
             }
         }
     }

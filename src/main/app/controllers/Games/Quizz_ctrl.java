@@ -32,7 +32,7 @@ public class Quizz_ctrl extends Game_ctrl {
         }
     }
 
-    private final GameQuizz mainQuizz = GameQuizz.getInstance();
+    private GameQuizz mainQuizz;
 
     @FXML
     public GridPane choices;
@@ -53,6 +53,7 @@ public class Quizz_ctrl extends Game_ctrl {
     @FXML
     protected void initialize() {
         gameName = "quizz";
+        mainQuizz = new GameQuizz();
         mainQuizz.setController(this);
         super.initialize();
     }

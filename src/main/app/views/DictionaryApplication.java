@@ -16,6 +16,7 @@ import models.DictFacade;
 import controllers.Panel.MainPanel_ctrl;
 
 public class DictionaryApplication extends Application {
+    long startTime = System.currentTimeMillis();
     public static void main(String[] args) throws Exception {
         DictFacade.Init();
         launch(args);
@@ -58,6 +59,7 @@ public class DictionaryApplication extends Application {
         //stage.setMinWidth(1100);
         //stage.setMinHeight(700);
         stage.show();
+        System.out.println("Init time: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 
     // Set app icon

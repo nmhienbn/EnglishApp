@@ -1,6 +1,7 @@
 package models.databases;
 
 import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -87,11 +88,12 @@ public class Dictionary {
      * Export all words to System.out.
      * Format: "{English meaning}" + "{Vietnamese meaning}"
      */
-    public void exports() {
+    public void exports(PrintWriter writer) {
         ArrayList<Word> words = trie.queryAllWords();
 
         for (Word word : words) {
-            System.out.printf("%s\t%s\n", word.getWordTarget(), word.getWordExplain().replaceAll("\n", "\\\\"));
+            writer.printf("%s\t%s\n", word.getWordTarget(),
+                    word.getWordExplain().replaceAll("\n", "\\\\"));
         }
     }
 

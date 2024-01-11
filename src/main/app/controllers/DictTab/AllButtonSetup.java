@@ -6,7 +6,16 @@ import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Tooltip;
 import javafx.util.Duration;
 
-public class Tooltips {
+public class AllButtonSetup {
+    void init_function_button(MainDictionaryTab_ctrl dictCtrl) {
+        new ButtonSpeak(dictCtrl).init();
+        new ButtonEditWord(dictCtrl).init();
+        new ButtonSaveEdit(dictCtrl).init();
+        new ButtonRemoveWord(dictCtrl).init();
+        new ButtonAddWord(dictCtrl).init();
+        new ButtonFavorite(dictCtrl).init();
+        new ButtonResetDictionary(dictCtrl).init();
+    }
     void setup_all_tooltips(ButtonBase[] buttons) {
         for (ButtonBase button : buttons) {
             setup_tooltip(button.getTooltip(), button);

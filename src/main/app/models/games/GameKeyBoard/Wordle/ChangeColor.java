@@ -11,7 +11,7 @@ import controllers.Games.GameAnimations;
 import static models.games.GameKeyBoard.LabelActions.getLabel;
 
 public class ChangeColor {
-    GameWordle mainWordle = GameWordle.getInstance();
+    GameWordle mainWordle;
 
     public ChangeColor(GameWordle mainWordle) {
         this.mainWordle = mainWordle;

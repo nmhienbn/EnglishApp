@@ -5,6 +5,7 @@ import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 public class PanelButton {
@@ -22,13 +23,19 @@ public class PanelButton {
     }
 
     void setButton(Button button, String filename, double durationMs) {
-        AnimatedGif animation = new AnimatedGif(getClass().getResource(filename).toExternalForm(), durationMs);
-        animation.setCycleCount(1);
-        button.setGraphic(animation.getView());
-        animation.getView().setEffect(colorAdjust);
+        ImageView img = new ImageView(new AnimatedGif(getClass().getResource(filename).
+                toExternalForm(), durationMs).getView().getImage());
+        img.setEffect(colorAdjust);
+        button.setGraphic(img);
         button.setOnMousePressed(e -> {
-            animation.getView().setEffect(null); // Remove the effect
+            AnimatedGif animation = new AnimatedGif(getClass().getResource(filename).
+                    toExternalForm(), durationMs);
+            button.setGraphic(animation.getView());
+            animation.setCycleCount(1);
             animation.play();
+            animation.setOnFinished(f -> {
+                button.setGraphic(img);
+            });
         });
     }
 

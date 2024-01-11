@@ -1,5 +1,6 @@
 package controllers.Games;
 
+import controllers.Panel.ChangeTab;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -17,7 +18,6 @@ import static models.games.GameSound.mediaClick;
 
 public abstract class Game_ctrl extends AppControllers {
     protected String gameName;
-
     @FXML
     public AnchorPane game_sc;
     @FXML
@@ -68,7 +68,7 @@ public abstract class Game_ctrl extends AppControllers {
     @FXML
     public final void exitGame() {
         mediaClick.play();
-        GameTab_ctrl.mainPanelCtrl.mainPane.setCenter(GameTab_ctrl.mainPanelCtrl.game_tab);
+        ChangeTab.GameTab(GameTab_ctrl.mainPane);
     }
 
     public abstract void restartAction();

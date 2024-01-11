@@ -1,43 +1,22 @@
 package models.games.GameKeyBoard.Wordle;
 
+import controllers.Games.GameAnimations;
+import controllers.Games.Game_ctrl;
+import controllers.Games.Wordle_ctrl;
 import edu.princeton.cs.algs4.StdRandom;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import controllers.Games.GameAnimations;
-import controllers.Games.Game_ctrl;
-import controllers.Games.Wordle_ctrl;
-import models.games.Game;
 import models.games.GameKeyBoard.GameWithKeyBoard;
 import models.games.GameKeyBoard.LabelActions;
 
 import java.util.Collections;
 import java.util.Objects;
 
-import static controllers.Games.Wordle_ctrl.winningWords;
-
 public class GameWordle extends GameWithKeyBoard {
-    protected static GameWordle instance = null;
     protected Wordle_ctrl wordleCtrl = null;
     protected final String[] LetterStyleClass = {"correct-letter", "valid-letter", "absent-letter"};
-
-
-    protected GameWordle() {
-        // Exists only to defeat instantiation.
-    }
-
-    /**
-     * Gets the instance of the mainWordle class
-     *
-     * @return the instance of the mainWordle class
-     */
-    public static GameWordle getInstance() {
-        if (instance == null) {
-            instance = new GameWordle();
-        }
-        return instance;
-    }
 
     @Override
     public void setController(Game_ctrl gameCtrl) {
@@ -122,7 +101,7 @@ public class GameWordle extends GameWithKeyBoard {
 
     @Override
     public void getRandomLevel() {
-        winWord = winningWords.get(StdRandom.uniformInt(winningWords.size()));
+        winWord = wordleCtrl.winningWords.get(StdRandom.uniformInt(wordleCtrl.winningWords.size()));
     }
 
     /**
@@ -132,7 +111,7 @@ public class GameWordle extends GameWithKeyBoard {
      * @return true if the guess is a valid word, false otherwise
      */
     protected boolean isValidGuess(String guess) {
-        return Collections.binarySearch(winningWords, guess) >= 0;
+        return Collections.binarySearch(wordleCtrl.winningWords, guess) >= 0;
     }
 
     /**

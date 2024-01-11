@@ -64,7 +64,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
     protected void initialize() {
         new SearchArea().init(this);
         new WordInfoArea(this).init();
-        init_function_button(this);
+        new AllButtonSetup().init_function_button(this);
         new EditWord(this).setup();
         new SHFGroup(this).setup();
 
@@ -72,17 +72,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
                 history_button, speak_button, add_word_button, remove_word_button,
                 edit_word_button, save_edit_button, favorite_toggle_button,
                 reset_dictionary_button};
-        new Tooltips().setup_all_tooltips(buttons);
-    }
-
-    void init_function_button(MainDictionaryTab_ctrl dictCtrl) {
-        new ButtonSpeak(this).init();
-        new ButtonEditWord(this).init();
-        new ButtonSaveEdit(this).init();
-        new ButtonRemoveWord(this).init();
-        new ButtonAddWord(this).init();
-        new ButtonFavorite(this).init();
-        new ButtonResetDictionary(this).init();
+        new AllButtonSetup().setup_all_tooltips(buttons);
     }
 
     public boolean isEditing() {

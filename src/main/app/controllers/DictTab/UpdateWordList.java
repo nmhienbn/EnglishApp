@@ -7,39 +7,38 @@ import java.util.ArrayList;
 
 public class UpdateWordList {
     void update_wordlist(MainDictionaryTab_ctrl dictCtrl) {
-        final int MAX_WORD_FIND = 100;
-        TextField search_box = dictCtrl.search_box;
-        ListView<String> word_list_box = dictCtrl.word_list_box;
-        ToggleGroup SHF_group = dictCtrl.SHF_group;
-        ToggleButton search_button = dictCtrl.search_button;
-        ToggleButton favorite_button = dictCtrl.favorite_button;
-        ToggleButton history_button = dictCtrl.history_button;
+        var MAX_WORD_FIND = 100;
+        var search_box = dictCtrl.search_box;
+        var result_list = dictCtrl.word_list_box.getItems();
+        var SHF_group = dictCtrl.SHF_group;
+        var search_button = dictCtrl.search_button;
+        var favorite_button = dictCtrl.favorite_button;
+        var history_button = dictCtrl.history_button;
 
-        word_list_box.getItems().clear();
+        result_list.clear();
         ArrayList<String> wordlist = new ArrayList<>();
 
         if (!search_box.getText().isEmpty())
             wordlist = DictFacade.Dict.getWordsWithPrefix(search_box.getText());
         int count = 0;
+        var selectedToggle = SHF_group.getSelectedToggle();
 
-        if (SHF_group.getSelectedToggle() == search_button) {
+        if (selectedToggle == search_button) {
             for (String word : wordlist) {
-                word_list_box.getItems().add(word);
+                result_list.add(word);
                 count++;
                 if (count >= MAX_WORD_FIND) break;
             }
-        } else if (SHF_group.getSelectedToggle() == favorite_button) {
-            for (String word : wordlist) {
-                if (DictFacade.Favourite.check(word)) {
-                    word_list_box.getItems().add(word);
-                    count++;
-                    if (count >= MAX_WORD_FIND) break;
-                }
+        } else if (selectedToggle == favorite_button) {
+            for (String word : DictFacade.Favourite.getAll()) {
+                result_list.add(word);
+                count++;
+                if (count >= MAX_WORD_FIND) break;
             }
-        } else if (SHF_group.getSelectedToggle() == history_button) {
+        } else if (selectedToggle == history_button) {
             for (String word : DictFacade.History.toIterable()) {
                 if (word.startsWith(search_box.getText())) {
-                    word_list_box.getItems().add(word);
+                    result_list.add(word);
                     count++;
                     if (count >= MAX_WORD_FIND) break;
                 }

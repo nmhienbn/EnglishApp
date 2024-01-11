@@ -12,7 +12,7 @@ import models.games.GameKeyBoard.CTW.GameCatchWord;
 import java.util.ArrayList;
 
 public class CTW_ctrl extends GameKeyBoard_ctrl {
-    private final GameCatchWord mainCTW = GameCatchWord.getInstance();
+    private GameCatchWord mainCTW;
 
     @FXML
     public ImageView ImageAns;
@@ -20,11 +20,12 @@ public class CTW_ctrl extends GameKeyBoard_ctrl {
     public GridPane gridPane;
 
     // Word lists
-    public static final ArrayList<String> winningWords = new ArrayList<>();
+    public ArrayList<String> winningWords;
 
     @FXML
     protected void initialize() {
         gameName = "ctw";
+        mainCTW = new GameCatchWord();
         mainCTW.setController(this);
         gameKeyBoard = mainCTW;
         super.initialize();
@@ -53,6 +54,7 @@ public class CTW_ctrl extends GameKeyBoard_ctrl {
 
     @Override
     protected void initializeGameData() {
+        winningWords = new ArrayList<>();
         initWords("/game/ctw_words.txt", winningWords);
         mainCTW.setLevels(winningWords.size());
         mainCTW.getRandomLevel();
@@ -65,8 +67,8 @@ public class CTW_ctrl extends GameKeyBoard_ctrl {
         mainCTW.createGrid(gridPane, ImageAns);
     }
 
-    public static void showWrongWord() {
-        new GameNotification().fadedNotification(GameCatchWord.getInstance().getController().notificationPane, "WRONG WORD!");
+    public void showWrongWord() {
+        new GameNotification().fadedNotification(mainCTW.getController().notificationPane, "WRONG WORD!");
     }
 
     public void showEndGameWindow(boolean guessed, String winningWord) {

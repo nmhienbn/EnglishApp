@@ -12,15 +12,15 @@ import java.util.ArrayList;
 
 public class Wordle_ctrl extends GameKeyBoard_ctrl {
 
-    private final GameWordle mainWordle = GameWordle.getInstance();
+    private GameWordle mainWordle;
 
     // Word lists
-    public static final ArrayList<String> winningWords = new ArrayList<>();
+    public ArrayList<String> winningWords;
 
     @FXML
     protected void initialize() {
         gameName = "wordle";
-        System.out.println("setController");
+        mainWordle = new GameWordle();
         mainWordle.setController(this);
         gameKeyBoard = mainWordle;
         super.initialize();
@@ -48,6 +48,7 @@ public class Wordle_ctrl extends GameKeyBoard_ctrl {
 
     @Override
     protected void initializeGameData() {
+        winningWords = new ArrayList<>();
         initWords("/game/winning-words.txt", winningWords);
         mainWordle.getRandomLevel();
     }
@@ -60,7 +61,7 @@ public class Wordle_ctrl extends GameKeyBoard_ctrl {
     }
 
     public void showWordNotFound() {
-        new GameNotification().fadedNotification(GameWordle.getInstance().
+        new GameNotification().fadedNotification(mainWordle.
                 getController().notificationPane, "INVALID WORD!");
     }
 

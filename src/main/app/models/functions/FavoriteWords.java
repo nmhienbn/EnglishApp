@@ -4,10 +4,12 @@ import models.DictFacade;
 
 import java.io.*;
 import java.util.HashSet;
+import java.util.TreeSet;
 
 public class FavoriteWords {
-    private static final String favoriteWordsPath = DictFacade.class.getClassLoader().getResource("models/favorite_words.txt").getPath();
-    private static final HashSet<String> favoriteWords = new HashSet<>();
+    private static final String favoriteWordsPath = DictFacade.class.
+            getClassLoader().getResource("models/favorite_words.txt").getPath();
+    private static final TreeSet<String> favoriteWords = new TreeSet<>();
     private static FavoriteWords ins = null;
 
     private FavoriteWords() {
@@ -33,18 +35,11 @@ public class FavoriteWords {
         }
     }
 
-    public void SaveFavoriteWords() {
-        try {
-            PrintStream fileOutputStream = new PrintStream(new FileOutputStream(favoriteWordsPath));
-            System.setOut(fileOutputStream); // Redirect System.out to the file
-
+    public synchronized void SaveFavoriteWords() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(favoriteWordsPath))) {
             for (String word : favoriteWords) {
-                System.out.println(word);
+                writer.println(word);
             }
-            // Close the fileOutputStream
-            fileOutputStream.close();
-            // You can restore the original System.out like this:
-            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,6 +48,10 @@ public class FavoriteWords {
 
     public boolean isFavoriteWord(String word) {
         return favoriteWords.contains(word);
+    }
+
+    public TreeSet<String> getFavoriteWords() {
+        return favoriteWords;
     }
 
     public void addFavoriteWord(String word) {

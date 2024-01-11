@@ -1,25 +1,22 @@
 package models.games.GameKeyBoard.CTW;
 
+import controllers.Games.CTW_ctrl;
+import controllers.Games.GameAnimations;
+import controllers.Games.Game_ctrl;
 import edu.princeton.cs.algs4.StdRandom;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import controllers.Games.GameAnimations;
-import controllers.Games.CTW_ctrl;
-import controllers.Games.Game_ctrl;
 import models.games.GameKeyBoard.GameWithKeyBoard;
 
 import java.util.Objects;
 
-import static controllers.Games.CTW_ctrl.showWrongWord;
-import static controllers.Games.CTW_ctrl.winningWords;
 import static models.games.GameKeyBoard.LabelActions.*;
 
 public class GameCatchWord extends GameWithKeyBoard {
-    protected static GameCatchWord instance = null;
-    protected CTW_ctrl ctw_ctrl = null;
+    protected CTW_ctrl ctwCtrl = null;
 
     /**
      * Variables for the grid.
@@ -28,23 +25,6 @@ public class GameCatchWord extends GameWithKeyBoard {
     protected int ord_winningWord;
     protected int[] level;
     protected int now_level;
-
-
-    protected GameCatchWord() {
-        // Exists only to defeat instantiation.
-    }
-
-    /**
-     * Gets the instance of the mainWordle class
-     *
-     * @return the instance of the mainWordle class
-     */
-    public static GameCatchWord getInstance() {
-        if (instance == null) {
-            instance = new GameCatchWord();
-        }
-        return instance;
-    }
 
     public void setLevels(int cntLevels) {
         level = new int[cntLevels];
@@ -58,7 +38,7 @@ public class GameCatchWord extends GameWithKeyBoard {
     @Override
     public void setController(Game_ctrl gameCtrl) {
         this.gameCtrl = gameCtrl;
-        ctw_ctrl = (CTW_ctrl) gameCtrl;
+        ctwCtrl = (CTW_ctrl) gameCtrl;
     }
 
     @Override
@@ -82,6 +62,9 @@ public class GameCatchWord extends GameWithKeyBoard {
      * @param gridPane the gridPane that will contain the keyboard
      */
     public void createGrid(GridPane gridPane, ImageView img) {
+//        img.setImage(new Image("file:" + System.getProperty("user.dir") +
+//                String.format("\\src\\main\\resources\\game\\ctw\\%d.jpg", ord_winningWord),
+//                300, 300, true, true));
         img.setImage(new Image(String.format("/game/ctw/%d.jpg", ord_winningWord),
                 300, 300, true, true));
 
@@ -146,9 +129,9 @@ public class GameCatchWord extends GameWithKeyBoard {
         if (CUR_COLUMN == MAX_COLUMN) {
             String guess = getWordFromCurrentRow(gridPane).toLowerCase();
             if (guess.equals(winWord)) {
-                ctw_ctrl.showEndGameWindow(true, winWord);
+                ctwCtrl.showEndGameWindow(true, winWord);
             } else {
-                showWrongWord();
+                ctwCtrl.showWrongWord();
             }
         }
     }
@@ -163,7 +146,7 @@ public class GameCatchWord extends GameWithKeyBoard {
             StdRandom.shuffle(level);
         }
         ord_winningWord = level[now_level];
-        winWord = winningWords.get(ord_winningWord);
+        winWord = ctwCtrl.winningWords.get(ord_winningWord);
         MAX_COLUMN = winWord.length();
     }
 
@@ -180,6 +163,6 @@ public class GameCatchWord extends GameWithKeyBoard {
         createKeyBoard(keyboardRows, gridPane);
 
         CUR_COLUMN = 1;
-        ctw_ctrl.gridRequestFocus();
+        ctwCtrl.gridRequestFocus();
     }
 }

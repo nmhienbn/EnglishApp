@@ -10,7 +10,7 @@ public class DictionaryManagement {
     public final String ORIGINAL_DICTIONARY_PATH = this.getClass().getResource("/models/original_dictionaries.txt").getPath();
     public final String DEFAULT_DICTIONARY_PATH = this.getClass().getResource("/models/dictionaries.txt").getPath();
     private static DictionaryManagement ins = null;
-    private Dictionary dictionary = Dictionary.getInstance();
+    private final Dictionary dictionary = Dictionary.getInstance();
 
     public static DictionaryManagement getInstance() {
         if (ins == null) {
@@ -89,31 +89,6 @@ public class DictionaryManagement {
     }
 
     /**
-     * Translate a string from source language to target language.
-     * <em>sourceLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ... or an <em>auto</em> (auto detect).
-     * <em>targetLanguage</em> = <em>en</em> (English), <em>vn</em> (Vietnamese), ...
-     *
-     * @param str            text to translate
-     * @param sourceLanguage source language
-     * @param targetLanguage target language
-     * @return translated text
-     */
-    public String translate(String str, String sourceLanguage, String targetLanguage) throws IOException {
-        return GoogleTranslate.translate(str, sourceLanguage, targetLanguage);
-    }
-
-    /**
-     * Speek text.
-     *
-     * @param text     content of text to speak
-     * @param language language of text, vi for vietnamese, en for english, ...
-     * @throws IOException if cannot speak
-     */
-    public void speak(String text, String language) throws IOException {
-        GoogleTranslate.speak(text, language);
-    }
-
-    /**
      * Clear all the words in dictionary
      */
     public void dictionaryClear() {
@@ -157,18 +132,9 @@ public class DictionaryManagement {
      * @param fout output directory.
      */
     public void dictionaryExportToFile(String fout) {
-        try {
-            PrintStream fileOutputStream = new PrintStream(new FileOutputStream(fout));
-            System.setOut(fileOutputStream); // Redirect System.out to the file
-
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fout))) {
             // export
-            dictionary.exports();
-
-            // Close the fileOutputStream
-            fileOutputStream.close();
-
-            // You can restore the original System.out like this:
-            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+            dictionary.exports(writer);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -7,16 +7,35 @@ import models.functions.HistoryWords;
 import models.databases.Word;
 
 import java.util.*;
+import java.util.concurrent.ExecutorService;
 
 public class DictFacade {
     public static void Init() {
-        LoadDict(false);
-        favoriteWords.LoadFavoriteWords();
+        ExecutorService executorService = java.util.concurrent.Executors.newFixedThreadPool(3);
+        executorService.submit(() -> {
+            LoadDict(false);
+        });
+        executorService.submit(favoriteWords::LoadFavoriteWords);
+        executorService.submit(historyWords::LoadSearchedWords);
+        executorService.shutdown();
+        try {
+            executorService.awaitTermination(Long.MAX_VALUE, java.util.concurrent.TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void Shutdown() {
-        SaveDict();
-        favoriteWords.SaveFavoriteWords();
+        ExecutorService executorService = java.util.concurrent.Executors.newFixedThreadPool(3);
+        executorService.submit(DictFacade::SaveDict);
+        executorService.submit(favoriteWords::SaveFavoriteWords);
+        executorService.submit(historyWords::SaveSearchedWords);
+        executorService.shutdown();
+        try {
+            executorService.awaitTermination(Long.MAX_VALUE, java.util.concurrent.TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private static final DictionaryManagement wordSet = DictionaryManagement.getInstance();
@@ -26,6 +45,10 @@ public class DictFacade {
     public static class Favourite {
         public static boolean check(String word) {
             return FavoriteWords.getInstance().isFavoriteWord(word);
+        }
+
+        public static TreeSet<String> getAll() {
+            return FavoriteWords.getInstance().getFavoriteWords();
         }
 
         public static void add(String word) {
@@ -62,7 +85,7 @@ public class DictFacade {
         wordSet.dictionaryInsertFromFile(wordSet.ORIGINAL_DICTIONARY_PATH);
     }
 
-    public static void SaveDict() {
+    public static synchronized void SaveDict() {
         wordSet.dictionaryExportToFile(wordSet.DEFAULT_DICTIONARY_PATH);
     }
 
@@ -110,7 +133,7 @@ public class DictFacade {
             if (text == null || text.isEmpty()) return;
             try {
                 System.out.println("start speak: " + text);
-                wordSet.speak(text, lang);
+                GoogleTranslate.speak(text, lang);
                 System.out.println("end speak: " + text);
             } catch (Exception e) {
                 System.out.println("SPEAK API ERROR");

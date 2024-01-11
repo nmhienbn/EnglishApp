@@ -17,15 +17,13 @@ public class File_loader {
         return instance;
     }
 
-    private File_loader() {
-    }
+    public Parent fxml_loadTab(String path, AppControllers controllerObject) {
+        FXMLLoader loader = new FXMLLoader(getUrl(path));
 
-    public URL getUrl(String path) {
-        return getClass().getClassLoader().getResource(path);
-    }
+        if (controllerObject != null) {
+            loader.setController(controllerObject);
+        }
 
-    // * use this to handle exception
-    private Parent FXMLloader_load(FXMLLoader loader) {
         try {
             return loader.load();
         } catch (IOException e) {
@@ -33,17 +31,15 @@ public class File_loader {
         }
     }
 
-    public String get_css(String name) {
-        return getUrl("front_end/css/" + name).toExternalForm();
+    private File_loader() {
     }
 
-    public Parent fxml_loadTab(String path, AppControllers controllerObject) {
-        FXMLLoader loader = new FXMLLoader(getUrl(path));
+    public URL getUrl(String path) {
+        return getClass().getClassLoader().getResource(path);
+    }
 
-        if (controllerObject != null) {
-            loader.setController(controllerObject);
-        }
-        return FXMLloader_load(loader);
+    public String get_css(String name) {
+        return getUrl("front_end/css/" + name).toExternalForm();
     }
 
 }

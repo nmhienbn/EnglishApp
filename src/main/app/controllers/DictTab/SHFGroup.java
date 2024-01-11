@@ -18,6 +18,8 @@ public class SHFGroup {
         var favorite_button = dictCtrl.favorite_button;
         var history_button = dictCtrl.history_button;
         var add_word_button = dictCtrl.add_word_button;
+        var search_box = dictCtrl.search_box;
+        var result_list = dictCtrl.word_list_box.getItems();
 
         search_button.setToggleGroup(SHF_group);
         favorite_button.setToggleGroup(SHF_group);
@@ -30,8 +32,8 @@ public class SHFGroup {
                 if (t2 == null)
                     t1.setSelected(true);
                 else if (t1 != null && t1 != t2) {
+                    search_box.setText("");
                     new UpdateWordList().update_wordlist(dictCtrl);
-
                     if (t2 != search_button) {
                         disallow_add_word(add_word_button);
                     } else {
