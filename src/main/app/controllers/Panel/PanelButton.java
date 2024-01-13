@@ -8,6 +8,8 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+import java.util.Objects;
+
 public class PanelButton {
     MainPanel_ctrl mainPanelCtrl;
 
@@ -23,19 +25,13 @@ public class PanelButton {
     }
 
     void setButton(Button button, String filename, double durationMs) {
-        ImageView img = new ImageView(new AnimatedGif(getClass().getResource(filename).
-                toExternalForm(), durationMs).getView().getImage());
-        img.setEffect(colorAdjust);
-        button.setGraphic(img);
+        AnimatedGif animation = new AnimatedGif(Objects.requireNonNull(getClass().getResource(filename)).
+                toExternalForm(), durationMs);
+        animation.getView().setEffect(colorAdjust);
+        button.setGraphic(animation.getView());
         button.setOnMousePressed(e -> {
-            AnimatedGif animation = new AnimatedGif(getClass().getResource(filename).
-                    toExternalForm(), durationMs);
-            button.setGraphic(animation.getView());
             animation.setCycleCount(1);
             animation.play();
-            animation.setOnFinished(f -> {
-                button.setGraphic(img);
-            });
         });
     }
 

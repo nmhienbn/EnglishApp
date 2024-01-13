@@ -1,8 +1,8 @@
 package models.games.GameKeyBoard;
 
+import controllers.Games.Game_ctrl;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
-import controllers.Games.Game_ctrl;
 
 public class MouseActionsOnKeyboard {
     Game_ctrl gameCtrl = null;

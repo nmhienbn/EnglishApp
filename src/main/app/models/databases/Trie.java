@@ -3,18 +3,9 @@ package models.databases;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Trie{
+public class Trie {
 
-    private class Node {
-        Node[] child; // Children of node.
-        Word word = null;
-
-        Node() {
-            child = new Node[30];
-        }
-    }
-
-    private final Node root;
+    private final TrieNode root;
     private final HashMap<Character, Integer> charset; // Map char to int.
     private int cntChar; // = 30
     private ArrayList<Word> proposedString; // use for get queries
@@ -23,7 +14,7 @@ public class Trie{
      * Trie constructor.
      */
     Trie() {
-        root = new Node();
+        root = new TrieNode();
 
         cntChar = 0;
         charset = new HashMap<>();
@@ -39,7 +30,7 @@ public class Trie{
     public boolean addWord(String str, String meaning) {
         String s = str.toLowerCase();
 
-        Node p = root;
+        TrieNode p = root;
         for (int i = 0; i < s.length(); ++i) {
             Integer c = charset.get(s.charAt(i));
             if (c == null) {
@@ -47,7 +38,7 @@ public class Trie{
                 return false;
             }
             if (p.child[c] == null) {
-                p.child[c] = new Node();
+                p.child[c] = new TrieNode();
             }
             p = p.child[c];
         }
@@ -63,7 +54,7 @@ public class Trie{
     public boolean editWord(String str, String meaning) {
         String s = str.toLowerCase();
 
-        Node p = root;
+        TrieNode p = root;
         for (int i = 0; i < s.length(); ++i) {
             Integer c = charset.get(s.charAt(i));
             if (c == null || p.child[c] == null) {
@@ -86,7 +77,7 @@ public class Trie{
     public boolean deleteWord(String str) {
         String s = str.toLowerCase();
 
-        Node p = root;
+        TrieNode p = root;
         for (int i = 0; i < s.length(); ++i) {
             Integer c = charset.get(s.charAt(i));
             if (c == null || p.child[c] == null) {
@@ -108,10 +99,10 @@ public class Trie{
      * Find a string in trie.
      *
      * @param s string to find
-     * @return null or the Node corresponding to s
+     * @return null or the TrieNode corresponding to s
      */
-    private Node findString(String s) {
-        Node p = root;
+    private TrieNode findString(String s) {
+        TrieNode p = root;
         for (int i = 0; i < s.length(); ++i) {
             Integer c = charset.get(s.charAt(i));
             if (c == null || p.child[c] == null) {
@@ -122,7 +113,6 @@ public class Trie{
         return p;
     }
 
-
     /**
      * Find a word in Trie.
      *
@@ -130,7 +120,7 @@ public class Trie{
      */
     public Word lookupWord(String str) {
         String s = str.toLowerCase();
-        Node foundNode = findString(s);
+        TrieNode foundNode = findString(s);
         if (foundNode == null)
             return null;
         else {
@@ -149,7 +139,7 @@ public class Trie{
      *
      * @param u Current node in Trie
      */
-    private void findAllWordTargets(Node u) {
+    private void findAllWordTargets(TrieNode u) {
         if (u.word != null) {
             proposedString.add(u.word);
         }
@@ -162,13 +152,14 @@ public class Trie{
 
     /**
      * Find all words with a string as prefix
+     *
      * @param str prefix
      * @return
      */
     public ArrayList<Word> getProposedString(String str) {
         String s = str.toLowerCase();
         proposedString = new ArrayList<>();
-        Node p = root;
+        TrieNode p = root;
         for (int i = 0; i < s.length(); ++i) {
             Integer c = charset.get(s.charAt(i));
             if (c == null || p.child[c] == null) {
@@ -183,28 +174,35 @@ public class Trie{
 
     /**
      * Delete a branch
+     *
      * @param cur root of the branch
-     * @param freeMemory true if free memory after deleting, false otherwise
      */
-    private void deleteBranch(Node cur, boolean freeMemory) {
+    private void deleteBranch(TrieNode cur) {
         if (cur == null) {
             return;
         }
-
-        for (int i = 0; i < 30; ++i) {
-            deleteBranch(cur.child[i], freeMemory);
-            if (freeMemory) {
-                cur.child[i] = null;
-            }
-        }
-
         cur.word = null;
+        for (int i = 0; i < cur.child.length; ++i) {
+            deleteBranch(cur.child[i]);
+            cur.child[i] = null;
+        }
     }
 
     /**
      * Clear trie.
      */
     public void clear() {
-        deleteBranch(root, false);
+        proposedString = null;
+        deleteBranch(root);
+    }
+
+    public static class TrieNode {
+        public static int cnt = 0;
+        private final TrieNode[] child = new TrieNode[30]; // Children of node.
+        private Word word;
+
+        protected void finalize() {
+            ++cnt;
+        }
     }
 }

@@ -14,10 +14,10 @@ import javafx.util.Duration;
 public class DictPopup {
 
     static final double DEFAULT_POPUP_TIME = 1.2;
-    Popup popup;
-    Label label;
-    int width;
-    int height;
+    final Popup popup;
+    final Label label;
+    final int width;
+    final int height;
 
     public DictPopup(Popup popup, Label label, int width, int height) {
         this.popup = popup;

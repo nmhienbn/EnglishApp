@@ -1,7 +1,7 @@
 package models.databases;
 
 public class Word {
-    private final String word_target; // Just contains 29 distinct chars: 'a'-'z', ' ', '-', '.', '\''
+    private final String word_target; // Just contains 30 distinct chars: 'a'-'z', ' ', '-', '.', '\''
     private String word_explain;
 
     public Word(String word_target, String word_explain) {
@@ -11,8 +11,7 @@ public class Word {
 
     @Override
     public String toString() {
-        String s = word_target + '\n' + word_explain.replaceAll("\\\\", "\n");
-        return s;
+        return word_target + '\n' + word_explain.replaceAll("\\\\", "\n");
     }
 
     public void setWordExplain(String word_explain) {

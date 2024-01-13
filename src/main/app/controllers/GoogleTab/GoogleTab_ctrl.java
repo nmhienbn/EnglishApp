@@ -1,10 +1,10 @@
 package controllers.GoogleTab;
 
+import controllers.AppControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import controllers.AppControllers;
 
 public class GoogleTab_ctrl extends AppControllers {
     @FXML

@@ -7,8 +7,12 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 public class GoogleTranslate {
@@ -52,9 +56,9 @@ public class GoogleTranslate {
 
         String trans = "-1";
         try {
-            trans = content.toString().substring(2, content.toString().length() - 2);
+            trans = content.substring(2, content.toString().length() - 2);
         } catch (Exception e) {
-            System.out.print("Error: " + e.toString());
+            System.out.print("Error: " + e);
             return "-1";
         }
 
@@ -66,9 +70,8 @@ public class GoogleTranslate {
      *
      * @param text     content of text to speak
      * @param language language of text, vi for vietnamese, en for english, ...
-     * @throws IOException if it cannot speak, throw IOException
      */
-    public static void speak(String text, String language) throws IOException {
+    public static void speak(String text, String language) {
         // https://translate.google.com.vn/translate_tts?ie=UTF-8&q=Ki%E1%BA%BFt%20gi%C3%A0%20Tr%C3%AAn&tl=vi&client=tw-ob
         String urlStr = String.format("https://translate.google.com.vn/translate_tts?ie=UTF-8&q=%s&tl=%s&client=tw-ob",
                 URLEncoder.encode(text, StandardCharsets.UTF_8), language);

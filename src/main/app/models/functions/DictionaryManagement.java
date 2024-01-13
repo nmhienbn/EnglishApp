@@ -113,8 +113,7 @@ public class DictionaryManagement {
         try (BufferedReader reader = new BufferedReader(new FileReader(fin1))) {
             dictionary.imports(reader);
         } catch (IOException e) {
-            e.printStackTrace();
-            return;
+            e.printStackTrace(System.out);
         }
 
     }
@@ -136,7 +135,7 @@ public class DictionaryManagement {
             // export
             dictionary.exports(writer);
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         // After this block, System.out will be back to its original state (console).

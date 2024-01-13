@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DatabaseSQLite extends Database {
+public class DatabaseSQLite extends DatabaseSQL {
     private static final DatabaseSQLite ins = new DatabaseSQLite();
     private static final String jdbcURL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\SQLite\\engData.db";
     private static Connection connection = null;
@@ -107,7 +107,7 @@ public class DatabaseSQLite extends Database {
             return false;
         }
         // SQL query to insert a new word into the dictionary table
-        String sqlQuery = "INSERT INTO dictionary (word_target, word_explain) VALUES (?, ?)";
+        String sqlQuery = "INSERT INTO engviet VALUES (?, NULL, NULL, ?, NULL, NULL)";
         preparedStatement = connection.prepareStatement(sqlQuery);
         preparedStatement.setString(1, wordTarget);
         preparedStatement.setString(2, wordExplain);
@@ -150,7 +150,7 @@ public class DatabaseSQLite extends Database {
         return res;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         try {
             // Load the SQLite JDBC driver
             Class.forName("org.sqlite.JDBC");
@@ -163,7 +163,7 @@ public class DatabaseSQLite extends Database {
                 System.out.println(word.getWordTarget());
             }
             Scanner cin = new Scanner(System.in);
-            while (true) {
+            while (cin.hasNext()) {
                 String wordTarget = cin.next();
                 System.out.println(ins.dictionaryLookup(wordTarget));
                 ArrayList<Word> tmp = ins.dictionarySearcher(wordTarget);
@@ -172,7 +172,7 @@ public class DatabaseSQLite extends Database {
                 }
             }
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             // Close resources in the reverse order of their creation
             try {
@@ -180,7 +180,7 @@ public class DatabaseSQLite extends Database {
                 if (preparedStatement != null) preparedStatement.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }

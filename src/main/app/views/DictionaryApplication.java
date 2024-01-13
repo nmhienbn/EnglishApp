@@ -1,5 +1,6 @@
 package views;
 
+import controllers.Panel.MainPanel_ctrl;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -12,17 +13,12 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import models.DictFacade;
-import controllers.Panel.MainPanel_ctrl;
+import models.facades.DictFacade;
 
 public class DictionaryApplication extends Application {
-    long startTime = System.currentTimeMillis();
-    public static void main(String[] args) throws Exception {
-        DictFacade.Init();
+    final long startTime = System.currentTimeMillis();
+    public static void main(String[] args) {
         launch(args);
-        DictFacade.Shutdown();
-        Platform.exit();
-        System.exit(0);
     }
 
     @Override

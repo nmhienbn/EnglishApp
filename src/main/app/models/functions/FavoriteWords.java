@@ -1,9 +1,8 @@
 package models.functions;
 
-import models.DictFacade;
+import models.facades.DictFacade;
 
 import java.io.*;
-import java.util.HashSet;
 import java.util.TreeSet;
 
 public class FavoriteWords {
@@ -28,10 +27,8 @@ public class FavoriteWords {
             while ((word = cin.readLine()) != null) {
                 favoriteWords.add(word);
             }
-            cin.close();
         } catch (IOException e) {
-            e.printStackTrace();
-            return;
+            e.printStackTrace(System.out);
         }
     }
 
@@ -41,9 +38,10 @@ public class FavoriteWords {
                 writer.println(word);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
         System.out.println("Favorite words has been exported to file!");
+        favoriteWords.clear();
     }
 
     public boolean isFavoriteWord(String word) {

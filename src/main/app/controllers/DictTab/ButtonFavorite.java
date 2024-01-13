@@ -1,9 +1,10 @@
 package controllers.DictTab;
 
-import models.DictFacade;
+import models.facades.FavouriteFacade;
+import models.facades.WordListFacade;
 
 public class ButtonFavorite {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonFavorite(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -20,13 +21,13 @@ public class ButtonFavorite {
         System.out.println("action toggle favorite called");
         String word = wifa_word.getText();
         if (favorite_toggle_button.isSelected()) {
-            if (word == null || word.isEmpty() || !DictFacade.Dict.contains(word)) {
+            if (word == null || word.isEmpty() || !WordListFacade.contains(word)) {
                 favorite_toggle_button.setSelected(false);
                 return;
             }
-            DictFacade.Favourite.add(word);
+            FavouriteFacade.add(word);
         } else {
-            DictFacade.Favourite.remove(word);
+            FavouriteFacade.remove(word);
         }
     }
 }

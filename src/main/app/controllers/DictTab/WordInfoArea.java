@@ -7,10 +7,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import models.DictFacade;
+import models.facades.WordListFacade;
 
 public class WordInfoArea {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public WordInfoArea(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -52,7 +52,7 @@ public class WordInfoArea {
         }
         speak_button.setDisable(false);
         wifa_word.setText(word);
-        wifa_meaning_raw.setText(DictFacade.Dict.getMeaning(word));
+        wifa_meaning_raw.setText(WordListFacade.getMeaning(word));
 
         String[] lines = meaning.split("\n");
 

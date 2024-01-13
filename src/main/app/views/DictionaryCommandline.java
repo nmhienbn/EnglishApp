@@ -1,8 +1,8 @@
 package views;
 
-import models.functions.DictionaryManagement;
 import models.databases.Word;
-import models.DictFacade;
+import models.facades.DictFacade;
+import models.functions.DictionaryManagement;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class DictionaryCommandline {
-    DictionaryManagement manager = DictionaryManagement.getInstance();
+    final DictionaryManagement manager = DictionaryManagement.getInstance();
 
     /**
      * Pause the program.

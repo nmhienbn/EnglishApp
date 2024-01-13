@@ -1,7 +1,7 @@
 package controllers.GoogleTab;
 
 public class ButtonSwapLang {
-    GoogleTab_ctrl googleTabCtrl;
+    final GoogleTab_ctrl googleTabCtrl;
     public ButtonSwapLang(GoogleTab_ctrl GoogleTabCtrl) {
         this.googleTabCtrl = GoogleTabCtrl;
     }

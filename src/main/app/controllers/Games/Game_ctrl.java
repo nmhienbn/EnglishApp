@@ -1,5 +1,6 @@
 package controllers.Games;
 
+import controllers.AppControllers;
 import controllers.Panel.ChangeTab;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
@@ -10,14 +11,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
-import controllers.AppControllers;
-import controllers.Panel.MainPanel_ctrl;
 import models.games.GameNotification;
 
 import static models.games.GameSound.mediaClick;
 
 public abstract class Game_ctrl extends AppControllers {
-    protected String gameName;
     @FXML
     public AnchorPane game_sc;
     @FXML
@@ -32,6 +30,7 @@ public abstract class Game_ctrl extends AppControllers {
     public Button exitButton;
     @FXML
     public Region dimSc;
+    protected String gameName;
 
     @FXML
     protected void initialize() {
@@ -68,7 +67,8 @@ public abstract class Game_ctrl extends AppControllers {
     @FXML
     public final void exitGame() {
         mediaClick.play();
-        ChangeTab.GameTab(GameTab_ctrl.mainPane);
+        new ChangeTab().GameTab(GameTab_ctrl.mainPane);
+        System.out.println(this + "game exited!");
     }
 
     public abstract void restartAction();

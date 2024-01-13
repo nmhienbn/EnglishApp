@@ -1,9 +1,9 @@
 package controllers.DictTab;
 
-import models.DictFacade;
+import models.facades.WordListFacade;
 
 public class ButtonEditWord {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonEditWord(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -27,7 +27,7 @@ public class ButtonEditWord {
         
         String word = wifa_word.getText();
         if (word == null || word.isEmpty()) return;
-        if (!DictFacade.Dict.contains(word)) {
+        if (!WordListFacade.contains(word)) {
             DictPopup.popup_word_not_exist(word).showPopup(dictCtrl);
             return;
         }

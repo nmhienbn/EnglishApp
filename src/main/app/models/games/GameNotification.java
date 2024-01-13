@@ -1,5 +1,7 @@
 package models.games;
 
+import controllers.Games.GameAnimations;
+import controllers.Games.Game_ctrl;
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Parent;
@@ -13,8 +15,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import views.File_loader;
-import controllers.Games.GameAnimations;
-import controllers.Games.Game_ctrl;
 
 
 public class GameNotification {

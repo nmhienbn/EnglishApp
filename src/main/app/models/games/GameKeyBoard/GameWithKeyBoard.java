@@ -4,14 +4,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import models.games.Game;
-import models.games.GameSound;
 
-import java.io.File;
-
-import static models.games.GameKeyBoard.LabelActions.getLabel;
 import static models.games.GameKeyBoard.LabelActions.getLabelText;
 import static models.games.GameSound.mediaKeyboardPress;
 
@@ -22,7 +16,7 @@ public abstract class GameWithKeyBoard extends Game {
     protected int CUR_ROW = 1;
     protected int CUR_COLUMN = 1;
     protected int MAX_COLUMN = 5;
-    protected int MAX_ROW = 6;
+    protected final int MAX_ROW = 6;
 
     public int getMAX_COLUMN() {
         return MAX_COLUMN;

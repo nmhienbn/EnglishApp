@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Toggle;
 
 public class SHFGroup {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public SHFGroup(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;

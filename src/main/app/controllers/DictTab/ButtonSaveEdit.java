@@ -1,7 +1,7 @@
 package controllers.DictTab;
 
 public class ButtonSaveEdit {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonSaveEdit(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;

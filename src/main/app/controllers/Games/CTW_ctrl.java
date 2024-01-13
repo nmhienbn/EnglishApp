@@ -5,9 +5,9 @@ import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
-import models.games.GameNotification;
+import javafx.scene.layout.GridPane;
 import models.games.GameKeyBoard.CTW.GameCatchWord;
+import models.games.GameNotification;
 
 import java.util.ArrayList;
 

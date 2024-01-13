@@ -1,15 +1,11 @@
 package controllers.Panel;
 
+import controllers.AppControllers;
+import controllers.Games.GameTab_ctrl;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import views.File_loader;
-import controllers.AppControllers;
-import controllers.DictTab.MainDictionaryTab_ctrl;
-import controllers.Games.*;
-import controllers.GoogleTab.GoogleTab_ctrl;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -43,7 +39,7 @@ public class MainPanel_ctrl extends AppControllers {
 
 
     @FXML
-    protected void initialize() throws IOException {
+    protected void initialize() {
         PanelButton panelButton = new PanelButton(this);
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
@@ -74,7 +70,7 @@ public class MainPanel_ctrl extends AppControllers {
                 onButtonPress(home_button);
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
     }
 
@@ -94,12 +90,12 @@ public class MainPanel_ctrl extends AppControllers {
         focused_button.getGraphic().setEffect(null);
 
         if (button == home_button)
-            ChangeTab.HomeTab(mainPane);
+            new ChangeTab().HomeTab(mainPane);
         else if (button == dict_button)
-            ChangeTab.DictionaryTab(mainPane);
+            new ChangeTab().DictionaryTab(mainPane);
         else if (button == gg_dict_button)
-            ChangeTab.GoogleTab(mainPane);
+            new ChangeTab().GoogleTab(mainPane);
         else if (button == game_button)
-            ChangeTab.GameTab(mainPane);
+            new ChangeTab().GameTab(mainPane);
     }
 }

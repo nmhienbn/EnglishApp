@@ -1,17 +1,15 @@
 package controllers.Games;
 
+import controllers.AppControllers;
 import controllers.Panel.ChangeTab;
 import javaGif.AnimatedGif;
 import javafx.animation.Animation;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.util.Duration;
-import views.File_loader;
-import controllers.AppControllers;
-import controllers.Panel.MainPanel_ctrl;
+
+import java.util.Objects;
 
 import static models.games.GameSound.mediaClick;
 
@@ -32,11 +30,11 @@ public class GameTab_ctrl extends AppControllers {
     }
 
     public void setButton(Button button, String filename, double durationMs) {
-        ImageView img = new ImageView(new AnimatedGif(getClass().getResource(filename).
+        ImageView img = new ImageView(new AnimatedGif(Objects.requireNonNull(getClass().getResource(filename)).
                 toExternalForm(), durationMs).getView().getImage());
         button.setGraphic(img);
         button.setOnMouseEntered(e -> {
-            AnimatedGif animation = new AnimatedGif(getClass().getResource(filename).
+            AnimatedGif animation = new AnimatedGif(Objects.requireNonNull(getClass().getResource(filename)).
                     toExternalForm(), durationMs);
             button.setGraphic(animation.getView());
             animation.setCycleCount(Animation.INDEFINITE);
@@ -53,14 +51,14 @@ public class GameTab_ctrl extends AppControllers {
 
     private void OnButtonPress(Button button) {
         if (button == quizz_button) {
-            Quizz_ctrl quizz_ctrl = ChangeTab.QuizzTab(mainPane);
+            Quizz_ctrl quizz_ctrl = new ChangeTab().QuizzTab(mainPane);
             quizz_ctrl.showStartGame();
         } else if (button == wordle_button) {
-            Wordle_ctrl wordle_ctrl = ChangeTab.WordleTab(mainPane);
+            Wordle_ctrl wordle_ctrl = new ChangeTab().WordleTab(mainPane);
             wordle_ctrl.gridRequestFocus();
             wordle_ctrl.showStartGame();
         } else if (button == ctw_button) {
-            CTW_ctrl ctwTab_ctrl = ChangeTab.CTWTab(mainPane);
+            CTW_ctrl ctwTab_ctrl = new ChangeTab().CTWTab(mainPane);
             ctwTab_ctrl.gridRequestFocus();
             ctwTab_ctrl.showStartGame();
         }

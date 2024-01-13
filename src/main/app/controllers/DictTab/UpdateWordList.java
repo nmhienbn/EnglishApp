@@ -1,7 +1,8 @@
 package controllers.DictTab;
 
-import javafx.scene.control.*;
-import models.DictFacade;
+import models.facades.FavouriteFacade;
+import models.facades.HistoryFacade;
+import models.facades.WordListFacade;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,7 @@ public class UpdateWordList {
         ArrayList<String> wordlist = new ArrayList<>();
 
         if (!search_box.getText().isEmpty())
-            wordlist = DictFacade.Dict.getWordsWithPrefix(search_box.getText());
+            wordlist = WordListFacade.getWordsWithPrefix(search_box.getText());
         int count = 0;
         var selectedToggle = SHF_group.getSelectedToggle();
 
@@ -30,13 +31,13 @@ public class UpdateWordList {
                 if (count >= MAX_WORD_FIND) break;
             }
         } else if (selectedToggle == favorite_button) {
-            for (String word : DictFacade.Favourite.getAll()) {
+            for (String word : FavouriteFacade.getAll()) {
                 result_list.add(word);
                 count++;
                 if (count >= MAX_WORD_FIND) break;
             }
         } else if (selectedToggle == history_button) {
-            for (String word : DictFacade.History.toIterable()) {
+            for (String word : HistoryFacade.toIterable()) {
                 if (word.startsWith(search_box.getText())) {
                     result_list.add(word);
                     count++;

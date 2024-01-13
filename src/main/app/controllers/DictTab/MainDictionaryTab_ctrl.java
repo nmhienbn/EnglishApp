@@ -1,9 +1,10 @@
 package controllers.DictTab;
 
+import controllers.AppControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.TextFlow;
-import controllers.AppControllers;
+import models.facades.DictFacade;
 
 public class MainDictionaryTab_ctrl extends AppControllers {
     @FXML
@@ -62,6 +63,7 @@ public class MainDictionaryTab_ctrl extends AppControllers {
 
     @FXML
     protected void initialize() {
+        DictFacade.Init();
         new SearchArea().init(this);
         new WordInfoArea(this).init();
         new AllButtonSetup().init_function_button(this);

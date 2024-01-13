@@ -1,14 +1,10 @@
 package controllers.Games;
 
-import javafx.animation.*;
-import javafx.embed.swing.SwingFXUtils;
+import javafx.animation.FadeTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.util.Duration;
-
-import java.awt.image.BufferedImage;
 
 // https://stackoverflow.com/questions/28183667/how-i-can-stop-an-animated-gif-in-javafx
 

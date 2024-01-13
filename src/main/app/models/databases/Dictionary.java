@@ -2,6 +2,7 @@ package models.databases;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -9,6 +10,11 @@ import java.util.concurrent.Executors;
 public class Dictionary {
 
     private static Dictionary instance = null;
+    private final int cnt = 0;
+    private final Trie trie = new Trie();
+
+    private Dictionary() {
+    }
 
     /**
      * Singleton.
@@ -18,13 +24,6 @@ public class Dictionary {
             instance = new Dictionary();
         }
         return instance;
-    }
-
-    private volatile Trie trie = null;
-    private volatile int cnt = 0;
-
-    private Dictionary() {
-        trie = new Trie();
     }
 
     /**
@@ -116,5 +115,8 @@ public class Dictionary {
      */
     public void clear() {
         trie.clear();
+//        System.out.println(trie.queryAllWords().size());
+//        System.out.println(Trie.TrieNode.cnt + " TrieNode is being garbage collected!\n");
+//        Trie.TrieNode.cnt = 0;
     }
 }

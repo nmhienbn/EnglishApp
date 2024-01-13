@@ -3,10 +3,10 @@ package controllers.DictTab;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.StageStyle;
-import models.DictFacade;
+import models.facades.DictFacade;
 
 public class ButtonResetDictionary {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonResetDictionary(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;

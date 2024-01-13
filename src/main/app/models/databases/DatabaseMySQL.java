@@ -1,14 +1,10 @@
 package models.databases;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DatabaseMySQL extends Database {
+public class DatabaseMySQL extends DatabaseSQL {
     private static final DatabaseMySQL ins = new DatabaseMySQL();
     private static final String jdbcURL = "jdbc:mysql://localhost:3307/englishapp";
     private static String username = "root";
@@ -131,7 +127,7 @@ public class DatabaseMySQL extends Database {
                 System.out.println(word.getWordTarget());
             }
             Scanner cin = new Scanner(System.in);
-            while (true) {
+            while (cin.hasNext()) {
                 String wordTarget = cin.next();
                 System.out.println(ins.dictionaryLookup(wordTarget));
                 ArrayList<Word> tmp = ins.dictionarySearcher(wordTarget);
@@ -140,7 +136,7 @@ public class DatabaseMySQL extends Database {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         } finally {
             try {
                 // Close resources
@@ -148,7 +144,7 @@ public class DatabaseMySQL extends Database {
                 if (preparedStatement != null) preparedStatement.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                e.printStackTrace(System.out);
             }
         }
     }

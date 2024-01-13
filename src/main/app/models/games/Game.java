@@ -1,7 +1,7 @@
 package models.games;
 
-import javafx.scene.layout.HBox;
 import controllers.Games.Game_ctrl;
+import javafx.scene.layout.HBox;
 
 public abstract class Game {
     protected String winWord;
@@ -29,4 +29,10 @@ public abstract class Game {
      * Gets a random word from the winningWords list
      */
     public abstract void getRandomLevel();
+
+    @Override
+    protected final void finalize() throws Throwable {
+        System.out.println(this + " has been collected!");
+        super.finalize();
+    }
 }

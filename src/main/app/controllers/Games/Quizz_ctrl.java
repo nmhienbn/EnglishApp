@@ -4,9 +4,10 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import controllers.Panel.MainPanel_ctrl;
 import models.games.GameNotification;
 import models.games.GameQuizz;
 
@@ -21,9 +22,9 @@ import static controllers.Games.NodeIntersect.inHierarchy;
 public class Quizz_ctrl extends Game_ctrl {
 
     public static class Quizz {
-        public String question;
-        public String[] choices;
-        public String answer;
+        public final String question;
+        public final String[] choices;
+        public final String answer;
 
         public Quizz(String question, String[] choices, String answer) {
             this.question = question;

@@ -3,10 +3,11 @@ package controllers.DictTab;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.StageStyle;
-import models.DictFacade;
+import models.facades.FavouriteFacade;
+import models.facades.WordListFacade;
 
 public class ButtonRemoveWord {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonRemoveWord(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -20,7 +21,7 @@ public class ButtonRemoveWord {
         var wifa_word = dictCtrl.wifa_word;
         
         if (wifa_word.getText() == null && wifa_word.getText().isEmpty()) return;
-        if (!DictFacade.Dict.contains(wifa_word.getText())) {
+        if (!WordListFacade.contains(wifa_word.getText())) {
             DictPopup.popup_word_not_exist(wifa_word.getText()).showPopup(dictCtrl);
             return;
         }
@@ -47,8 +48,8 @@ public class ButtonRemoveWord {
         alert.showAndWait().ifPresent(type -> {
             if (type == buttonTypeYes) {
                 System.out.println("remove word: " + word);
-                DictFacade.Dict.remove(word);
-                DictFacade.Favourite.remove(word);
+                WordListFacade.remove(word);
+                FavouriteFacade.remove(word);
                 new UpdateWordList().update_wordlist(dictCtrl);
                 DictPopup.popup_word_removed(word).showPopup(dictCtrl);
                new WordInfoArea(dictCtrl).update_word_info_area(null, null, null);

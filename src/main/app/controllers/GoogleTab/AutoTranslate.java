@@ -5,7 +5,7 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class AutoTranslate {
-    GoogleTab_ctrl googleTabCtrl;
+    final GoogleTab_ctrl googleTabCtrl;
 
     public AutoTranslate(GoogleTab_ctrl GoogleTabCtrl) {
         this.googleTabCtrl = GoogleTabCtrl;

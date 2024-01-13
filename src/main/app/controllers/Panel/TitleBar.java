@@ -1,8 +1,10 @@
 package controllers.Panel;
 
+import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import models.facades.DictFacade;
 
 public class TitleBar {
 
@@ -11,7 +13,7 @@ public class TitleBar {
     }
 
     final Delta dragDelta = new Delta();
-    MainPanel_ctrl mainPanelCtrl;
+    final MainPanel_ctrl mainPanelCtrl;
 
     public TitleBar(MainPanel_ctrl mainPanelCtrl) {
         this.mainPanelCtrl = mainPanelCtrl;
@@ -47,6 +49,18 @@ public class TitleBar {
     private static void closeAction(Button closeButton) {
         closeButton.setOnAction(e -> {
             closeButton.getScene().getWindow().hide();
+            DictFacade.Shutdown();
+            Platform.runLater(() -> {
+                System.out.println("Exiting...");
+
+                // Additional cleanup or finalization if needed
+
+                // Exit the JavaFX application
+                Platform.exit();
+
+                // Terminate the Java Virtual Machine
+                System.exit(0);
+            });
         });
     }
 }

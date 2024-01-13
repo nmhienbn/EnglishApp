@@ -1,10 +1,12 @@
 package controllers.DictTab;
 
 import javafx.scene.control.ListView;
-import models.DictFacade;
+import models.facades.FavouriteFacade;
+import models.facades.HistoryFacade;
+import models.facades.WordListFacade;
 
 public class SearchBox {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public SearchBox(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -30,11 +32,11 @@ public class SearchBox {
 
         if (word == null) return;
         //System.out.println("choose word: " + word);
-        favorite_toggle_button.setSelected(DictFacade.Favourite.check(word));
+        favorite_toggle_button.setSelected(FavouriteFacade.check(word));
 
-        new WordInfoArea(dictCtrl).update_word_info_area(word, DictFacade.Dict.getMeaning(word), word_list_box);
+        new WordInfoArea(dictCtrl).update_word_info_area(word, WordListFacade.getMeaning(word), word_list_box);
 
         if (SHF_group.getSelectedToggle() != history_button)
-            DictFacade.History.add(word);
+            HistoryFacade.add(word);
     }
 }

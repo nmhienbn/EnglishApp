@@ -7,10 +7,10 @@ import javafx.util.Duration;
 import java.io.File;
 
 public class GameSound {
-    public static MediaPlayer mediaClick;
-    public static MediaPlayer mediaWin;
-    public static MediaPlayer mediaLose;
-    public static MediaPlayer mediaKeyboardPress;
+    public static final MediaPlayer mediaClick;
+    public static final MediaPlayer mediaWin;
+    public static final MediaPlayer mediaLose;
+    public static final MediaPlayer mediaKeyboardPress;
 
     static {
         Media click = new Media(new File(System.getProperty("user.dir") +

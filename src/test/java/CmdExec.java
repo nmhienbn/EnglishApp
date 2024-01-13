@@ -1,7 +1,7 @@
 import java.io.*;
 public class CmdExec {
 
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
         try {
             String line;
             Process p = Runtime.getRuntime().exec
@@ -15,7 +15,7 @@ public class CmdExec {
             input.close();
         }
         catch (Exception err) {
-            err.printStackTrace();
+            err.printStackTrace(System.out);
         }
     }
 }

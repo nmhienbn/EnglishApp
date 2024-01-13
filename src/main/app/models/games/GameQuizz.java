@@ -1,13 +1,15 @@
 package models.games;
 
-import javafx.animation.ScaleTransition;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.*;
-import javafx.scene.text.Text;
 import controllers.Games.GameAnimations;
 import controllers.Games.Game_ctrl;
 import controllers.Games.Quizz_ctrl;
+import javafx.animation.ScaleTransition;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 
 import static controllers.Games.Quizz_ctrl.QUESTIONS;
 

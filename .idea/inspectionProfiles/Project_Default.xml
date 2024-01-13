@@ -1,0 +1,29 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="white0" />
+            <item index="1" class="java.lang.String" itemvalue="white1" />
+            <item index="2" class="java.lang.String" itemvalue="white2" />
+            <item index="3" class="java.lang.String" itemvalue="white3" />
+            <item index="4" class="java.lang.String" itemvalue="white4" />
+            <item index="5" class="java.lang.String" itemvalue="white5" />
+            <item index="6" class="java.lang.String" itemvalue="green0" />
+            <item index="7" class="java.lang.String" itemvalue="green1" />
+            <item index="8" class="java.lang.String" itemvalue="green2" />
+            <item index="9" class="java.lang.String" itemvalue="nav_color0" />
+            <item index="10" class="java.lang.String" itemvalue="nav_color1" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ThrowablePrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Tests" level="WARNING" enabled="false" />
+    </inspection_tool>
+  </profile>
+</component>

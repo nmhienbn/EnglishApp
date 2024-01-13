@@ -1,9 +1,9 @@
 package controllers.DictTab;
 
-import models.DictFacade;
+import models.facades.WordListFacade;
 
 public class ButtonAddWord {
-    MainDictionaryTab_ctrl dictCtrl;
+    final MainDictionaryTab_ctrl dictCtrl;
 
     public ButtonAddWord(MainDictionaryTab_ctrl dictCtrl) {
         this.dictCtrl = dictCtrl;
@@ -19,12 +19,12 @@ public class ButtonAddWord {
 
         String word = search_box.getText();
         if (word == null || word.isEmpty()) return;
-        if (DictFacade.Dict.contains(word)) {
+        if (WordListFacade.contains(word)) {
             DictPopup.popup_exist(word).showPopup(dictCtrl);
             return;
         }
 
-        boolean success = DictFacade.Dict.add(word, "");
+        boolean success = WordListFacade.add(word, "");
         if (success) {
             DictPopup.popup_word_added(word).showPopup(dictCtrl);
             new UpdateWordList().update_wordlist(dictCtrl);

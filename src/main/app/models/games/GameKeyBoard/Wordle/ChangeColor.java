@@ -1,17 +1,17 @@
 package models.games.GameKeyBoard.Wordle;
 
+import controllers.Games.GameAnimations;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import controllers.Games.GameAnimations;
 
 import static models.games.GameKeyBoard.LabelActions.getLabel;
 
 public class ChangeColor {
-    GameWordle mainWordle;
+    final GameWordle mainWordle;
 
     public ChangeColor(GameWordle mainWordle) {
         this.mainWordle = mainWordle;
